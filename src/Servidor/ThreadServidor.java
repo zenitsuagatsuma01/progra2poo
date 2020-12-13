@@ -60,7 +60,7 @@ class ThreadServidor extends Thread{
                         }
                     break;
                     case 3:
-                        int dado1 = (new Random()).nextInt(6)+1;                // Codigo placeholder para los dados, en realidad se supone que deberian ir al iniciar la partida
+                        int dado1 = (new Random()).nextInt(6)+1;                // Codigo placeholder para los dados, en realidad deberian tener su propia clase y estar al iniciar la partida
                         int dado2 = (new Random()).nextInt(6)+1;
                         String next = server.getNextTurno();
                         
@@ -75,12 +75,14 @@ class ThreadServidor extends Thread{
                     break;
                     case 4: // iniciar partida
                         server.iniciarPartida();
-                        
+                        // al iniciar la partida se deberían tirar los dados para determinar el orden
                         for (int i = 0; i < server.conexiones.size(); i++) {
                             ThreadServidor current = server.conexiones.get(i);
                             current.writer.writeInt(4);
                             
                         }
+                        
+                        
                     break;
                 }
             } catch (IOException ex) {

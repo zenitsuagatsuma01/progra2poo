@@ -12,6 +12,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import Cliente.ThreadCliente;
+import javax.swing.JOptionPane;
+import java.lang.*;
 
 
 public class Servidor{
@@ -26,6 +28,7 @@ public class Servidor{
     private boolean partidaIniciada = false;
     private Banco banco;
     private ArrayList<ThreadCliente> jugadores;
+    private boolean maximoAlcanzado = false;
 
     public Servidor(PantallaServidor refPantalla) {
         this.refPantalla = refPantalla;
@@ -55,22 +58,57 @@ public class Servidor{
     
     public void runServer(){
         int contadorDeConexiones = 0;
+        String stringCantidad;
+        int cantidadJugadores = 0;
+        
+        do{
+           
+            stringCantidad = JOptionPane.showInputDialog("Escriba la cantidad de jugadores que jugarán (Mínimo 2 y máximo 6): ");
+        
+        try{
+            cantidadJugadores = Integer.parseInt(stringCantidad);
+            
+        } catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "La cantidad debe ser un entero.");
+        }
+            
+        } while (cantidadJugadores < 2 || cantidadJugadores > 6);
+
+        limiteMax = cantidadJugadores;        
         
         try{
             srv = new ServerSocket(35577);
             while (running){
-                refPantalla.addMessage("::Esperando conexión ...");
-                refPantalla.addMessage("El límite máximo de jugadores es 6. Cantidad actual de jugadores: " + contadorDeConexiones);
+                if (contadorDeConexiones <= limiteMax && !maximoAlcanzado){
+                    refPantalla.addMessage(":Esperando más jugadores...");
+                    refPantalla.addMessage("El límite máximo de jugadores para esta partida es " + cantidadJugadores + ". Cantidad actual de jugadores: " + contadorDeConexiones);
+                    
+                }
+                    
                 Socket nuevaConexion = srv.accept();
                 if (!partidaIniciada){
                     contadorDeConexiones++;
-                    
+
                     if (contadorDeConexiones > limiteMax){
                         refPantalla.addMessage("Conexión denegada: Límite máximo de jugadores alcanzado.");
-                        srv.close();
+                        //srv.close();
+                        
                     }
-                    else{
+                    
+                    else if (contadorDeConexiones <= limiteMax){
+                        
                         refPantalla.addMessage(":Conexión " + contadorDeConexiones + "aceptada");
+                        
+                        if (contadorDeConexiones == limiteMax){
+                            
+                            refPantalla.addMessage("El límite máximo de jugadores para esta partida es " + limiteMax + ". Cantidad actual de jugadores: " + contadorDeConexiones);
+                            refPantalla.addMessage("Cantidad máxima de jugadores alcanzada. No se permitirán más conexiones.");
+                            refPantalla.addMessage("Iniciando partida...");
+                            maximoAlcanzado = true;
+                            srv.close();
+                        }
+                            
+                    
 
                     // nuevo thread
                         ThreadServidor newThread = new ThreadServidor(nuevaConexion, this);
