@@ -7,15 +7,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+// Interfaz grafica que le aparece a cada jugador, el diseno es un placeholder porque ocupamos poner el tablero y el historial (yo hago el historial)
 
-public class ChatCliente extends javax.swing.JFrame {
+public class InterfazCliente extends javax.swing.JFrame {
 
     Cliente refCliente;
     private String nombreTurno = "";
     /**
      * Creates new form ChatCliente
      */
-    public ChatCliente() {
+    public InterfazCliente() {
         initComponents();
         lblDado1.setOpaque(true);
         lblDado2.setOpaque(true);

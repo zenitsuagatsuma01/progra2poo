@@ -16,7 +16,7 @@ public class MainCliente {
      */
     public static void main(String[] args) {
         try{
-        ChatCliente pantalla = new ChatCliente();
+        InterfazCliente pantalla = new InterfazCliente();
         Cliente c = new Cliente(pantalla);
         pantalla.setVisible(true); 
         c.conectar();

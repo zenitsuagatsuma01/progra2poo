@@ -14,8 +14,6 @@ import java.util.ArrayList;
  */
 public class Banco {
     
-    private ThreadCliente jugadorActual;
-    private ArrayList<ThreadCliente> jugadores;
     private ArrayList<ThreadCliente> enQuiebra;
     // El banco tiene dinero ilimitado
     

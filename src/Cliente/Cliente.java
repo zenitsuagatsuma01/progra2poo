@@ -13,10 +13,10 @@ import javax.swing.JOptionPane;
 public class Cliente {
     
     Socket socketRef;
-    ChatCliente refPantalla;
+    InterfazCliente refPantalla;
     public ThreadCliente hiloCliente;
 
-    public Cliente(ChatCliente refPantalla) {
+    public Cliente(InterfazCliente refPantalla) {
         this.refPantalla = refPantalla;
         refPantalla.setRefCliente(this);
     }

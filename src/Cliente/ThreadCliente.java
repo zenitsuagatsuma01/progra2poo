@@ -21,16 +21,34 @@ public class ThreadCliente extends Thread{
     private int dinero;
     //private Ficha ficha;
     //private ArrayList<Propiedad> propiedades;
+    //private ArrayList<Casas> casas;
+    //private ArrayList<Hotel> hoteles;
     private int numJugador;
     private boolean quebrado = false;
     private boolean running = true;
-    private ChatCliente refPantalla;
+    private InterfazCliente refPantalla;
 
-    public ThreadCliente(Socket socketRef, ChatCliente refPantalla) throws IOException {
+    public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
         reader = new DataInputStream(socketRef.getInputStream());
         writer = new DataOutputStream(socketRef.getOutputStream());
         this.refPantalla = refPantalla;
+    }
+    
+    public void solicitarPropiedad(){ // Parametro debería en realidad ser un objeto tipo Propiedad pero la clase no existe todavía
+        
+    }
+    
+    public void solicitarCasa(){ // Parametro debería ser un objeto tipo Casa
+        
+    }
+    
+    public void solicitarHotel(){ // Parametro debería ser un objeto tipo Hotel
+        
+    }
+    
+    public void actuarCarta(){
+        
     }
     
     public void run (){
