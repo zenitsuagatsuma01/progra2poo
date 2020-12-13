@@ -9,6 +9,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.ArrayList;
 
 
 public class ThreadCliente extends Thread{
@@ -17,6 +18,11 @@ public class ThreadCliente extends Thread{
     public DataInputStream reader;
     public DataOutputStream writer;
     private String nombre;
+    private int dinero;
+    //private Ficha ficha;
+    //private ArrayList<Propiedad> propiedades;
+    private int numJugador;
+    private boolean quebrado = false;
     private boolean running = true;
     private ChatCliente refPantalla;
 
@@ -66,4 +72,38 @@ public class ThreadCliente extends Thread{
             }
         }
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(int dinero) {
+        this.dinero = dinero;
+    }
+
+    public int getNumJugador() {
+        return numJugador;
+    }
+
+    public void setNumJugador(int numJugador) {
+        this.numJugador = numJugador;
+    }
+
+    public boolean isQuebrado() {
+        return quebrado;
+    }
+
+    public void setQuebrado(boolean quebrado) {
+        this.quebrado = quebrado;
+    }
+    
+    
 }

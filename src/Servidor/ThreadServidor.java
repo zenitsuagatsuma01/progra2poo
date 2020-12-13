@@ -60,7 +60,7 @@ class ThreadServidor extends Thread{
                         }
                     break;
                     case 3:
-                        int dado1 = (new Random()).nextInt(6)+1;
+                        int dado1 = (new Random()).nextInt(6)+1;                // Codigo placeholder para los dados, en realidad se supone que deberian ir al iniciar la partida
                         int dado2 = (new Random()).nextInt(6)+1;
                         String next = server.getNextTurno();
                         

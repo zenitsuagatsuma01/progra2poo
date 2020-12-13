@@ -11,6 +11,7 @@ import static java.lang.Thread.sleep;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import Cliente.ThreadCliente;
 
 
 public class Servidor{
@@ -23,6 +24,8 @@ public class Servidor{
     private int limiteMin = 2;
     private int limiteMax = 6;
     private boolean partidaIniciada = false;
+    private Banco banco;
+    private ArrayList<ThreadCliente> jugadores;
 
     public Servidor(PantallaServidor refPantalla) {
         this.refPantalla = refPantalla;
@@ -49,12 +52,15 @@ public class Servidor{
         return conexiones.get(turno).nombre;
     }
     
+    
     public void runServer(){
         int contadorDeConexiones = 0;
+        
         try{
             srv = new ServerSocket(35577);
             while (running){
                 refPantalla.addMessage("::Esperando conexión ...");
+                refPantalla.addMessage("El límite máximo de jugadores es 6. Cantidad actual de jugadores: " + contadorDeConexiones);
                 Socket nuevaConexion = srv.accept();
                 if (!partidaIniciada){
                     contadorDeConexiones++;
@@ -85,11 +91,6 @@ public class Servidor{
             System.out.println(e.getMessage());
         }
     }
-    
-    
-    
-    
-    
     
     
 }
