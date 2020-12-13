@@ -6,7 +6,7 @@
 package Servidor;
 
 
-public class ChatGR2 {
+public class MainServidor {
 
     /**
      * @param args the command line arguments
