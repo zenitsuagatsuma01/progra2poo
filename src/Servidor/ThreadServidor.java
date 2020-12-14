@@ -8,15 +8,16 @@ package Servidor;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.Socket;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-class ThreadServidor extends Thread{
+public class ThreadServidor extends Thread implements Serializable{
     
-    private Socket socketRef;
+    transient private Socket socketRef;
     protected DataInputStream reader;
     protected DataOutputStream writer;
     public String nombre;
@@ -30,7 +31,7 @@ class ThreadServidor extends Thread{
         this.server = server;
     }
     
-    public void enviarTurnoInicial() throws IOException{
+    public void enviarTurnoInicial() throws IOException{            // Manda el turno inicial
         writer.writeInt(1);
         writer.writeUTF(server.getTurno());
     }

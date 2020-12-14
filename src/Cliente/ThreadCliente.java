@@ -8,13 +8,14 @@ package Cliente;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.Socket;
 import java.util.ArrayList;
 
 
-public class ThreadCliente extends Thread{
+public class ThreadCliente extends Thread implements Serializable{
     
-    private Socket socketRef;
+    transient private Socket socketRef;
     public DataInputStream reader;
     public DataOutputStream writer;
     private String nombre;
@@ -46,7 +47,7 @@ public class ThreadCliente extends Thread{
         
     }
     
-    public void actuarCarta(){
+    public void actuarCarta(){      // Para reaccionar ante las diferentes cartas del juego
         
     }
     
@@ -78,7 +79,7 @@ public class ThreadCliente extends Thread{
                         refPantalla.addMensaje(usuario+">  Lanzamiento de dados (" + dado1 + ", " + dado2 + ")");
                         refPantalla.pintarTurno(turno);
                     break;                    
-                    case 4: // pinta que inicio partida
+                    case 4: // Se inicia la partida
                         refPantalla.setInicioPartida();
                     break;
                     

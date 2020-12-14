@@ -6,13 +6,14 @@
 package Cliente;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.Socket;
 import javax.swing.JOptionPane;
 
 
-public class Cliente {
+public class Cliente implements Serializable{
     
-    Socket socketRef;
+    transient Socket socketRef;
     InterfazCliente refPantalla;
     public ThreadCliente hiloCliente;
 
@@ -21,7 +22,7 @@ public class Cliente {
         refPantalla.setRefCliente(this);
     }
     
-    public void conectar(){
+    public void conectar(){     // Para conectarse al servidor
  
         try{
         
@@ -29,8 +30,8 @@ public class Cliente {
             hiloCliente = new ThreadCliente(socketRef, refPantalla);
             hiloCliente.start();
             String nombre = JOptionPane.showInputDialog("Escriba su nombre:");
-            refPantalla.setTitle("Monopoly - Nombre del jugador: " + nombre);
-            refPantalla.setNombreJugador("Su nombre es: " + nombre);
+            refPantalla.setTitle("Monopoly - Nombre del jugador: " + nombre);       // Se pone el titulo de la ventana del jugador
+            refPantalla.setNombreJugador("Su nombre es: " + nombre);    // Se pone el nombre del jugador
             hiloCliente.writer.writeInt(1); //instruccion para el switch del thraed servidor
             hiloCliente.writer.writeUTF(nombre); //instruccion para el switch del thraed servidor
         }

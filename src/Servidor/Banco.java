@@ -6,34 +6,43 @@
 package Servidor;
 
 import Cliente.ThreadCliente;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author aleja
  */
-public class Banco {
+public class Banco implements Serializable{
     
     private ArrayList<ThreadCliente> enQuiebra;
     // El banco tiene dinero ilimitado
     
-    public void darDinero(ThreadCliente jugador, int dineroDado){
+    public void darDinero(ThreadCliente jugador, int dineroDado){           // Se agrega la cantidad pedida al dinero del jugador solicitado
         
         int dineroViejo = jugador.getDinero();
-        jugador.setDinero(dineroViejo + dineroDado);
+        int dineroNuevo = dineroViejo + dineroDado;
+        jugador.setDinero(dineroNuevo);
         
     }
     
-    public void retirarDinero(ThreadCliente jugador, int dineroRetirado){
+    public void retirarDinero(ThreadCliente jugador, int dineroRetirado){       // Se retira la cantidad pedida de dinero al jugador solicitado
         
         int dineroViejo = jugador.getDinero();
+        int dineroNuevo = dineroViejo - dineroRetirado;
         jugador.setDinero(dineroViejo - dineroRetirado);
         
+        if (dineroNuevo <= 0){
+            enQuiebra.add(jugador);
+        }
+        
     }
     
-    public void consultarDinero(ThreadCliente jugador){
+    public int consultarDinero(ThreadCliente jugador){              // Se retorna la cantidad de dinero del jugador solicitado
         
         int dineroJugador = jugador.getDinero();
+        
+        return dineroJugador;
         
     }
     

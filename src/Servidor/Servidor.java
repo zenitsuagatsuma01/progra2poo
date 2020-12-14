@@ -12,21 +12,22 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import Cliente.ThreadCliente;
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 import java.lang.*;
 
 
-public class Servidor{
+public class Servidor implements Serializable{
     
     PantallaServidor refPantalla;
-    public ArrayList<ThreadServidor> conexiones;
+    public ArrayList<ThreadServidor> conexiones;            // Las conexiones son los jugadores de la partida
     private boolean running = true;
-    private ServerSocket srv;
-    private int turno = 0;
-    private int limiteMax;
+    transient private ServerSocket srv;
+    private int turno = 0;                                  // Numero de turno de la partida
+    private int limiteMax;                                  // Limite maximo de jugadores
     private boolean partidaIniciada = false;
     private Banco banco;
-    private boolean maximoAlcanzado = false;
+    private boolean maximoAlcanzado = false;                // Si se ha o no alcanzado el limite maximo de jugadores de la partida
 
     public Servidor(PantallaServidor refPantalla) {
         this.refPantalla = refPantalla;
@@ -34,17 +35,17 @@ public class Servidor{
         this.refPantalla.setSrv(this);
     }
 
-    public void iniciarPartida() {
+    public void iniciarPartida() {          // Se empieza la partida
         this.partidaIniciada = true;
         refPantalla.addMessage("-Partida iniciada.");
         refPantalla.addMessage("-Cada jugador debe lanzar los dados para determinar el orden de los turnos.");
     }
     
-    public void guardarPartida() {
+    public void guardarPartida() {          // Para guardar la partida actual con serializable
         
     }
     
-    public void cargarPartida(){
+    public void cargarPartida(){            // Carga la partida con serializable
         
     }
     
@@ -52,14 +53,14 @@ public class Servidor{
         running = false;
     }
     
-    public String getNextTurno(){
+    public String getNextTurno(){               // Retorna el nombre del jugador que va siguiente
         if ( ++turno >= conexiones.size())
             turno = 0;
         
         return conexiones.get(turno).nombre;
     }
     
-    public String getTurno(){
+    public String getTurno(){                   // Retorna el nombre del jugador cuyo turno es actualmente
         return conexiones.get(turno).nombre;
     }
     
@@ -68,7 +69,7 @@ public class Servidor{
     public void runServer(){
         int contadorDeConexiones = 0;
         String stringCantidad;
-        int cantidadJugadores = 0;
+        int cantidadJugadores = 0;                      // Primero se pide la cantidad maxima de jugadores que van a participar, de 2 minimo a 6 maximo
         
         do{
            
@@ -89,19 +90,19 @@ public class Servidor{
             
         } while (cantidadJugadores < 2 || cantidadJugadores > 6);
 
-        this.setLimiteMax(cantidadJugadores);   
+        this.setLimiteMax(cantidadJugadores);               // Este será el limite maximo de la cantidad de jugadores de la partida
         
         try{
             srv = new ServerSocket(35577);
             while (running){
-                if (contadorDeConexiones <= this.getLimiteMax() && this.isMaximoAlcanzado() == false){
+                if (contadorDeConexiones <= this.getLimiteMax() && this.isMaximoAlcanzado() == false){          // Mientras no se ha llegado al límmite maximo, se aceptan conexiones nuevas
                     refPantalla.addMessage("-Esperando más jugadores...");
                     refPantalla.addMessage("-El límite máximo de jugadores para esta partida es " + cantidadJugadores + ". Cantidad actual de jugadores: " + contadorDeConexiones);
                     
                 }
                     
                 Socket nuevaConexion = srv.accept();
-                if (!partidaIniciada){
+                if (!partidaIniciada){              // Mientras no se empezado la partida, se aceptan conexiones nuevas
                     contadorDeConexiones++;
 
                     if (contadorDeConexiones > this.getLimiteMax()){
@@ -121,7 +122,7 @@ public class Servidor{
 
                     }
                         
-                        if (contadorDeConexiones == this.getLimiteMax()){
+                        if (contadorDeConexiones == this.getLimiteMax()){           // Al llegar al límite máximo de jugadores, se para de aceptar nuevas conexiones y se empiza la partida
                             
                             refPantalla.addMessage("-El límite máximo de jugadores para esta partida es " + limiteMax + ". Cantidad actual de jugadores: " + contadorDeConexiones);
                             refPantalla.addMessage("-Cantidad máxima de jugadores alcanzada. No se permitirán más conexiones.");

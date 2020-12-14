@@ -11,7 +11,7 @@ public class MainServidor {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) {                        // Para inicializar el servidor
         PantallaServidor pantalla = new PantallaServidor();
         Servidor srv = new Servidor(pantalla);
         pantalla.setVisible(true);

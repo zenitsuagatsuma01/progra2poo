@@ -2,6 +2,7 @@ package Cliente;
 
 import java.awt.Color;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,11 +11,11 @@ import javax.swing.JOptionPane;
 
 // Interfaz grafica que le aparece a cada jugador, el diseno es un placeholder porque ocupamos poner el tablero y el historial (yo hago el historial)
 
-public class InterfazCliente extends javax.swing.JFrame {
+public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     public Cliente refCliente;
-    private String nombreTurno = "";
-    private String nombreJugador = "";
+    private String nombreTurno = "";            // Nombre del jugador cuyo turno es actualmente
+    private String nombreJugador = "";          // Nombre del jugador
     /**
      * Creates new form ChatCliente
      */
@@ -38,7 +39,7 @@ public class InterfazCliente extends javax.swing.JFrame {
         lblNombreJugador.setText(nombreJugador);
     }
     
-    public void addMensaje(String msj)
+    public void addMensaje(String msj)              // Para agregar un mensaje en la interfaz del cliente
     {
         txaMensajes.append(msj + "\n");
     }    
@@ -50,6 +51,7 @@ public class InterfazCliente extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         lblDado2 = new javax.swing.JLabel();
@@ -79,6 +81,7 @@ public class InterfazCliente extends javax.swing.JFrame {
         lblStatusPartida = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -278,22 +281,14 @@ public class InterfazCliente extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(810, 810, 810)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 27;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(13, 810, 11, 10);
+        getContentPane().add(jPanel1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -301,7 +296,7 @@ public class InterfazCliente extends javax.swing.JFrame {
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         try {
             // TODO add your handling code here:
-            refCliente.hiloCliente.writer.writeInt(2);
+            refCliente.hiloCliente.writer.writeInt(2);      // Se envia al servidor la accion de enviar un mensaje por chat y se envia el mensaje
             refCliente.hiloCliente.writer.writeUTF(txfMensaje.getText());
         } catch (IOException ex) {
 
@@ -312,7 +307,7 @@ public class InterfazCliente extends javax.swing.JFrame {
     private void btnLanzarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanzarDadosActionPerformed
         try {
 
-            if (nombreTurno.equals(this.getTitle())){
+            if (nombreTurno.equals(this.getTitle())){               // Si el jugador que lanzó el dado es el que tiene el turno actualmente entonces se envia la accion de lanzar dado
                 // TODO add your handling code here:
                 refCliente.hiloCliente.writer.writeInt(3);
 
@@ -336,7 +331,7 @@ public class InterfazCliente extends javax.swing.JFrame {
     }
 
     
-    public void setInicioPartida(){
+    public void setInicioPartida(){             // Configura la partida con los datos iniciales para empezarla
         lblStatusPartida.setText("Estado de partida: Iniciada");
         lblDinero.setText("Dinero: $" + refCliente.getHiloCliente().getDinero());
         lblNumCasas.setText("Numero de casas: " + 0);
@@ -344,7 +339,7 @@ public class InterfazCliente extends javax.swing.JFrame {
         lblNumPropiedades.setText("Numero de propiedades: " + 0);
     }
     
-    public void pintarLanzamientoDados (int valor1, int valor2, String usuario){        
+    public void pintarLanzamientoDados (int valor1, int valor2, String usuario){    // Para escribir en la interfaz del cliente los valores de los dice rolls    
         
         lblDado1.setText(valor1 + "");
         lblDado2.setText(valor2 + "");
@@ -358,7 +353,7 @@ public class InterfazCliente extends javax.swing.JFrame {
     }
     
     
-    public void pintarTurno(String turno){
+    public void pintarTurno(String turno){              // Para escribir en la interfaz del cliente el jugador que está jugando actualmente
         this.nombreTurno = turno;
         lblTurno.setText("Es turno de " + turno);
     }
