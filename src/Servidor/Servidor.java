@@ -12,6 +12,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import Cliente.ThreadCliente;
+import Partida.FileManager;
 import java.io.Serializable;
 import javax.swing.JOptionPane;
 import java.lang.*;
@@ -42,11 +43,13 @@ public class Servidor implements Serializable{
     }
     
     public void guardarPartida() {          // Para guardar la partida actual con serializable
-        
+        FileManager.writeObject(this,"src/Partida/partida.dat");
+        refPantalla.addMessage("-Partida guardada correctamente.");
     }
     
     public void cargarPartida(){            // Carga la partida con serializable
-        
+        FileManager.readObject("src/Partida/partida.dat");
+        refPantalla.addMessage("-Partida cargada correctamente.");
     }
     
     public void stopserver(){

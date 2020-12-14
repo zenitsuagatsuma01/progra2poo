@@ -6,7 +6,6 @@
 package Servidor;
 
 import java.io.Serializable;
-import Partida.FileManager;
 
 public class PantallaServidor extends javax.swing.JFrame implements Serializable{
     
@@ -124,11 +123,12 @@ public class PantallaServidor extends javax.swing.JFrame implements Serializable
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        FileManager.writeObject(srv,"src/Partida/partida.dat");
+        srv.guardarPartida();   // Guarda la partida
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         // TODO add your handling code here:
+        srv.cargarPartida(); // Carga la partida
     }//GEN-LAST:event_btnLoadActionPerformed
 
     /**
