@@ -15,7 +15,7 @@ public class MainServidor {
         PantallaServidor pantalla = new PantallaServidor();
         Servidor srv = new Servidor(pantalla);
         pantalla.setVisible(true);
-        srv.runServer();
+        srv.run();
         
     }
     

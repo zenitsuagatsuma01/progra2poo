@@ -5,6 +5,10 @@
  */
 package progra2;
 
+import Partida.MenuPrincipal;
+import Servidor.PantallaServidor;
+import Servidor.Servidor;
+
 /**
  *
  * @author aleja
@@ -16,6 +20,10 @@ public class Progra2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.pack();
+        menu.setVisible(true);
+        
     }
     
 }

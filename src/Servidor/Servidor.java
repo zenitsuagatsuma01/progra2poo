@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 import java.lang.*;
 
 
-public class Servidor implements Serializable{
+public class Servidor extends Thread implements Serializable{
     
     PantallaServidor refPantalla;
     public ArrayList<ThreadServidor> conexiones;            // Las conexiones son los jugadores de la partida
@@ -34,6 +34,15 @@ public class Servidor implements Serializable{
         this.refPantalla = refPantalla;
         conexiones = new ArrayList<ThreadServidor>();
         this.refPantalla.setSrv(this);
+    }
+    
+    public Servidor(PantallaServidor refPantalla, ArrayList<ThreadServidor> conexionesCargadas, int turnoCargado, int limiteMaxCargado, Banco bancoCargado) {
+        this.refPantalla = refPantalla;
+        conexiones = conexionesCargadas;
+        this.refPantalla.setSrv(this);
+        turno = turnoCargado;
+        limiteMax = limiteMaxCargado;
+        banco = bancoCargado;
     }
 
     public void iniciarPartida() {          // Se empieza la partida
@@ -69,7 +78,7 @@ public class Servidor implements Serializable{
     
     
     
-    public void runServer(){
+    public void run(){
         int contadorDeConexiones = 0;
         String stringCantidad;
         int cantidadJugadores = 0;                      // Primero se pide la cantidad maxima de jugadores que van a participar, de 2 minimo a 6 maximo
