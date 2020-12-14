@@ -82,7 +82,7 @@ public class PantallaServidor extends javax.swing.JFrame {
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
         srv.stopserver();
-        this.addMessage("Servidor detenido.");
+        this.addMessage("-Servidor detenido.");
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     /**

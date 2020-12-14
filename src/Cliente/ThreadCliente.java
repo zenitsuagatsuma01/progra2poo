@@ -23,8 +23,7 @@ public class ThreadCliente extends Thread{
     //private ArrayList<Propiedad> propiedades;
     //private ArrayList<Casas> casas;
     //private ArrayList<Hotel> hoteles;
-    private int numJugador;
-    private boolean quebrado = false;
+    protected boolean quebrado = false;
     private boolean running = true;
     public InterfazCliente refPantalla;
 
@@ -105,14 +104,6 @@ public class ThreadCliente extends Thread{
 
     public void setDinero(int dinero) {
         this.dinero = dinero;
-    }
-
-    public int getNumJugador() {
-        return numJugador;
-    }
-
-    public void setNumJugador(int numJugador) {
-        this.numJugador = numJugador;
     }
 
     public boolean isQuebrado() {

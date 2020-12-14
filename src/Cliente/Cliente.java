@@ -41,5 +41,22 @@ public class Cliente {
         
         
     }
+
+    public InterfazCliente getRefPantalla() {
+        return refPantalla;
+    }
+
+    public void setRefPantalla(InterfazCliente refPantalla) {
+        this.refPantalla = refPantalla;
+    }
+
+    public ThreadCliente getHiloCliente() {
+        return hiloCliente;
+    }
+
+    public void setHiloCliente(ThreadCliente hiloCliente) {
+        this.hiloCliente = hiloCliente;
+    }
+    
     
 }

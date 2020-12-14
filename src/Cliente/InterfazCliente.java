@@ -66,16 +66,16 @@ public class InterfazCliente extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         txaHistorial = new javax.swing.JTextArea();
         btnComprar = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnEndTurn = new javax.swing.JButton();
         lblDinero = new javax.swing.JLabel();
         lblNombreJugador = new javax.swing.JLabel();
-        lblHoteles = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        lblCasas1 = new javax.swing.JLabel();
-        lblPropiedades = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        btnComprar1 = new javax.swing.JButton();
+        lblNumHoteles = new javax.swing.JLabel();
+        lblFicha = new javax.swing.JLabel();
+        lblNumCasas = new javax.swing.JLabel();
+        lblNumPropiedades = new javax.swing.JLabel();
+        btnIntercambiar = new javax.swing.JButton();
+        btnVender = new javax.swing.JButton();
+        btnHipotecar = new javax.swing.JButton();
         lblStatusPartida = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -123,7 +123,7 @@ public class InterfazCliente extends javax.swing.JFrame {
 
         btnComprar.setText("Comprar propiedad/casa/hotel");
 
-        jButton3.setText("Terminar turno");
+        btnEndTurn.setText("Terminar turno");
 
         lblDinero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblDinero.setText("Dinero:");
@@ -131,23 +131,23 @@ public class InterfazCliente extends javax.swing.JFrame {
         lblNombreJugador.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblNombreJugador.setText("Su nombre es:");
 
-        lblHoteles.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblHoteles.setText("Numero de hoteles:");
+        lblNumHoteles.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNumHoteles.setText("Numero de hoteles:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Ficha:");
+        lblFicha.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblFicha.setText("Ficha:");
 
-        lblCasas1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblCasas1.setText("Numero de casas:");
+        lblNumCasas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNumCasas.setText("Numero de casas:");
 
-        lblPropiedades.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblPropiedades.setText("Numero de propiedades:");
+        lblNumPropiedades.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNumPropiedades.setText("Numero de propiedades:");
 
-        jButton5.setText("Intercambiar");
+        btnIntercambiar.setText("Intercambiar");
 
-        jButton6.setText("Vender");
+        btnVender.setText("Vender");
 
-        btnComprar1.setText("Hipotecar/deshipotecar");
+        btnHipotecar.setText("Hipotecar/deshipotecar");
 
         lblStatusPartida.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblStatusPartida.setText("Estado de partida: Esperando jugadores");
@@ -173,11 +173,11 @@ public class InterfazCliente extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2))
+                                .addComponent(lblFicha))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnComprar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnVender, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
@@ -185,16 +185,16 @@ public class InterfazCliente extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnComprar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(btnHipotecar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCasas1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblHoteles, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPropiedades, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNumCasas, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNumHoteles, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNumPropiedades, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnIntercambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnEndTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(8, 8, 8))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -260,21 +260,21 @@ public class InterfazCliente extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
+                            .addComponent(lblFicha)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblCasas1)
+                        .addComponent(lblNumCasas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblHoteles)
+                        .addComponent(lblNumHoteles)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblPropiedades, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblNumPropiedades, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnComprar1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnIntercambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEndTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHipotecar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVender, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
         );
 
@@ -337,8 +337,11 @@ public class InterfazCliente extends javax.swing.JFrame {
 
     
     public void setInicioPartida(){
-        System.out.println("hola");
         lblStatusPartida.setText("Estado de partida: Iniciada");
+        lblDinero.setText("Dinero: $" + refCliente.getHiloCliente().getDinero());
+        lblNumCasas.setText("Numero de casas: " + 0);
+        lblNumHoteles.setText("Numero de hoteles: " + 0);
+        lblNumPropiedades.setText("Numero de propiedades: " + 0);
     }
     
     public void pintarLanzamientoDados (int valor1, int valor2, String usuario){        
@@ -366,25 +369,25 @@ public class InterfazCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnComprar;
-    private javax.swing.JButton btnComprar1;
+    private javax.swing.JButton btnEndTurn;
     private javax.swing.JButton btnEnviar;
+    private javax.swing.JButton btnHipotecar;
+    private javax.swing.JButton btnIntercambiar;
     private javax.swing.JButton btnLanzarDados;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btnVender;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblCasas1;
     private javax.swing.JLabel lblChat;
     private javax.swing.JLabel lblDado1;
     private javax.swing.JLabel lblDado2;
     private javax.swing.JLabel lblDinero;
+    private javax.swing.JLabel lblFicha;
     private javax.swing.JLabel lblHistorial;
-    private javax.swing.JLabel lblHoteles;
     private javax.swing.JLabel lblNombreJugador;
-    private javax.swing.JLabel lblPropiedades;
+    private javax.swing.JLabel lblNumCasas;
+    private javax.swing.JLabel lblNumHoteles;
+    private javax.swing.JLabel lblNumPropiedades;
     private javax.swing.JLabel lblStatusPartida;
     private javax.swing.JLabel lblTurno;
     private javax.swing.JLabel lblUsuarioLanzamiento;

@@ -36,8 +36,8 @@ public class Servidor{
 
     public void iniciarPartida() {
         this.partidaIniciada = true;
-        refPantalla.addMessage("Partida iniciada.");
-        refPantalla.addMessage("Cada jugador debe lanzar los dados para determinar el orden de los turnos.");
+        refPantalla.addMessage("-Partida iniciada.");
+        refPantalla.addMessage("-Cada jugador debe lanzar los dados para determinar el orden de los turnos.");
     }
     
     public void guardarPartida() {
@@ -89,14 +89,14 @@ public class Servidor{
             
         } while (cantidadJugadores < 2 || cantidadJugadores > 6);
 
-        limiteMax = cantidadJugadores;        
+        this.setLimiteMax(cantidadJugadores);   
         
         try{
             srv = new ServerSocket(35577);
             while (running){
                 if (contadorDeConexiones <= this.getLimiteMax() && this.isMaximoAlcanzado() == false){
-                    refPantalla.addMessage(":Esperando más jugadores...");
-                    refPantalla.addMessage("El límite máximo de jugadores para esta partida es " + cantidadJugadores + ". Cantidad actual de jugadores: " + contadorDeConexiones);
+                    refPantalla.addMessage("-Esperando más jugadores...");
+                    refPantalla.addMessage("-El límite máximo de jugadores para esta partida es " + cantidadJugadores + ". Cantidad actual de jugadores: " + contadorDeConexiones);
                     
                 }
                     
@@ -105,42 +105,41 @@ public class Servidor{
                     contadorDeConexiones++;
 
                     if (contadorDeConexiones > this.getLimiteMax()){
-                        refPantalla.addMessage("Conexión denegada: Límite máximo de jugadores alcanzado.");
+                        refPantalla.addMessage("-Conexión denegada: Límite máximo de jugadores alcanzado.");
                         
                         
                     }
                     
                     else if (contadorDeConexiones <= this.getLimiteMax()){
                         
-                        refPantalla.addMessage(":Conexión " + contadorDeConexiones + "aceptada");
+                        refPantalla.addMessage("-Conexión " + contadorDeConexiones + " aceptada.");
                         
-                        if (contadorDeConexiones == this.getLimiteMax()){
-                            
-                            refPantalla.addMessage("El límite máximo de jugadores para esta partida es " + limiteMax + ". Cantidad actual de jugadores: " + contadorDeConexiones);
-                            refPantalla.addMessage("Cantidad máxima de jugadores alcanzada. No se permitirán más conexiones.");
-                            refPantalla.addMessage("Iniciando partida...");
-                            this.setMaximoAlcanzado(true);
-                            srv.close();
-                            
-                        }
-                            
-                    
-
-                    // nuevo thread
+                        // nuevo thread
                         ThreadServidor newThread = new ThreadServidor(nuevaConexion, this);
                         conexiones.add(newThread);
                         newThread.start();
+
                     }
-                    
-                    for (int i = 0; i < conexiones.size(); i++) {
+                        
+                        if (contadorDeConexiones == this.getLimiteMax()){
+                            
+                            refPantalla.addMessage("-El límite máximo de jugadores para esta partida es " + limiteMax + ". Cantidad actual de jugadores: " + contadorDeConexiones);
+                            refPantalla.addMessage("-Cantidad máxima de jugadores alcanzada. No se permitirán más conexiones.");
+                            refPantalla.addMessage("-Iniciando partida...");
+                            this.setMaximoAlcanzado(true);
+                            srv.close();
+                            
+                            for (int i = 0; i < conexiones.size(); i++) {
                             ThreadServidor current = conexiones.get(i);
                             current.writer.writeInt(4);
                             }
+                            
+                        }
                     
                 }
                 else{
                     // OutputStream socket para poder hacer un writer
-                    refPantalla.addMessage(":Conexión denegada: partida iniciada");
+                    refPantalla.addMessage("-Conexión denegada: partida iniciada");
                     
                 }
                 

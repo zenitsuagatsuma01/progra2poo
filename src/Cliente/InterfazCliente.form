@@ -73,12 +73,12 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="lblDinero" min="-2" pref="253" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblFicha" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="btnComprar" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton6" min="-2" pref="131" max="-2" attributes="0"/>
+                                  <Component id="btnVender" min="-2" pref="131" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -89,18 +89,18 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnComprar1" max="32767" attributes="0"/>
+                                  <Component id="btnHipotecar" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblCasas1" alignment="1" min="-2" pref="257" max="-2" attributes="0"/>
-                              <Component id="lblHoteles" alignment="1" min="-2" pref="257" max="-2" attributes="0"/>
-                              <Component id="lblPropiedades" alignment="1" min="-2" pref="257" max="-2" attributes="0"/>
+                              <Component id="lblNumCasas" alignment="1" min="-2" pref="257" max="-2" attributes="0"/>
+                              <Component id="lblNumHoteles" alignment="1" min="-2" pref="257" max="-2" attributes="0"/>
+                              <Component id="lblNumPropiedades" alignment="1" min="-2" pref="257" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jButton5" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="btnIntercambiar" min="-2" pref="110" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jButton3" min="-2" pref="127" max="-2" attributes="0"/>
+                                  <Component id="btnEndTurn" min="-2" pref="127" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -188,25 +188,25 @@
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblDinero" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblFicha" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="lblCasas1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNumCasas" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="lblHoteles" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNumHoteles" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblPropiedades" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="lblNumPropiedades" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="33" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnComprar" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
-                      <Component id="jButton5" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
-                      <Component id="jButton3" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
-                      <Component id="btnComprar1" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
-                      <Component id="jButton6" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
+                      <Component id="btnIntercambiar" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
+                      <Component id="btnEndTurn" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
+                      <Component id="btnHipotecar" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
+                      <Component id="btnVender" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
@@ -323,7 +323,7 @@
             <Property name="text" type="java.lang.String" value="Comprar propiedad/casa/hotel"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="btnEndTurn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Terminar turno"/>
           </Properties>
@@ -344,7 +344,7 @@
             <Property name="text" type="java.lang.String" value="Su nombre es:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblHoteles">
+        <Component class="javax.swing.JLabel" name="lblNumHoteles">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
@@ -352,7 +352,7 @@
             <Property name="text" type="java.lang.String" value="Numero de hoteles:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="lblFicha">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="1"/>
@@ -360,7 +360,7 @@
             <Property name="text" type="java.lang.String" value="Ficha:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblCasas1">
+        <Component class="javax.swing.JLabel" name="lblNumCasas">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
@@ -368,7 +368,7 @@
             <Property name="text" type="java.lang.String" value="Numero de casas:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblPropiedades">
+        <Component class="javax.swing.JLabel" name="lblNumPropiedades">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
@@ -376,17 +376,17 @@
             <Property name="text" type="java.lang.String" value="Numero de propiedades:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="btnIntercambiar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Intercambiar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="btnVender">
           <Properties>
             <Property name="text" type="java.lang.String" value="Vender"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnComprar1">
+        <Component class="javax.swing.JButton" name="btnHipotecar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Hipotecar/deshipotecar"/>
           </Properties>
