@@ -5,7 +5,10 @@
  */
 package Servidor;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PantallaServidor extends javax.swing.JFrame implements Serializable{
     
@@ -122,8 +125,12 @@ public class PantallaServidor extends javax.swing.JFrame implements Serializable
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
-        srv.guardarPartida();   // Guarda la partida
+        try {
+            // TODO add your handling code here:
+            srv.guardarPartida();   // Guarda la partida
+        } catch (IOException ex) {
+            Logger.getLogger(PantallaServidor.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed

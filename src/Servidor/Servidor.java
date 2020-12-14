@@ -13,6 +13,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import Cliente.ThreadCliente;
 import Partida.FileManager;
+import java.io.IOException;
 import java.io.Serializable;
 import javax.swing.JOptionPane;
 import java.lang.*;
@@ -21,7 +22,7 @@ import java.lang.*;
 public class Servidor extends Thread implements Serializable{
     
     PantallaServidor refPantalla;
-    public ArrayList<ThreadServidor> conexiones;            // Las conexiones son los jugadores de la partida
+    public ArrayList<ThreadServidor> conexiones;            // Las conexiones de los jugadores de la partida al servidor
     private boolean running = true;
     transient private ServerSocket srv;
     private int turno = 0;                                  // Numero de turno de la partida
@@ -29,6 +30,8 @@ public class Servidor extends Thread implements Serializable{
     private boolean partidaIniciada = false;
     private Banco banco;
     private boolean maximoAlcanzado = false;                // Si se ha o no alcanzado el limite maximo de jugadores de la partida
+    public boolean flagCargado = false;
+    public Servidor partidaGuardada;
 
     public Servidor(PantallaServidor refPantalla) {
         this.refPantalla = refPantalla;
@@ -36,13 +39,15 @@ public class Servidor extends Thread implements Serializable{
         this.refPantalla.setSrv(this);
     }
     
-    public Servidor(PantallaServidor refPantalla, ArrayList<ThreadServidor> conexionesCargadas, int turnoCargado, int limiteMaxCargado, Banco bancoCargado) {
+    public Servidor(PantallaServidor refPantalla, int turnoCargado, int limiteMaxCargado, Banco bancoCargado, Servidor servidorCargado) {
         this.refPantalla = refPantalla;
-        conexiones = conexionesCargadas;
+        conexiones = new ArrayList<ThreadServidor>();
         this.refPantalla.setSrv(this);
         turno = turnoCargado;
         limiteMax = limiteMaxCargado;
         banco = bancoCargado;
+        flagCargado = true;
+        partidaGuardada = servidorCargado;
     }
 
     public void iniciarPartida() {          // Se empieza la partida
@@ -51,9 +56,20 @@ public class Servidor extends Thread implements Serializable{
         refPantalla.addMessage("-Cada jugador debe lanzar los dados para determinar el orden de los turnos.");
     }
     
-    public void guardarPartida() {          // Para guardar la partida actual con serializable
-        FileManager.writeObject(this,"src/Partida/partida.dat");
-        refPantalla.addMessage("-Partida guardada correctamente.");
+    public void guardarPartida() throws IOException {          // Para guardar la partida actual con serializable
+        
+        for (int i = 0; i < conexiones.size(); i++) {
+            ThreadServidor current = conexiones.get(i);
+            current.writer.writeInt(5);
+        }
+    }
+    
+    public void signalIniciarPartida() throws IOException{
+        
+        for (int i = 0; i < conexiones.size(); i++) {
+            ThreadServidor current = conexiones.get(i);
+            current.writer.writeInt(4);
+        }
     }
     
     public void cargarPartida(){            // Carga la partida con serializable
@@ -140,13 +156,10 @@ public class Servidor extends Thread implements Serializable{
                             refPantalla.addMessage("-Cantidad máxima de jugadores alcanzada. No se permitirán más conexiones.");
                             refPantalla.addMessage("-Iniciando partida...");
                             this.setMaximoAlcanzado(true);
-                            srv.close();
-                            
-                            for (int i = 0; i < conexiones.size(); i++) {
-                            ThreadServidor current = conexiones.get(i);
-                            current.writer.writeInt(4);
-                            }
-                            
+                            this.partidaIniciada = true;
+                            //srv.close();
+                            this.signalIniciarPartida();
+
                         }
                     
                 }
@@ -156,7 +169,7 @@ public class Servidor extends Thread implements Serializable{
                     
                 }
                 
-                while (partidaIniciada){
+                if (partidaIniciada){
                     
                 }
                 
@@ -168,6 +181,30 @@ public class Servidor extends Thread implements Serializable{
         }
     }
 
+    public PantallaServidor getRefPantalla() {
+        return refPantalla;
+    }
+
+    public void setRefPantalla(PantallaServidor refPantalla) {
+        this.refPantalla = refPantalla;
+    }
+
+    public boolean isFlagCargado() {
+        return flagCargado;
+    }
+
+    public void setFlagCargado(boolean flagCargado) {
+        this.flagCargado = flagCargado;
+    }
+
+    public ArrayList<ThreadServidor> getConexiones() {
+        return conexiones;
+    }
+
+    public void setConexiones(ArrayList<ThreadServidor> conexiones) {
+        this.conexiones = conexiones;
+    }
+    
     public int getLimiteMax() {
         return limiteMax;
     }
@@ -210,6 +247,10 @@ public class Servidor extends Thread implements Serializable{
 
     public void setTurno(int turno) {
         this.turno = turno;
+    }
+    
+    public int getNumTurno(){
+        return turno;
     }
     
 }

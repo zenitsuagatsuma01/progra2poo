@@ -5,9 +5,11 @@
  */
 package Cliente;
 
+import Partida.FileManager;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -16,23 +18,32 @@ import java.util.ArrayList;
 public class ThreadCliente extends Thread implements Serializable{
     
     transient private Socket socketRef;
-    public DataInputStream reader;
-    public DataOutputStream writer;
+    transient public DataInputStream reader;
+    transient public DataOutputStream writer;
+    transient public ObjectOutputStream objWriter;
     private String nombre;
     private int dinero;
+    private int numCasas;
+    private int numHoteles;
+    private int numPropiedades;
+    //private Tablero tablero;
     //private Ficha ficha;
     //private ArrayList<Propiedad> propiedades;
     //private ArrayList<Casas> casas;
     //private ArrayList<Hotel> hoteles;
     protected boolean quebrado = false;
     private boolean running = true;
-    public InterfazCliente refPantalla;
+    transient public InterfazCliente refPantalla;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
         reader = new DataInputStream(socketRef.getInputStream());
         writer = new DataOutputStream(socketRef.getOutputStream());
+        objWriter = new ObjectOutputStream(socketRef.getOutputStream());
         this.refPantalla = refPantalla;
+        numCasas = 0;
+        numHoteles = 0;
+        numPropiedades = 0;
     }
     
     public void solicitarPropiedad(){ // Parametro debería en realidad ser un objeto tipo Propiedad pero la clase no existe todavía
@@ -82,7 +93,10 @@ public class ThreadCliente extends Thread implements Serializable{
                     case 4: // Se inicia la partida
                         refPantalla.setInicioPartida();
                     break;
-                    
+                    case 5: // se guardan los datos de cada jugador
+                        String nombreJugador = this.getRefPantalla().getNombreJugador();
+                        FileManager.writeObject(this,"src/Partida/partida" + nombreJugador + ".dat");
+                    break;
                     
                 }
             } catch (IOException ex) {
@@ -90,6 +104,32 @@ public class ThreadCliente extends Thread implements Serializable{
             }
         }
     }
+
+    public int getNumCasas() {
+        return numCasas;
+    }
+
+    public void setNumCasas(int numCasas) {
+        this.numCasas = numCasas;
+    }
+
+    public int getNumHoteles() {
+        return numHoteles;
+    }
+
+    public void setNumHoteles(int numHoteles) {
+        this.numHoteles = numHoteles;
+    }
+
+    public int getNumPropiedades() {
+        return numPropiedades;
+    }
+
+    public void setNumPropiedades(int numPropiedades) {
+        this.numPropiedades = numPropiedades;
+    }
+    
+    
 
     public String getNombre() {
         return nombre;

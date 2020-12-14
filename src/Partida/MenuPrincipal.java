@@ -30,6 +30,40 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
     }
+    
+    public void newServer(){
+        PantallaServidor pantalla = new PantallaServidor();
+        Servidor srv = new Servidor(pantalla);
+        pantalla.setVisible(true);
+        srv.start();
+    }
+    
+    public void newPlayer(){
+        try{
+        InterfazCliente pantalla = new InterfazCliente();
+        Cliente c = new Cliente(pantalla);
+        pantalla.pack();
+        pantalla.setVisible(true); 
+        c.conectar();
+               
+        }
+        catch(Exception e){
+            
+        }
+    }
+    
+    public void cargarPartida(){
+        Servidor srvCargado = (Servidor)FileManager.readObject("src/Partida/partida.dat");
+        PantallaServidor pantalla = new PantallaServidor();
+        Servidor srv = new Servidor(pantalla,srvCargado.getNumTurno(),srvCargado.getLimiteMax(),srvCargado.getBanco(), srvCargado);
+        pantalla.setVisible(true);
+        srv.start();
+        srv.getRefPantalla().addMessage("-Partida cargada correctamente.");
+    }
+    
+    public void exitMenu(){
+        System.exit(0);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -137,35 +171,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnStartClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartClientActionPerformed
         // TODO add your handling code here:
-        try{
-        InterfazCliente pantalla = new InterfazCliente();
-        Cliente c = new Cliente(pantalla);
-        pantalla.pack();
-        pantalla.setVisible(true); 
-        c.conectar();
-               
-        }
-        catch(Exception e){
-            
-        }
+        this.newPlayer();
     }//GEN-LAST:event_btnStartClientActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         // TODO add your handling code here:
-        
+        this.cargarPartida();
     }//GEN-LAST:event_btnLoadActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        this.exitMenu();
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnStartServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartServerActionPerformed
         // TODO add your handling code here:
-        PantallaServidor pantalla = new PantallaServidor();
-        Servidor srv = new Servidor(pantalla);
-        pantalla.setVisible(true);
-        srv.start();
+        this.newServer();
     }//GEN-LAST:event_btnStartServerActionPerformed
 
     /**

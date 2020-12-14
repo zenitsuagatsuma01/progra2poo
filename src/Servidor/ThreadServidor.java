@@ -8,6 +8,7 @@ package Servidor;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
 import java.util.Random;
@@ -20,6 +21,7 @@ public class ThreadServidor extends Thread implements Serializable{
     transient private Socket socketRef;
     protected DataInputStream reader;
     protected DataOutputStream writer;
+    protected ObjectOutputStream objWriter;
     public String nombre;
     private boolean running = true;
     Servidor server;
@@ -28,6 +30,7 @@ public class ThreadServidor extends Thread implements Serializable{
         this.socketRef = socketRef;
         reader = new DataInputStream(socketRef.getInputStream());
         writer = new DataOutputStream(socketRef.getOutputStream());
+        objWriter = new ObjectOutputStream(socketRef.getOutputStream());
         this.server = server;
     }
     
@@ -84,6 +87,12 @@ public class ThreadServidor extends Thread implements Serializable{
                         
                         
                     break;
+                    case 5:
+                        for (int i = 0; i < server.conexiones.size(); i++) {
+                            ThreadServidor current = server.conexiones.get(i);
+                            current.writer.writeInt(5);
+                        }
+                        break;
                 }
             } catch (IOException ex) {
                 

@@ -31,7 +31,7 @@ public class Cliente implements Serializable{
             hiloCliente.start();
             String nombre = JOptionPane.showInputDialog("Escriba su nombre:");
             refPantalla.setTitle("Monopoly - Nombre del jugador: " + nombre);       // Se pone el titulo de la ventana del jugador
-            refPantalla.setNombreJugador("Su nombre es: " + nombre);    // Se pone el nombre del jugador
+            refPantalla.setNombreJugador(nombre);    // Se pone el nombre del jugador
             hiloCliente.writer.writeInt(1); //instruccion para el switch del thraed servidor
             hiloCliente.writer.writeUTF(nombre); //instruccion para el switch del thraed servidor
         }

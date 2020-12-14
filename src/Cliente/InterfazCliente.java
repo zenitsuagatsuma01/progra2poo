@@ -38,6 +38,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         this.nombreJugador = nombreJugador;
         lblNombreJugador.setText(nombreJugador);
     }
+
+    public String getNombreJugador() {
+        return nombreJugador;
+    }
+    
+    
     
     public void addMensaje(String msj)              // Para agregar un mensaje en la interfaz del cliente
     {
@@ -132,7 +138,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblDinero.setText("Dinero:");
 
         lblNombreJugador.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblNombreJugador.setText("Su nombre es:");
+        lblNombreJugador.setText("Sin nombre...");
 
         lblNumHoteles.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNumHoteles.setText("Numero de hoteles:");
@@ -184,8 +190,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
-                                .addComponent(lblUsuarioLanzamiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(lblUsuarioLanzamiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnHipotecar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -271,7 +276,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                         .addComponent(lblNumHoteles)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblNumPropiedades, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIntercambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -334,9 +339,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     public void setInicioPartida(){             // Configura la partida con los datos iniciales para empezarla
         lblStatusPartida.setText("Estado de partida: Iniciada");
         lblDinero.setText("Dinero: $" + refCliente.getHiloCliente().getDinero());
-        lblNumCasas.setText("Numero de casas: " + 0);
-        lblNumHoteles.setText("Numero de hoteles: " + 0);
-        lblNumPropiedades.setText("Numero de propiedades: " + 0);
+        lblNumCasas.setText("Numero de casas: " + refCliente.getHiloCliente().getNumCasas());
+        lblNumHoteles.setText("Numero de hoteles: " + refCliente.getHiloCliente().getNumHoteles());
+        lblNumPropiedades.setText("Numero de propiedades: " + refCliente.getHiloCliente().getNumPropiedades());
     }
     
     public void pintarLanzamientoDados (int valor1, int valor2, String usuario){    // Para escribir en la interfaz del cliente los valores de los dice rolls    
