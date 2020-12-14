@@ -26,7 +26,6 @@ public class Servidor{
     private int limiteMax;
     private boolean partidaIniciada = false;
     private Banco banco;
-    private ArrayList<ThreadCliente> jugadores;
     private boolean maximoAlcanzado = false;
 
     public Servidor(PantallaServidor refPantalla) {
@@ -122,7 +121,7 @@ public class Servidor{
                             refPantalla.addMessage("Iniciando partida...");
                             this.setMaximoAlcanzado(true);
                             srv.close();
-                            this.iniciarPartida();
+                            
                         }
                             
                     
@@ -132,6 +131,11 @@ public class Servidor{
                         conexiones.add(newThread);
                         newThread.start();
                     }
+                    
+                    for (int i = 0; i < conexiones.size(); i++) {
+                            ThreadServidor current = conexiones.get(i);
+                            current.writer.writeInt(4);
+                            }
                     
                 }
                 else{

@@ -5,13 +5,14 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 // Interfaz grafica que le aparece a cada jugador, el diseno es un placeholder porque ocupamos poner el tablero y el historial (yo hago el historial)
 
 public class InterfazCliente extends javax.swing.JFrame {
 
-    Cliente refCliente;
+    public Cliente refCliente;
     private String nombreTurno = "";
     private String nombreJugador = "";
     /**
@@ -326,9 +327,18 @@ public class InterfazCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLanzarDadosActionPerformed
 
+    public JLabel getLblStatusPartida() {
+        return lblStatusPartida;
+    }
+
+    public void setLblStatusPartida(JLabel lblStatusPartida) {
+        this.lblStatusPartida = lblStatusPartida;
+    }
+
+    
     public void setInicioPartida(){
+        System.out.println("hola");
         lblStatusPartida.setText("Estado de partida: Iniciada");
-        lblStatusPartida.setBackground(Color.green);
     }
     
     public void pintarLanzamientoDados (int valor1, int valor2, String usuario){        
@@ -349,6 +359,8 @@ public class InterfazCliente extends javax.swing.JFrame {
         this.nombreTurno = turno;
         lblTurno.setText("Es turno de " + turno);
     }
+    
+    
     
 
 

@@ -26,7 +26,7 @@ public class ThreadCliente extends Thread{
     private int numJugador;
     private boolean quebrado = false;
     private boolean running = true;
-    private InterfazCliente refPantalla;
+    public InterfazCliente refPantalla;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -121,6 +121,38 @@ public class ThreadCliente extends Thread{
 
     public void setQuebrado(boolean quebrado) {
         this.quebrado = quebrado;
+    }
+
+    public DataInputStream getReader() {
+        return reader;
+    }
+
+    public void setReader(DataInputStream reader) {
+        this.reader = reader;
+    }
+
+    public DataOutputStream getWriter() {
+        return writer;
+    }
+
+    public void setWriter(DataOutputStream writer) {
+        this.writer = writer;
+    }
+
+    public boolean isRunning() {
+        return running;
+    }
+
+    public void setRunning(boolean running) {
+        this.running = running;
+    }
+
+    public InterfazCliente getRefPantalla() {
+        return refPantalla;
+    }
+
+    public void setRefPantalla(InterfazCliente refPantalla) {
+        this.refPantalla = refPantalla;
     }
     
     

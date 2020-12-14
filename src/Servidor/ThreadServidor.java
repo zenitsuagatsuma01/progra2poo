@@ -17,8 +17,8 @@ import java.util.logging.Logger;
 class ThreadServidor extends Thread{
     
     private Socket socketRef;
-    private DataInputStream reader;
-    private DataOutputStream writer;
+    protected DataInputStream reader;
+    protected DataOutputStream writer;
     public String nombre;
     private boolean running = true;
     Servidor server;
@@ -79,7 +79,6 @@ class ThreadServidor extends Thread{
                         for (int i = 0; i < server.conexiones.size(); i++) {
                             ThreadServidor current = server.conexiones.get(i);
                             current.writer.writeInt(4);
-                            
                         }
                         
                         
