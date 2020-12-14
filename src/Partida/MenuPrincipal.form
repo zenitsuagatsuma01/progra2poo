@@ -132,6 +132,11 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblLogo">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new ImageIcon(&quot;src/Imagenes/logo.png&quot;)" type="code"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

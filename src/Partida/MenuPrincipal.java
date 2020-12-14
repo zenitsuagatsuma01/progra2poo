@@ -17,6 +17,7 @@ import Servidor.*;
 import Cliente.*;
 import Servidor.PantallaServidor;
 import Servidor.Servidor;
+import java.io.File;
 
 /**
  *
@@ -81,6 +82,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
+
+        lblLogo.setIcon(new ImageIcon("src/Imagenes/logo.png"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
