@@ -37,6 +37,8 @@ public class Servidor{
 
     public void iniciarPartida() {
         this.partidaIniciada = true;
+        refPantalla.addMessage("Partida iniciada.");
+        refPantalla.addMessage("Cada jugador debe lanzar los dados para determinar el orden de los turnos.");
     }
     
     public void guardarPartida() {
@@ -135,6 +137,11 @@ public class Servidor{
                 else{
                     // OutputStream socket para poder hacer un writer
                     refPantalla.addMessage(":Conexión denegada: partida iniciada");
+                    
+                }
+                
+                while (partidaIniciada){
+                    
                 }
                 
             }
