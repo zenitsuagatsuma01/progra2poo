@@ -13,6 +13,7 @@ public class InterfazCliente extends javax.swing.JFrame {
 
     Cliente refCliente;
     private String nombreTurno = "";
+    private String nombreJugador = "";
     /**
      * Creates new form ChatCliente
      */
@@ -28,10 +29,13 @@ public class InterfazCliente extends javax.swing.JFrame {
 
     public void setNombreTurno(String nombreTurno) {
         this.nombreTurno = nombreTurno;
-        lblTurno.setText(nombreTurno);
+        lblTurno.setText("Es turno de: " + nombreTurno);
     }
 
-    
+    public void setNombreJugador(String nombreJugador){
+        this.nombreJugador = nombreJugador;
+        lblNombreJugador.setText(nombreJugador);
+    }
     
     public void addMensaje(String msj)
     {
@@ -63,7 +67,7 @@ public class InterfazCliente extends javax.swing.JFrame {
         btnComprar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         lblDinero = new javax.swing.JLabel();
-        lblNombre = new javax.swing.JLabel();
+        lblNombreJugador = new javax.swing.JLabel();
         lblHoteles = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblCasas1 = new javax.swing.JLabel();
@@ -123,8 +127,8 @@ public class InterfazCliente extends javax.swing.JFrame {
         lblDinero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblDinero.setText("Dinero:");
 
-        lblNombre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblNombre.setText("Su nombre es:");
+        lblNombreJugador.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblNombreJugador.setText("Su nombre es:");
 
         lblHoteles.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblHoteles.setText("Numero de hoteles:");
@@ -203,7 +207,7 @@ public class InterfazCliente extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(91, 91, 91)
-                                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblNombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(lblStatusPartida, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
@@ -222,7 +226,7 @@ public class InterfazCliente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblNombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -343,7 +347,7 @@ public class InterfazCliente extends javax.swing.JFrame {
     
     public void pintarTurno(String turno){
         this.nombreTurno = turno;
-        lblTurno.setText("Turno de " + turno);
+        lblTurno.setText("Es turno de " + turno);
     }
     
 
@@ -367,7 +371,7 @@ public class InterfazCliente extends javax.swing.JFrame {
     private javax.swing.JLabel lblDinero;
     private javax.swing.JLabel lblHistorial;
     private javax.swing.JLabel lblHoteles;
-    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombreJugador;
     private javax.swing.JLabel lblPropiedades;
     private javax.swing.JLabel lblStatusPartida;
     private javax.swing.JLabel lblTurno;

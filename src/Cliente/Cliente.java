@@ -28,8 +28,9 @@ public class Cliente {
             socketRef = new Socket("localhost", 35577);
             hiloCliente = new ThreadCliente(socketRef, refPantalla);
             hiloCliente.start();
-            String nombre = JOptionPane.showInputDialog("Introduzca un Nick:");
-            refPantalla.setTitle(nombre);
+            String nombre = JOptionPane.showInputDialog("Escriba su nombre:");
+            refPantalla.setTitle("Monopoly - Nombre del jugador: " + nombre);
+            refPantalla.setNombreJugador("Su nombre es: " + nombre);
             hiloCliente.writer.writeInt(1); //instruccion para el switch del thraed servidor
             hiloCliente.writer.writeUTF(nombre); //instruccion para el switch del thraed servidor
         }
