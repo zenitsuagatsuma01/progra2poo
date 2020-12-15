@@ -157,7 +157,7 @@ public class Servidor extends Thread implements Serializable{
                             refPantalla.addMessage("-Iniciando partida...");
                             this.setMaximoAlcanzado(true);
                             this.partidaIniciada = true;
-                            //srv.close();
+                            srv.close();
                             this.signalIniciarPartida();
 
                         }

@@ -42,6 +42,26 @@ public class Cliente implements Serializable{
         
         
     }
+    
+    public void conectarLoad(ThreadCliente clienteCargado, String nombre){     // Para conectarse al servidor
+ 
+        try{
+        
+            socketRef = new Socket("localhost", 35577);
+            hiloCliente = new ThreadCliente(socketRef, refPantalla, nombre, clienteCargado.getDinero(), clienteCargado.getNumCasas(), clienteCargado.getNumHoteles(), clienteCargado.getNumPropiedades(), clienteCargado.isQuebrado());
+            hiloCliente.start();
+            refPantalla.setTitle("Monopoly - Nombre del jugador: " + nombre);       // Se pone el titulo de la ventana del jugador
+            refPantalla.setNombreJugador(nombre);    // Se pone el nombre del jugador
+            hiloCliente.writer.writeInt(1); //instruccion para el switch del thraed servidor
+            hiloCliente.writer.writeUTF(nombre); //instruccion para el switch del thraed servidor
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
+        
+        
+    }
 
     public InterfazCliente getRefPantalla() {
         return refPantalla;

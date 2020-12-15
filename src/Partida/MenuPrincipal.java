@@ -52,13 +52,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
     }
     
+    public void loadPlayer(ThreadCliente jugadorCargado, String nombre){
+        try{
+        InterfazCliente pantalla = new InterfazCliente();
+        Cliente c = new Cliente(pantalla);
+        pantalla.pack();
+        pantalla.setVisible(true); 
+        c.conectarLoad(jugadorCargado, nombre);
+        }
+        catch(Exception e){
+            
+        }
+    }
+    
+    public static void infoBox(String infoMessage, String titleBar)
+    {
+        JOptionPane.showMessageDialog(null, infoMessage, titleBar, JOptionPane.INFORMATION_MESSAGE);
+    }
+    
     public void cargarPartida(){
-        Servidor srvCargado = (Servidor)FileManager.readObject("src/Partida/partida.dat");
-        PantallaServidor pantalla = new PantallaServidor();
-        Servidor srv = new Servidor(pantalla,srvCargado.getNumTurno(),srvCargado.getLimiteMax(),srvCargado.getBanco(), srvCargado);
-        pantalla.setVisible(true);
-        srv.start();
-        srv.getRefPantalla().addMessage("-Partida cargada correctamente.");
+        String nombre = JOptionPane.showInputDialog("Por favor escriba el nombre del jugador cuya partida quiere cargar");
+        
+        ThreadCliente partidaCargada = (ThreadCliente)FileManager.readObject("src/Partida/partida" + nombre + ".dat");
+        
+        this.loadPlayer(partidaCargada,nombre);
+        
+        this.infoBox("-Partida cargada correctamente.","Load succesful.");
     }
     
     public void exitMenu(){

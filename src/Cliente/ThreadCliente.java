@@ -46,6 +46,20 @@ public class ThreadCliente extends Thread implements Serializable{
         numPropiedades = 0;
     }
     
+    public ThreadCliente(Socket socketRef, InterfazCliente refPantalla, String nombreCargado, int dineroCargado, int numCasasCargado, int numHotelesCargado, int numPropiedadesCargado, boolean quebradoCargado) throws IOException {
+        this.socketRef = socketRef;
+        reader = new DataInputStream(socketRef.getInputStream());
+        writer = new DataOutputStream(socketRef.getOutputStream());
+        objWriter = new ObjectOutputStream(socketRef.getOutputStream());
+        this.refPantalla = refPantalla;
+        nombre = nombreCargado;
+        dinero = dineroCargado;
+        numCasas = numCasasCargado;
+        numHoteles = numHotelesCargado;
+        numPropiedades = numPropiedadesCargado;
+        quebrado = quebradoCargado;
+    }
+    
     public void solicitarPropiedad(){ // Parametro debería en realidad ser un objeto tipo Propiedad pero la clase no existe todavía
         
     }
