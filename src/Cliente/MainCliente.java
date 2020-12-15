@@ -8,6 +8,7 @@ package Cliente;
 import Servidor.PantallaServidor;
 import Servidor.Servidor;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 
 public class MainCliente {
@@ -15,11 +16,12 @@ public class MainCliente {
      * @param args the command line arguments
      */
     public static void main(String[] args) {            // Para inicializar el cliente
+        String nombre = JOptionPane.showInputDialog("Escriba su nombre:");
         try{
         InterfazCliente pantalla = new InterfazCliente();
         Cliente c = new Cliente(pantalla);
         pantalla.setVisible(true); 
-        c.conectar();
+        c.conectar(nombre);
                
         }
         catch(Exception e){

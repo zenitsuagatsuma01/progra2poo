@@ -40,12 +40,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
     
     public void newPlayer(){
+        String nombre = JOptionPane.showInputDialog("Escriba su nombre:");
         try{
         InterfazCliente pantalla = new InterfazCliente();
         Cliente c = new Cliente(pantalla);
         pantalla.pack();
         pantalla.setVisible(true); 
-        c.conectar();
+        c.conectar(nombre);
                
         }
         catch(Exception e){

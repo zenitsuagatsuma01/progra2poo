@@ -106,6 +106,7 @@ public class ThreadCliente extends Thread implements Serializable{
                     break;                    
                     case 4: // Se inicia la partida
                         refPantalla.setInicioPartida();
+                        refPantalla.seleccionFicha();
                     break;
                     case 5: // se guardan los datos de cada jugador
                         String nombreJugador = this.getRefPantalla().getNombreJugador();

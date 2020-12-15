@@ -1,11 +1,13 @@
 package Cliente;
 
+import static Partida.MenuPrincipal.infoBox;
 import java.awt.Color;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -342,6 +344,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblNumCasas.setText("Numero de casas: " + refCliente.getHiloCliente().getNumCasas());
         lblNumHoteles.setText("Numero de hoteles: " + refCliente.getHiloCliente().getNumHoteles());
         lblNumPropiedades.setText("Numero de propiedades: " + refCliente.getHiloCliente().getNumPropiedades());
+    }
+    
+    public void seleccionFicha(){
+        
+        //infoBox("Por favor escoja la ficha que desesa.","Selección de ficha");
+        SeleccionFicha cbFicha = new SeleccionFicha();
+        cbFicha.setTitle("Por favor seleccione su ficha, " + nombreJugador);
+        cbFicha.setVisible(true);
     }
     
     public void pintarLanzamientoDados (int valor1, int valor2, String usuario){    // Para escribir en la interfaz del cliente los valores de los dice rolls    

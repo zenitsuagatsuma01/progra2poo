@@ -22,14 +22,13 @@ public class Cliente implements Serializable{
         refPantalla.setRefCliente(this);
     }
     
-    public void conectar(){     // Para conectarse al servidor
+    public void conectar(String nombre){     // Para conectarse al servidor
  
         try{
         
             socketRef = new Socket("localhost", 35577);
             hiloCliente = new ThreadCliente(socketRef, refPantalla);
             hiloCliente.start();
-            String nombre = JOptionPane.showInputDialog("Escriba su nombre:");
             refPantalla.setTitle("Monopoly - Nombre del jugador: " + nombre);       // Se pone el titulo de la ventana del jugador
             refPantalla.setNombreJugador(nombre);    // Se pone el nombre del jugador
             hiloCliente.writer.writeInt(1); //instruccion para el switch del thraed servidor
