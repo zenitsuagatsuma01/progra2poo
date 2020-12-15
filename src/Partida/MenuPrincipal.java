@@ -35,6 +35,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         PantallaServidor pantalla = new PantallaServidor();
         Servidor srv = new Servidor(pantalla);
         pantalla.setVisible(true);
+        pantalla.setTitle("Servidor Pokenopoly");
         srv.start();
     }
     
@@ -65,6 +66,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
     }
     
+    public static boolean isNumeric(String strNum) {
+    if (strNum == null) {
+        return false;
+    }
+    try {
+        int i = Integer.parseInt(strNum);
+        float f = Float.parseFloat(strNum);
+        double d = Double.parseDouble(strNum);
+        long l = Long.parseLong(strNum);
+        
+    } catch (NumberFormatException nfe) {
+        return false;
+    }
+    return true;
+}
+    
     public static void infoBox(String infoMessage, String titleBar)
     {
         JOptionPane.showMessageDialog(null, infoMessage, titleBar, JOptionPane.INFORMATION_MESSAGE);
@@ -73,7 +90,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public void cargarPartida(){
         String nombre = JOptionPane.showInputDialog("Por favor escriba el nombre del jugador cuya partida quiere cargar");
         
-        ThreadCliente partidaCargada = (ThreadCliente)FileManager.readObject("src/Partida/partida" + nombre + ".dat");
+        ThreadCliente partidaCargada = null;
+        if ((ThreadCliente)FileManager.readObject("src/Partida/partida" + nombre + ".dat") != null)
+            partidaCargada = (ThreadCliente)FileManager.readObject("src/Partida/partida" + nombre + ".dat");
+        else{
+            infoBox("Por favor escriba una partida guardada valida.","Partida no encontrada");
+            return;
+        }
+            
         
         this.loadPlayer(partidaCargada,nombre);
         

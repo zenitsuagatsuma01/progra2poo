@@ -23,7 +23,7 @@ public class Progra2 {
         MenuPrincipal menu = new MenuPrincipal();
         menu.pack();
         menu.setVisible(true);
-        
+        menu.setTitle("Menu Principal Pokenopoly");
     }
     
 }

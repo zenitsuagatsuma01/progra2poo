@@ -15,6 +15,7 @@ public class MainServidor {
         PantallaServidor pantalla = new PantallaServidor();
         Servidor srv = new Servidor(pantalla);
         pantalla.setVisible(true);
+        pantalla.setTitle("Servidor Pokenopoly");
         srv.run();
         
     }
