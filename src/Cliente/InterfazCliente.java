@@ -1,11 +1,13 @@
 package Cliente;
 
+import Partida.FileManager;
 import static Partida.MenuPrincipal.infoBox;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -13,6 +15,8 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 // Interfaz grafica que le aparece a cada jugador, el diseno es un placeholder porque ocupamos poner el tablero y el historial (yo hago el historial)
 
@@ -54,9 +58,45 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         this.lblGo = lblGo;
     }
 
+    public JLabel getLblElMuelle() {
+        return jLabel70;
+    }
+
+    public void setLblElMuelle(JLabel lblElMuelle) {
+        this.jLabel70 = lblElMuelle;
+    }
+
+    public JPanel getjPanel69() {
+        return jPanel69;
+    }
+
+    public void setjPanel69(JPanel jPanel69) {
+        this.jPanel69 = jPanel69;
+    }
+
+    
+    
     public JPanel getPnlToolbar() {
         return pnlToolbar;
     }
+
+    public JPanel getPnlElMuelle() {
+        return jPanel69;
+    }
+
+    public void setPnlElMuelle(JPanel pnlElMuelle) {
+        this.jPanel69 = pnlElMuelle;
+    }
+
+    public JPanel getPnlParqueoLibre() {
+        return jPanel55;
+    }
+
+    public void setPnlParqueoLibre(JPanel pnlParqueoLibre) {
+        this.jPanel55 = pnlParqueoLibre;
+    }
+    
+    
 
     public void setPnlToolbar(JPanel pnlToolbar) {
         this.pnlToolbar = pnlToolbar;
@@ -76,7 +116,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     public void setNombreTurno(String nombreTurno) {
         this.nombreTurno = nombreTurno;
-        lblTurno.setText("Es turno de: " + nombreTurno);
+        lblTurno.setText(nombreTurno);
     }
 
     public void setNombreJugador(String nombreJugador){
@@ -108,20 +148,25 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel1 = new javax.swing.JPanel();
         lblTurno = new javax.swing.JLabel();
         lblUsuarioLanzamiento = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txaMensajes = new javax.swing.JTextArea();
         lblHistorial = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txaHistorial = new javax.swing.JTextArea();
         lblChat = new javax.swing.JLabel();
         txfMensaje = new javax.swing.JTextField();
         btnEnviar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblTurnoDe = new javax.swing.JLabel();
         lblNombreJugador = new javax.swing.JLabel();
         lblFicha = new javax.swing.JLabel();
-        lblDinero = new javax.swing.JLabel();
+        lblNumDinero = new javax.swing.JLabel();
         lblStatusPartida = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txaHistorial = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txaMensajes = new javax.swing.JTextArea();
+        lblDinero = new javax.swing.JLabel();
+        pnlFicha = new javax.swing.JPanel();
+        lblFichaJugador = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pnlTablero = new javax.swing.JPanel();
         jPanel30 = new javax.swing.JPanel();
@@ -172,7 +217,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jLabel65 = new javax.swing.JLabel();
         jPanel66 = new javax.swing.JPanel();
         jLabel66 = new javax.swing.JLabel();
-        jLabel67 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -207,10 +252,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel36 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jPanel73 = new javax.swing.JPanel();
-        jLabel74 = new javax.swing.JLabel();
+        lblFortuna = new javax.swing.JLabel();
         jPanel75 = new javax.swing.JPanel();
         jLabel76 = new javax.swing.JLabel();
-        jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
         jPanel76 = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
@@ -262,14 +306,25 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel58 = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
         pnlToolbar = new javax.swing.JPanel();
-        btnVender = new javax.swing.JButton();
-        btnComprar = new javax.swing.JButton();
+        btnVenderProp = new javax.swing.JButton();
+        btnComprarPropActual = new javax.swing.JButton();
         btnLanzarDados = new javax.swing.JButton();
         btnHipotecar = new javax.swing.JButton();
         btnEndTurn = new javax.swing.JButton();
-        lblSeleccion = new javax.swing.JLabel();
+        lblSeleccionFicha = new javax.swing.JLabel();
         cbSeleccion = new javax.swing.JComboBox<>();
-        btnSeleccion = new javax.swing.JButton();
+        btnSeleccionFicha = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        lblDado1 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        lblDado2 = new javax.swing.JLabel();
+        cbPropiedades = new javax.swing.JComboBox<>();
+        lblAdministrar = new javax.swing.JLabel();
+        btnCompraCasa = new javax.swing.JButton();
+        btnVenderEdificio = new javax.swing.JButton();
+        cbEdificios = new javax.swing.JComboBox<>();
+        lblVenderEdificio = new javax.swing.JLabel();
+        btnCompraHotel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -282,21 +337,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel1.add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 90, 40));
         jPanel1.add(lblUsuarioLanzamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 735, -1, 68));
 
-        txaMensajes.setColumns(20);
-        txaMensajes.setRows(5);
-        jScrollPane1.setViewportView(txaMensajes);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, 380, 190));
-
         lblHistorial.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblHistorial.setText("Historial");
         jPanel1.add(lblHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
-
-        txaHistorial.setColumns(20);
-        txaHistorial.setRows(5);
-        jScrollPane2.setViewportView(txaHistorial);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 380, 220));
 
         lblChat.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblChat.setText("Chat comunal");
@@ -311,9 +354,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         });
         jPanel1.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 890, 70, 70));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Es turno de:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        lblTurnoDe.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblTurnoDe.setText("Es turno de:");
+        jPanel1.add(lblTurnoDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         lblNombreJugador.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblNombreJugador.setText("Sin nombre...");
@@ -321,11 +364,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         lblFicha.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblFicha.setText("Ficha:");
-        jPanel1.add(lblFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 70, -1));
+        jPanel1.add(lblFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 70, -1));
 
-        lblDinero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblDinero.setText("Dinero:");
-        jPanel1.add(lblDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 200, 29));
+        lblNumDinero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblNumDinero.setText("0 $");
+        jPanel1.add(lblNumDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 120, 29));
 
         lblStatusPartida.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblStatusPartida.setText("Esperando para iniciar...");
@@ -333,6 +376,43 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         lblLogo.setIcon(new ImageIcon("src/Imagenes/logo.png"));
         jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 400, 130));
+
+        txaHistorial.setColumns(20);
+        txaHistorial.setRows(5);
+        jScrollPane2.setViewportView(txaHistorial);
+
+        jScrollPane3.setViewportView(jScrollPane2);
+
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 380, 230));
+
+        txaMensajes.setColumns(20);
+        txaMensajes.setRows(5);
+        jScrollPane1.setViewportView(txaMensajes);
+
+        jScrollPane4.setViewportView(jScrollPane1);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 710, 380, 180));
+
+        lblDinero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblDinero.setText("Dinero:");
+        jPanel1.add(lblDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
+
+        javax.swing.GroupLayout pnlFichaLayout = new javax.swing.GroupLayout(pnlFicha);
+        pnlFicha.setLayout(pnlFichaLayout);
+        pnlFichaLayout.setHorizontalGroup(
+            pnlFichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFichaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblFichaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        pnlFichaLayout.setVerticalGroup(
+            pnlFichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFichaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblFichaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel1.add(pnlFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 0, 400, 1000));
 
@@ -343,7 +423,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel30.setBackground(new java.awt.Color(255, 255, 255));
         jPanel30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel22.setText("AVENIDA INDIA");
+        jLabel22.setText("AVENIDA INDIANA");
 
         jPanel29.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -369,7 +449,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
@@ -461,21 +541,23 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addContainerGap()
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel16))
-                .addContainerGap(33, Short.MAX_VALUE))
-            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel15)))
+                .addContainerGap())
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17))
+                .addGap(34, 34, 34))
         );
 
         jPanel27.setBackground(new java.awt.Color(255, 255, 255));
@@ -523,13 +605,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel50.setBackground(new java.awt.Color(255, 255, 255));
         jPanel50.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel44.setText("VÁYASE A LA CÁRCEL");
+        jLabel44.setText("VÁYA A LA CÁRCEL");
 
         javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
         jPanel50.setLayout(jPanel50Layout);
         jPanel50Layout.setHorizontalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -699,7 +781,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel23.setBackground(new java.awt.Color(255, 255, 255));
         jPanel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel18.setText("AVENIDA KENTUCKY");
+        jLabel18.setText("AVENIDA CONNECTICUT");
 
         jPanel24.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -714,7 +796,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel19.setText("$220");
+        jLabel19.setText("$120");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -764,7 +846,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblGo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblGo.setLayout(new javax.swing.OverlayLayout(lblGo));
 
-        jLabel47.setText("GO");
+        jLabel47.setText("GO (COBRE 200$)");
         lblGo.add(jLabel47);
 
         jPanel52.setBackground(new java.awt.Color(255, 255, 255));
@@ -800,21 +882,19 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel66.setBackground(new java.awt.Color(255, 255, 255));
         jPanel66.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel66.setText("AGUA");
+        jLabel66.setText("ARCA");
 
-        jLabel67.setText("    $150");
+        jLabel1.setText("COMUNAL");
 
         javax.swing.GroupLayout jPanel66Layout = new javax.swing.GroupLayout(jPanel66);
         jPanel66.setLayout(jPanel66Layout);
         jPanel66Layout.setHorizontalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel66Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel66Layout.createSequentialGroup()
                 .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel66Layout.setVerticalGroup(
@@ -823,7 +903,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addContainerGap()
                 .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
                 .addContainerGap())
         );
 
@@ -832,7 +912,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         jLabel27.setText("    FERROCARRIL");
 
-        jLabel28.setText("        B.&.O");
+        jLabel28.setText("READING");
 
         jLabel29.setText("    $200");
 
@@ -865,7 +945,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel33.setBackground(new java.awt.Color(255, 255, 255));
         jPanel33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel30.setText("AVENIDA ILLINOIS");
+        jLabel30.setText("AV. ORIENTAL");
 
         jPanel34.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -893,7 +973,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                     .addGroup(jPanel33Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
             .addComponent(jPanel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel33Layout.setVerticalGroup(
@@ -909,7 +989,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel67.setBackground(new java.awt.Color(255, 255, 255));
         jPanel67.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel68.setText("JARDINES MARVIN");
+        jLabel68.setText("AV. MEDITERRÁNEO");
 
         jPanel68.setBackground(new java.awt.Color(102, 102, 0));
 
@@ -924,7 +1004,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel69.setText("$280");
+        jLabel69.setText("$60");
 
         javax.swing.GroupLayout jPanel67Layout = new javax.swing.GroupLayout(jPanel67);
         jPanel67.setLayout(jPanel67Layout);
@@ -951,7 +1031,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel4.setText("AVENIDA INDIA");
+        jLabel4.setText("AVENIDA VERMONT");
 
         jPanel7.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -966,7 +1046,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel7.setText("$220");
+        jLabel7.setText("$100");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -977,7 +1057,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
@@ -993,7 +1073,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel8.setText("AVENIDA VENTNOR");
+        jLabel8.setText("AVENIDA BÁLTICA");
 
         jPanel9.setBackground(new java.awt.Color(102, 102, 0));
 
@@ -1008,7 +1088,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel9.setText("$260");
+        jLabel9.setText("$60");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1036,7 +1116,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel69.setBackground(new java.awt.Color(255, 255, 255));
         jPanel69.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel70.setText("AVENIDA KENTUCKY");
+        jLabel70.setText("EL MUELLE");
 
         jPanel70.setBackground(new java.awt.Color(0, 0, 153));
 
@@ -1048,10 +1128,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel70Layout.setVerticalGroup(
             jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        jLabel71.setText("$220");
+        jLabel71.setText("$400");
 
         javax.swing.GroupLayout jPanel69Layout = new javax.swing.GroupLayout(jPanel69);
         jPanel69.setLayout(jPanel69Layout);
@@ -1097,7 +1177,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         jLabel72.setText("        IMPUESTOS");
 
-        jLabel73.setText("            $150");
+        jLabel73.setText("            $100");
 
         javax.swing.GroupLayout jPanel72Layout = new javax.swing.GroupLayout(jPanel72);
         jPanel72.setLayout(jPanel72Layout);
@@ -1112,14 +1192,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addContainerGap()
                 .addComponent(jLabel72)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jPanel35.setBackground(new java.awt.Color(255, 255, 255));
         jPanel35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel33.setText("AVENIDA KENTUCKY");
+        jLabel33.setText("AVENIDA PACÍFICO");
 
         jPanel36.setBackground(new java.awt.Color(0, 153, 0));
 
@@ -1134,7 +1214,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel34.setText("$220");
+        jLabel34.setText("$300");
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -1145,7 +1225,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addContainerGap()
                 .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1160,25 +1240,23 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel73.setBackground(new java.awt.Color(255, 255, 255));
         jPanel73.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel74.setText("FORTUNA");
+        lblFortuna.setText("FORTUNA");
 
         javax.swing.GroupLayout jPanel73Layout = new javax.swing.GroupLayout(jPanel73);
         jPanel73.setLayout(jPanel73Layout);
         jPanel73Layout.setHorizontalGroup(
             jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel74, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblFortuna, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel73Layout.setVerticalGroup(
             jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel74, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(lblFortuna, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         jPanel75.setBackground(new java.awt.Color(255, 255, 255));
         jPanel75.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel76.setText("    FERROCARRIL");
-
-        jLabel77.setText("PENSILVANIA");
 
         jLabel78.setText("    $200");
 
@@ -1188,22 +1266,15 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel75Layout.createSequentialGroup()
-                .addGroup(jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel75Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel75Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel77)))
+                .addGap(21, 21, 21)
+                .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel75Layout.setVerticalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel75Layout.createSequentialGroup()
                 .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(jLabel78)
                 .addContainerGap())
         );
@@ -1211,7 +1282,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel76.setBackground(new java.awt.Color(255, 255, 255));
         jPanel76.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel79.setText("AVENIDA KENTUCKY");
+        jLabel79.setText("AV. PENSILVANIA");
 
         jPanel77.setBackground(new java.awt.Color(0, 153, 0));
 
@@ -1226,7 +1297,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel80.setText("$220");
+        jLabel80.setText("$320");
 
         javax.swing.GroupLayout jPanel76Layout = new javax.swing.GroupLayout(jPanel76);
         jPanel76.setLayout(jPanel76Layout);
@@ -1252,7 +1323,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel78.setBackground(new java.awt.Color(255, 255, 255));
         jPanel78.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel81.setText("AVENIDA KENTUCKY");
+        jLabel81.setText("PLAZA PARK");
 
         jPanel79.setBackground(new java.awt.Color(0, 0, 153));
 
@@ -1267,7 +1338,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel82.setText("$220");
+        jLabel82.setText("$350");
 
         javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
         jPanel78.setLayout(jPanel78Layout);
@@ -1293,7 +1364,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel37.setBackground(new java.awt.Color(255, 255, 255));
         jPanel37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel35.setText("AVENIDA KENTUCKY");
+        jLabel35.setText("AV. N. CAROLINA");
 
         jPanel38.setBackground(new java.awt.Color(0, 153, 0));
 
@@ -1308,7 +1379,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel36.setText("$220");
+        jLabel36.setText("$300");
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
@@ -1334,7 +1405,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel108.setBackground(new java.awt.Color(255, 255, 255));
         jPanel108.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel118.setText("AVENIDA KENTUCKY");
+        jLabel118.setText("PLAZA SAN CARLOS");
 
         jPanel109.setBackground(new java.awt.Color(255, 0, 153));
 
@@ -1349,7 +1420,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel119.setText("$220");
+        jLabel119.setText("$140");
 
         javax.swing.GroupLayout jPanel108Layout = new javax.swing.GroupLayout(jPanel108);
         jPanel108.setLayout(jPanel108Layout);
@@ -1396,7 +1467,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel111.setBackground(new java.awt.Color(255, 255, 255));
         jPanel111.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel120.setText("AGUA");
+        jLabel120.setText("ELECTRICIDAD");
 
         jLabel121.setText("    $150");
 
@@ -1405,13 +1476,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel111Layout.setHorizontalGroup(
             jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel111Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel121, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel111Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel121, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel111Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel120, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel111Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel120, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         jPanel111Layout.setVerticalGroup(
             jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1426,7 +1498,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel49.setBackground(new java.awt.Color(255, 255, 255));
         jPanel49.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel45.setText("AVENIDA KENTUCKY");
+        jLabel45.setText("AVENIDA NUEVA YORK");
 
         jPanel54.setBackground(new java.awt.Color(255, 102, 0));
 
@@ -1441,7 +1513,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel53.setText("$220");
+        jLabel53.setText("$200");
 
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
         jPanel49.setLayout(jPanel49Layout);
@@ -1469,7 +1541,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel112.setBackground(new java.awt.Color(255, 255, 255));
         jPanel112.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel122.setText("AVENIDA KENTUCKY");
+        jLabel122.setText("AVENIDA VIRGINIA");
 
         jPanel113.setBackground(new java.awt.Color(255, 0, 153));
 
@@ -1484,7 +1556,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel123.setText("$220");
+        jLabel123.setText("$160");
 
         javax.swing.GroupLayout jPanel112Layout = new javax.swing.GroupLayout(jPanel112);
         jPanel112.setLayout(jPanel112Layout);
@@ -1553,7 +1625,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel55Layout.setHorizontalGroup(
             jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel55Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(10, Short.MAX_VALUE)
                 .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
         );
@@ -1568,7 +1640,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel115.setBackground(new java.awt.Color(255, 255, 255));
         jPanel115.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel127.setText("AVENIDA KENTUCKY");
+        jLabel127.setText("AVENIDA ST. JAMES");
 
         jPanel116.setBackground(new java.awt.Color(255, 102, 0));
 
@@ -1583,7 +1655,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel128.setText("$220");
+        jLabel128.setText("$180");
 
         javax.swing.GroupLayout jPanel115Layout = new javax.swing.GroupLayout(jPanel115);
         jPanel115.setLayout(jPanel115Layout);
@@ -1611,7 +1683,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel117.setBackground(new java.awt.Color(255, 255, 255));
         jPanel117.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel129.setText("AVENIDA KENTUCKY");
+        jLabel129.setText("AVENIDA STATUS");
 
         jPanel118.setBackground(new java.awt.Color(255, 0, 153));
 
@@ -1626,7 +1698,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel130.setText("$220");
+        jLabel130.setText("$140");
 
         javax.swing.GroupLayout jPanel117Layout = new javax.swing.GroupLayout(jPanel117);
         jPanel117.setLayout(jPanel117Layout);
@@ -1654,7 +1726,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel56.setBackground(new java.awt.Color(255, 255, 255));
         jPanel56.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel55.setText("AVENIDA KENTUCKY");
+        jLabel55.setText("AVENIDA TENNESSEE");
 
         jPanel57.setBackground(new java.awt.Color(255, 102, 0));
 
@@ -1669,7 +1741,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jLabel56.setText("$220");
+        jLabel56.setText("$180");
 
         javax.swing.GroupLayout jPanel56Layout = new javax.swing.GroupLayout(jPanel56);
         jPanel56.setLayout(jPanel56Layout);
@@ -1733,9 +1805,28 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                     .addComponent(jPanel117, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel111, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pnlTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlTableroLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTableroLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1752,26 +1843,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlTableroLayout.createSequentialGroup()
-                        .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(pnlTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(pnlTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlTableroLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1779,16 +1852,16 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                             .addComponent(jPanel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel75, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblGo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel72, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(pnlTableroLayout.createSequentialGroup()
+                            .addComponent(jPanel72, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel75, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTableroLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(jPanel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jPanel50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11))
         );
         pnlTableroLayout.setVerticalGroup(
             pnlTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1814,7 +1887,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel76, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel75, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1823,7 +1896,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addComponent(jPanel72, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel69, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(pnlTableroLayout.createSequentialGroup()
                         .addComponent(lblGo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1866,11 +1939,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1380, 660));
 
-        btnVender.setText("Vender");
-        pnlToolbar.add(btnVender);
+        pnlToolbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnComprar.setText("Comprar");
-        pnlToolbar.add(btnComprar);
+        btnVenderProp.setText("Vender");
+        pnlToolbar.add(btnVenderProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 90, 70));
+
+        btnComprarPropActual.setText("Comprar propiedad actual");
+        pnlToolbar.add(btnComprarPropActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 200, 70));
 
         btnLanzarDados.setText("Lanzar Dados");
         btnLanzarDados.addActionListener(new java.awt.event.ActionListener() {
@@ -1878,42 +1953,120 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnLanzarDadosActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnLanzarDados);
+        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 150, 70));
 
         btnHipotecar.setText("Hipotecar/deshipotecar");
-        pnlToolbar.add(btnHipotecar);
+        pnlToolbar.add(btnHipotecar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 170, 70));
 
         btnEndTurn.setText("Terminar turno");
-        pnlToolbar.add(btnEndTurn);
+        pnlToolbar.add(btnEndTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 200, 130, 70));
 
-        lblSeleccion.setText("Selección:");
-        pnlToolbar.add(lblSeleccion);
+        lblSeleccionFicha.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblSeleccionFicha.setText("Seleccionar ficha:");
+        pnlToolbar.add(lblSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 170, -1));
 
         cbSeleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chikorita", "Slowbro", "Charizard", "Pikachu", "Yamper", "Rayquaza", "Suicune", "Entei", "Raikoui", "Mewtwo", "Espeon", "Ditto", "Cyndaquil", "Totodile" }));
-        pnlToolbar.add(cbSeleccion);
+        pnlToolbar.add(cbSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 230, 30));
 
-        btnSeleccion.setText("Ficha seleccionada");
-        btnSeleccion.addActionListener(new java.awt.event.ActionListener() {
+        btnSeleccionFicha.setText("Ficha seleccionada");
+        btnSeleccionFicha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeleccionActionPerformed(evt);
+                btnSeleccionFichaActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnSeleccion);
+        pnlToolbar.add(btnSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, 160, 70));
+
+        lblDado1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblDado1.setForeground(new java.awt.Color(102, 255, 255));
+        lblDado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblDado1, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblDado1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        pnlToolbar.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 120, -1));
+
+        lblDado2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblDado2.setForeground(new java.awt.Color(153, 255, 255));
+        lblDado2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblDado2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblDado2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+
+        pnlToolbar.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
+
+        pnlToolbar.add(cbPropiedades, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 360, 30));
+
+        lblAdministrar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblAdministrar.setText("Administrar propiedades:");
+        pnlToolbar.add(lblAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(543, 130, 240, -1));
+
+        btnCompraCasa.setText("Comprar casa");
+        pnlToolbar.add(btnCompraCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, -1, 70));
+
+        btnVenderEdificio.setText("Vender");
+        pnlToolbar.add(btnVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 200, 90, 70));
+
+        pnlToolbar.add(cbEdificios, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 160, 190, 30));
+
+        lblVenderEdificio.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblVenderEdificio.setText("Vender edificios:");
+        pnlToolbar.add(lblVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 130, -1, -1));
+
+        btnCompraHotel.setText("Comprar hotel");
+        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 120, 70));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JPanel getPnlFicha() {
+        return pnlFicha;
+    }
+
+    public void setPnlFicha(JPanel pnlFicha) {
+        this.pnlFicha = pnlFicha;
+    }
+
+    public JLabel getLblFichaJugador() {
+        return lblFichaJugador;
+    }
+
+    public void setLblFichaJugador(JLabel lblFichaJugador) {
+        this.lblFichaJugador = lblFichaJugador;
+    }
+    
+    
+    
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
+        
         try {
             // TODO add your handling code here:
             refCliente.hiloCliente.writer.writeInt(2);      // Se envia al servidor la accion de enviar un mensaje por chat y se envia el mensaje
+            refCliente.hiloCliente.writer.writeUTF(this.getLblNombreJugador().getText());
             refCliente.hiloCliente.writer.writeUTF(txfMensaje.getText());
         } catch (IOException ex) {
 
         }
-
+        this.getTxfMensaje().setText("");
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnLanzarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanzarDadosActionPerformed
@@ -1934,10 +2087,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         }
     }//GEN-LAST:event_btnLanzarDadosActionPerformed
 
-    private void btnSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionActionPerformed
+    private void btnSeleccionFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionFichaActionPerformed
         // TODO add your handling code here:
         String seleccion = this.cbSeleccion.getSelectedItem().toString();
         System.out.println(seleccion);
+        ArrayList<Ficha> listaFichas = (ArrayList<Ficha>)FileManager.readObject("src/Partida/listafichas.dat");
         
         if (seleccion.equals("Chikorita")){
             
@@ -1945,14 +2099,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Slowbro")){
@@ -1961,14 +2122,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Charizard")){
@@ -1977,14 +2145,24 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha());
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            //this.getLblGo().add(newFicha.getLabelFicha());
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            FileManager.writeObject(newFicha.getLabelFicha(), "src/Partida/prueba.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Pikachu")){
@@ -1993,14 +2171,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Yamper")){
@@ -2009,14 +2194,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Rayquaza")){
@@ -2025,14 +2217,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Suicune")){
@@ -2041,14 +2240,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Entei")){
@@ -2057,14 +2263,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Raikou")){
@@ -2073,14 +2286,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Mewtwo")){
@@ -2089,14 +2309,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Espeon")){
@@ -2105,14 +2332,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Ditto")){
@@ -2121,14 +2355,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Cyndaquil")){
@@ -2137,14 +2378,21 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
         
         else if (seleccion.equals("Totodile")){
@@ -2153,16 +2401,23 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getLblGo().add(newLabel);
+            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getPnlTablero().getLayout().getClass().getName());
-            
+            listaFichas.add(newFicha);
+            FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(6);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.getLblFichaJugador().setIcon(imageIcon);
         }
-    }//GEN-LAST:event_btnSeleccionActionPerformed
+    }//GEN-LAST:event_btnSeleccionFichaActionPerformed
 
     public JLabel getLblStatusPartida() {
         return lblStatusPartida;
@@ -2172,10 +2427,68 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         this.lblStatusPartida = lblStatusPartida;
     }
 
+    public JComboBox<String> getCbSeleccion() {
+        return cbSeleccion;
+    }
+
+    public void setCbSeleccion(JComboBox<String> cbSeleccion) {
+        this.cbSeleccion = cbSeleccion;
+    }
+
+    public JLabel getLblTurno() {
+        return lblTurno;
+    }
+
+    public void setLblTurno(JLabel lblTurno) {
+        this.lblTurno = lblTurno;
+    }
+
+    public JLabel getLblUsuarioLanzamiento() {
+        return lblUsuarioLanzamiento;
+    }
+
+    public void setLblUsuarioLanzamiento(JLabel lblUsuarioLanzamiento) {
+        this.lblUsuarioLanzamiento = lblUsuarioLanzamiento;
+    }
+
+    public JTextArea getTxaHistorial() {
+        return txaHistorial;
+    }
+
+    public void setTxaHistorial(JTextArea txaHistorial) {
+        this.txaHistorial = txaHistorial;
+    }
+
+    public JTextArea getTxaMensajes() {
+        return txaMensajes;
+    }
+
+    public void setTxaMensajes(JTextArea txaMensajes) {
+        this.txaMensajes = txaMensajes;
+    }
+
+    public JTextField getTxfMensaje() {
+        return txfMensaje;
+    }
+
+    public void setTxfMensaje(JTextField txfMensaje) {
+        this.txfMensaje = txfMensaje;
+    }
+
+    public JLabel getLblNumDinero() {
+        return lblNumDinero;
+    }
+
+    public void setLblNumDinero(JLabel lblNumDinero) {
+        this.lblNumDinero = lblNumDinero;
+    }
+    
+    
+
     
     public void setInicioPartida(){             // Configura la partida con los datos iniciales para empezarla
         lblStatusPartida.setText("Partida Iniciada");
-        lblDinero.setText("Dinero: $" + refCliente.getHiloCliente().getDinero());
+        lblNumDinero.setText("Dinero: $" + refCliente.getHiloCliente().getDinero());
       //  lblNumCasas.setText("Numero de casas: " + refCliente.getHiloCliente().getNumCasas());
      //   lblNumHoteles.setText("Numero de hoteles: " + refCliente.getHiloCliente().getNumHoteles());
      //   lblNumPropiedades.setText("Numero de propiedades: " + refCliente.getHiloCliente().getNumPropiedades());
@@ -2214,13 +2527,18 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnComprar;
+    private javax.swing.JButton btnCompraCasa;
+    private javax.swing.JButton btnCompraHotel;
+    private javax.swing.JButton btnComprarPropActual;
     private javax.swing.JButton btnEndTurn;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JButton btnHipotecar;
     private javax.swing.JButton btnLanzarDados;
-    private javax.swing.JButton btnSeleccion;
-    private javax.swing.JButton btnVender;
+    private javax.swing.JButton btnSeleccionFicha;
+    private javax.swing.JButton btnVenderEdificio;
+    private javax.swing.JButton btnVenderProp;
+    private javax.swing.JComboBox<String> cbEdificios;
+    private javax.swing.JComboBox<String> cbPropiedades;
     private javax.swing.JComboBox<String> cbSeleccion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2280,7 +2598,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
@@ -2288,9 +2605,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
@@ -2299,6 +2614,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel108;
     private javax.swing.JPanel jPanel109;
     private javax.swing.JPanel jPanel110;
@@ -2322,6 +2638,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
@@ -2363,17 +2680,28 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JLabel lblAdministrar;
     private javax.swing.JLabel lblChat;
+    private javax.swing.JLabel lblDado1;
+    private javax.swing.JLabel lblDado2;
     private javax.swing.JLabel lblDinero;
     private javax.swing.JLabel lblFicha;
+    private javax.swing.JLabel lblFichaJugador;
+    private javax.swing.JLabel lblFortuna;
     private javax.swing.JPanel lblGo;
     private javax.swing.JLabel lblHistorial;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblNombreJugador;
-    private javax.swing.JLabel lblSeleccion;
+    private javax.swing.JLabel lblNumDinero;
+    private javax.swing.JLabel lblSeleccionFicha;
     private javax.swing.JLabel lblStatusPartida;
     private javax.swing.JLabel lblTurno;
+    private javax.swing.JLabel lblTurnoDe;
     private javax.swing.JLabel lblUsuarioLanzamiento;
+    private javax.swing.JLabel lblVenderEdificio;
+    private javax.swing.JPanel pnlFicha;
     private javax.swing.JPanel pnlTablero;
     private javax.swing.JPanel pnlToolbar;
     private javax.swing.JTextArea txaHistorial;

@@ -5,9 +5,12 @@
  */
 package progra2;
 
+import Cliente.Ficha;
+import Partida.FileManager;
 import Partida.MenuPrincipal;
 import Servidor.PantallaServidor;
 import Servidor.Servidor;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -35,6 +38,9 @@ public class Progra2 {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Progra2.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        ArrayList<Ficha> fichasPartida = new ArrayList<Ficha>();
+        FileManager.writeObject(fichasPartida, "src/Partida/listafichas.dat");
         MenuPrincipal menu = new MenuPrincipal();
         menu.pack();
         menu.setVisible(true);

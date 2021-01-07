@@ -5,6 +5,7 @@
  */
 package Cliente;
 
+import java.io.Serializable;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -12,7 +13,7 @@ import javax.swing.JLabel;
  *
  * @author aleja
  */
-public class Ficha {
+public class Ficha implements Serializable{
     String nombre;
     String imagen;
     JLabel labelFicha;

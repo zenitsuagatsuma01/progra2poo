@@ -5,6 +5,7 @@
  */
 package Cliente;
 
+import Partida.FileManager;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Image;
@@ -131,13 +132,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+           // this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -151,13 +153,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+          //  this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -171,13 +174,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+           // this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -191,13 +195,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+           // this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -211,13 +216,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+           // this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -231,13 +237,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+           // this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -251,13 +258,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+            //this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -271,13 +279,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+           // this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -291,13 +300,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+            //this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -311,13 +321,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+            //this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -331,13 +342,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+            //this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -351,13 +363,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+            //this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -371,13 +384,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+            //this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
         
@@ -391,13 +405,14 @@ public class SeleccionFicha extends javax.swing.JFrame {
             System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            this.getRefPantalla().getLblGo().add(newLabel);
+            //this.getRefPantalla().getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
             System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            FileManager.writeObject(newFicha, "src/Partida/ficha" + newFicha.getNombre() + ".dat");
             
         }
 

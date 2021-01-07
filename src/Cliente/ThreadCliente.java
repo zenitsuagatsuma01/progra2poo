@@ -6,6 +6,10 @@
 package Cliente;
 
 import Partida.FileManager;
+import Servidor.Banco;
+import Servidor.ThreadServidor;
+import java.awt.Color;
+import java.awt.Image;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -13,6 +17,9 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.OverlayLayout;
 
 
 public class ThreadCliente extends Thread implements Serializable{
@@ -27,6 +34,7 @@ public class ThreadCliente extends Thread implements Serializable{
     private int numHoteles;
     private int numPropiedades;
     private Ficha ficha;
+    private Banco banco;
     //private ArrayList<Propiedad> propiedades;
     //private ArrayList<Casas> casas;
     //private ArrayList<Hotel> hoteles;
@@ -43,6 +51,7 @@ public class ThreadCliente extends Thread implements Serializable{
         numCasas = 0;
         numHoteles = 0;
         numPropiedades = 0;
+        banco = new Banco();
     }
     
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla, String nombreCargado, int dineroCargado, int numCasasCargado, int numHotelesCargado, int numPropiedadesCargado, boolean quebradoCargado) throws IOException {
@@ -101,7 +110,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         usuario = reader.readUTF();
                         String mensaje = reader.readUTF();
                         //System.out.println("CLIENTE Recibido mensaje: " + mensaje);
-                        refPantalla.addMensaje(usuario+">   " + mensaje);
+                        refPantalla.addMensaje(usuario+ ":   " + mensaje);
                     break;
                     case 3: // pasan un mensaje por el chat
                         usuario = reader.readUTF();
@@ -115,12 +124,38 @@ public class ThreadCliente extends Thread implements Serializable{
                     break;                    
                     case 4: // Se inicia la partida
                         refPantalla.setInicioPartida();
+                        
                         //refPantalla.seleccionFicha();
                     break;
                     case 5: // se guardan los datos de cada jugador
                         String nombreJugador = this.getRefPantalla().getNombreJugador();
                         FileManager.writeObject(this,"src/Partida/partida" + nombreJugador + ".dat");
                     break;
+                    case 6:
+                        ArrayList<Ficha> listaFichas = (ArrayList<Ficha>)FileManager.readObject("src/Partida/listafichas.dat");
+                        
+                        for (int i = 0; i < listaFichas.size(); i++){
+                            
+                            Ficha newFicha = listaFichas.get(i);
+                            System.out.println(newFicha.getLabelFicha());
+                            System.out.println(newFicha.getLabelFicha().getIcon());
+                            this.getRefPantalla().getLblGo().add(newFicha.getLabelFicha());
+                            refPantalla.getLblGo().revalidate();
+                            refPantalla.getLblGo().repaint();
+
+                        }
+                        
+                        
+                        break;
+                    case 7:
+                        mensaje = reader.readUTF();
+                        refPantalla.getTxaHistorial().append(mensaje + '\n');
+                        break;
+                    case 8:
+                        int cantidadDinero = reader.readInt();
+                        this.banco.darDinero(this, cantidadDinero);
+                        this.refPantalla.getLblNumDinero().setText(this.getDinero() + " $");
+                        break;
                     
                 }
             } catch (IOException ex) {

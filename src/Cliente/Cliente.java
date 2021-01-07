@@ -31,8 +31,9 @@ public class Cliente implements Serializable{
             hiloCliente.start();
             refPantalla.setTitle("Monopoly - Nombre del jugador: " + nombre);       // Se pone el titulo de la ventana del jugador
             refPantalla.setNombreJugador(nombre);    // Se pone el nombre del jugador
-            hiloCliente.writer.writeInt(1); //instruccion para el switch del thraed servidor
-            hiloCliente.writer.writeUTF(nombre); //instruccion para el switch del thraed servidor
+            hiloCliente.setNombre(nombre);
+            //hiloCliente.writer.writeInt(1); //instruccion para el switch del thraed servidor
+            //hiloCliente.writer.writeUTF(nombre); //instruccion para el switch del thraed servidor
         }
         catch(Exception e){
             System.out.println(e.getMessage());

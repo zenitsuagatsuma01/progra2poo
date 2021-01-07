@@ -38,6 +38,32 @@ public class ThreadServidor extends Thread implements Serializable{
         writer.writeInt(1);
         writer.writeUTF(server.getTurno());
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public boolean isRunning() {
+        return running;
+    }
+
+    public void setRunning(boolean running) {
+        this.running = running;
+    }
+
+    public Servidor getServer() {
+        return server;
+    }
+
+    public void setServer(Servidor server) {
+        this.server = server;
+    }
+    
+    
     
     public void run (){
         
@@ -48,18 +74,19 @@ public class ThreadServidor extends Thread implements Serializable{
                 
                 switch (instruccionId){
                     case 1: // pasan el nombre del usuario
-                        nombre = reader.readUTF();
-                        enviarTurnoInicial();                  
+                        //nombre = reader.readUTF();
+                        //enviarTurnoInicial();                  
                         
                         
                     break;
                     case 2: // pasan un mensaje por el chat
+                        String usuario = reader.readUTF();
                         String mensaje = reader.readUTF();
                         
                         for (int i = 0; i < server.conexiones.size(); i++) {
                             ThreadServidor current = server.conexiones.get(i);
                             current.writer.writeInt(2);
-                            current.writer.writeUTF(nombre);
+                            current.writer.writeUTF(usuario);
                             current.writer.writeUTF(mensaje);
                         }
                     break;
@@ -78,7 +105,6 @@ public class ThreadServidor extends Thread implements Serializable{
                         }
                     break;
                     case 4: // iniciar partida
-                        server.iniciarPartida();
                         // al iniciar la partida se deberían tirar los dados para determinar el orden
                         for (int i = 0; i < server.conexiones.size(); i++) {
                             ThreadServidor current = server.conexiones.get(i);
@@ -91,6 +117,47 @@ public class ThreadServidor extends Thread implements Serializable{
                         for (int i = 0; i < server.conexiones.size(); i++) {
                             ThreadServidor current = server.conexiones.get(i);
                             current.writer.writeInt(5);
+                        }
+                        break;
+                    case 6:
+                        int numFichas = this.server.getContFichas();
+                        numFichas = numFichas + 1;
+                        System.out.println(this.server.getContFichas());
+                        System.out.println(numFichas);
+                        if (numFichas == server.getLimiteMax()){
+                            System.out.println("hola");
+                            this.server.setContFichas(numFichas);
+                            
+                            for (int i = 0; i < server.conexiones.size(); i++) {
+                                ThreadServidor current = server.conexiones.get(i);
+                                current.writer.writeInt(6);
+                            }
+                            
+                            for (int i = 0; i < server.conexiones.size(); i++) {
+                                ThreadServidor current = server.conexiones.get(i);
+                                current.writer.writeInt(7);
+                                current.writer.writeUTF("Por favor tire los dados para decidir el orden la partida.");
+                            }
+                            
+                        }
+                        
+                        this.server.setContFichas(numFichas);
+                        break;
+                    case 7:
+                        mensaje = reader.readUTF();
+                        
+                        for (int i = 0; i < server.conexiones.size(); i++) {
+                            ThreadServidor current = server.conexiones.get(i);
+                            current.writer.writeInt(7);
+                            current.writer.writeUTF(mensaje);
+                        }
+                        break;
+                    case 8:
+                        int cantidadDinero = reader.readInt();
+                        for (int i = 0; i < server.conexiones.size(); i++) {
+                            ThreadServidor current = server.conexiones.get(i);
+                            current.writer.writeInt(8);
+                            current.writer.writeInt(cantidadDinero);
                         }
                         break;
                 }

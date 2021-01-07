@@ -32,6 +32,8 @@ public class Servidor extends Thread implements Serializable{
     private boolean maximoAlcanzado = false;                // Si se ha o no alcanzado el limite maximo de jugadores de la partida
     public boolean flagCargado = false;
     public Servidor partidaGuardada;
+    private int contFichas = 0;
+    private boolean turnosDecididos = false;
 
     public Servidor(PantallaServidor refPantalla) {
         this.refPantalla = refPantalla;
@@ -50,6 +52,24 @@ public class Servidor extends Thread implements Serializable{
         partidaGuardada = servidorCargado;
     }
 
+    public int getContFichas() {
+        return contFichas;
+    }
+
+    public void setContFichas(int contFichas) {
+        this.contFichas = contFichas;
+    }
+
+    public boolean isTurnosDecididos() {
+        return turnosDecididos;
+    }
+
+    public void setTurnosDecididos(boolean turnosDecididos) {
+        this.turnosDecididos = turnosDecididos;
+    }
+
+    
+    
     public void iniciarPartida() {          // Se empieza la partida
         this.partidaIniciada = true;
         refPantalla.addMessage("-Partida iniciada.");
@@ -65,10 +85,25 @@ public class Servidor extends Thread implements Serializable{
     }
     
     public void signalIniciarPartida() throws IOException{
+        this.partidaIniciada = true;
+        refPantalla.addMessage("-Partida iniciada.");
+        refPantalla.addMessage("-Cada jugador debe seleccionar una ficha y luego lanzar los dados para decidir el orden.");
         
         for (int i = 0; i < conexiones.size(); i++) {
             ThreadServidor current = conexiones.get(i);
             current.writer.writeInt(4);
+        }
+        
+        for (int i = 0; i < conexiones.size(); i++) {
+            ThreadServidor current = conexiones.get(i);
+            current.writer.writeInt(7);
+            current.writer.writeUTF("Por favor, seleccione una ficha.");
+        }
+        
+        for (int i = 0; i < conexiones.size(); i++) {
+            ThreadServidor current = conexiones.get(i);
+            current.writer.writeInt(8);
+            current.writer.writeInt(3500);
         }
     }
     
@@ -156,7 +191,6 @@ public class Servidor extends Thread implements Serializable{
                             refPantalla.addMessage("-Cantidad máxima de jugadores alcanzada. No se permitirán más conexiones.");
                             refPantalla.addMessage("-Iniciando partida...");
                             this.setMaximoAlcanzado(true);
-                            this.partidaIniciada = true;
                             srv.close();
                             this.signalIniciarPartida();
 
