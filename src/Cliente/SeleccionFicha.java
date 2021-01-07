@@ -5,6 +5,17 @@
  */
 package Cliente;
 
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Image;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import progra2.Progra2;
+
 /**
  *
  * @author aleja
@@ -15,9 +26,26 @@ public class SeleccionFicha extends javax.swing.JFrame {
     /**
      * Creates new form SeleccionFicha
      */
-    public SeleccionFicha() {
+    public SeleccionFicha(InterfazCliente refPantalla) {
+        this.refPantalla = refPantalla;
         initComponents();
     }
+
+    private SeleccionFicha() {
+        
+    }
+    
+    
+
+    public InterfazCliente getRefPantalla() {
+        return refPantalla;
+    }
+
+    public void setRefPantalla(InterfazCliente refPantalla) {
+        this.refPantalla = refPantalla;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,7 +119,288 @@ public class SeleccionFicha extends javax.swing.JFrame {
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
         // TODO add your handling code here:
         String seleccion = this.cbSeleccion.getSelectedItem().toString();
-        //refPantalla.refCliente.hiloCliente.ficha = seleccion;
+        System.out.println(seleccion);
+        
+        if (seleccion.equals("Chikorita")){
+            
+            Ficha newFicha = new Ficha("Chikorita", "src/Imagenes/chikorita.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Slowbro")){
+            
+            Ficha newFicha = new Ficha("Slowbro", "src/Imagenes/slowbro.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Charizard")){
+            
+            Ficha newFicha = new Ficha("Charizard", "src/Imagenes/charizard.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Pikachu")){
+            
+            Ficha newFicha = new Ficha("Pikachu", "src/Imagenes/pikachu.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Yamper")){
+            
+            Ficha newFicha = new Ficha("Yamper", "src/Imagenes/yamper.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Rayquaza")){
+            
+            Ficha newFicha = new Ficha("Rayquaza", "src/Imagenes/rayquaza.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Suicune")){
+            
+            Ficha newFicha = new Ficha("Suicune", "src/Imagenes/suicune.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Entei")){
+            
+            Ficha newFicha = new Ficha("Entei", "src/Imagenes/entei.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Raikou")){
+            
+            Ficha newFicha = new Ficha("Raikou", "src/Imagenes/raikou.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Mewtwo")){
+            
+            Ficha newFicha = new Ficha("Mewtwo", "src/Imagenes/mewtwo.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Espeon")){
+            
+            Ficha newFicha = new Ficha("Espeon", "src/Imagenes/espeon.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Ditto")){
+            
+            Ficha newFicha = new Ficha("Ditto", "src/Imagenes/ditto.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Cyndaquil")){
+            
+            Ficha newFicha = new Ficha("Cyndaquil", "src/Imagenes/cyndaquil.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+        
+        else if (seleccion.equals("Totodile")){
+            
+            Ficha newFicha = new Ficha("Totodile", "src/Imagenes/totodile.png", this.getRefPantalla().getLblNombreJugador().getText());
+            this.getRefPantalla().getRefCliente().getHiloCliente().setFicha(newFicha);
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombre());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getNombreJugador());
+            System.out.println(this.getRefPantalla().getRefCliente().getHiloCliente().getFicha().getImagen());
+            JLabel newLabel = new JLabel("");
+            newLabel.setVisible(true);
+            this.getRefPantalla().getLblGo().add(newLabel);
+            newFicha.setLabelFicha(newLabel);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+            newFicha.getLabelFicha().setIcon((imageIcon));
+            System.out.println(newFicha.getLabelFicha().getIcon());
+            newFicha.getLabelFicha().setVisible(true);
+            System.out.println(this.getRefPantalla().getPnlTablero().getLayout().getClass().getName());
+            
+        }
+
         super.dispose();
     }//GEN-LAST:event_btnListoActionPerformed
 
@@ -125,6 +434,7 @@ public class SeleccionFicha extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+
                 new SeleccionFicha().setVisible(true);
             }
         });
@@ -140,4 +450,6 @@ public class SeleccionFicha extends javax.swing.JFrame {
     Object getCbSeleccion() {
         return cbSeleccion;
     }
+    
+    
 }

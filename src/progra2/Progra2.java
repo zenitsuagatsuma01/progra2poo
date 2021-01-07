@@ -24,9 +24,7 @@ public class Progra2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        MenuPrincipal menu = new MenuPrincipal();
-        menu.pack();
-        try {
+                try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Progra2.class.getName()).log(Level.SEVERE, null, ex);
@@ -37,6 +35,8 @@ public class Progra2 {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Progra2.class.getName()).log(Level.SEVERE, null, ex);
         }
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.pack();
         menu.setVisible(true);
         menu.setTitle("Menu Principal Pokenopoly");
     }

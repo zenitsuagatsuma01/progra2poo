@@ -26,8 +26,7 @@ public class ThreadCliente extends Thread implements Serializable{
     private int numCasas;
     private int numHoteles;
     private int numPropiedades;
-    //private Tablero tablero;
-    //private Ficha ficha;
+    private Ficha ficha;
     //private ArrayList<Propiedad> propiedades;
     //private ArrayList<Casas> casas;
     //private ArrayList<Hotel> hoteles;
@@ -75,6 +74,16 @@ public class ThreadCliente extends Thread implements Serializable{
     public void actuarCarta(){      // Para reaccionar ante las diferentes cartas del juego
         
     }
+
+    public Ficha getFicha() {
+        return ficha;
+    }
+
+    public void setFicha(Ficha ficha) {
+        this.ficha = ficha;
+    }
+    
+    
     
     public void run (){
         
@@ -106,7 +115,7 @@ public class ThreadCliente extends Thread implements Serializable{
                     break;                    
                     case 4: // Se inicia la partida
                         refPantalla.setInicioPartida();
-                        refPantalla.seleccionFicha();
+                        //refPantalla.seleccionFicha();
                     break;
                     case 5: // se guardan los datos de cada jugador
                         String nombreJugador = this.getRefPantalla().getNombreJugador();
