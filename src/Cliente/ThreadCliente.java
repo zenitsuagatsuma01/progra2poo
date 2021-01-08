@@ -139,9 +139,9 @@ public class ThreadCliente extends Thread implements Serializable{
                             Ficha newFicha = listaFichas.get(i);
                             System.out.println(newFicha.getLabelFicha());
                             System.out.println(newFicha.getLabelFicha().getIcon());
-                            this.getRefPantalla().getLblElMuelle4().add(newFicha.getLabelFicha());
-                            refPantalla.getLblElMuelle4().revalidate();
-                            refPantalla.getLblElMuelle4().repaint();
+                            this.getRefPantalla().getLblGo().add(newFicha.getLabelFicha());
+                            refPantalla.getLblGo().revalidate();
+                            refPantalla.getLblGo().repaint();
 
                         }
                         

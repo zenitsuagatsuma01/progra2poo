@@ -424,6 +424,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel110.setBounds(10, 180, 170, 50);
 
         jPanel70.setBackground(new java.awt.Color(0, 0, 153));
+        jPanel70.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel70Layout = new javax.swing.GroupLayout(jPanel70);
         jPanel70.setLayout(jPanel70Layout);
@@ -433,7 +434,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel70Layout.setVerticalGroup(
             jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel70);
@@ -472,6 +473,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle1.setBounds(1250, 400, 118, 70);
 
         jPanel72.setBackground(new java.awt.Color(0, 0, 153));
+        jPanel72.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel72Layout = new javax.swing.GroupLayout(jPanel72);
         jPanel72.setLayout(jPanel72Layout);
@@ -481,7 +483,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel72Layout.setVerticalGroup(
             jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGap(0, 68, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel72);
@@ -533,6 +535,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle4.setBounds(1250, 220, 118, 60);
 
         jPanel77.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel77.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel77Layout = new javax.swing.GroupLayout(jPanel77);
         jPanel77.setLayout(jPanel77Layout);
@@ -542,7 +545,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel77Layout.setVerticalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel77);
@@ -570,7 +573,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle5.setBounds(1248, 0, 120, 60);
 
         jPanel38.setBackground(new java.awt.Color(0, 153, 0));
-        jPanel38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel38.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
         jPanel38.setLayout(jPanel38Layout);
@@ -587,6 +590,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel38.setBounds(1230, 110, 20, 60);
 
         jPanel36.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel36.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
@@ -596,7 +600,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGap(0, 48, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel36);
@@ -660,6 +664,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle10.setBounds(290, 0, 120, 60);
 
         jPanel53.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel53.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel53Layout = new javax.swing.GroupLayout(jPanel53);
         jPanel53.setLayout(jPanel53Layout);
@@ -669,7 +674,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel53Layout.setVerticalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel53);
@@ -710,6 +715,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle12.setBounds(1028, 0, 110, 60);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel5.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -719,7 +725,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel5);
@@ -743,6 +749,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle13.setBounds(910, 0, 120, 50);
 
         jPanel46.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel46.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
@@ -752,7 +759,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel46);
@@ -776,6 +783,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle14.setBounds(780, 0, 130, 50);
 
         jPanel28.setBackground(new java.awt.Color(255, 0, 0));
+        jPanel28.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -785,7 +793,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel28);
@@ -826,6 +834,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle16.setBounds(530, 0, 120, 50);
 
         jPanel31.setBackground(new java.awt.Color(255, 0, 0));
+        jPanel31.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -835,7 +844,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
+            .addGap(0, 18, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel31);
@@ -871,6 +880,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle18.setBounds(410, 0, 120, 50);
 
         jPanel18.setBackground(new java.awt.Color(255, 0, 0));
+        jPanel18.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -880,7 +890,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel18);
@@ -926,6 +936,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle20.setBounds(160, 0, 130, 50);
 
         jPanel54.setBackground(new java.awt.Color(255, 102, 0));
+        jPanel54.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel54Layout = new javax.swing.GroupLayout(jPanel54);
         jPanel54.setLayout(jPanel54Layout);
@@ -935,7 +946,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel54Layout.setVerticalGroup(
             jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel54);
@@ -959,6 +970,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle21.setBounds(10, 60, 150, 60);
 
         jPanel57.setBackground(new java.awt.Color(255, 102, 0));
+        jPanel57.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
         jPanel57.setLayout(jPanel57Layout);
@@ -968,7 +980,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel57Layout.setVerticalGroup(
             jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel57);
@@ -992,6 +1004,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle22.setBounds(10, 120, 150, 60);
 
         jPanel116.setBackground(new java.awt.Color(255, 102, 0));
+        jPanel116.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel116Layout = new javax.swing.GroupLayout(jPanel116);
         jPanel116.setLayout(jPanel116Layout);
@@ -1001,7 +1014,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel116Layout.setVerticalGroup(
             jPanel116Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel116);
@@ -1042,6 +1055,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle24.setBounds(10, 230, 150, 60);
 
         jPanel113.setBackground(new java.awt.Color(255, 0, 153));
+        jPanel113.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel113Layout = new javax.swing.GroupLayout(jPanel113);
         jPanel113.setLayout(jPanel113Layout);
@@ -1051,7 +1065,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel113Layout.setVerticalGroup(
             jPanel113Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel113);
@@ -1070,6 +1084,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle25.setBounds(440, 590, 120, 70);
 
         jPanel118.setBackground(new java.awt.Color(255, 0, 153));
+        jPanel118.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel118Layout = new javax.swing.GroupLayout(jPanel118);
         jPanel118.setLayout(jPanel118Layout);
@@ -1079,13 +1094,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel118Layout.setVerticalGroup(
             jPanel118Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel118);
         jPanel118.setBounds(160, 400, 20, 60);
 
         jPanel109.setBackground(new java.awt.Color(255, 0, 153));
+        jPanel109.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel109Layout = new javax.swing.GroupLayout(jPanel109);
         jPanel109.setLayout(jPanel109Layout);
@@ -1095,13 +1111,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel109Layout.setVerticalGroup(
             jPanel109Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGap(0, 68, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel109);
         jPanel109.setBounds(160, 520, 20, 70);
 
         jPanel24.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel24.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -1111,13 +1128,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel24);
         jPanel24.setBounds(160, 590, 150, 10);
 
         jPanel7.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel7.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1127,7 +1145,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel7);
@@ -1236,6 +1254,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle32.setBounds(310, 600, 130, 60);
 
         jPanel34.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel34.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
@@ -1245,7 +1264,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel34);
@@ -1325,6 +1344,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle36.setBounds(560, 600, 120, 60);
 
         jPanel9.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel9.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1334,7 +1354,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel9);
@@ -1375,6 +1395,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblElMuelle38.setBounds(1100, 600, 130, 60);
 
         jPanel11.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel11.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -1384,7 +1405,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         pnlTablero.add(jPanel11);
