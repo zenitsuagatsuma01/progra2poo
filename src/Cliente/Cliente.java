@@ -5,6 +5,7 @@
  */
 package Cliente;
 
+import Partida.FileManager;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.Socket;
@@ -32,6 +33,11 @@ public class Cliente implements Serializable{
             refPantalla.setTitle("Monopoly - Nombre del jugador: " + nombre);       // Se pone el titulo de la ventana del jugador
             refPantalla.setNombreJugador(nombre);    // Se pone el nombre del jugador
             hiloCliente.setNombre(nombre);
+            Integer numJugador = (Integer)FileManager.readObject("src/Partida/numjugador.dat");
+            numJugador = numJugador + 1;
+            FileManager.writeObject(numJugador, "src/Partida/numjugador.dat");
+            hiloCliente.setNumJugador(numJugador);
+            System.out.println("numjugador es " + numJugador);
             //hiloCliente.writer.writeInt(1); //instruccion para el switch del thraed servidor
             //hiloCliente.writer.writeUTF(nombre); //instruccion para el switch del thraed servidor
         }

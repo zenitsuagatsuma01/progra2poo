@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -1435,6 +1436,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlToolbar.add(btnHipotecar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 170, 70));
 
         btnEndTurn.setText("Terminar turno");
+        btnEndTurn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEndTurnActionPerformed(evt);
+            }
+        });
         pnlToolbar.add(btnEndTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 200, 130, 70));
 
         lblSeleccionFicha.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -1452,8 +1458,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         });
         pnlToolbar.add(btnSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, 160, 70));
 
-        lblDado1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblDado1.setForeground(new java.awt.Color(102, 255, 255));
+        lblDado1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        lblDado1.setForeground(new java.awt.Color(255, 0, 51));
         lblDado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1471,8 +1477,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         pnlToolbar.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 120, -1));
 
-        lblDado2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblDado2.setForeground(new java.awt.Color(153, 255, 255));
+        lblDado2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        lblDado2.setForeground(new java.awt.Color(255, 0, 0));
         lblDado2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -1529,6 +1535,30 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     public void setLblFichaJugador(JLabel lblFichaJugador) {
         this.lblFichaJugador = lblFichaJugador;
     }
+
+    public JLabel getLblDado1() {
+        return lblDado1;
+    }
+
+    public void setLblDado1(JLabel lblDado1) {
+        this.lblDado1 = lblDado1;
+    }
+
+    public JLabel getLblDado2() {
+        return lblDado2;
+    }
+
+    public void setLblDado2(JLabel lblDado2) {
+        this.lblDado2 = lblDado2;
+    }
+
+    public JPanel getLblGo1() {
+        return lblGo1;
+    }
+
+    public void setLblGo1(JPanel lblGo1) {
+        this.lblGo1 = lblGo1;
+    }
     
     
     
@@ -1546,21 +1576,51 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnLanzarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanzarDadosActionPerformed
-        try {
 
-            if (nombreTurno.equals(this.getTitle())){               // Si el jugador que lanzó el dado es el que tiene el turno actualmente entonces se envia la accion de lanzar dado
-                // TODO add your handling code here:
-                refCliente.hiloCliente.writer.writeInt(3);
-
-                if (btnLanzarDados.isEnabled())
-                btnLanzarDados.setEnabled(false);
+        if (this.getRefCliente().getHiloCliente().isTurnoConseguido()){
+            try {
+                this.getRefCliente().getHiloCliente().writer.writeInt(9);
+                this.getRefCliente().getHiloCliente().writer.writeUTF(this.getLblNombreJugador().getText());
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
-            else
-            JOptionPane.showMessageDialog(this, "NO ES SU TURNO");
-
-        } catch (IOException ex) {
-
+            
         }
+        
+        else if (!this.getRefCliente().getHiloCliente().isTurnoConseguido()){
+            Random random = new Random();
+        int dado1 = random.nextInt(6); // se hace pasar de 0-5 a 1-6 sumandole 1 al resultado
+        dado1 = dado1 + 1;
+        this.getLblDado1().setText(""+dado1);
+        
+        int dado2 = random.nextInt(6); // se hace pasar de 0-5 a 1-6 sumandole 1 al resultado
+        dado2 = dado2 + 1;
+        this.getLblDado2().setText(""+dado2);
+        
+        int dadoTotal = dado1+dado2;
+        
+        System.out.println(dadoTotal);
+        ArrayList<Integer> listaDados = (ArrayList<Integer>)FileManager.readObject("src/Partida/listadados.dat");
+        if (listaDados.contains(dadoTotal)){
+            this.getTxaHistorial().append(this.getLblNombreJugador().getText() + ", su resultado de dado es repetido. Por favor lance los dados de nuevo.\n");
+            return;
+        }
+        this.getRefCliente().getHiloCliente().setTotalRoll(dadoTotal);
+        listaDados.add(dadoTotal);
+        System.out.println(listaDados);
+        FileManager.writeObject(listaDados, "src/Partida/listadados.dat");
+        ArrayList<String> listaNombres = (ArrayList<String>)FileManager.readObject("src/Partida/listanombres.dat");
+        listaNombres.add(this.getRefCliente().getHiloCliente().getNombre());
+        FileManager.writeObject(listaNombres, "src/Partida/listanombres.dat");
+        this.getRefCliente().getHiloCliente().setTurnoConseguido(true);
+        try {
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(3);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+        
     }//GEN-LAST:event_btnLanzarDadosActionPerformed
 
     private void btnSeleccionFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionFichaActionPerformed
@@ -1581,7 +1641,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1604,7 +1663,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1696,7 +1754,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1719,7 +1776,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1736,13 +1792,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setFicha(newFicha);
             JLabel newLabel = new JLabel("");
             newLabel.setVisible(true);
-            //this.getLblGo().add(newLabel);
             newFicha.setLabelFicha(newLabel);
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(newFicha.getImagen()).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
             newFicha.getLabelFicha().setIcon((imageIcon));
-            System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1765,7 +1818,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1788,7 +1840,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1811,7 +1862,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1834,7 +1884,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1857,7 +1906,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1880,7 +1928,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             newFicha.getLabelFicha().setIcon((imageIcon));
             System.out.println(newFicha.getLabelFicha().getIcon());
             newFicha.getLabelFicha().setVisible(true);
-            System.out.println(this.getPnlTablero().getLayout().getClass().getName());
             listaFichas.add(newFicha);
             FileManager.writeObject(listaFichas, "src/Partida/listafichas.dat");
             try {
@@ -1891,6 +1938,16 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getLblFichaJugador().setIcon(imageIcon);
         }
     }//GEN-LAST:event_btnSeleccionFichaActionPerformed
+
+    private void btnEndTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEndTurnActionPerformed
+        // TODO add your handling code here:
+        try {
+                this.getRefCliente().getHiloCliente().writer.writeInt(9);
+                this.getRefCliente().getHiloCliente().writer.writeUTF(this.getLblNombreJugador().getText());
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_btnEndTurnActionPerformed
 
     public JLabel getLblStatusPartida() {
         return lblStatusPartida;
@@ -1956,7 +2013,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         this.lblNumDinero = lblNumDinero;
     }
     
-    
+    public void setFinalPartida(){
+        this.lblStatusPartida.setText("Partida terminada");
+    }
 
     
     public void setInicioPartida(){             // Configura la partida con los datos iniciales para empezarla

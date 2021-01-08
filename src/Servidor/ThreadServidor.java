@@ -5,12 +5,14 @@
  */
 package Servidor;
 
+import Partida.FileManager;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -91,18 +93,386 @@ public class ThreadServidor extends Thread implements Serializable{
                         }
                     break;
                     case 3:
-                        int dado1 = (new Random()).nextInt(6)+1;                // Codigo placeholder para los dados, en realidad deberian tener su propia clase y estar al iniciar la partida
-                        int dado2 = (new Random()).nextInt(6)+1;
-                        String next = server.getNextTurno();
+                        int vecesTirado = this.server.getNumTirado();
+                        vecesTirado = vecesTirado + 1;
+                        this.server.setNumTirado(vecesTirado);
+                        ArrayList<Integer> listaOrden = (ArrayList<Integer>)FileManager.readObject("src/Partida/listadados.dat");
+                        System.out.println(listaOrden);
+                        ArrayList<String> listaNombres = (ArrayList<String>)FileManager.readObject("src/Partida/listanombres.dat");
+                        int jugador1Orden = 1;
+                        int jugador2Orden = 1;
+                        int jugador3Orden = 1;
+                        int jugador4Orden = 1;
+                        int jugador5Orden = 1;
+                        int jugador6Orden = 1;
+                        ArrayList<Integer> listaOrden2 = (ArrayList<Integer>)FileManager.readObject("src/Partida/listadados2.dat");
+                        ArrayList<String> nombresOrden = (ArrayList<String>)FileManager.readObject("src/Partida/nombresorden.dat");
+                        int decidido = 0;
                         
-                        for (int i = 0; i < server.conexiones.size(); i++) {
-                            ThreadServidor current = server.conexiones.get(i);
-                            current.writer.writeInt(3);
-                            current.writer.writeUTF(nombre);
-                            current.writer.writeInt(dado1);
-                            current.writer.writeInt(dado2);
-                            current.writer.writeUTF(next);
-                        }
+                        if (this.server.isTurnosDecididos() == false){
+                             if (vecesTirado == server.getLimiteMax()){
+                            
+                            if (server.getLimiteMax() == 2){
+                                
+                                if (listaOrden.get(0) < listaOrden.get(1)){
+                                    
+                                    nombresOrden.add(listaNombres.get(1));
+                                    nombresOrden.add(listaNombres.get(0));
+                                    FileManager.writeObject(nombresOrden, "src/Partida/nombresorden.dat");
+                                    this.server.setNombreOrder(nombresOrden);
+                                    System.out.println(this.server.getNombreOrder());
+                                    System.out.println(" 1 menor que 2 " + nombresOrden);
+                                    this.server.setTurnosDecididos(true);
+                                    System.out.println(this.server.isTurnosDecididos());
+                                    decidido = 1;
+                                }
+                                else if (listaOrden.get(0) > listaOrden.get(1)){
+
+                                    nombresOrden.add(listaNombres.get(0));
+                                    nombresOrden.add(listaNombres.get(1));
+                                    FileManager.writeObject(nombresOrden, "src/Partida/nombresorden.dat");
+                                    this.server.setNombreOrder(nombresOrden);
+                                    System.out.println(this.server.getNombreOrder());
+                                    System.out.println(" 1 menor que 2 " + nombresOrden);
+                                    this.server.setTurnosDecididos(true);
+                                    System.out.println(this.server.isTurnosDecididos());
+                                    decidido = 1;
+                                }
+                                
+                                else if (listaOrden.get(0) == listaOrden.get(1)){
+                                    System.out.println("Los dos jugadores sacaron el mismo numero. Por favor tiren de nuevo.");
+                                }
+                                
+                            }
+                            
+                            if (server.getLimiteMax() == 3){
+                                
+                                if (listaOrden.get(0) < listaOrden.get(1))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(2))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(0))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(2))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(0))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(1))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                System.out.println(jugador1Orden);
+                                System.out.println(jugador2Orden);
+                                System.out.println(jugador3Orden);
+                                
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                
+                                nombresOrden.set(jugador1Orden-1, listaNombres.get(0));
+                                nombresOrden.set(jugador2Orden-1, listaNombres.get(1));
+                                nombresOrden.set(jugador3Orden-1, listaNombres.get(2));
+                                
+                                System.out.println(nombresOrden);
+                                
+                                FileManager.writeObject(nombresOrden, "src/Partida/nombresorden.dat");
+                                this.server.setNombreOrder(nombresOrden);
+                                System.out.println(this.server.getNombreOrder());
+                                this.server.setTurnosDecididos(true);
+                                decidido = 1;
+                                
+                            }
+                            
+                            if (server.getLimiteMax() == 4){
+                                
+                                if (listaOrden.get(0) < listaOrden.get(1))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(2))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(3))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(0))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(2))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(3))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(0))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(1))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(3))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(0))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(1))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(2))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                System.out.println(jugador1Orden);
+                                System.out.println(jugador2Orden);
+                                System.out.println(jugador3Orden);
+                                System.out.println(jugador4Orden);
+                                
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                
+                                nombresOrden.set(jugador1Orden-1, listaNombres.get(0));
+                                nombresOrden.set(jugador2Orden-1, listaNombres.get(1));
+                                nombresOrden.set(jugador3Orden-1, listaNombres.get(2));
+                                nombresOrden.set(jugador4Orden-1, listaNombres.get(3));
+                                
+                                System.out.println(nombresOrden);
+                                
+                                FileManager.writeObject(nombresOrden, "src/Partida/nombresorden.dat");
+                                this.server.setNombreOrder(nombresOrden);
+                                System.out.println(this.server.getNombreOrder());
+                                this.server.setTurnosDecididos(true);
+                                decidido = 1;
+                                
+                            }
+                            
+                            if (server.getLimiteMax() == 5){
+                                
+                                if (listaOrden.get(0) < listaOrden.get(1))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(2))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(3))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(4))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(0))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(2))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(3))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(4))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(0))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(1))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(3))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(4))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(0))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(1))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(2))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(4))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(4) < listaOrden.get(0))
+                                    jugador5Orden = jugador5Orden + 1;
+                                
+                                if (listaOrden.get(4) < listaOrden.get(1))
+                                    jugador5Orden = jugador5Orden + 1;
+                                
+                                if (listaOrden.get(4) < listaOrden.get(2))
+                                    jugador5Orden = jugador5Orden + 1;
+                                
+                                if (listaOrden.get(4) < listaOrden.get(3))
+                                    jugador5Orden = jugador5Orden + 1;
+                                
+                                System.out.println(jugador1Orden);
+                                System.out.println(jugador2Orden);
+                                System.out.println(jugador3Orden);
+                                System.out.println(jugador4Orden);
+                                System.out.println(jugador5Orden);
+                                
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                
+                                nombresOrden.set(jugador1Orden-1, listaNombres.get(0));
+                                nombresOrden.set(jugador2Orden-1, listaNombres.get(1));
+                                nombresOrden.set(jugador3Orden-1, listaNombres.get(2));
+                                nombresOrden.set(jugador4Orden-1, listaNombres.get(3));
+                                nombresOrden.set(jugador5Orden-1, listaNombres.get(4));
+                                
+                                System.out.println(nombresOrden);
+                                
+                                FileManager.writeObject(nombresOrden, "src/Partida/nombresorden.dat");
+                                this.server.setNombreOrder(nombresOrden);
+                                System.out.println(this.server.getNombreOrder());
+                                this.server.setTurnosDecididos(true);
+                                decidido = 1;
+                                
+                            }
+                            
+                            if (server.getLimiteMax() == 6){
+                                
+                                if (listaOrden.get(0) < listaOrden.get(1))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(2))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(3))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(4))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(0) < listaOrden.get(5))
+                                    jugador1Orden = jugador1Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(0))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(2))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(3))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(4))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(1) < listaOrden.get(5))
+                                    jugador2Orden = jugador2Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(0))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(1))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(3))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(4))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(2) < listaOrden.get(5))
+                                    jugador3Orden = jugador3Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(0))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(1))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(2))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(4))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(3) < listaOrden.get(5))
+                                    jugador4Orden = jugador4Orden + 1;
+                                
+                                if (listaOrden.get(4) < listaOrden.get(0))
+                                    jugador5Orden = jugador5Orden + 1;
+                                
+                                if (listaOrden.get(4) < listaOrden.get(1))
+                                    jugador5Orden = jugador5Orden + 1;
+                                
+                                if (listaOrden.get(4) < listaOrden.get(2))
+                                    jugador5Orden = jugador5Orden + 1;
+                                
+                                if (listaOrden.get(4) < listaOrden.get(3))
+                                    jugador5Orden = jugador5Orden + 1;
+                                
+                                if (listaOrden.get(4) < listaOrden.get(5))
+                                    jugador5Orden = jugador5Orden + 1;
+                                
+                                if (listaOrden.get(5) < listaOrden.get(0))
+                                    jugador6Orden = jugador6Orden + 1;
+                                
+                                if (listaOrden.get(5) < listaOrden.get(1))
+                                    jugador6Orden = jugador6Orden + 1;
+                                
+                                if (listaOrden.get(5) < listaOrden.get(2))
+                                    jugador6Orden = jugador6Orden + 1;
+                                
+                                if (listaOrden.get(5) < listaOrden.get(3))
+                                    jugador6Orden = jugador6Orden + 1;
+                                
+                                if (listaOrden.get(5) < listaOrden.get(4))
+                                    jugador6Orden = jugador6Orden + 1;
+                                
+                                System.out.println(jugador1Orden);
+                                System.out.println(jugador2Orden);
+                                System.out.println(jugador3Orden);
+                                System.out.println(jugador4Orden);
+                                System.out.println(jugador5Orden);
+                                System.out.println(jugador6Orden);
+                                
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                nombresOrden.add("placeholder");
+                                
+                                nombresOrden.set(jugador1Orden-1, listaNombres.get(0));
+                                nombresOrden.set(jugador2Orden-1, listaNombres.get(1));
+                                nombresOrden.set(jugador3Orden-1, listaNombres.get(2));
+                                nombresOrden.set(jugador4Orden-1, listaNombres.get(3));
+                                nombresOrden.set(jugador5Orden-1, listaNombres.get(4));
+                                nombresOrden.set(jugador6Orden-1, listaNombres.get(5));
+                                
+                                System.out.println(nombresOrden);
+                                
+                                FileManager.writeObject(nombresOrden, "src/Partida/nombresorden.dat");
+                                this.server.setNombreOrder(nombresOrden);
+                                System.out.println(this.server.getNombreOrder());
+                                this.server.setTurnosDecididos(true);
+                                decidido = 1;
+                                
+                            }
+                            
+                            for (int i = 0; i < server.conexiones.size(); i++) {
+                                ThreadServidor current = server.conexiones.get(i);
+                                current.writer.writeInt(9);
+                                current.writer.writeInt(decidido);
+                            }
+                            
+                        }    
+                    }
+                        
+                       
                     break;
                     case 4: // iniciar partida
                         // al iniciar la partida se deberían tirar los dados para determinar el orden
@@ -160,6 +530,14 @@ public class ThreadServidor extends Thread implements Serializable{
                             current.writer.writeInt(cantidadDinero);
                         }
                         break;
+                    case 9:
+                        String turnoActual = reader.readUTF();  // Para cambiar de turno
+                        this.server.proximoTurno(turnoActual);
+                        break;
+                    case 10:
+                        this.server.enviarTurnoInicial();
+                        break;
+                        
                 }
             } catch (IOException ex) {
                 

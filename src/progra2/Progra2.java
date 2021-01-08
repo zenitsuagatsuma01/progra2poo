@@ -39,8 +39,23 @@ public class Progra2 {
             Logger.getLogger(Progra2.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        boolean turnosDecididos = false;
+        FileManager.writeObject(turnosDecididos, "src/Partida/turnosdecididos.dat");
+                
         ArrayList<Ficha> fichasPartida = new ArrayList<Ficha>();
         FileManager.writeObject(fichasPartida, "src/Partida/listafichas.dat");
+        ArrayList<String> nombreOrden = new ArrayList<String>();
+        FileManager.writeObject(nombreOrden, "src/Partida/nombreorden.dat");
+        ArrayList<Integer> listaDados = new ArrayList<Integer>();
+        FileManager.writeObject(listaDados, "src/Partida/listadados.dat");
+        ArrayList<Integer> listaDados2 = new ArrayList<Integer>();
+        FileManager.writeObject(listaDados2, "src/Partida/listadados2.dat");
+        Integer numJugador = 0;
+        FileManager.writeObject(numJugador, "src/Partida/numjugador.dat");
+        ArrayList<String> nombresOrden = new ArrayList<String>();
+        FileManager.writeObject(nombresOrden, "src/Partida/nombresorden.dat");
+        ArrayList<String> listaNombres = new ArrayList<String>();
+        FileManager.writeObject(listaNombres, "src/Partida/listanombres.dat");
         MenuPrincipal menu = new MenuPrincipal();
         menu.pack();
         menu.setVisible(true);

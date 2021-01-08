@@ -41,6 +41,10 @@ public class ThreadCliente extends Thread implements Serializable{
     protected boolean quebrado = false;
     private boolean running = true;
     transient public InterfazCliente refPantalla;
+    private int numOrden = 1;
+    private int totalRoll = 0;
+    private int numJugador = 0;
+    private boolean turnoConseguido = false;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -67,6 +71,50 @@ public class ThreadCliente extends Thread implements Serializable{
         numPropiedades = numPropiedadesCargado;
         quebrado = quebradoCargado;
     }
+
+    public int getTotalRoll() {
+        return totalRoll;
+    }
+
+    public void setTotalRoll(int totalRoll) {
+        this.totalRoll = totalRoll;
+    }
+
+    public int getNumOrden() {
+        return numOrden;
+    }
+
+    public void setNumOrden(int numOrden) {
+        this.numOrden = numOrden;
+    }
+
+    public Banco getBanco() {
+        return banco;
+    }
+
+    public boolean isTurnoConseguido() {
+        return turnoConseguido;
+    }
+
+    public void setTurnoConseguido(boolean turnoConseguido) {
+        this.turnoConseguido = turnoConseguido;
+    }
+    
+    
+
+    public void setBanco(Banco banco) {
+        this.banco = banco;
+    }
+
+    public int getNumJugador() {
+        return numJugador;
+    }
+
+    public void setNumJugador(int numJugador) {
+        this.numJugador = numJugador;
+    }
+    
+    
     
     public void solicitarPropiedad(){ // Parametro debería en realidad ser un objeto tipo Propiedad pero la clase no existe todavía
         
@@ -139,9 +187,9 @@ public class ThreadCliente extends Thread implements Serializable{
                             Ficha newFicha = listaFichas.get(i);
                             System.out.println(newFicha.getLabelFicha());
                             System.out.println(newFicha.getLabelFicha().getIcon());
-                            this.getRefPantalla().getLblGo().add(newFicha.getLabelFicha());
-                            refPantalla.getLblGo().revalidate();
-                            refPantalla.getLblGo().repaint();
+                            this.getRefPantalla().getLblGo1().add(newFicha.getLabelFicha());
+                            refPantalla.getLblGo1().revalidate();
+                            refPantalla.getLblGo1().repaint();
 
                         }
                         
@@ -156,7 +204,41 @@ public class ThreadCliente extends Thread implements Serializable{
                         this.banco.darDinero(this, cantidadDinero);
                         this.refPantalla.getLblNumDinero().setText(this.getDinero() + " $");
                         break;
-                    
+                    case 9:
+                        int decidido = reader.readInt();
+                        
+                        if (decidido == 1){
+                            System.out.println(decidido);
+                            ArrayList<Integer> listaOrden = (ArrayList<Integer>)FileManager.readObject("src/Partida/listadados2.dat");
+                            ArrayList<String> nombresOrden = (ArrayList<String>)FileManager.readObject("src/Partida/nombresorden.dat");
+                            ArrayList<String> listaNombres = (ArrayList<String>)FileManager.readObject("src/Partida/listanombres.dat");
+                            System.out.println(this.getTotalRoll());
+                            System.out.println(this.getNombre());
+
+                            
+                            nombresOrden = (ArrayList<String>)FileManager.readObject("src/Partida/nombresorden.dat");
+                            System.out.println(nombresOrden);
+                            this.refPantalla.getTxaHistorial().append("El orden ha sido decidido. El orden será:\n");
+                            int contPos = 1;
+                            for (int i = 0; i < nombresOrden.size(); i++){
+                                this.refPantalla.getTxaHistorial().append(contPos + ". " + nombresOrden.get(i) + "\n");
+                                contPos = contPos + 1;
+                            }
+                            this.writer.writeInt(10);
+                        }
+                        else if (decidido == 0){
+                            this.refPantalla.getTxaHistorial().append("Por favor vuelva a lanzar los dados.\n");
+                        }
+                        
+                        
+                        
+                        break;
+                    case 10:
+                        refPantalla.setFinalPartida();
+                        break;
+                    case 11:
+                        refPantalla.setNombreTurno(reader.readUTF());
+                    break;
                 }
             } catch (IOException ex) {
                 

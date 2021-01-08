@@ -34,11 +34,16 @@ public class Servidor extends Thread implements Serializable{
     public Servidor partidaGuardada;
     private int contFichas = 0;
     private boolean turnosDecididos = false;
+    private int numTirado = 0;
+    private ArrayList<String> nombreOrder;
+    private ArrayList<String> listaPerdedores;
 
     public Servidor(PantallaServidor refPantalla) {
         this.refPantalla = refPantalla;
         conexiones = new ArrayList<ThreadServidor>();
         this.refPantalla.setSrv(this);
+        this.nombreOrder = new ArrayList<String>();
+        this.listaPerdedores = new ArrayList<String>();
     }
     
     public Servidor(PantallaServidor refPantalla, int turnoCargado, int limiteMaxCargado, Banco bancoCargado, Servidor servidorCargado) {
@@ -51,6 +56,16 @@ public class Servidor extends Thread implements Serializable{
         flagCargado = true;
         partidaGuardada = servidorCargado;
     }
+
+    public ArrayList<String> getListaPerdedores() {
+        return listaPerdedores;
+    }
+
+    public void setListaPerdedores(ArrayList<String> listaPerdedores) {
+        this.listaPerdedores = listaPerdedores;
+    }
+    
+    
 
     public int getContFichas() {
         return contFichas;
@@ -66,6 +81,22 @@ public class Servidor extends Thread implements Serializable{
 
     public void setTurnosDecididos(boolean turnosDecididos) {
         this.turnosDecididos = turnosDecididos;
+    }
+
+    public int getNumTirado() {
+        return numTirado;
+    }
+
+    public void setNumTirado(int numTirado) {
+        this.numTirado = numTirado;
+    }
+
+    public ArrayList<String> getNombreOrder() {
+        return nombreOrder;
+    }
+
+    public void setNombreOrder(ArrayList<String> nombreOrder) {
+        this.nombreOrder = nombreOrder;
     }
 
     
@@ -112,6 +143,71 @@ public class Servidor extends Thread implements Serializable{
         refPantalla.addMessage("-Partida cargada correctamente.");
     }
     
+    public void signalTerminarPartida() throws IOException{
+        for (int i = 0; i < conexiones.size(); i++) {
+            ThreadServidor current = conexiones.get(i);
+            current.writer.writeInt(13);
+        }
+    }
+    
+    public void enviarTurnoInicial() throws IOException{            // Manda el turno inicial
+
+        for (int i = 0; i < conexiones.size(); i++){
+            ThreadServidor current = conexiones.get(i);
+            current.writer.writeInt(11);
+            current.writer.writeUTF(nombreOrder.get(0));
+        }
+        
+        return;
+    }
+    
+    public void proximoTurno(String turnoActual) throws IOException{
+        String nombreTurno = "";
+        System.out.println("El turnoActual de proximoTurno al comienzo es " + turnoActual);
+        if (this.nombreOrder.size() == 1){
+            ArrayList<String> logLeida = (ArrayList<String>)FileManager.readObject("src/Archivos/log.dat");
+            this.enviarMensaje("El jugador " + nombreOrder.get(0) + " ha ganado la partida!");
+            logLeida.add("El jugador " + nombreOrder.get(0) + " ha ganado la partida!\n");
+            FileManager.writeObject(logLeida, "src/Archivos/log.dat");
+            this.signalTerminarPartida();
+            return;
+        }
+        
+        for (int i = 0; i < nombreOrder.size(); i++) {
+            if (turnoActual.contains(nombreOrder.get(i))){
+                if (i + 1 >= nombreOrder.size()){
+                    nombreTurno = nombreOrder.get(0);
+                    break;
+                }
+                else
+                    nombreTurno = nombreOrder.get(i+1);
+            }
+        }
+        
+        System.out.println("El nuevo turno de proximoTurno es " + nombreTurno);
+        System.out.println("La lista de perdedores del servidor es " + this.getListaPerdedores());
+        if (this.getListaPerdedores().contains(nombreTurno)){
+            for (int i = 0; i < nombreOrder.size(); i++) {
+            if (nombreTurno.equals(nombreOrder.get(i))){
+                nombreOrder.remove(nombreOrder.get(i));
+                if (i + 1 >= nombreOrder.size()){
+                    nombreTurno = nombreOrder.get(0);
+                    break;
+                }
+                else
+                    nombreTurno = nombreOrder.get(i+1);
+            }
+        }
+            System.out.println(nombreTurno);
+        }
+        
+        for (int i = 0; i < conexiones.size(); i++) {
+            ThreadServidor current = conexiones.get(i);
+            current.writer.writeInt(11);
+            current.writer.writeUTF(nombreTurno);
+        }
+    }
+    
     public void stopserver(){
         running = false;
     }
@@ -127,7 +223,13 @@ public class Servidor extends Thread implements Serializable{
         return conexiones.get(turno).nombre;
     }
     
-    
+    public void enviarMensaje(String msg) throws IOException{
+        for (int i = 0; i < conexiones.size(); i++) {
+            ThreadServidor current = conexiones.get(i);
+            current.writer.writeInt(7);
+            current.writer.writeUTF(msg);
+        }
+    }
     
     public void run(){
         int contadorDeConexiones = 0;
