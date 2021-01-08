@@ -356,8 +356,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblStatusPartida.setText("Esperando para iniciar...");
         jPanel1.add(lblStatusPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 160, 30));
 
-        lblLogo.setIcon(new ImageIcon("src/Imagenes/logo.png"));
-        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 400, 130));
+        lblLogo.setIcon(new ImageIcon("src/Imagenes/logosmall.png"));
+        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 370, 130));
 
         txaHistorial.setColumns(20);
         txaHistorial.setRows(5);
