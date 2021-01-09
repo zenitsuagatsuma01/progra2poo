@@ -303,46 +303,6 @@
             <Property name="useNullLayout" type="boolean" value="true"/>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel110">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="10" y="180" width="170" height="50"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel43" alignment="1" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel43" pref="42" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel43">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="ARCA COMUNAL"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
             <Container class="javax.swing.JPanel" name="jPanel70">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -373,7 +333,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblGo1">
+            <Container class="javax.swing.JPanel" name="lblCasilla1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -399,11 +359,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="1_lblGo1">
-                    <CodeVariable name="lblGo1" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="1_lblCasilla1">
+                    <CodeVariable name="lblCasilla1" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblGo1"/>
+                        <ComponentRef name="lblCasilla1"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -417,7 +377,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="1_lblGo1"/>
+                          <CodeExpression id="1_lblCasilla1"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -425,7 +385,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblImpuestos1">
+            <Container class="javax.swing.JPanel" name="lblCasilla3">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -451,11 +411,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="3_lblImpuestos1">
-                    <CodeVariable name="lblImpuestos1" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="3_lblCasilla3">
+                    <CodeVariable name="lblCasilla3" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblImpuestos1"/>
+                        <ComponentRef name="lblCasilla3"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -469,7 +429,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="3_lblImpuestos1"/>
+                          <CodeExpression id="3_lblCasilla3"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -477,7 +437,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle1">
+            <Container class="javax.swing.JPanel" name="lblCasilla4">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -502,11 +462,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="5_lblElMuelle1">
-                    <CodeVariable name="lblElMuelle1" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="5_lblCasilla4">
+                    <CodeVariable name="lblCasilla4" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle1"/>
+                        <ComponentRef name="lblCasilla4"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -520,7 +480,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="5_lblElMuelle1"/>
+                          <CodeExpression id="5_lblCasilla4"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -558,7 +518,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle2">
+            <Container class="javax.swing.JPanel" name="lblCasilla5">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -584,11 +544,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="7_lblElMuelle2">
-                    <CodeVariable name="lblElMuelle2" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="7_lblCasilla5">
+                    <CodeVariable name="lblCasilla5" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle2"/>
+                        <ComponentRef name="lblCasilla5"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -602,7 +562,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="7_lblElMuelle2"/>
+                          <CodeExpression id="7_lblCasilla5"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -610,7 +570,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle3">
+            <Container class="javax.swing.JPanel" name="lblCasilla6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -644,11 +604,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="9_lblElMuelle3">
-                    <CodeVariable name="lblElMuelle3" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="9_lblCasilla6">
+                    <CodeVariable name="lblCasilla6" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle3"/>
+                        <ComponentRef name="lblCasilla6"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -662,7 +622,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="9_lblElMuelle3"/>
+                          <CodeExpression id="9_lblCasilla6"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -670,7 +630,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle4">
+            <Container class="javax.swing.JPanel" name="lblCasilla7">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -704,11 +664,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="11_lblElMuelle4">
-                    <CodeVariable name="lblElMuelle4" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="11_lblCasilla7">
+                    <CodeVariable name="lblCasilla7" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle4"/>
+                        <ComponentRef name="lblCasilla7"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -722,7 +682,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="11_lblElMuelle4"/>
+                          <CodeExpression id="11_lblCasilla7"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -760,7 +720,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle">
+            <Container class="javax.swing.JPanel" name="lblCasilla24">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -773,7 +733,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1228" y="170" width="140" height="50"/>
+                  <AbsoluteConstraints x="10" y="180" width="170" height="50"/>
                 </Constraint>
               </Constraints>
               <SubComponents>
@@ -785,11 +745,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="13_lblElMuelle">
-                    <CodeVariable name="lblElMuelle" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="13_lblCasilla24">
+                    <CodeVariable name="lblCasilla24" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle"/>
+                        <ComponentRef name="lblCasilla24"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -803,7 +763,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="13_lblElMuelle"/>
+                          <CodeExpression id="13_lblCasilla24"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -811,7 +771,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle5">
+            <Container class="javax.swing.JPanel" name="lblCasilla11">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -837,11 +797,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="15_lblElMuelle5">
-                    <CodeVariable name="lblElMuelle5" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="15_lblCasilla11">
+                    <CodeVariable name="lblCasilla11" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle5"/>
+                        <ComponentRef name="lblCasilla11"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -855,7 +815,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="15_lblElMuelle5"/>
+                          <CodeExpression id="15_lblCasilla11"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -923,7 +883,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle7">
+            <Container class="javax.swing.JPanel" name="lblCasilla12">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -957,11 +917,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="17_lblElMuelle7">
-                    <CodeVariable name="lblElMuelle7" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="17_lblCasilla12">
+                    <CodeVariable name="lblCasilla12" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle7"/>
+                        <ComponentRef name="lblCasilla12"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -975,7 +935,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="17_lblElMuelle7"/>
+                          <CodeExpression id="17_lblCasilla12"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -983,7 +943,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle8">
+            <Container class="javax.swing.JPanel" name="lblCasilla10">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1017,11 +977,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="19_lblElMuelle8">
-                    <CodeVariable name="lblElMuelle8" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="19_lblCasilla10">
+                    <CodeVariable name="lblCasilla10" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle8"/>
+                        <ComponentRef name="lblCasilla10"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1035,7 +995,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="19_lblElMuelle8"/>
+                          <CodeExpression id="19_lblCasilla10"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1043,7 +1003,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle9">
+            <Container class="javax.swing.JPanel" name="lblCasilla2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1069,11 +1029,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="21_lblElMuelle9">
-                    <CodeVariable name="lblElMuelle9" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="21_lblCasilla2">
+                    <CodeVariable name="lblCasilla2" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle9"/>
+                        <ComponentRef name="lblCasilla2"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1087,7 +1047,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="21_lblElMuelle9"/>
+                          <CodeExpression id="21_lblCasilla2"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1095,7 +1055,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle10">
+            <Container class="javax.swing.JPanel" name="lblCasilla19">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1122,11 +1082,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="23_lblElMuelle10">
-                    <CodeVariable name="lblElMuelle10" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="23_lblCasilla19">
+                    <CodeVariable name="lblCasilla19" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle10"/>
+                        <ComponentRef name="lblCasilla19"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1140,7 +1100,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="23_lblElMuelle10"/>
+                          <CodeExpression id="23_lblCasilla19"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1178,7 +1138,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle11">
+            <Container class="javax.swing.JPanel" name="lblCasilla9">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1212,11 +1172,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="25_lblElMuelle11">
-                    <CodeVariable name="lblElMuelle11" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="25_lblCasilla9">
+                    <CodeVariable name="lblCasilla9" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle11"/>
+                        <ComponentRef name="lblCasilla9"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1230,7 +1190,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="25_lblElMuelle11"/>
+                          <CodeExpression id="25_lblCasilla9"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1238,7 +1198,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle12">
+            <Container class="javax.swing.JPanel" name="lblCasilla13">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1272,11 +1232,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="27_lblElMuelle12">
-                    <CodeVariable name="lblElMuelle12" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="27_lblCasilla13">
+                    <CodeVariable name="lblCasilla13" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle12"/>
+                        <ComponentRef name="lblCasilla13"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1290,7 +1250,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="27_lblElMuelle12"/>
+                          <CodeExpression id="27_lblCasilla13"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1328,7 +1288,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle13">
+            <Container class="javax.swing.JPanel" name="lblCasilla14">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1362,11 +1322,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="29_lblElMuelle13">
-                    <CodeVariable name="lblElMuelle13" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="29_lblCasilla14">
+                    <CodeVariable name="lblCasilla14" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle13"/>
+                        <ComponentRef name="lblCasilla14"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1380,7 +1340,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="29_lblElMuelle13"/>
+                          <CodeExpression id="29_lblCasilla14"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1418,7 +1378,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle14">
+            <Container class="javax.swing.JPanel" name="lblCasilla15">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1452,11 +1412,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="31_lblElMuelle14">
-                    <CodeVariable name="lblElMuelle14" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="31_lblCasilla15">
+                    <CodeVariable name="lblCasilla15" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle14"/>
+                        <ComponentRef name="lblCasilla15"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1470,7 +1430,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="31_lblElMuelle14"/>
+                          <CodeExpression id="31_lblCasilla15"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1508,7 +1468,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle15">
+            <Container class="javax.swing.JPanel" name="lblCasilla16">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1542,11 +1502,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="33_lblElMuelle15">
-                    <CodeVariable name="lblElMuelle15" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="33_lblCasilla16">
+                    <CodeVariable name="lblCasilla16" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle15"/>
+                        <ComponentRef name="lblCasilla16"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1560,7 +1520,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="33_lblElMuelle15"/>
+                          <CodeExpression id="33_lblCasilla16"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1568,7 +1528,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle16">
+            <Container class="javax.swing.JPanel" name="lblCasilla17">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1602,11 +1562,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="35_lblElMuelle16">
-                    <CodeVariable name="lblElMuelle16" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="35_lblCasilla17">
+                    <CodeVariable name="lblCasilla17" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle16"/>
+                        <ComponentRef name="lblCasilla17"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1620,7 +1580,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="35_lblElMuelle16"/>
+                          <CodeExpression id="35_lblCasilla17"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1658,7 +1618,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle17">
+            <Container class="javax.swing.JPanel" name="lblCasilla21">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1685,11 +1645,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="37_lblElMuelle17">
-                    <CodeVariable name="lblElMuelle17" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="37_lblCasilla21">
+                    <CodeVariable name="lblCasilla21" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle17"/>
+                        <ComponentRef name="lblCasilla21"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1703,7 +1663,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="37_lblElMuelle17"/>
+                          <CodeExpression id="37_lblCasilla21"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1711,7 +1671,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle18">
+            <Container class="javax.swing.JPanel" name="lblCasilla18">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1745,11 +1705,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="39_lblElMuelle18">
-                    <CodeVariable name="lblElMuelle18" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="39_lblCasilla18">
+                    <CodeVariable name="lblCasilla18" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle18"/>
+                        <ComponentRef name="lblCasilla18"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1763,7 +1723,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="39_lblElMuelle18"/>
+                          <CodeExpression id="39_lblCasilla18"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1801,7 +1761,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle19">
+            <Container class="javax.swing.JPanel" name="lblCasilla36">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1842,11 +1802,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="41_lblElMuelle19">
-                    <CodeVariable name="lblElMuelle19" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="41_lblCasilla36">
+                    <CodeVariable name="lblCasilla36" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle19"/>
+                        <ComponentRef name="lblCasilla36"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1860,7 +1820,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="41_lblElMuelle19"/>
+                          <CodeExpression id="41_lblCasilla36"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1868,7 +1828,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle20">
+            <Container class="javax.swing.JPanel" name="lblCasilla20">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1902,11 +1862,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="43_lblElMuelle20">
-                    <CodeVariable name="lblElMuelle20" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="43_lblCasilla20">
+                    <CodeVariable name="lblCasilla20" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle20"/>
+                        <ComponentRef name="lblCasilla20"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1920,7 +1880,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="43_lblElMuelle20"/>
+                          <CodeExpression id="43_lblCasilla20"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1958,7 +1918,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle21">
+            <Container class="javax.swing.JPanel" name="lblCasilla22">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1992,11 +1952,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="45_lblElMuelle21">
-                    <CodeVariable name="lblElMuelle21" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="45_lblCasilla22">
+                    <CodeVariable name="lblCasilla22" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle21"/>
+                        <ComponentRef name="lblCasilla22"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2010,7 +1970,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="45_lblElMuelle21"/>
+                          <CodeExpression id="45_lblCasilla22"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2048,7 +2008,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle22">
+            <Container class="javax.swing.JPanel" name="lblCasilla23">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2082,11 +2042,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="47_lblElMuelle22">
-                    <CodeVariable name="lblElMuelle22" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="47_lblCasilla23">
+                    <CodeVariable name="lblCasilla23" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle22"/>
+                        <ComponentRef name="lblCasilla23"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2100,7 +2060,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="47_lblElMuelle22"/>
+                          <CodeExpression id="47_lblCasilla23"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2138,7 +2098,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle23">
+            <Container class="javax.swing.JPanel" name="lblCasilla29">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2172,11 +2132,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="49_lblElMuelle23">
-                    <CodeVariable name="lblElMuelle23" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="49_lblCasilla29">
+                    <CodeVariable name="lblCasilla29" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle23"/>
+                        <ComponentRef name="lblCasilla29"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2190,7 +2150,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="49_lblElMuelle23"/>
+                          <CodeExpression id="49_lblCasilla29"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2198,7 +2158,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle24">
+            <Container class="javax.swing.JPanel" name="lblCasilla25">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2232,11 +2192,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="51_lblElMuelle24">
-                    <CodeVariable name="lblElMuelle24" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="51_lblCasilla25">
+                    <CodeVariable name="lblCasilla25" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle24"/>
+                        <ComponentRef name="lblCasilla25"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2250,7 +2210,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="51_lblElMuelle24"/>
+                          <CodeExpression id="51_lblCasilla25"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2288,7 +2248,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle25">
+            <Container class="javax.swing.JPanel" name="lblCasilla34">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2315,11 +2275,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="53_lblElMuelle25">
-                    <CodeVariable name="lblElMuelle25" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="53_lblCasilla34">
+                    <CodeVariable name="lblCasilla34" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle25"/>
+                        <ComponentRef name="lblCasilla34"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2333,7 +2293,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="53_lblElMuelle25"/>
+                          <CodeExpression id="53_lblCasilla34"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2461,7 +2421,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle26">
+            <Container class="javax.swing.JPanel" name="lblCasilla32">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2495,11 +2455,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="55_lblElMuelle26">
-                    <CodeVariable name="lblElMuelle26" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="55_lblCasilla32">
+                    <CodeVariable name="lblCasilla32" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle26"/>
+                        <ComponentRef name="lblCasilla32"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2513,7 +2473,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="55_lblElMuelle26"/>
+                          <CodeExpression id="55_lblCasilla32"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2521,7 +2481,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle27">
+            <Container class="javax.swing.JPanel" name="lblCasilla28">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2555,11 +2515,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="57_lblElMuelle27">
-                    <CodeVariable name="lblElMuelle27" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="57_lblCasilla28">
+                    <CodeVariable name="lblCasilla28" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle27"/>
+                        <ComponentRef name="lblCasilla28"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2573,7 +2533,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="57_lblElMuelle27"/>
+                          <CodeExpression id="57_lblCasilla28"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2581,7 +2541,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle28">
+            <Container class="javax.swing.JPanel" name="lblCasilla30">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2615,11 +2575,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="59_lblElMuelle28">
-                    <CodeVariable name="lblElMuelle28" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="59_lblCasilla30">
+                    <CodeVariable name="lblCasilla30" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle28"/>
+                        <ComponentRef name="lblCasilla30"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2633,7 +2593,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="59_lblElMuelle28"/>
+                          <CodeExpression id="59_lblCasilla30"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2641,7 +2601,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle29">
+            <Container class="javax.swing.JPanel" name="lblCasilla31">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2675,11 +2635,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="61_lblElMuelle29">
-                    <CodeVariable name="lblElMuelle29" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="61_lblCasilla31">
+                    <CodeVariable name="lblCasilla31" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle29"/>
+                        <ComponentRef name="lblCasilla31"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2693,7 +2653,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="61_lblElMuelle29"/>
+                          <CodeExpression id="61_lblCasilla31"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2701,7 +2661,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle30">
+            <Container class="javax.swing.JPanel" name="lblCasilla27">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2735,11 +2695,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="63_lblElMuelle30">
-                    <CodeVariable name="lblElMuelle30" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="63_lblCasilla27">
+                    <CodeVariable name="lblCasilla27" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle30"/>
+                        <ComponentRef name="lblCasilla27"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2753,7 +2713,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="63_lblElMuelle30"/>
+                          <CodeExpression id="63_lblCasilla27"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2761,7 +2721,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle32">
+            <Container class="javax.swing.JPanel" name="lblCasilla33">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2795,11 +2755,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="65_lblElMuelle32">
-                    <CodeVariable name="lblElMuelle32" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="65_lblCasilla33">
+                    <CodeVariable name="lblCasilla33" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle32"/>
+                        <ComponentRef name="lblCasilla33"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2813,7 +2773,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="65_lblElMuelle32"/>
+                          <CodeExpression id="65_lblCasilla33"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2851,7 +2811,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle33">
+            <Container class="javax.swing.JPanel" name="lblCasilla39">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2885,11 +2845,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="67_lblElMuelle33">
-                    <CodeVariable name="lblElMuelle33" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="67_lblCasilla39">
+                    <CodeVariable name="lblCasilla39" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle33"/>
+                        <ComponentRef name="lblCasilla39"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2903,7 +2863,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="67_lblElMuelle33"/>
+                          <CodeExpression id="67_lblCasilla39"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2911,7 +2871,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle34">
+            <Container class="javax.swing.JPanel" name="lblCasilla26">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2952,11 +2912,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="69_lblElMuelle34">
-                    <CodeVariable name="lblElMuelle34" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="69_lblCasilla26">
+                    <CodeVariable name="lblCasilla26" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle34"/>
+                        <ComponentRef name="lblCasilla26"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -2970,7 +2930,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="69_lblElMuelle34"/>
+                          <CodeExpression id="69_lblCasilla26"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -2978,7 +2938,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle35">
+            <Container class="javax.swing.JPanel" name="lblCasilla38">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3012,11 +2972,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="71_lblElMuelle35">
-                    <CodeVariable name="lblElMuelle35" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="71_lblCasilla38">
+                    <CodeVariable name="lblCasilla38" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle35"/>
+                        <ComponentRef name="lblCasilla38"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -3030,7 +2990,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="71_lblElMuelle35"/>
+                          <CodeExpression id="71_lblCasilla38"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -3038,7 +2998,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle36">
+            <Container class="javax.swing.JPanel" name="lblCasilla35">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3072,11 +3032,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="73_lblElMuelle36">
-                    <CodeVariable name="lblElMuelle36" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="73_lblCasilla35">
+                    <CodeVariable name="lblCasilla35" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle36"/>
+                        <ComponentRef name="lblCasilla35"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -3090,7 +3050,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="73_lblElMuelle36"/>
+                          <CodeExpression id="73_lblCasilla35"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -3128,7 +3088,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle37">
+            <Container class="javax.swing.JPanel" name="lblCasilla37">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3162,11 +3122,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="75_lblElMuelle37">
-                    <CodeVariable name="lblElMuelle37" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="75_lblCasilla37">
+                    <CodeVariable name="lblCasilla37" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle37"/>
+                        <ComponentRef name="lblCasilla37"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -3180,7 +3140,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="75_lblElMuelle37"/>
+                          <CodeExpression id="75_lblCasilla37"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -3188,7 +3148,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="lblElMuelle38">
+            <Container class="javax.swing.JPanel" name="lblCasilla40">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3222,11 +3182,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="77_lblElMuelle38">
-                    <CodeVariable name="lblElMuelle38" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="77_lblCasilla40">
+                    <CodeVariable name="lblCasilla40" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="lblElMuelle38"/>
+                        <ComponentRef name="lblCasilla40"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -3240,7 +3200,7 @@
                           <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                         </ExpressionProvider>
                         <Parameters>
-                          <CodeExpression id="77_lblElMuelle38"/>
+                          <CodeExpression id="77_lblCasilla40"/>
                         </Parameters>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -3278,12 +3238,63 @@
                 </DimensionLayout>
               </Layout>
             </Container>
+            <Container class="javax.swing.JPanel" name="lblCasilla8">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="1228" y="170" width="140" height="50"/>
+                </Constraint>
+              </Constraints>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel65">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ARCA COMUNAL"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+              <LayoutCode>
+                <CodeStatement>
+                  <CodeExpression id="79_lblCasilla8">
+                    <CodeVariable name="lblCasilla8" type="8194" declaredType="javax.swing.JPanel"/>
+                    <ExpressionOrigin>
+                      <ExpressionProvider type="ComponentRef">
+                        <ComponentRef name="lblCasilla8"/>
+                      </ExpressionProvider>
+                    </ExpressionOrigin>
+                  </CodeExpression>
+                  <StatementProvider type="CodeMethod">
+                    <CodeMethod name="setLayout" class="java.awt.Container" parameterTypes="java.awt.LayoutManager"/>
+                  </StatementProvider>
+                  <Parameters>
+                    <CodeExpression id="80">
+                      <ExpressionOrigin>
+                        <ExpressionProvider type="CodeConstructor">
+                          <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
+                        </ExpressionProvider>
+                        <Parameters>
+                          <CodeExpression id="79_lblCasilla8"/>
+                        </Parameters>
+                      </ExpressionOrigin>
+                    </CodeExpression>
+                  </Parameters>
+                </CodeStatement>
+              </LayoutCode>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
       <LayoutCode>
         <CodeStatement>
-          <CodeExpression id="79_jPanel2">
+          <CodeExpression id="81_jPanel2">
             <CodeVariable name="jPanel2" type="8194" declaredType="javax.swing.JPanel"/>
             <ExpressionOrigin>
               <ExpressionProvider type="ComponentRef">
@@ -3295,13 +3306,13 @@
             <CodeMethod name="setLayout" class="java.awt.Container" parameterTypes="java.awt.LayoutManager"/>
           </StatementProvider>
           <Parameters>
-            <CodeExpression id="80">
+            <CodeExpression id="82">
               <ExpressionOrigin>
                 <ExpressionProvider type="CodeConstructor">
                   <CodeConstructor class="javax.swing.OverlayLayout" parameterTypes="java.awt.Container"/>
                 </ExpressionProvider>
                 <Parameters>
-                  <CodeExpression id="79_jPanel2"/>
+                  <CodeExpression id="81_jPanel2"/>
                 </Parameters>
               </ExpressionOrigin>
             </CodeExpression>

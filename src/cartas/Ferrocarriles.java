@@ -5,6 +5,9 @@
  */
 package cartas;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Usuario
@@ -12,9 +15,9 @@ package cartas;
 public class Ferrocarriles extends Propiedades{
     public int cantidadDeFerrocarriles;
 
-    public Ferrocarriles(String imagen, String nombre, int precioCompra, int valorHipoteca, int cantidadDeFerrocarriles) {
-        super(imagen, nombre, precioCompra, valorHipoteca);
-        this.cantidadDeFerrocarriles = cantidadDeFerrocarriles;
+    public Ferrocarriles(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca) {
+        super(imagen, panel, nombre, precioCompra, valorHipoteca);
+        this.cantidadDeFerrocarriles = 0;
         
     }
     
@@ -31,4 +34,22 @@ public class Ferrocarriles extends Propiedades{
                 return 200;
         }
     }
+
+    public int getCantidadDeFerrocarriles() {
+        return cantidadDeFerrocarriles;
+    }
+
+    public void setCantidadDeFerrocarriles(int cantidadDeFerrocarriles) {
+        this.cantidadDeFerrocarriles = cantidadDeFerrocarriles;
+    }
+
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+    
+    
 }

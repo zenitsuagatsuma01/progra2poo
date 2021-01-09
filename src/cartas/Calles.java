@@ -5,6 +5,9 @@
  */
 package cartas;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Usuario
@@ -12,7 +15,10 @@ package cartas;
 public class Calles extends Propiedades{
     public String color;
     public int cantidadCasas;
+    public int cantidadHoteles;
+    public int cantidadEdificios;
     public int precioCasa;
+    public int precioHotel;
     public int precio0;
     public int precio1;
     public int precio2;
@@ -20,23 +26,26 @@ public class Calles extends Propiedades{
     public int precio4;
     public int precio5;
 
-    public Calles(String imagen, String nombre, int precioCompra, int valorHipoteca, String color, int cantidadCasas, int precioCasas, int precio0, int precio1, int precio2, int precio3, int precio4, int precio5) {
-        super(imagen, nombre, precioCompra, valorHipoteca);
+    public Calles(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, String color, int precioCasas, int precioHoteles, int precio0, int precio1, int precio2, int precio3, int precio4, int precio5) {
+        super(imagen, panel, nombre, precioCompra, valorHipoteca);
         this.color = color;
-        this.cantidadCasas = cantidadCasas;
+        this.cantidadCasas = 0;
+        this.cantidadHoteles = 0;
+        this.cantidadEdificios = 0;
         this.precioCasa = precioCasas;
+        this.precioHotel = precioHoteles;
         this.precio0 = precio0;
         this.precio1 = precio1;
         this.precio2 = precio2;
         this.precio3 = precio3;
         this.precio4 = precio4;
         this.precio5 = precio5;
-                
+        
     }
     
     @Override
     public int cobrar(){
-        switch (cantidadCasas) {
+        switch (cantidadEdificios) {
             case 0:
                 return precio0;
             case 1:
@@ -53,6 +62,31 @@ public class Calles extends Propiedades{
         
 
     }
+
+    public int getCantidadCasas() {
+        return cantidadCasas;
+    }
+
+    public void setCantidadCasas(int cantidadCasas) {
+        this.cantidadCasas = cantidadCasas;
+    }
+
+    public int getCantidadHoteles() {
+        return cantidadHoteles;
+    }
+
+    public void setCantidadHoteles(int cantidadHoteles) {
+        this.cantidadHoteles = cantidadHoteles;
+    }
+
+    public int getCantidadEdificios() {
+        return cantidadEdificios;
+    }
+
+    public void setCantidadEdificios(int cantidadEdificios) {
+        this.cantidadEdificios = cantidadEdificios;
+    }
+    
     
     
 }

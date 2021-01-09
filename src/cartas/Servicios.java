@@ -5,6 +5,9 @@
  */
 package cartas;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Usuario
@@ -12,9 +15,9 @@ package cartas;
 public class Servicios extends Propiedades{
     public int cantidadDeServicios;
 
-    public Servicios(String imagen, String nombre, int precioCompra, int valorHipoteca, int cantidadDeServicios) {
-        super(imagen, nombre, precioCompra, valorHipoteca);
-        this.cantidadDeServicios = cantidadDeServicios;
+    public Servicios(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca) {
+        super(imagen, panel, nombre, precioCompra, valorHipoteca);
+        this.cantidadDeServicios = 0;
     }
     
     public int cobrar(int dados){

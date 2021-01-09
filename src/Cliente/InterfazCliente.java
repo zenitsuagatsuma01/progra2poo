@@ -52,29 +52,29 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     }
 
     public JPanel getLblGo() {
-        return lblImpuestos1;
+        return lblCasilla3;
     }
 
     public void setLblGo(JPanel lblGo) {
-        this.lblImpuestos1 = lblGo;
+        this.lblCasilla3 = lblGo;
     }
 
     public JPanel getLblElMuelle4() {
-        return lblElMuelle4;
+        return lblCasilla7;
     }
 
     public void setLblElMuelle4(JPanel lblElMuelle4) {
-        this.lblElMuelle4 = lblElMuelle4;
+        this.lblCasilla7 = lblElMuelle4;
     }
 
     
     
     public JPanel getLblElMuelle() {
-        return lblElMuelle;
+        return lblCasilla24;
     }
 
     public void setLblElMuelle(JPanel lblElMuelle) {
-        this.lblElMuelle = lblElMuelle;
+        this.lblCasilla24 = lblElMuelle;
     }
     
    
@@ -154,139 +154,139 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblFichaJugador = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pnlTablero = new javax.swing.JPanel();
-        jPanel110 = new javax.swing.JPanel();
-        jLabel43 = new javax.swing.JLabel();
         jPanel70 = new javax.swing.JPanel();
-        lblGo1 = new javax.swing.JPanel();
+        lblCasilla1 = new javax.swing.JPanel();
         jLabel59 = new javax.swing.JLabel();
-        lblImpuestos1 = new javax.swing.JPanel();
+        lblCasilla3 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
-        lblElMuelle1 = new javax.swing.JPanel();
+        lblCasilla4 = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jPanel72 = new javax.swing.JPanel();
-        lblElMuelle2 = new javax.swing.JPanel();
+        lblCasilla5 = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
-        lblElMuelle3 = new javax.swing.JPanel();
+        lblCasilla6 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
-        lblElMuelle4 = new javax.swing.JPanel();
+        lblCasilla7 = new javax.swing.JPanel();
         jLabel63 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
         jPanel77 = new javax.swing.JPanel();
-        lblElMuelle = new javax.swing.JPanel();
+        lblCasilla24 = new javax.swing.JPanel();
         jLabel58 = new javax.swing.JLabel();
-        lblElMuelle5 = new javax.swing.JPanel();
+        lblCasilla11 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
         jPanel38 = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
-        lblElMuelle7 = new javax.swing.JPanel();
+        lblCasilla12 = new javax.swing.JPanel();
         jLabel70 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
-        lblElMuelle8 = new javax.swing.JPanel();
+        lblCasilla10 = new javax.swing.JPanel();
         jLabel71 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
-        lblElMuelle9 = new javax.swing.JPanel();
+        lblCasilla2 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
-        lblElMuelle10 = new javax.swing.JPanel();
+        lblCasilla19 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
         jPanel53 = new javax.swing.JPanel();
-        lblElMuelle11 = new javax.swing.JPanel();
+        lblCasilla9 = new javax.swing.JPanel();
         jLabel74 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
-        lblElMuelle12 = new javax.swing.JPanel();
+        lblCasilla13 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
         jLabel88 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        lblElMuelle13 = new javax.swing.JPanel();
+        lblCasilla14 = new javax.swing.JPanel();
         jLabel76 = new javax.swing.JLabel();
         jLabel89 = new javax.swing.JLabel();
         jPanel46 = new javax.swing.JPanel();
-        lblElMuelle14 = new javax.swing.JPanel();
+        lblCasilla15 = new javax.swing.JPanel();
         jLabel77 = new javax.swing.JLabel();
         jLabel90 = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
-        lblElMuelle15 = new javax.swing.JPanel();
+        lblCasilla16 = new javax.swing.JPanel();
         jLabel78 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
-        lblElMuelle16 = new javax.swing.JPanel();
+        lblCasilla17 = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
         jLabel92 = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
-        lblElMuelle17 = new javax.swing.JPanel();
+        lblCasilla21 = new javax.swing.JPanel();
         jLabel80 = new javax.swing.JLabel();
-        lblElMuelle18 = new javax.swing.JPanel();
+        lblCasilla18 = new javax.swing.JPanel();
         jLabel81 = new javax.swing.JLabel();
         jLabel94 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
-        lblElMuelle19 = new javax.swing.JPanel();
+        lblCasilla36 = new javax.swing.JPanel();
         jLabel86 = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
         jLabel131 = new javax.swing.JLabel();
-        lblElMuelle20 = new javax.swing.JPanel();
+        lblCasilla20 = new javax.swing.JPanel();
         jLabel96 = new javax.swing.JLabel();
         jLabel97 = new javax.swing.JLabel();
         jPanel54 = new javax.swing.JPanel();
-        lblElMuelle21 = new javax.swing.JPanel();
+        lblCasilla22 = new javax.swing.JPanel();
         jLabel93 = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
         jPanel57 = new javax.swing.JPanel();
-        lblElMuelle22 = new javax.swing.JPanel();
+        lblCasilla23 = new javax.swing.JPanel();
         jLabel99 = new javax.swing.JLabel();
         jLabel100 = new javax.swing.JLabel();
         jPanel116 = new javax.swing.JPanel();
-        lblElMuelle23 = new javax.swing.JPanel();
+        lblCasilla29 = new javax.swing.JPanel();
         jLabel101 = new javax.swing.JLabel();
         jLabel102 = new javax.swing.JLabel();
-        lblElMuelle24 = new javax.swing.JPanel();
+        lblCasilla25 = new javax.swing.JPanel();
         jLabel103 = new javax.swing.JLabel();
         jLabel104 = new javax.swing.JLabel();
         jPanel113 = new javax.swing.JPanel();
-        lblElMuelle25 = new javax.swing.JPanel();
+        lblCasilla34 = new javax.swing.JPanel();
         jLabel105 = new javax.swing.JLabel();
         jPanel118 = new javax.swing.JPanel();
         jPanel109 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        lblElMuelle26 = new javax.swing.JPanel();
+        lblCasilla32 = new javax.swing.JPanel();
         jLabel107 = new javax.swing.JLabel();
         jLabel108 = new javax.swing.JLabel();
-        lblElMuelle27 = new javax.swing.JPanel();
+        lblCasilla28 = new javax.swing.JPanel();
         jLabel109 = new javax.swing.JLabel();
         jLabel110 = new javax.swing.JLabel();
-        lblElMuelle28 = new javax.swing.JPanel();
+        lblCasilla30 = new javax.swing.JPanel();
         jLabel111 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
-        lblElMuelle29 = new javax.swing.JPanel();
+        lblCasilla31 = new javax.swing.JPanel();
         jLabel113 = new javax.swing.JLabel();
         jLabel114 = new javax.swing.JLabel();
-        lblElMuelle30 = new javax.swing.JPanel();
+        lblCasilla27 = new javax.swing.JPanel();
         jLabel115 = new javax.swing.JLabel();
         jLabel116 = new javax.swing.JLabel();
-        lblElMuelle32 = new javax.swing.JPanel();
+        lblCasilla33 = new javax.swing.JPanel();
         jLabel119 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
         jPanel34 = new javax.swing.JPanel();
-        lblElMuelle33 = new javax.swing.JPanel();
+        lblCasilla39 = new javax.swing.JPanel();
         jLabel121 = new javax.swing.JLabel();
         jLabel122 = new javax.swing.JLabel();
-        lblElMuelle34 = new javax.swing.JPanel();
+        lblCasilla26 = new javax.swing.JPanel();
         jLabel106 = new javax.swing.JLabel();
         jLabel123 = new javax.swing.JLabel();
         jLabel132 = new javax.swing.JLabel();
-        lblElMuelle35 = new javax.swing.JPanel();
+        lblCasilla38 = new javax.swing.JPanel();
         jLabel124 = new javax.swing.JLabel();
         jLabel125 = new javax.swing.JLabel();
-        lblElMuelle36 = new javax.swing.JPanel();
+        lblCasilla35 = new javax.swing.JPanel();
         jLabel126 = new javax.swing.JLabel();
         jLabel127 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
-        lblElMuelle37 = new javax.swing.JPanel();
+        lblCasilla37 = new javax.swing.JPanel();
         jLabel128 = new javax.swing.JLabel();
         jLabel129 = new javax.swing.JLabel();
-        lblElMuelle38 = new javax.swing.JPanel();
+        lblCasilla40 = new javax.swing.JPanel();
         jLabel130 = new javax.swing.JLabel();
         jLabel133 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
+        lblCasilla8 = new javax.swing.JPanel();
+        jLabel65 = new javax.swing.JLabel();
         pnlToolbar = new javax.swing.JPanel();
         btnVenderProp = new javax.swing.JButton();
         btnComprarPropActual = new javax.swing.JButton();
@@ -403,27 +403,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         pnlTablero.setLayout(null);
 
-        jPanel110.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel110.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel43.setText("ARCA COMUNAL");
-
-        javax.swing.GroupLayout jPanel110Layout = new javax.swing.GroupLayout(jPanel110);
-        jPanel110.setLayout(jPanel110Layout);
-        jPanel110Layout.setHorizontalGroup(
-            jPanel110Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel110Layout.setVerticalGroup(
-            jPanel110Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel110Layout.createSequentialGroup()
-                .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        pnlTablero.add(jPanel110);
-        jPanel110.setBounds(10, 180, 170, 50);
-
         jPanel70.setBackground(new java.awt.Color(0, 0, 153));
         jPanel70.setBorder(new javax.swing.border.MatteBorder(null));
 
@@ -441,37 +420,37 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel70);
         jPanel70.setBounds(1230, 530, 20, 60);
 
-        lblGo1.setBackground(new java.awt.Color(255, 255, 255));
-        lblGo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblGo1.setLayout(new javax.swing.OverlayLayout(lblGo1));
+        lblCasilla1.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla1.setLayout(new javax.swing.OverlayLayout(lblCasilla1));
 
         jLabel59.setText("GO (COBRE 200$)");
         jLabel59.setAlignmentY(0.2F);
-        lblGo1.add(jLabel59);
+        lblCasilla1.add(jLabel59);
 
-        pnlTablero.add(lblGo1);
-        lblGo1.setBounds(1229, 588, 140, 70);
+        pnlTablero.add(lblCasilla1);
+        lblCasilla1.setBounds(1229, 588, 140, 70);
 
-        lblImpuestos1.setBackground(new java.awt.Color(255, 255, 255));
-        lblImpuestos1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblImpuestos1.setLayout(new javax.swing.OverlayLayout(lblImpuestos1));
+        lblCasilla3.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla3.setLayout(new javax.swing.OverlayLayout(lblCasilla3));
 
         jLabel47.setText("IMPUESTOS ($100)");
         jLabel47.setAlignmentX(0.5F);
-        lblImpuestos1.add(jLabel47);
+        lblCasilla3.add(jLabel47);
 
-        pnlTablero.add(lblImpuestos1);
-        lblImpuestos1.setBounds(1228, 470, 140, 60);
+        pnlTablero.add(lblCasilla3);
+        lblCasilla3.setBounds(1228, 470, 140, 60);
 
-        lblElMuelle1.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle1.setLayout(new javax.swing.OverlayLayout(lblElMuelle1));
+        lblCasilla4.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla4.setLayout(new javax.swing.OverlayLayout(lblCasilla4));
 
         jLabel60.setText("PLAZA PARK $350");
-        lblElMuelle1.add(jLabel60);
+        lblCasilla4.add(jLabel60);
 
-        pnlTablero.add(lblElMuelle1);
-        lblElMuelle1.setBounds(1250, 400, 118, 70);
+        pnlTablero.add(lblCasilla4);
+        lblCasilla4.setBounds(1250, 400, 118, 70);
 
         jPanel72.setBackground(new java.awt.Color(0, 0, 153));
         jPanel72.setBorder(new javax.swing.border.MatteBorder(null));
@@ -490,50 +469,50 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel72);
         jPanel72.setBounds(1230, 400, 20, 70);
 
-        lblElMuelle2.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle2.setLayout(new javax.swing.OverlayLayout(lblElMuelle2));
+        lblCasilla5.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla5.setLayout(new javax.swing.OverlayLayout(lblCasilla5));
 
         jLabel61.setText("FORTUNA");
         jLabel61.setAlignmentX(0.5F);
-        lblElMuelle2.add(jLabel61);
+        lblCasilla5.add(jLabel61);
 
-        pnlTablero.add(lblElMuelle2);
-        lblElMuelle2.setBounds(1228, 340, 140, 60);
+        pnlTablero.add(lblCasilla5);
+        lblCasilla5.setBounds(1228, 340, 140, 60);
 
-        lblElMuelle3.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle3.setLayout(new javax.swing.OverlayLayout(lblElMuelle3));
+        lblCasilla6.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla6.setLayout(new javax.swing.OverlayLayout(lblCasilla6));
 
         jLabel62.setText("FERROCARRIL");
         jLabel62.setAlignmentY(1.0F);
-        lblElMuelle3.add(jLabel62);
+        lblCasilla6.add(jLabel62);
 
         jLabel82.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel82.setText("$200");
         jLabel82.setAlignmentX(0.1F);
         jLabel82.setAlignmentY(0.1F);
-        lblElMuelle3.add(jLabel82);
+        lblCasilla6.add(jLabel82);
 
-        pnlTablero.add(lblElMuelle3);
-        lblElMuelle3.setBounds(1228, 280, 140, 60);
+        pnlTablero.add(lblCasilla6);
+        lblCasilla6.setBounds(1228, 280, 140, 60);
 
-        lblElMuelle4.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle4.setLayout(new javax.swing.OverlayLayout(lblElMuelle4));
+        lblCasilla7.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla7.setLayout(new javax.swing.OverlayLayout(lblCasilla7));
 
         jLabel63.setText("AV. PENSILVANIA");
         jLabel63.setAlignmentY(1.0F);
-        lblElMuelle4.add(jLabel63);
+        lblCasilla7.add(jLabel63);
 
         jLabel83.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel83.setText("$320");
         jLabel83.setAlignmentX(0.1F);
         jLabel83.setAlignmentY(0.1F);
-        lblElMuelle4.add(jLabel83);
+        lblCasilla7.add(jLabel83);
 
-        pnlTablero.add(lblElMuelle4);
-        lblElMuelle4.setBounds(1250, 220, 118, 60);
+        pnlTablero.add(lblCasilla7);
+        lblCasilla7.setBounds(1250, 220, 118, 60);
 
         jPanel77.setBackground(new java.awt.Color(0, 153, 0));
         jPanel77.setBorder(new javax.swing.border.MatteBorder(null));
@@ -552,26 +531,26 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel77);
         jPanel77.setBounds(1230, 220, 20, 60);
 
-        lblElMuelle.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle.setLayout(new javax.swing.OverlayLayout(lblElMuelle));
+        lblCasilla24.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla24.setLayout(new javax.swing.OverlayLayout(lblCasilla24));
 
         jLabel58.setText("ARCA COMUNAL");
-        lblElMuelle.add(jLabel58);
+        lblCasilla24.add(jLabel58);
 
-        pnlTablero.add(lblElMuelle);
-        lblElMuelle.setBounds(1228, 170, 140, 50);
+        pnlTablero.add(lblCasilla24);
+        lblCasilla24.setBounds(10, 180, 170, 50);
 
-        lblElMuelle5.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle5.setLayout(new javax.swing.OverlayLayout(lblElMuelle5));
+        lblCasilla11.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla11.setLayout(new javax.swing.OverlayLayout(lblCasilla11));
 
         jLabel64.setText("VAYA A LA CÁRCEL");
         jLabel64.setAlignmentY(0.3F);
-        lblElMuelle5.add(jLabel64);
+        lblCasilla11.add(jLabel64);
 
-        pnlTablero.add(lblElMuelle5);
-        lblElMuelle5.setBounds(1248, 0, 120, 60);
+        pnlTablero.add(lblCasilla11);
+        lblCasilla11.setBounds(1248, 0, 120, 60);
 
         jPanel38.setBackground(new java.awt.Color(0, 153, 0));
         jPanel38.setBorder(new javax.swing.border.MatteBorder(null));
@@ -607,62 +586,62 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel36);
         jPanel36.setBounds(1230, 60, 20, 50);
 
-        lblElMuelle7.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle7.setLayout(new javax.swing.OverlayLayout(lblElMuelle7));
+        lblCasilla12.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla12.setLayout(new javax.swing.OverlayLayout(lblCasilla12));
 
         jLabel70.setText("JARDINES MARVIN");
         jLabel70.setAlignmentY(1.0F);
-        lblElMuelle7.add(jLabel70);
+        lblCasilla12.add(jLabel70);
 
         jLabel84.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel84.setText("$280");
         jLabel84.setAlignmentX(0.1F);
         jLabel84.setAlignmentY(0.1F);
-        lblElMuelle7.add(jLabel84);
+        lblCasilla12.add(jLabel84);
 
-        pnlTablero.add(lblElMuelle7);
-        lblElMuelle7.setBounds(1130, 0, 118, 50);
+        pnlTablero.add(lblCasilla12);
+        lblCasilla12.setBounds(1130, 0, 118, 50);
 
-        lblElMuelle8.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle8.setLayout(new javax.swing.OverlayLayout(lblElMuelle8));
+        lblCasilla10.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla10.setLayout(new javax.swing.OverlayLayout(lblCasilla10));
 
         jLabel71.setText("AV. PACÍFICO");
         jLabel71.setAlignmentY(1.0F);
-        lblElMuelle8.add(jLabel71);
+        lblCasilla10.add(jLabel71);
 
         jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel85.setText("$300");
         jLabel85.setAlignmentX(0.1F);
         jLabel85.setAlignmentY(0.1F);
-        lblElMuelle8.add(jLabel85);
+        lblCasilla10.add(jLabel85);
 
-        pnlTablero.add(lblElMuelle8);
-        lblElMuelle8.setBounds(1250, 60, 118, 60);
+        pnlTablero.add(lblCasilla10);
+        lblCasilla10.setBounds(1250, 60, 118, 60);
 
-        lblElMuelle9.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle9.setLayout(new javax.swing.OverlayLayout(lblElMuelle9));
+        lblCasilla2.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla2.setLayout(new javax.swing.OverlayLayout(lblCasilla2));
 
         jLabel72.setText("EL MUELLE ($400)");
         jLabel72.setAlignmentX(0.2F);
-        lblElMuelle9.add(jLabel72);
+        lblCasilla2.add(jLabel72);
 
-        pnlTablero.add(lblElMuelle9);
-        lblElMuelle9.setBounds(1248, 530, 120, 60);
+        pnlTablero.add(lblCasilla2);
+        lblCasilla2.setBounds(1248, 530, 120, 60);
 
-        lblElMuelle10.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle10.setLayout(new javax.swing.OverlayLayout(lblElMuelle10));
+        lblCasilla19.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla19.setLayout(new javax.swing.OverlayLayout(lblCasilla19));
 
         jLabel73.setText("FORTUNA");
         jLabel73.setAlignmentX(0.5F);
         jLabel73.setAlignmentY(0.0F);
-        lblElMuelle10.add(jLabel73);
+        lblCasilla19.add(jLabel73);
 
-        pnlTablero.add(lblElMuelle10);
-        lblElMuelle10.setBounds(290, 0, 120, 60);
+        pnlTablero.add(lblCasilla19);
+        lblCasilla19.setBounds(290, 0, 120, 60);
 
         jPanel53.setBackground(new java.awt.Color(255, 255, 0));
         jPanel53.setBorder(new javax.swing.border.MatteBorder(null));
@@ -681,39 +660,39 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel53);
         jPanel53.setBounds(1130, 50, 120, 10);
 
-        lblElMuelle11.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle11.setLayout(new javax.swing.OverlayLayout(lblElMuelle11));
+        lblCasilla9.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla9.setLayout(new javax.swing.OverlayLayout(lblCasilla9));
 
         jLabel74.setText("AV. N. CAROLINA");
         jLabel74.setAlignmentY(1.0F);
-        lblElMuelle11.add(jLabel74);
+        lblCasilla9.add(jLabel74);
 
         jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel87.setText("$320");
         jLabel87.setAlignmentX(0.1F);
         jLabel87.setAlignmentY(0.1F);
-        lblElMuelle11.add(jLabel87);
+        lblCasilla9.add(jLabel87);
 
-        pnlTablero.add(lblElMuelle11);
-        lblElMuelle11.setBounds(1250, 110, 118, 60);
+        pnlTablero.add(lblCasilla9);
+        lblCasilla9.setBounds(1250, 110, 118, 60);
 
-        lblElMuelle12.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle12.setLayout(new javax.swing.OverlayLayout(lblElMuelle12));
+        lblCasilla13.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla13.setLayout(new javax.swing.OverlayLayout(lblCasilla13));
 
         jLabel75.setText("AGUA");
         jLabel75.setAlignmentY(1.0F);
-        lblElMuelle12.add(jLabel75);
+        lblCasilla13.add(jLabel75);
 
         jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel88.setText("$150");
         jLabel88.setAlignmentX(0.1F);
         jLabel88.setAlignmentY(0.1F);
-        lblElMuelle12.add(jLabel88);
+        lblCasilla13.add(jLabel88);
 
-        pnlTablero.add(lblElMuelle12);
-        lblElMuelle12.setBounds(1028, 0, 110, 60);
+        pnlTablero.add(lblCasilla13);
+        lblCasilla13.setBounds(1028, 0, 110, 60);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 0));
         jPanel5.setBorder(new javax.swing.border.MatteBorder(null));
@@ -732,22 +711,22 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel5);
         jPanel5.setBounds(910, 50, 120, 10);
 
-        lblElMuelle13.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle13.setLayout(new javax.swing.OverlayLayout(lblElMuelle13));
+        lblCasilla14.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla14.setLayout(new javax.swing.OverlayLayout(lblCasilla14));
 
         jLabel76.setText("AVENIDA VENTNOR");
         jLabel76.setAlignmentY(1.0F);
-        lblElMuelle13.add(jLabel76);
+        lblCasilla14.add(jLabel76);
 
         jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel89.setText("$260");
         jLabel89.setAlignmentX(0.1F);
         jLabel89.setAlignmentY(0.1F);
-        lblElMuelle13.add(jLabel89);
+        lblCasilla14.add(jLabel89);
 
-        pnlTablero.add(lblElMuelle13);
-        lblElMuelle13.setBounds(910, 0, 120, 50);
+        pnlTablero.add(lblCasilla14);
+        lblCasilla14.setBounds(910, 0, 120, 50);
 
         jPanel46.setBackground(new java.awt.Color(255, 255, 0));
         jPanel46.setBorder(new javax.swing.border.MatteBorder(null));
@@ -766,22 +745,22 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel46);
         jPanel46.setBounds(780, 50, 130, 10);
 
-        lblElMuelle14.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle14.setLayout(new javax.swing.OverlayLayout(lblElMuelle14));
+        lblCasilla15.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla15.setLayout(new javax.swing.OverlayLayout(lblCasilla15));
 
         jLabel77.setText("AV. ATLÁNTICO");
         jLabel77.setAlignmentY(1.0F);
-        lblElMuelle14.add(jLabel77);
+        lblCasilla15.add(jLabel77);
 
         jLabel90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel90.setText("$260");
         jLabel90.setAlignmentX(0.1F);
         jLabel90.setAlignmentY(0.1F);
-        lblElMuelle14.add(jLabel90);
+        lblCasilla15.add(jLabel90);
 
-        pnlTablero.add(lblElMuelle14);
-        lblElMuelle14.setBounds(780, 0, 130, 50);
+        pnlTablero.add(lblCasilla15);
+        lblCasilla15.setBounds(780, 0, 130, 50);
 
         jPanel28.setBackground(new java.awt.Color(255, 0, 0));
         jPanel28.setBorder(new javax.swing.border.MatteBorder(null));
@@ -800,39 +779,39 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel28);
         jPanel28.setBounds(410, 50, 120, 10);
 
-        lblElMuelle15.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle15.setLayout(new javax.swing.OverlayLayout(lblElMuelle15));
+        lblCasilla16.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla16.setLayout(new javax.swing.OverlayLayout(lblCasilla16));
 
         jLabel78.setText("FERROCARRIL B&O");
         jLabel78.setAlignmentY(1.0F);
-        lblElMuelle15.add(jLabel78);
+        lblCasilla16.add(jLabel78);
 
         jLabel91.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel91.setText("$200");
         jLabel91.setAlignmentX(0.1F);
         jLabel91.setAlignmentY(0.1F);
-        lblElMuelle15.add(jLabel91);
+        lblCasilla16.add(jLabel91);
 
-        pnlTablero.add(lblElMuelle15);
-        lblElMuelle15.setBounds(650, 0, 130, 60);
+        pnlTablero.add(lblCasilla16);
+        lblCasilla16.setBounds(650, 0, 130, 60);
 
-        lblElMuelle16.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle16.setLayout(new javax.swing.OverlayLayout(lblElMuelle16));
+        lblCasilla17.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla17.setLayout(new javax.swing.OverlayLayout(lblCasilla17));
 
         jLabel79.setText("AVENIDA  ILLINOIS");
         jLabel79.setAlignmentY(1.0F);
-        lblElMuelle16.add(jLabel79);
+        lblCasilla17.add(jLabel79);
 
         jLabel92.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel92.setText("$240");
         jLabel92.setAlignmentX(0.1F);
         jLabel92.setAlignmentY(0.1F);
-        lblElMuelle16.add(jLabel92);
+        lblCasilla17.add(jLabel92);
 
-        pnlTablero.add(lblElMuelle16);
-        lblElMuelle16.setBounds(530, 0, 120, 50);
+        pnlTablero.add(lblCasilla17);
+        lblCasilla17.setBounds(530, 0, 120, 50);
 
         jPanel31.setBackground(new java.awt.Color(255, 0, 0));
         jPanel31.setBorder(new javax.swing.border.MatteBorder(null));
@@ -851,34 +830,34 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel31);
         jPanel31.setBounds(530, 40, 120, 20);
 
-        lblElMuelle17.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle17.setLayout(new javax.swing.OverlayLayout(lblElMuelle17));
+        lblCasilla21.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla21.setLayout(new javax.swing.OverlayLayout(lblCasilla21));
 
         jLabel80.setText("PARQUEO LIBRE");
         jLabel80.setAlignmentX(0.5F);
         jLabel80.setAlignmentY(0.0F);
-        lblElMuelle17.add(jLabel80);
+        lblCasilla21.add(jLabel80);
 
-        pnlTablero.add(lblElMuelle17);
-        lblElMuelle17.setBounds(10, 0, 150, 60);
+        pnlTablero.add(lblCasilla21);
+        lblCasilla21.setBounds(10, 0, 150, 60);
 
-        lblElMuelle18.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle18.setLayout(new javax.swing.OverlayLayout(lblElMuelle18));
+        lblCasilla18.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla18.setLayout(new javax.swing.OverlayLayout(lblCasilla18));
 
         jLabel81.setText("AVENIDA INDIANA");
         jLabel81.setAlignmentY(1.0F);
-        lblElMuelle18.add(jLabel81);
+        lblCasilla18.add(jLabel81);
 
         jLabel94.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel94.setText("$220");
         jLabel94.setAlignmentX(0.1F);
         jLabel94.setAlignmentY(0.1F);
-        lblElMuelle18.add(jLabel94);
+        lblCasilla18.add(jLabel94);
 
-        pnlTablero.add(lblElMuelle18);
-        lblElMuelle18.setBounds(410, 0, 120, 50);
+        pnlTablero.add(lblCasilla18);
+        lblCasilla18.setBounds(410, 0, 120, 50);
 
         jPanel18.setBackground(new java.awt.Color(255, 0, 0));
         jPanel18.setBorder(new javax.swing.border.MatteBorder(null));
@@ -897,44 +876,44 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel18);
         jPanel18.setBounds(160, 50, 130, 10);
 
-        lblElMuelle19.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle19.setLayout(new javax.swing.OverlayLayout(lblElMuelle19));
+        lblCasilla36.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla36.setLayout(new javax.swing.OverlayLayout(lblCasilla36));
 
         jLabel86.setText("FERROCARRIL");
         jLabel86.setAlignmentX(1.0F);
         jLabel86.setAlignmentY(1.0F);
-        lblElMuelle19.add(jLabel86);
+        lblCasilla36.add(jLabel86);
 
         jLabel95.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel95.setText("READING");
         jLabel95.setAlignmentX(1.0F);
         jLabel95.setAlignmentY(0.0F);
-        lblElMuelle19.add(jLabel95);
+        lblCasilla36.add(jLabel95);
 
         jLabel131.setText("    $200");
         jLabel131.setAlignmentY(1.0F);
-        lblElMuelle19.add(jLabel131);
+        lblCasilla36.add(jLabel131);
 
-        pnlTablero.add(lblElMuelle19);
-        lblElMuelle19.setBounds(680, 590, 140, 70);
+        pnlTablero.add(lblCasilla36);
+        lblCasilla36.setBounds(680, 590, 140, 70);
 
-        lblElMuelle20.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle20.setLayout(new javax.swing.OverlayLayout(lblElMuelle20));
+        lblCasilla20.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla20.setLayout(new javax.swing.OverlayLayout(lblCasilla20));
 
         jLabel96.setText("AVENIDA KENTUCKY");
         jLabel96.setAlignmentY(1.0F);
-        lblElMuelle20.add(jLabel96);
+        lblCasilla20.add(jLabel96);
 
         jLabel97.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel97.setText("$220");
         jLabel97.setAlignmentX(0.1F);
         jLabel97.setAlignmentY(0.1F);
-        lblElMuelle20.add(jLabel97);
+        lblCasilla20.add(jLabel97);
 
-        pnlTablero.add(lblElMuelle20);
-        lblElMuelle20.setBounds(160, 0, 130, 50);
+        pnlTablero.add(lblCasilla20);
+        lblCasilla20.setBounds(160, 0, 130, 50);
 
         jPanel54.setBackground(new java.awt.Color(255, 102, 0));
         jPanel54.setBorder(new javax.swing.border.MatteBorder(null));
@@ -953,22 +932,22 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel54);
         jPanel54.setBounds(160, 60, 20, 60);
 
-        lblElMuelle21.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle21.setLayout(new javax.swing.OverlayLayout(lblElMuelle21));
+        lblCasilla22.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla22.setLayout(new javax.swing.OverlayLayout(lblCasilla22));
 
         jLabel93.setText("AV. NUEVA YORK");
         jLabel93.setAlignmentY(1.0F);
-        lblElMuelle21.add(jLabel93);
+        lblCasilla22.add(jLabel93);
 
         jLabel98.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel98.setText("$200");
         jLabel98.setAlignmentX(0.1F);
         jLabel98.setAlignmentY(0.1F);
-        lblElMuelle21.add(jLabel98);
+        lblCasilla22.add(jLabel98);
 
-        pnlTablero.add(lblElMuelle21);
-        lblElMuelle21.setBounds(10, 60, 150, 60);
+        pnlTablero.add(lblCasilla22);
+        lblCasilla22.setBounds(10, 60, 150, 60);
 
         jPanel57.setBackground(new java.awt.Color(255, 102, 0));
         jPanel57.setBorder(new javax.swing.border.MatteBorder(null));
@@ -987,22 +966,22 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel57);
         jPanel57.setBounds(160, 120, 20, 60);
 
-        lblElMuelle22.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle22.setLayout(new javax.swing.OverlayLayout(lblElMuelle22));
+        lblCasilla23.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla23.setLayout(new javax.swing.OverlayLayout(lblCasilla23));
 
         jLabel99.setText("AVENIDA TENNESSEE");
         jLabel99.setAlignmentY(1.0F);
-        lblElMuelle22.add(jLabel99);
+        lblCasilla23.add(jLabel99);
 
         jLabel100.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel100.setText("$180");
         jLabel100.setAlignmentX(0.1F);
         jLabel100.setAlignmentY(0.1F);
-        lblElMuelle22.add(jLabel100);
+        lblCasilla23.add(jLabel100);
 
-        pnlTablero.add(lblElMuelle22);
-        lblElMuelle22.setBounds(10, 120, 150, 60);
+        pnlTablero.add(lblCasilla23);
+        lblCasilla23.setBounds(10, 120, 150, 60);
 
         jPanel116.setBackground(new java.awt.Color(255, 102, 0));
         jPanel116.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1021,39 +1000,39 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel116);
         jPanel116.setBounds(160, 230, 20, 60);
 
-        lblElMuelle23.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle23.setLayout(new javax.swing.OverlayLayout(lblElMuelle23));
+        lblCasilla29.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla29.setLayout(new javax.swing.OverlayLayout(lblCasilla29));
 
         jLabel101.setText("ELECTRICIDAD");
         jLabel101.setAlignmentY(1.0F);
-        lblElMuelle23.add(jLabel101);
+        lblCasilla29.add(jLabel101);
 
         jLabel102.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel102.setText("$150");
         jLabel102.setAlignmentX(0.1F);
         jLabel102.setAlignmentY(0.1F);
-        lblElMuelle23.add(jLabel102);
+        lblCasilla29.add(jLabel102);
 
-        pnlTablero.add(lblElMuelle23);
-        lblElMuelle23.setBounds(10, 460, 170, 60);
+        pnlTablero.add(lblCasilla29);
+        lblCasilla29.setBounds(10, 460, 170, 60);
 
-        lblElMuelle24.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle24.setLayout(new javax.swing.OverlayLayout(lblElMuelle24));
+        lblCasilla25.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla25.setLayout(new javax.swing.OverlayLayout(lblCasilla25));
 
         jLabel103.setText("AVENIDA ST. JAMES");
         jLabel103.setAlignmentY(1.0F);
-        lblElMuelle24.add(jLabel103);
+        lblCasilla25.add(jLabel103);
 
         jLabel104.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel104.setText("$180");
         jLabel104.setAlignmentX(0.1F);
         jLabel104.setAlignmentY(0.1F);
-        lblElMuelle24.add(jLabel104);
+        lblCasilla25.add(jLabel104);
 
-        pnlTablero.add(lblElMuelle24);
-        lblElMuelle24.setBounds(10, 230, 150, 60);
+        pnlTablero.add(lblCasilla25);
+        lblCasilla25.setBounds(10, 230, 150, 60);
 
         jPanel113.setBackground(new java.awt.Color(255, 0, 153));
         jPanel113.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1072,17 +1051,17 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel113);
         jPanel113.setBounds(160, 340, 20, 60);
 
-        lblElMuelle25.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle25.setLayout(new javax.swing.OverlayLayout(lblElMuelle25));
+        lblCasilla34.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla34.setLayout(new javax.swing.OverlayLayout(lblCasilla34));
 
         jLabel105.setText("FORTUNA");
         jLabel105.setAlignmentX(0.5F);
         jLabel105.setAlignmentY(0.0F);
-        lblElMuelle25.add(jLabel105);
+        lblCasilla34.add(jLabel105);
 
-        pnlTablero.add(lblElMuelle25);
-        lblElMuelle25.setBounds(440, 590, 120, 70);
+        pnlTablero.add(lblCasilla34);
+        lblCasilla34.setBounds(440, 590, 120, 70);
 
         jPanel118.setBackground(new java.awt.Color(255, 0, 153));
         jPanel118.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1152,107 +1131,107 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel7);
         jPanel7.setBounds(305, 590, 140, 10);
 
-        lblElMuelle26.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle26.setLayout(new javax.swing.OverlayLayout(lblElMuelle26));
+        lblCasilla32.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla32.setLayout(new javax.swing.OverlayLayout(lblCasilla32));
 
         jLabel107.setText("AVENIDA CONNECTICUT");
         jLabel107.setAlignmentY(1.0F);
-        lblElMuelle26.add(jLabel107);
+        lblCasilla32.add(jLabel107);
 
         jLabel108.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel108.setText("$120");
         jLabel108.setAlignmentX(0.1F);
         jLabel108.setAlignmentY(0.1F);
-        lblElMuelle26.add(jLabel108);
+        lblCasilla32.add(jLabel108);
 
-        pnlTablero.add(lblElMuelle26);
-        lblElMuelle26.setBounds(160, 590, 150, 70);
+        pnlTablero.add(lblCasilla32);
+        lblCasilla32.setBounds(160, 590, 150, 70);
 
-        lblElMuelle27.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle27.setLayout(new javax.swing.OverlayLayout(lblElMuelle27));
+        lblCasilla28.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla28.setLayout(new javax.swing.OverlayLayout(lblCasilla28));
 
         jLabel109.setText("AVENIDA STATUS");
         jLabel109.setAlignmentY(1.0F);
-        lblElMuelle27.add(jLabel109);
+        lblCasilla28.add(jLabel109);
 
         jLabel110.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel110.setText("$140");
         jLabel110.setAlignmentX(0.1F);
         jLabel110.setAlignmentY(0.1F);
-        lblElMuelle27.add(jLabel110);
+        lblCasilla28.add(jLabel110);
 
-        pnlTablero.add(lblElMuelle27);
-        lblElMuelle27.setBounds(10, 400, 150, 60);
+        pnlTablero.add(lblCasilla28);
+        lblCasilla28.setBounds(10, 400, 150, 60);
 
-        lblElMuelle28.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle28.setLayout(new javax.swing.OverlayLayout(lblElMuelle28));
+        lblCasilla30.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla30.setLayout(new javax.swing.OverlayLayout(lblCasilla30));
 
         jLabel111.setText("PLAZA SAN CARLOS");
         jLabel111.setAlignmentY(1.0F);
-        lblElMuelle28.add(jLabel111);
+        lblCasilla30.add(jLabel111);
 
         jLabel112.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel112.setText("$140");
         jLabel112.setAlignmentX(0.1F);
         jLabel112.setAlignmentY(0.1F);
-        lblElMuelle28.add(jLabel112);
+        lblCasilla30.add(jLabel112);
 
-        pnlTablero.add(lblElMuelle28);
-        lblElMuelle28.setBounds(10, 520, 150, 70);
+        pnlTablero.add(lblCasilla30);
+        lblCasilla30.setBounds(10, 520, 150, 70);
 
-        lblElMuelle29.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle29.setLayout(new javax.swing.OverlayLayout(lblElMuelle29));
+        lblCasilla31.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla31.setLayout(new javax.swing.OverlayLayout(lblCasilla31));
 
         jLabel113.setText("LA CÁRCEL");
         jLabel113.setAlignmentY(1.0F);
-        lblElMuelle29.add(jLabel113);
+        lblCasilla31.add(jLabel113);
 
         jLabel114.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel114.setText("$140");
         jLabel114.setAlignmentX(0.1F);
         jLabel114.setAlignmentY(0.1F);
-        lblElMuelle29.add(jLabel114);
+        lblCasilla31.add(jLabel114);
 
-        pnlTablero.add(lblElMuelle29);
-        lblElMuelle29.setBounds(10, 590, 150, 70);
+        pnlTablero.add(lblCasilla31);
+        lblCasilla31.setBounds(10, 590, 150, 70);
 
-        lblElMuelle30.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle30.setLayout(new javax.swing.OverlayLayout(lblElMuelle30));
+        lblCasilla27.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla27.setLayout(new javax.swing.OverlayLayout(lblCasilla27));
 
         jLabel115.setText("AVENIDA VIRGINIA");
         jLabel115.setAlignmentY(1.0F);
-        lblElMuelle30.add(jLabel115);
+        lblCasilla27.add(jLabel115);
 
         jLabel116.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel116.setText("$160");
         jLabel116.setAlignmentX(0.1F);
         jLabel116.setAlignmentY(0.1F);
-        lblElMuelle30.add(jLabel116);
+        lblCasilla27.add(jLabel116);
 
-        pnlTablero.add(lblElMuelle30);
-        lblElMuelle30.setBounds(10, 340, 150, 60);
+        pnlTablero.add(lblCasilla27);
+        lblCasilla27.setBounds(10, 340, 150, 60);
 
-        lblElMuelle32.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle32.setLayout(new javax.swing.OverlayLayout(lblElMuelle32));
+        lblCasilla33.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla33.setLayout(new javax.swing.OverlayLayout(lblCasilla33));
 
         jLabel119.setText("AVENIDA VERMONT");
         jLabel119.setAlignmentY(1.0F);
-        lblElMuelle32.add(jLabel119);
+        lblCasilla33.add(jLabel119);
 
         jLabel120.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel120.setText("$100");
         jLabel120.setAlignmentX(0.1F);
         jLabel120.setAlignmentY(0.1F);
-        lblElMuelle32.add(jLabel120);
+        lblCasilla33.add(jLabel120);
 
-        pnlTablero.add(lblElMuelle32);
-        lblElMuelle32.setBounds(310, 600, 130, 60);
+        pnlTablero.add(lblCasilla33);
+        lblCasilla33.setBounds(310, 600, 130, 60);
 
         jPanel34.setBackground(new java.awt.Color(0, 153, 153));
         jPanel34.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1271,78 +1250,78 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel34);
         jPanel34.setBounds(560, 590, 120, 10);
 
-        lblElMuelle33.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle33.setLayout(new javax.swing.OverlayLayout(lblElMuelle33));
+        lblCasilla39.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla39.setLayout(new javax.swing.OverlayLayout(lblCasilla39));
 
         jLabel121.setText("ARCA");
         jLabel121.setAlignmentY(1.0F);
-        lblElMuelle33.add(jLabel121);
+        lblCasilla39.add(jLabel121);
 
         jLabel122.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel122.setText("COMUNAL");
         jLabel122.setAlignmentX(0.1F);
         jLabel122.setAlignmentY(0.1F);
-        lblElMuelle33.add(jLabel122);
+        lblCasilla39.add(jLabel122);
 
-        pnlTablero.add(lblElMuelle33);
-        lblElMuelle33.setBounds(1010, 590, 90, 70);
+        pnlTablero.add(lblCasilla39);
+        lblCasilla39.setBounds(1010, 590, 90, 70);
 
-        lblElMuelle34.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle34.setLayout(new javax.swing.OverlayLayout(lblElMuelle34));
+        lblCasilla26.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla26.setLayout(new javax.swing.OverlayLayout(lblCasilla26));
 
         jLabel106.setText("FERROCARRIL");
         jLabel106.setAlignmentX(1.0F);
         jLabel106.setAlignmentY(1.0F);
-        lblElMuelle34.add(jLabel106);
+        lblCasilla26.add(jLabel106);
 
         jLabel123.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel123.setText("PENSILVANIA");
         jLabel123.setAlignmentX(1.0F);
         jLabel123.setAlignmentY(0.0F);
-        lblElMuelle34.add(jLabel123);
+        lblCasilla26.add(jLabel123);
 
         jLabel132.setText("    $200");
         jLabel132.setAlignmentY(1.0F);
-        lblElMuelle34.add(jLabel132);
+        lblCasilla26.add(jLabel132);
 
-        pnlTablero.add(lblElMuelle34);
-        lblElMuelle34.setBounds(10, 290, 170, 50);
+        pnlTablero.add(lblCasilla26);
+        lblCasilla26.setBounds(10, 290, 170, 50);
 
-        lblElMuelle35.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle35.setLayout(new javax.swing.OverlayLayout(lblElMuelle35));
+        lblCasilla38.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla38.setLayout(new javax.swing.OverlayLayout(lblCasilla38));
 
         jLabel124.setText("AVENIDA BÁLTICA");
         jLabel124.setAlignmentY(1.0F);
-        lblElMuelle35.add(jLabel124);
+        lblCasilla38.add(jLabel124);
 
         jLabel125.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel125.setText("$60");
         jLabel125.setAlignmentX(0.1F);
         jLabel125.setAlignmentY(0.1F);
-        lblElMuelle35.add(jLabel125);
+        lblCasilla38.add(jLabel125);
 
-        pnlTablero.add(lblElMuelle35);
-        lblElMuelle35.setBounds(900, 600, 110, 60);
+        pnlTablero.add(lblCasilla38);
+        lblCasilla38.setBounds(900, 600, 110, 60);
 
-        lblElMuelle36.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle36.setLayout(new javax.swing.OverlayLayout(lblElMuelle36));
+        lblCasilla35.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla35.setLayout(new javax.swing.OverlayLayout(lblCasilla35));
 
         jLabel126.setText("AV. ORIENTAL");
         jLabel126.setAlignmentY(1.0F);
-        lblElMuelle36.add(jLabel126);
+        lblCasilla35.add(jLabel126);
 
         jLabel127.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel127.setText("$100");
         jLabel127.setAlignmentX(0.1F);
         jLabel127.setAlignmentY(0.1F);
-        lblElMuelle36.add(jLabel127);
+        lblCasilla35.add(jLabel127);
 
-        pnlTablero.add(lblElMuelle36);
-        lblElMuelle36.setBounds(560, 600, 120, 60);
+        pnlTablero.add(lblCasilla35);
+        lblCasilla35.setBounds(560, 600, 120, 60);
 
         jPanel9.setBackground(new java.awt.Color(102, 102, 0));
         jPanel9.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1361,39 +1340,39 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(jPanel9);
         jPanel9.setBounds(900, 590, 108, 10);
 
-        lblElMuelle37.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle37.setLayout(new javax.swing.OverlayLayout(lblElMuelle37));
+        lblCasilla37.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla37.setLayout(new javax.swing.OverlayLayout(lblCasilla37));
 
         jLabel128.setText("IMPUESTOS");
         jLabel128.setAlignmentY(1.0F);
-        lblElMuelle37.add(jLabel128);
+        lblCasilla37.add(jLabel128);
 
         jLabel129.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel129.setText("$260");
         jLabel129.setAlignmentX(0.1F);
         jLabel129.setAlignmentY(0.1F);
-        lblElMuelle37.add(jLabel129);
+        lblCasilla37.add(jLabel129);
 
-        pnlTablero.add(lblElMuelle37);
-        lblElMuelle37.setBounds(820, 590, 80, 70);
+        pnlTablero.add(lblCasilla37);
+        lblCasilla37.setBounds(820, 590, 80, 70);
 
-        lblElMuelle38.setBackground(new java.awt.Color(255, 255, 255));
-        lblElMuelle38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblElMuelle38.setLayout(new javax.swing.OverlayLayout(lblElMuelle38));
+        lblCasilla40.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla40.setLayout(new javax.swing.OverlayLayout(lblCasilla40));
 
         jLabel130.setText("AV. MEDITERRÁNEO");
         jLabel130.setAlignmentY(1.0F);
-        lblElMuelle38.add(jLabel130);
+        lblCasilla40.add(jLabel130);
 
         jLabel133.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel133.setText("$60");
         jLabel133.setAlignmentX(0.1F);
         jLabel133.setAlignmentY(0.1F);
-        lblElMuelle38.add(jLabel133);
+        lblCasilla40.add(jLabel133);
 
-        pnlTablero.add(lblElMuelle38);
-        lblElMuelle38.setBounds(1100, 600, 130, 60);
+        pnlTablero.add(lblCasilla40);
+        lblCasilla40.setBounds(1100, 600, 130, 60);
 
         jPanel11.setBackground(new java.awt.Color(102, 102, 0));
         jPanel11.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1411,6 +1390,16 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         pnlTablero.add(jPanel11);
         jPanel11.setBounds(1100, 590, 130, 10);
+
+        lblCasilla8.setBackground(new java.awt.Color(255, 255, 255));
+        lblCasilla8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasilla8.setLayout(new javax.swing.OverlayLayout(lblCasilla8));
+
+        jLabel65.setText("ARCA COMUNAL");
+        lblCasilla8.add(jLabel65);
+
+        pnlTablero.add(lblCasilla8);
+        lblCasilla8.setBounds(1228, 170, 140, 50);
 
         jPanel2.add(pnlTablero);
 
@@ -1552,13 +1541,337 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         this.lblDado2 = lblDado2;
     }
 
-    public JPanel getLblGo1() {
-        return lblGo1;
+    public JPanel getLblCasilla1() {
+        return lblCasilla1;
     }
 
-    public void setLblGo1(JPanel lblGo1) {
-        this.lblGo1 = lblGo1;
+    public void setLblCasilla1(JPanel lblCasilla1) {
+        this.lblCasilla1 = lblCasilla1;
     }
+
+    public JPanel getLblCasilla10() {
+        return lblCasilla10;
+    }
+
+    public void setLblCasilla10(JPanel lblCasilla10) {
+        this.lblCasilla10 = lblCasilla10;
+    }
+
+    public JPanel getLblCasilla11() {
+        return lblCasilla11;
+    }
+
+    public void setLblCasilla11(JPanel lblCasilla11) {
+        this.lblCasilla11 = lblCasilla11;
+    }
+
+    public JPanel getLblCasilla12() {
+        return lblCasilla12;
+    }
+
+    public void setLblCasilla12(JPanel lblCasilla12) {
+        this.lblCasilla12 = lblCasilla12;
+    }
+
+    public JPanel getLblCasilla13() {
+        return lblCasilla13;
+    }
+
+    public void setLblCasilla13(JPanel lblCasilla13) {
+        this.lblCasilla13 = lblCasilla13;
+    }
+
+    public JPanel getLblCasilla14() {
+        return lblCasilla14;
+    }
+
+    public void setLblCasilla14(JPanel lblCasilla14) {
+        this.lblCasilla14 = lblCasilla14;
+    }
+
+    public JPanel getLblCasilla15() {
+        return lblCasilla15;
+    }
+
+    public void setLblCasilla15(JPanel lblCasilla15) {
+        this.lblCasilla15 = lblCasilla15;
+    }
+
+    public JPanel getLblCasilla16() {
+        return lblCasilla16;
+    }
+
+    public void setLblCasilla16(JPanel lblCasilla16) {
+        this.lblCasilla16 = lblCasilla16;
+    }
+
+    public JPanel getLblCasilla17() {
+        return lblCasilla17;
+    }
+
+    public void setLblCasilla17(JPanel lblCasilla17) {
+        this.lblCasilla17 = lblCasilla17;
+    }
+
+    public JPanel getLblCasilla18() {
+        return lblCasilla18;
+    }
+
+    public void setLblCasilla18(JPanel lblCasilla18) {
+        this.lblCasilla18 = lblCasilla18;
+    }
+
+    public JPanel getLblCasilla19() {
+        return lblCasilla19;
+    }
+
+    public void setLblCasilla19(JPanel lblCasilla19) {
+        this.lblCasilla19 = lblCasilla19;
+    }
+
+    public JPanel getLblCasilla2() {
+        return lblCasilla2;
+    }
+
+    public void setLblCasilla2(JPanel lblCasilla2) {
+        this.lblCasilla2 = lblCasilla2;
+    }
+
+    public JPanel getLblCasilla20() {
+        return lblCasilla20;
+    }
+
+    public void setLblCasilla20(JPanel lblCasilla20) {
+        this.lblCasilla20 = lblCasilla20;
+    }
+
+    public JPanel getLblCasilla21() {
+        return lblCasilla21;
+    }
+
+    public void setLblCasilla21(JPanel lblCasilla21) {
+        this.lblCasilla21 = lblCasilla21;
+    }
+
+    public JPanel getLblCasilla22() {
+        return lblCasilla22;
+    }
+
+    public void setLblCasilla22(JPanel lblCasilla22) {
+        this.lblCasilla22 = lblCasilla22;
+    }
+
+    public JPanel getLblCasilla23() {
+        return lblCasilla23;
+    }
+
+    public void setLblCasilla23(JPanel lblCasilla23) {
+        this.lblCasilla23 = lblCasilla23;
+    }
+
+    public JPanel getLblCasilla24() {
+        return lblCasilla24;
+    }
+
+    public void setLblCasilla24(JPanel lblCasilla24) {
+        this.lblCasilla24 = lblCasilla24;
+    }
+
+    public JPanel getLblCasilla30() {
+        return lblCasilla30;
+    }
+
+    public void setLblCasilla30(JPanel lblCasilla30) {
+        this.lblCasilla30 = lblCasilla30;
+    }
+
+    public JPanel getLblCasilla41() {
+        return lblCasilla8;
+    }
+
+    public void setLblCasilla41(JPanel lblCasilla41) {
+        this.lblCasilla8 = lblCasilla41;
+    }
+
+
+
+    public JPanel getLblCasilla25() {
+        return lblCasilla25;
+    }
+
+    public void setLblCasilla25(JPanel lblCasilla25) {
+        this.lblCasilla25 = lblCasilla25;
+    }
+
+    public JPanel getLblCasilla26() {
+        return lblCasilla26;
+    }
+
+    public void setLblCasilla26(JPanel lblCasilla26) {
+        this.lblCasilla26 = lblCasilla26;
+    }
+
+    public JPanel getLblCasilla27() {
+        return lblCasilla27;
+    }
+
+    public void setLblCasilla27(JPanel lblCasilla27) {
+        this.lblCasilla27 = lblCasilla27;
+    }
+
+    public JPanel getLblCasilla28() {
+        return lblCasilla28;
+    }
+
+    public void setLblCasilla28(JPanel lblCasilla28) {
+        this.lblCasilla28 = lblCasilla28;
+    }
+
+    public JPanel getLblCasilla29() {
+        return lblCasilla29;
+    }
+
+    public void setLblCasilla29(JPanel lblCasilla29) {
+        this.lblCasilla29 = lblCasilla29;
+    }
+
+    public JPanel getLblCasilla3() {
+        return lblCasilla3;
+    }
+
+    public void setLblCasilla3(JPanel lblCasilla3) {
+        this.lblCasilla3 = lblCasilla3;
+    }
+
+    public JPanel getLblCasilla31() {
+        return lblCasilla31;
+    }
+
+    public void setLblCasilla31(JPanel lblCasilla31) {
+        this.lblCasilla31 = lblCasilla31;
+    }
+
+    public JPanel getLblCasilla32() {
+        return lblCasilla32;
+    }
+
+    public void setLblCasilla32(JPanel lblCasilla32) {
+        this.lblCasilla32 = lblCasilla32;
+    }
+
+    public JPanel getLblCasilla33() {
+        return lblCasilla33;
+    }
+
+    public void setLblCasilla33(JPanel lblCasilla33) {
+        this.lblCasilla33 = lblCasilla33;
+    }
+
+    public JPanel getLblCasilla34() {
+        return lblCasilla34;
+    }
+
+    public void setLblCasilla34(JPanel lblCasilla34) {
+        this.lblCasilla34 = lblCasilla34;
+    }
+
+    public JPanel getLblCasilla35() {
+        return lblCasilla35;
+    }
+
+    public void setLblCasilla35(JPanel lblCasilla35) {
+        this.lblCasilla35 = lblCasilla35;
+    }
+
+    public JPanel getLblCasilla36() {
+        return lblCasilla36;
+    }
+
+    public void setLblCasilla36(JPanel lblCasilla36) {
+        this.lblCasilla36 = lblCasilla36;
+    }
+
+    public JPanel getLblCasilla37() {
+        return lblCasilla37;
+    }
+
+    public void setLblCasilla37(JPanel lblCasilla37) {
+        this.lblCasilla37 = lblCasilla37;
+    }
+
+    public JPanel getLblCasilla38() {
+        return lblCasilla38;
+    }
+
+    public void setLblCasilla38(JPanel lblCasilla38) {
+        this.lblCasilla38 = lblCasilla38;
+    }
+
+    public JPanel getLblCasilla39() {
+        return lblCasilla39;
+    }
+
+    public void setLblCasilla39(JPanel lblCasilla39) {
+        this.lblCasilla39 = lblCasilla39;
+    }
+
+    public JPanel getLblCasilla4() {
+        return lblCasilla4;
+    }
+
+    public void setLblCasilla4(JPanel lblCasilla4) {
+        this.lblCasilla4 = lblCasilla4;
+    }
+
+    public JPanel getLblCasilla40() {
+        return lblCasilla40;
+    }
+
+    public void setLblCasilla40(JPanel lblCasilla40) {
+        this.lblCasilla40 = lblCasilla40;
+    }
+
+    public JPanel getLblCasilla5() {
+        return lblCasilla5;
+    }
+
+    public void setLblCasilla5(JPanel lblCasilla5) {
+        this.lblCasilla5 = lblCasilla5;
+    }
+
+    public JPanel getLblCasilla6() {
+        return lblCasilla6;
+    }
+
+    public void setLblCasilla6(JPanel lblCasilla6) {
+        this.lblCasilla6 = lblCasilla6;
+    }
+
+    public JPanel getLblCasilla7() {
+        return lblCasilla7;
+    }
+
+    public void setLblCasilla7(JPanel lblCasilla7) {
+        this.lblCasilla7 = lblCasilla7;
+    }
+
+    public JPanel getLblCasilla8() {
+        return lblCasilla24;
+    }
+
+    public void setLblCasilla8(JPanel lblCasilla8) {
+        this.lblCasilla24 = lblCasilla8;
+    }
+
+    public JPanel getLblCasilla9() {
+        return lblCasilla9;
+    }
+
+    public void setLblCasilla9(JPanel lblCasilla9) {
+        this.lblCasilla9 = lblCasilla9;
+    }
+    
+    
     
     
     
@@ -1578,17 +1891,22 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private void btnLanzarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanzarDadosActionPerformed
 
         if (this.getRefCliente().getHiloCliente().isTurnoConseguido()){
-            try {
-                this.getRefCliente().getHiloCliente().writer.writeInt(9);
-                this.getRefCliente().getHiloCliente().writer.writeUTF(this.getLblNombreJugador().getText());
-            } catch (IOException ex) {
-                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Random random = new Random();
+            int dado1 = random.nextInt(6); // se hace pasar de 0-5 a 1-6 sumandole 1 al resultado
+            dado1 = dado1 + 1;
+            this.getLblDado1().setText(""+dado1);
+        
+            int dado2 = random.nextInt(6); // se hace pasar de 0-5 a 1-6 sumandole 1 al resultado
+            dado2 = dado2 + 1;
+            this.getLblDado2().setText(""+dado2);
+        
+            int dadoTotal = dado1+dado2;
+            
             
         }
         
         else if (!this.getRefCliente().getHiloCliente().isTurnoConseguido()){
-            Random random = new Random();
+        Random random = new Random();
         int dado1 = random.nextInt(6); // se hace pasar de 0-5 a 1-6 sumandole 1 al resultado
         dado1 = dado1 + 1;
         this.getLblDado1().setText(""+dado1);
@@ -2104,7 +2422,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
     private javax.swing.JLabel jLabel133;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
@@ -2113,6 +2430,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
@@ -2147,7 +2465,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel109;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel110;
     private javax.swing.JPanel jPanel113;
     private javax.swing.JPanel jPanel116;
     private javax.swing.JPanel jPanel118;
@@ -2175,52 +2492,53 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel lblAdministrar;
+    private javax.swing.JPanel lblCasilla1;
+    private javax.swing.JPanel lblCasilla10;
+    private javax.swing.JPanel lblCasilla11;
+    private javax.swing.JPanel lblCasilla12;
+    private javax.swing.JPanel lblCasilla13;
+    private javax.swing.JPanel lblCasilla14;
+    private javax.swing.JPanel lblCasilla15;
+    private javax.swing.JPanel lblCasilla16;
+    private javax.swing.JPanel lblCasilla17;
+    private javax.swing.JPanel lblCasilla18;
+    private javax.swing.JPanel lblCasilla19;
+    private javax.swing.JPanel lblCasilla2;
+    private javax.swing.JPanel lblCasilla20;
+    private javax.swing.JPanel lblCasilla21;
+    private javax.swing.JPanel lblCasilla22;
+    private javax.swing.JPanel lblCasilla23;
+    private javax.swing.JPanel lblCasilla24;
+    private javax.swing.JPanel lblCasilla25;
+    private javax.swing.JPanel lblCasilla26;
+    private javax.swing.JPanel lblCasilla27;
+    private javax.swing.JPanel lblCasilla28;
+    private javax.swing.JPanel lblCasilla29;
+    private javax.swing.JPanel lblCasilla3;
+    private javax.swing.JPanel lblCasilla30;
+    private javax.swing.JPanel lblCasilla31;
+    private javax.swing.JPanel lblCasilla32;
+    private javax.swing.JPanel lblCasilla33;
+    private javax.swing.JPanel lblCasilla34;
+    private javax.swing.JPanel lblCasilla35;
+    private javax.swing.JPanel lblCasilla36;
+    private javax.swing.JPanel lblCasilla37;
+    private javax.swing.JPanel lblCasilla38;
+    private javax.swing.JPanel lblCasilla39;
+    private javax.swing.JPanel lblCasilla4;
+    private javax.swing.JPanel lblCasilla40;
+    private javax.swing.JPanel lblCasilla5;
+    private javax.swing.JPanel lblCasilla6;
+    private javax.swing.JPanel lblCasilla7;
+    private javax.swing.JPanel lblCasilla8;
+    private javax.swing.JPanel lblCasilla9;
     private javax.swing.JLabel lblChat;
     private javax.swing.JLabel lblDado1;
     private javax.swing.JLabel lblDado2;
     private javax.swing.JLabel lblDinero;
-    private javax.swing.JPanel lblElMuelle;
-    private javax.swing.JPanel lblElMuelle1;
-    private javax.swing.JPanel lblElMuelle10;
-    private javax.swing.JPanel lblElMuelle11;
-    private javax.swing.JPanel lblElMuelle12;
-    private javax.swing.JPanel lblElMuelle13;
-    private javax.swing.JPanel lblElMuelle14;
-    private javax.swing.JPanel lblElMuelle15;
-    private javax.swing.JPanel lblElMuelle16;
-    private javax.swing.JPanel lblElMuelle17;
-    private javax.swing.JPanel lblElMuelle18;
-    private javax.swing.JPanel lblElMuelle19;
-    private javax.swing.JPanel lblElMuelle2;
-    private javax.swing.JPanel lblElMuelle20;
-    private javax.swing.JPanel lblElMuelle21;
-    private javax.swing.JPanel lblElMuelle22;
-    private javax.swing.JPanel lblElMuelle23;
-    private javax.swing.JPanel lblElMuelle24;
-    private javax.swing.JPanel lblElMuelle25;
-    private javax.swing.JPanel lblElMuelle26;
-    private javax.swing.JPanel lblElMuelle27;
-    private javax.swing.JPanel lblElMuelle28;
-    private javax.swing.JPanel lblElMuelle29;
-    private javax.swing.JPanel lblElMuelle3;
-    private javax.swing.JPanel lblElMuelle30;
-    private javax.swing.JPanel lblElMuelle32;
-    private javax.swing.JPanel lblElMuelle33;
-    private javax.swing.JPanel lblElMuelle34;
-    private javax.swing.JPanel lblElMuelle35;
-    private javax.swing.JPanel lblElMuelle36;
-    private javax.swing.JPanel lblElMuelle37;
-    private javax.swing.JPanel lblElMuelle38;
-    private javax.swing.JPanel lblElMuelle4;
-    private javax.swing.JPanel lblElMuelle5;
-    private javax.swing.JPanel lblElMuelle7;
-    private javax.swing.JPanel lblElMuelle8;
-    private javax.swing.JPanel lblElMuelle9;
     private javax.swing.JLabel lblFicha;
     private javax.swing.JLabel lblFichaJugador;
-    private javax.swing.JPanel lblGo1;
     private javax.swing.JLabel lblHistorial;
-    private javax.swing.JPanel lblImpuestos1;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblNombreJugador;
     private javax.swing.JLabel lblNumDinero;

@@ -5,6 +5,9 @@
  */
 package cartas;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Usuario
@@ -12,12 +15,13 @@ package cartas;
 public abstract class Propiedades extends Cartas{
     public int precioCompra;
     public int valorHipoteca;
+    public JPanel panel;
 
-    public Propiedades(String imagen, String nombre, int precioCompra, int valorHipoteca) {
-        super(imagen, nombre);
+    public Propiedades(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca) {
+        super(imagen, panel, nombre);
         this.precioCompra = precioCompra;
         this.valorHipoteca = valorHipoteca;
-                
+        this.panel = panel;
     }
 
     
