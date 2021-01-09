@@ -45,7 +45,7 @@ public class Progra2 {
         ArrayList<Ficha> fichasPartida = new ArrayList<Ficha>();
         FileManager.writeObject(fichasPartida, "src/Partida/listafichas.dat");
         ArrayList<String> nombreOrden = new ArrayList<String>();
-        FileManager.writeObject(nombreOrden, "src/Partida/nombreorden.dat");
+        FileManager.writeObject(nombreOrden, "src/Partida/nombresorden.dat");
         ArrayList<Integer> listaDados = new ArrayList<Integer>();
         FileManager.writeObject(listaDados, "src/Partida/listadados.dat");
         ArrayList<Integer> listaDados2 = new ArrayList<Integer>();

@@ -22,6 +22,9 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.OverlayLayout;
@@ -284,9 +287,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             Ficha newFicha = listaFichas.get(i);
                             System.out.println(newFicha.getLabelFicha());
                             System.out.println(newFicha.getLabelFicha().getIcon());
-                            //this.getRefPantalla().getLblGo1().add(newFicha.getLabelFicha());
-                            //refPantalla.getLblGo1().revalidate();
-                            //refPantalla.getLblGo1().repaint();
+
                             this.getTablero().getCasillas().get(0).getPanel().add(newFicha.getLabelFicha());
                             this.getTablero().getCasillas().get(0).getPanel().revalidate();
                             this.getTablero().getCasillas().get(0).getPanel().repaint();
@@ -320,12 +321,13 @@ public class ThreadCliente extends Thread implements Serializable{
                             nombresOrden = (ArrayList<String>)FileManager.readObject("src/Partida/nombresorden.dat");
                             System.out.println(nombresOrden);
                             this.refPantalla.getTxaHistorial().append("El orden ha sido decidido. El orden será:\n");
+                            this.refPantalla.getLblTurno().setText(nombresOrden.get(0));
                             int contPos = 1;
                             for (int i = 0; i < nombresOrden.size(); i++){
                                 this.refPantalla.getTxaHistorial().append(contPos + ". " + nombresOrden.get(i) + "\n");
                                 contPos = contPos + 1;
                             }
-                            this.writer.writeInt(10);
+                            refPantalla.setNombreTurno(nombresOrden.get(0));
                         }
                         else if (decidido == 0){
                             this.refPantalla.getTxaHistorial().append("Por favor vuelva a lanzar los dados.\n");
@@ -340,9 +342,100 @@ public class ThreadCliente extends Thread implements Serializable{
                     case 11:
                         refPantalla.setNombreTurno(reader.readUTF());
                     break;
+                    case 12:
+                        int numMoverse = reader.readInt();
+                        String nombreFicha = reader.readUTF();
+                        int posFicha = reader.readInt();
+                        
+                        listaFichas = (ArrayList<Ficha>)FileManager.readObject("src/Partida/listafichas.dat");
+                        Ficha fichaMover = null;
+                        int posicionActual = posFicha;
+                        int fichaQuitar = 0;
+                        int indicePnl = 0;
+                        
+                        for (int i = 0; i < listaFichas.size(); i++){
+                            if (listaFichas.get(i).getNombre().equals(nombreFicha)){
+                                fichaMover = listaFichas.get(i);
+                                fichaQuitar = i;
+                                System.out.println("i es: " + i);
+                                //posicionActual = listaFichas.get(i).getPosicionActual();
+                            }
+                                    
+                        }
+                        
+                        System.out.println(listaFichas);
+                        
+                        if (fichaQuitar == 0)
+                            indicePnl = 2;
+                        if (fichaQuitar == 1)
+                            indicePnl = 3;
+                        if (fichaQuitar == 2)
+                            indicePnl = 4;
+                        if (fichaQuitar == 3)
+                            indicePnl = 5;
+                        if (fichaQuitar == 4)
+                            indicePnl = 6;
+                        if (fichaQuitar == 5)
+                            indicePnl = 7;
+                        
+                        System.out.println("indicePnl es :" + indicePnl);
+                        System.out.println("ComponentCount es: " + this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount());
+                        if (this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount()-1 < indicePnl)
+                            indicePnl = indicePnl - 1;
+
+                        this.getTablero().getCasillas().get(posicionActual).getPanel().remove(indicePnl);
+                        this.getTablero().getCasillas().get(posicionActual).getPanel().revalidate();
+                        this.getTablero().getCasillas().get(posicionActual).getPanel().repaint();
+                        
+                        if (posicionActual + 1 > this.getTablero().getCasillas().size()-1){
+                            posicionActual = 0;
+                        }
+                        
+                        int contMovido = 0;
+                        for (int i = posicionActual+1; contMovido < numMoverse ; i++){
+                            
+                            System.out.println("Ficha originalmente estaba en: " + this.getTablero().getCasillas().get(i).getPanel().getComponents());
+                            System.out.println("Componentes: " + this.getTablero().getCasillas().get(i).getPanel().getComponents());
+                            System.out.println("Cantidad de componentes: " + this.getTablero().getCasillas().get(i).getPanel().getComponentCount());
+                            
+                            this.getTablero().getCasillas().get(i-1).getPanel().remove(fichaMover.getLabelFicha());
+                            this.getTablero().getCasillas().get(i-1).getPanel().revalidate();
+                            this.getTablero().getCasillas().get(i-1).getPanel().repaint();
+                            
+                            this.getTablero().getCasillas().get(i).getPanel().add(fichaMover.getLabelFicha());
+                            this.getTablero().getCasillas().get(i).getPanel().revalidate();
+                            this.getTablero().getCasillas().get(i).getPanel().repaint();
+                            
+                            if (i + 1 > 39){
+                                i = 0;
+                            }
+                            
+                            if (this.getFicha().getNombre().equals(fichaMover.getNombre())){
+                                this.getFicha().setPosicionActual(i);
+                            }
+                            contMovido = contMovido + 1;
+                            TimeUnit.SECONDS.sleep(1);
+                            
+                            if (i == 0){
+                                System.out.println("Vuelta al tablero");
+                                this.getTablero().getCasillas().get(39).getPanel().remove(fichaMover.getLabelFicha());
+                                this.getTablero().getCasillas().get(39).getPanel().revalidate();
+                                this.getTablero().getCasillas().get(39).getPanel().repaint();
+                                
+                                this.getTablero().getCasillas().get(0).getPanel().add(fichaMover.getLabelFicha());
+                                this.getTablero().getCasillas().get(0).getPanel().revalidate();
+                                this.getTablero().getCasillas().get(0).getPanel().repaint();
+                                TimeUnit.SECONDS.sleep(1);
+                                contMovido = contMovido + 1;
+                            }
+                        }
+                        
+                        break;
                 }
             } catch (IOException ex) {
                 
+            } catch (InterruptedException ex) {
+                Logger.getLogger(ThreadCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

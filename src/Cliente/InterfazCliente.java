@@ -157,13 +157,17 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel70 = new javax.swing.JPanel();
         lblCasilla1 = new javax.swing.JPanel();
         jLabel59 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         lblCasilla3 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         lblCasilla4 = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel72 = new javax.swing.JPanel();
         lblCasilla5 = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         lblCasilla6 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
@@ -173,8 +177,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel77 = new javax.swing.JPanel();
         lblCasilla24 = new javax.swing.JPanel();
         jLabel58 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         lblCasilla11 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel38 = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         lblCasilla12 = new javax.swing.JPanel();
@@ -185,8 +191,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jLabel85 = new javax.swing.JLabel();
         lblCasilla2 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         lblCasilla19 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel53 = new javax.swing.JPanel();
         lblCasilla9 = new javax.swing.JPanel();
         jLabel74 = new javax.swing.JLabel();
@@ -212,6 +220,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel31 = new javax.swing.JPanel();
         lblCasilla21 = new javax.swing.JPanel();
         jLabel80 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         lblCasilla18 = new javax.swing.JPanel();
         jLabel81 = new javax.swing.JLabel();
         jLabel94 = new javax.swing.JLabel();
@@ -219,7 +228,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla36 = new javax.swing.JPanel();
         jLabel86 = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
-        jLabel131 = new javax.swing.JLabel();
         lblCasilla20 = new javax.swing.JPanel();
         jLabel96 = new javax.swing.JLabel();
         jLabel97 = new javax.swing.JLabel();
@@ -241,6 +249,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel113 = new javax.swing.JPanel();
         lblCasilla34 = new javax.swing.JPanel();
         jLabel105 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel118 = new javax.swing.JPanel();
         jPanel109 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
@@ -270,7 +279,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla26 = new javax.swing.JPanel();
         jLabel106 = new javax.swing.JLabel();
         jLabel123 = new javax.swing.JLabel();
-        jLabel132 = new javax.swing.JLabel();
         lblCasilla38 = new javax.swing.JPanel();
         jLabel124 = new javax.swing.JLabel();
         jLabel125 = new javax.swing.JLabel();
@@ -287,6 +295,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel11 = new javax.swing.JPanel();
         lblCasilla8 = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         pnlToolbar = new javax.swing.JPanel();
         btnVenderProp = new javax.swing.JButton();
         btnComprarPropActual = new javax.swing.JButton();
@@ -424,9 +433,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla1.setLayout(new javax.swing.OverlayLayout(lblCasilla1));
 
-        jLabel59.setText("GO (COBRE 200$)");
-        jLabel59.setAlignmentY(0.2F);
+        jLabel59.setText("GO");
+        jLabel59.setAlignmentY(1.0F);
         lblCasilla1.add(jLabel59);
+
+        jLabel1.setText("COBRE $200");
+        jLabel1.setAlignmentY(0.0F);
+        lblCasilla1.add(jLabel1);
 
         pnlTablero.add(lblCasilla1);
         lblCasilla1.setBounds(1229, 588, 140, 70);
@@ -435,9 +448,15 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla3.setLayout(new javax.swing.OverlayLayout(lblCasilla3));
 
-        jLabel47.setText("IMPUESTOS ($100)");
+        jLabel47.setText("IMPUESTOS");
         jLabel47.setAlignmentX(0.5F);
+        jLabel47.setAlignmentY(1.0F);
         lblCasilla3.add(jLabel47);
+
+        jLabel3.setText("$100");
+        jLabel3.setAlignmentX(0.5F);
+        jLabel3.setAlignmentY(0.0F);
+        lblCasilla3.add(jLabel3);
 
         pnlTablero.add(lblCasilla3);
         lblCasilla3.setBounds(1228, 470, 140, 60);
@@ -446,8 +465,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla4.setLayout(new javax.swing.OverlayLayout(lblCasilla4));
 
-        jLabel60.setText("PLAZA PARK $350");
+        jLabel60.setText("PLAZA PARK");
+        jLabel60.setAlignmentY(1.0F);
         lblCasilla4.add(jLabel60);
+
+        jLabel4.setText("$350");
+        jLabel4.setAlignmentY(0.0F);
+        lblCasilla4.add(jLabel4);
 
         pnlTablero.add(lblCasilla4);
         lblCasilla4.setBounds(1250, 400, 118, 70);
@@ -474,8 +498,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla5.setLayout(new javax.swing.OverlayLayout(lblCasilla5));
 
         jLabel61.setText("FORTUNA");
-        jLabel61.setAlignmentX(0.5F);
+        jLabel61.setAlignmentX(1.0F);
+        jLabel61.setAlignmentY(1.0F);
         lblCasilla5.add(jLabel61);
+
+        jLabel5.setText("(SACAR CARTA)");
+        jLabel5.setAlignmentX(1.0F);
+        jLabel5.setAlignmentY(0.0F);
+        lblCasilla5.add(jLabel5);
 
         pnlTablero.add(lblCasilla5);
         lblCasilla5.setBounds(1228, 340, 140, 60);
@@ -535,8 +565,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla24.setLayout(new javax.swing.OverlayLayout(lblCasilla24));
 
-        jLabel58.setText("ARCA COMUNAL");
+        jLabel58.setText("ARCA");
+        jLabel58.setAlignmentY(1.0F);
         lblCasilla24.add(jLabel58);
+
+        jLabel10.setText("COMUNAL");
+        jLabel10.setAlignmentY(0.0F);
+        lblCasilla24.add(jLabel10);
 
         pnlTablero.add(lblCasilla24);
         lblCasilla24.setBounds(10, 180, 170, 50);
@@ -545,9 +580,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla11.setLayout(new javax.swing.OverlayLayout(lblCasilla11));
 
-        jLabel64.setText("VAYA A LA CÁRCEL");
-        jLabel64.setAlignmentY(0.3F);
+        jLabel64.setText("VAYA A");
+        jLabel64.setAlignmentY(1.0F);
         lblCasilla11.add(jLabel64);
+
+        jLabel7.setText("LA CÁRCEL");
+        jLabel7.setAlignmentY(0.0F);
+        lblCasilla11.add(jLabel7);
 
         pnlTablero.add(lblCasilla11);
         lblCasilla11.setBounds(1248, 0, 120, 60);
@@ -624,9 +663,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla2.setLayout(new javax.swing.OverlayLayout(lblCasilla2));
 
-        jLabel72.setText("EL MUELLE ($400)");
+        jLabel72.setText("EL MUELLE");
         jLabel72.setAlignmentX(0.2F);
+        jLabel72.setAlignmentY(1.0F);
         lblCasilla2.add(jLabel72);
+
+        jLabel2.setText("$400");
+        jLabel2.setAlignmentY(0.0F);
+        lblCasilla2.add(jLabel2);
 
         pnlTablero.add(lblCasilla2);
         lblCasilla2.setBounds(1248, 530, 120, 60);
@@ -637,8 +681,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         jLabel73.setText("FORTUNA");
         jLabel73.setAlignmentX(0.5F);
-        jLabel73.setAlignmentY(0.0F);
+        jLabel73.setAlignmentY(1.0F);
         lblCasilla19.add(jLabel73);
+
+        jLabel8.setText("(SACAR CARTA)");
+        jLabel8.setAlignmentY(0.0F);
+        lblCasilla19.add(jLabel8);
 
         pnlTablero.add(lblCasilla19);
         lblCasilla19.setBounds(290, 0, 120, 60);
@@ -834,10 +882,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla21.setLayout(new javax.swing.OverlayLayout(lblCasilla21));
 
-        jLabel80.setText("PARQUEO LIBRE");
+        jLabel80.setText("LIBRE");
         jLabel80.setAlignmentX(0.5F);
         jLabel80.setAlignmentY(0.0F);
         lblCasilla21.add(jLabel80);
+
+        jLabel9.setText("PARQUEO");
+        jLabel9.setAlignmentY(1.0F);
+        lblCasilla21.add(jLabel9);
 
         pnlTablero.add(lblCasilla21);
         lblCasilla21.setBounds(10, 0, 150, 60);
@@ -880,7 +932,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla36.setLayout(new javax.swing.OverlayLayout(lblCasilla36));
 
-        jLabel86.setText("FERROCARRIL");
+        jLabel86.setText("FERROCARRIL $200");
         jLabel86.setAlignmentX(1.0F);
         jLabel86.setAlignmentY(1.0F);
         lblCasilla36.add(jLabel86);
@@ -890,10 +942,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jLabel95.setAlignmentX(1.0F);
         jLabel95.setAlignmentY(0.0F);
         lblCasilla36.add(jLabel95);
-
-        jLabel131.setText("    $200");
-        jLabel131.setAlignmentY(1.0F);
-        lblCasilla36.add(jLabel131);
 
         pnlTablero.add(lblCasilla36);
         lblCasilla36.setBounds(680, 590, 140, 70);
@@ -1055,10 +1103,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla34.setLayout(new javax.swing.OverlayLayout(lblCasilla34));
 
-        jLabel105.setText("FORTUNA");
+        jLabel105.setText("(SACAR CARTA)");
         jLabel105.setAlignmentX(0.5F);
         jLabel105.setAlignmentY(0.0F);
         lblCasilla34.add(jLabel105);
+
+        jLabel11.setText("FORTUNA");
+        jLabel11.setAlignmentY(1.0F);
+        lblCasilla34.add(jLabel11);
 
         pnlTablero.add(lblCasilla34);
         lblCasilla34.setBounds(440, 590, 120, 70);
@@ -1129,7 +1181,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
 
         pnlTablero.add(jPanel7);
-        jPanel7.setBounds(305, 590, 140, 10);
+        jPanel7.setBounds(310, 590, 140, 10);
 
         lblCasilla32.setBackground(new java.awt.Color(255, 255, 255));
         lblCasilla32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1146,7 +1198,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla32.add(jLabel108);
 
         pnlTablero.add(lblCasilla32);
-        lblCasilla32.setBounds(160, 590, 150, 70);
+        lblCasilla32.setBounds(160, 600, 150, 60);
 
         lblCasilla28.setBackground(new java.awt.Color(255, 255, 255));
         lblCasilla28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1271,20 +1323,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla26.setLayout(new javax.swing.OverlayLayout(lblCasilla26));
 
-        jLabel106.setText("FERROCARRIL");
-        jLabel106.setAlignmentX(1.0F);
+        jLabel106.setText("FERROCARRIL PENSILVANIA");
         jLabel106.setAlignmentY(1.0F);
         lblCasilla26.add(jLabel106);
 
         jLabel123.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel123.setText("PENSILVANIA");
-        jLabel123.setAlignmentX(1.0F);
+        jLabel123.setText("$200");
         jLabel123.setAlignmentY(0.0F);
         lblCasilla26.add(jLabel123);
-
-        jLabel132.setText("    $200");
-        jLabel132.setAlignmentY(1.0F);
-        lblCasilla26.add(jLabel132);
 
         pnlTablero.add(lblCasilla26);
         lblCasilla26.setBounds(10, 290, 170, 50);
@@ -1395,8 +1441,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla8.setLayout(new javax.swing.OverlayLayout(lblCasilla8));
 
-        jLabel65.setText("ARCA COMUNAL");
+        jLabel65.setText("ARCA");
+        jLabel65.setAlignmentY(1.0F);
         lblCasilla8.add(jLabel65);
+
+        jLabel6.setText("COMUNAL");
+        jLabel6.setAlignmentY(0.0F);
+        lblCasilla8.add(jLabel6);
 
         pnlTablero.add(lblCasilla8);
         lblCasilla8.setBounds(1228, 170, 140, 50);
@@ -1677,24 +1728,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         this.lblCasilla24 = lblCasilla24;
     }
 
-    public JPanel getLblCasilla30() {
-        return lblCasilla30;
-    }
-
-    public void setLblCasilla30(JPanel lblCasilla30) {
-        this.lblCasilla30 = lblCasilla30;
-    }
-
-    public JPanel getLblCasilla41() {
-        return lblCasilla8;
-    }
-
-    public void setLblCasilla41(JPanel lblCasilla41) {
-        this.lblCasilla8 = lblCasilla41;
-    }
-
-
-
     public JPanel getLblCasilla25() {
         return lblCasilla25;
     }
@@ -1741,6 +1774,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     public void setLblCasilla3(JPanel lblCasilla3) {
         this.lblCasilla3 = lblCasilla3;
+    }
+
+    public JPanel getLblCasilla30() {
+        return lblCasilla30;
+    }
+
+    public void setLblCasilla30(JPanel lblCasilla30) {
+        this.lblCasilla30 = lblCasilla30;
     }
 
     public JPanel getLblCasilla31() {
@@ -1856,11 +1897,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     }
 
     public JPanel getLblCasilla8() {
-        return lblCasilla24;
+        return lblCasilla8;
     }
 
     public void setLblCasilla8(JPanel lblCasilla8) {
-        this.lblCasilla24 = lblCasilla8;
+        this.lblCasilla8 = lblCasilla8;
     }
 
     public JPanel getLblCasilla9() {
@@ -1870,8 +1911,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     public void setLblCasilla9(JPanel lblCasilla9) {
         this.lblCasilla9 = lblCasilla9;
     }
-    
-    
     
     
     
@@ -1901,7 +1940,18 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getLblDado2().setText(""+dado2);
         
             int dadoTotal = dado1+dado2;
+            String nombreFicha = this.getRefCliente().getHiloCliente().getFicha().getNombre();
+            int posFicha = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual();
             
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(11);
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(dadoTotal);
+                this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombreFicha);
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(posFicha);
+                
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
         }
         
@@ -2390,6 +2440,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JComboBox<String> cbEdificios;
     private javax.swing.JComboBox<String> cbPropiedades;
     private javax.swing.JComboBox<String> cbSeleccion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
@@ -2400,6 +2452,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel109;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel112;
@@ -2419,18 +2472,22 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
-    private javax.swing.JLabel jLabel132;
     private javax.swing.JLabel jLabel133;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
@@ -2441,6 +2498,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
@@ -2451,6 +2509,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;

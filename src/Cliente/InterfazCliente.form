@@ -352,8 +352,14 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel59">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="GO (COBRE 200$)"/>
-                    <Property name="alignmentY" type="float" value="0.2"/>
+                    <Property name="text" type="java.lang.String" value="GO"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="COBRE $200"/>
+                    <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -404,8 +410,16 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel47">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="IMPUESTOS ($100)"/>
+                    <Property name="text" type="java.lang.String" value="IMPUESTOS"/>
                     <Property name="alignmentX" type="float" value="0.5"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="$100"/>
+                    <Property name="alignmentX" type="float" value="0.5"/>
+                    <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -456,7 +470,14 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel60">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="PLAZA PARK $350"/>
+                    <Property name="text" type="java.lang.String" value="PLAZA PARK"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="$350"/>
+                    <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -538,7 +559,15 @@
                 <Component class="javax.swing.JLabel" name="jLabel61">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="FORTUNA"/>
-                    <Property name="alignmentX" type="float" value="0.5"/>
+                    <Property name="alignmentX" type="float" value="1.0"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel5">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="(SACAR CARTA)"/>
+                    <Property name="alignmentX" type="float" value="1.0"/>
+                    <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -739,7 +768,14 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel58">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="ARCA COMUNAL"/>
+                    <Property name="text" type="java.lang.String" value="ARCA"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="COMUNAL"/>
+                    <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -790,8 +826,14 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel64">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="VAYA A LA C&#xc1;RCEL"/>
-                    <Property name="alignmentY" type="float" value="0.3"/>
+                    <Property name="text" type="java.lang.String" value="VAYA A"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="LA C&#xc1;RCEL"/>
+                    <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1022,8 +1064,15 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel72">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="EL MUELLE ($400)"/>
+                    <Property name="text" type="java.lang.String" value="EL MUELLE"/>
                     <Property name="alignmentX" type="float" value="0.2"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="$400"/>
+                    <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1076,6 +1125,12 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="FORTUNA"/>
                     <Property name="alignmentX" type="float" value="0.5"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="(SACAR CARTA)"/>
                     <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
                 </Component>
@@ -1637,9 +1692,15 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel80">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="PARQUEO LIBRE"/>
+                    <Property name="text" type="java.lang.String" value="LIBRE"/>
                     <Property name="alignmentX" type="float" value="0.5"/>
                     <Property name="alignmentY" type="float" value="0.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel9">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="PARQUEO"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1780,7 +1841,7 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel86">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="FERROCARRIL"/>
+                    <Property name="text" type="java.lang.String" value="FERROCARRIL $200"/>
                     <Property name="alignmentX" type="float" value="1.0"/>
                     <Property name="alignmentY" type="float" value="1.0"/>
                   </Properties>
@@ -1791,12 +1852,6 @@
                     <Property name="text" type="java.lang.String" value="READING"/>
                     <Property name="alignmentX" type="float" value="1.0"/>
                     <Property name="alignmentY" type="float" value="0.0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel131">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="    $200"/>
-                    <Property name="alignmentY" type="float" value="1.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -2267,9 +2322,15 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel105">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="FORTUNA"/>
+                    <Property name="text" type="java.lang.String" value="(SACAR CARTA)"/>
                     <Property name="alignmentX" type="float" value="0.5"/>
                     <Property name="alignmentY" type="float" value="0.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="FORTUNA"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -2404,7 +2465,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="305" y="590" width="140" height="10"/>
+                  <AbsoluteConstraints x="310" y="590" width="140" height="10"/>
                 </Constraint>
               </Constraints>
 
@@ -2434,7 +2495,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="160" y="590" width="150" height="70"/>
+                  <AbsoluteConstraints x="160" y="600" width="150" height="60"/>
                 </Constraint>
               </Constraints>
               <SubComponents>
@@ -2890,23 +2951,15 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel106">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="FERROCARRIL"/>
-                    <Property name="alignmentX" type="float" value="1.0"/>
+                    <Property name="text" type="java.lang.String" value="FERROCARRIL PENSILVANIA"/>
                     <Property name="alignmentY" type="float" value="1.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel123">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PENSILVANIA"/>
-                    <Property name="alignmentX" type="float" value="1.0"/>
+                    <Property name="text" type="java.lang.String" value="$200"/>
                     <Property name="alignmentY" type="float" value="0.0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel132">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="    $200"/>
-                    <Property name="alignmentY" type="float" value="1.0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -3257,7 +3310,14 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel65">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="ARCA COMUNAL"/>
+                    <Property name="text" type="java.lang.String" value="ARCA"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel6">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="COMUNAL"/>
+                    <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
                 </Component>
               </SubComponents>

@@ -110,7 +110,7 @@ public class ThreadServidor extends Thread implements Serializable{
                         int decidido = 0;
                         
                         if (this.server.isTurnosDecididos() == false){
-                             if (vecesTirado == server.getLimiteMax()){
+                             if (vecesTirado >= server.getLimiteMax()){
                             
                             if (server.getLimiteMax() == 2){
                                 
@@ -536,6 +536,19 @@ public class ThreadServidor extends Thread implements Serializable{
                         break;
                     case 10:
                         this.server.enviarTurnoInicial();
+                        break;
+                    case 11:
+                        int numMoverse = reader.readInt();
+                        String nombreFicha = reader.readUTF();
+                        int posFicha = reader.readInt();
+                        
+                        for (int i = 0; i < server.conexiones.size(); i++) {
+                            ThreadServidor current = server.conexiones.get(i);
+                            current.writer.writeInt(12);
+                            current.writer.writeInt(numMoverse);
+                            current.writer.writeUTF(nombreFicha);
+                            current.writer.writeInt(posFicha);
+                        }
                         break;
                         
                 }
