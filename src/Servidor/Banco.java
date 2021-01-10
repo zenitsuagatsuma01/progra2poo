@@ -38,6 +38,7 @@ public class Banco implements Serializable{
         
     }
     
+    
     public int consultarDinero(ThreadCliente jugador){              // Se retorna la cantidad de dinero del jugador solicitado
         
         int dineroJugador = jugador.getDinero();
