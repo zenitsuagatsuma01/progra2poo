@@ -316,6 +316,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         cbEdificios = new javax.swing.JComboBox<>();
         lblVenderEdificio = new javax.swing.JLabel();
         btnCompraHotel = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1506,7 +1507,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblDado1, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(lblDado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(129, 129, 129))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1554,6 +1557,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         btnCompraHotel.setText("Comprar hotel");
         pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 120, 70));
+
+        jButton1.setText("prueba ir a lugar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
@@ -2317,6 +2328,18 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             }
     }//GEN-LAST:event_btnEndTurnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // TODO add your handling code here:
+            this.getRefCliente().getHiloCliente().writer.writeInt(12);
+            this.getRefCliente().getHiloCliente().writer.writeInt(30);
+            this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getFicha().getNombre());
+            this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getFicha().getPosicionActual());
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public JLabel getLblStatusPartida() {
         return lblStatusPartida;
     }
@@ -2440,6 +2463,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JComboBox<String> cbEdificios;
     private javax.swing.JComboBox<String> cbPropiedades;
     private javax.swing.JComboBox<String> cbSeleccion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
