@@ -431,6 +431,60 @@ public class ThreadCliente extends Thread implements Serializable{
                         }
                         
                         break;
+                    case 13:
+                        int casillaMoverse = reader.readInt();
+                        nombreFicha = reader.readUTF();
+                        posFicha = reader.readInt();
+                        
+                        listaFichas = (ArrayList<Ficha>)FileManager.readObject("src/Partida/listafichas.dat");
+                        fichaMover = null;
+                        posicionActual = posFicha;
+                        fichaQuitar = 0;
+                        indicePnl = 0;
+                        
+                        for (int i = 0; i < listaFichas.size(); i++){
+                            if (listaFichas.get(i).getNombre().equals(nombreFicha)){
+                                fichaMover = listaFichas.get(i);
+                                fichaQuitar = i;
+                                System.out.println("i es: " + i);
+                                //posicionActual = listaFichas.get(i).getPosicionActual();
+                            }
+                                    
+                        }
+                        
+                        System.out.println(listaFichas);
+                        
+                        if (fichaQuitar == 0)
+                            indicePnl = 2;
+                        if (fichaQuitar == 1)
+                            indicePnl = 3;
+                        if (fichaQuitar == 2)
+                            indicePnl = 4;
+                        if (fichaQuitar == 3)
+                            indicePnl = 5;
+                        if (fichaQuitar == 4)
+                            indicePnl = 6;
+                        if (fichaQuitar == 5)
+                            indicePnl = 7;
+                        
+                        System.out.println("indicePnl es :" + indicePnl);
+                        System.out.println("ComponentCount es: " + this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount());
+                        if (this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount()-1 < indicePnl)
+                            indicePnl = indicePnl - 1;
+
+                        this.getTablero().getCasillas().get(posicionActual).getPanel().remove(indicePnl);
+                        this.getTablero().getCasillas().get(posicionActual).getPanel().revalidate();
+                        this.getTablero().getCasillas().get(posicionActual).getPanel().repaint();
+                        
+                        if (posicionActual + 1 > this.getTablero().getCasillas().size()-1){
+                            posicionActual = 0;
+                        }
+                        
+                        this.getTablero().getCasillas().get(casillaMoverse).getPanel().add(fichaMover.getLabelFicha());
+                        this.getTablero().getCasillas().get(casillaMoverse).getPanel().revalidate();
+                        this.getTablero().getCasillas().get(casillaMoverse).getPanel().repaint();
+                        
+                        break;
                 }
             } catch (IOException ex) {
                 

@@ -550,6 +550,20 @@ public class ThreadServidor extends Thread implements Serializable{
                             current.writer.writeInt(posFicha);
                         }
                         break;
+                    case 12:
+                        int casillaMoverse = reader.readInt();
+                        nombreFicha = reader.readUTF();
+                        posFicha = reader.readInt();
+                        
+                        for (int i = 0; i < server.conexiones.size(); i++) {
+                            ThreadServidor current = server.conexiones.get(i);
+                            current.writer.writeInt(13);
+                            current.writer.writeInt(casillaMoverse);
+                            current.writer.writeUTF(nombreFicha);
+                            current.writer.writeInt(posFicha);
+                        }
+                        
+                        break;
                         
                 }
             } catch (IOException ex) {
