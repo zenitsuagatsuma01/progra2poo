@@ -490,6 +490,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         
                         if (this.getNombre().equals(nombreComprador)){
                             
+                            this.getBanco().retirarDinero(this, 120);
                             
                         }
                         

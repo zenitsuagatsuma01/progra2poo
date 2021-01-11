@@ -2349,6 +2349,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         try {
             // TODO add your handling code here:
             this.getRefCliente().getHiloCliente().writer.writeInt(13);
+            String nombreComprador = this.getRefCliente().getHiloCliente().getNombre();
             this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
