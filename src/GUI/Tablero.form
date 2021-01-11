@@ -18,6 +18,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-104,0,0,5,80"/>
   </AuxValues>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel31">
@@ -148,7 +149,7 @@
                   <Component id="jPanel72" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel69" min="-2" pref="52" max="-2" attributes="0"/>
-                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jPanel51" max="32767" attributes="0"/>
@@ -825,23 +826,25 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel24" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel19" min="-2" pref="82" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel18" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel19" min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="jLabel13" alignment="1" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel18" max="32767" attributes="0"/>
+                      <Component id="jLabel18" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel13" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel19" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel24" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -851,7 +854,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="         AVENIDA"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel24">
@@ -876,7 +879,12 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel19">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$120"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel13">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CONNECTICUT"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -993,9 +1001,9 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel48" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel65" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1009,7 +1017,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel65">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$260"/>
+                <Property name="text" type="java.lang.String" value="$200"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1083,15 +1091,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel27" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jLabel29" min="-2" pref="47" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel29" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="33" max="32767" attributes="0"/>
                   </Group>
@@ -1118,7 +1121,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>
-                <Property name="text" type="java.lang.String" value="        B.&amp;.O"/>
+                <Property name="text" type="java.lang.String" value="READING"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel29">
@@ -1172,7 +1175,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel30">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA ILLINOIS"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA ORIENTAL"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel34">
@@ -1197,7 +1200,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel31">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$240"/>
+                <Property name="text" type="java.lang.String" value="$100"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1217,23 +1220,34 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Component id="jPanel68" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel69" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
-                          <Component id="jLabel68" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel69" alignment="1" min="-2" pref="82" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jPanel68" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel68" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel69" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel68" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -1243,7 +1257,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel68">
               <Properties>
-                <Property name="text" type="java.lang.String" value="JARDINES MARVIN"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel68">
@@ -1271,6 +1285,11 @@
                 <Property name="text" type="java.lang.String" value="$280"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="MEDITERRANEO"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel6">
@@ -1294,7 +1313,7 @@
                           <Component id="jLabel7" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanel7" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -1314,7 +1333,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA INDIA"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA VERMONT"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel7">
@@ -1339,7 +1358,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$100"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1387,7 +1406,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA VENTNOR"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA BALTICA"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel9">
@@ -1460,7 +1479,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel70">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="EL MUELLE"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel70">
@@ -1485,7 +1504,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel71">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$400"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1547,7 +1566,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel73" pref="24" max="32767" attributes="0"/>
+                      <Component id="jLabel73" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1561,7 +1580,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel73">
               <Properties>
-                <Property name="text" type="java.lang.String" value="            $150"/>
+                <Property name="text" type="java.lang.String" value="            $100"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1605,7 +1624,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel33">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA PAC&#xcd;FICO"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel36">
@@ -1630,7 +1649,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$300"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1717,7 +1736,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel77">
               <Properties>
-                <Property name="text" type="java.lang.String" value="PENSILVANIA"/>
+                <Property name="text" type="java.lang.String" value="VIA RAPIDA"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel78">
@@ -1766,7 +1785,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel79">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA PENSILVANIA"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel77">
@@ -1791,7 +1810,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel80">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$320"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1835,7 +1854,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel81">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="PLAZA PARK"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel79">
@@ -1860,7 +1879,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel82">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$350"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1881,22 +1900,31 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel38" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel35" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel36" min="-2" pref="82" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="jLabel36" min="-2" pref="82" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel1" min="-2" pref="99" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jLabel35" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel35" max="32767" attributes="0"/>
+                      <Component id="jLabel35" min="-2" pref="8" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel36" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel38" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1904,7 +1932,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel35">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA CAROLINA"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel38">
@@ -1922,14 +1950,19 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel36">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$300"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="DEL NORTE"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1977,7 +2010,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel118">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="PLAZA SAN CARLOS"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel109">
@@ -2002,7 +2035,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel119">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$140"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -2061,13 +2094,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel121" min="-2" pref="47" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="103" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel120" min="-2" pref="78" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel120" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2077,7 +2106,7 @@
                       <Component id="jLabel120" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel121" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2085,7 +2114,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel120">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AGUA"/>
+                <Property name="text" type="java.lang.String" value="COMPA&#xd1;IA DE ELECTRICIDAD"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel121">
@@ -2138,7 +2167,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel45">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA NEW YORK"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel54">
@@ -2163,7 +2192,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel53">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$200"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -2211,7 +2240,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel122">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA VIRGINIA"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel113">
@@ -2236,7 +2265,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel123">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$160"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -2317,7 +2346,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                       <Component id="jLabel54" min="-2" pref="123" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
@@ -2384,7 +2413,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel127">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA ST JAMES"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel116">
@@ -2409,7 +2438,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel128">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$180"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -2457,7 +2486,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel129">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA STATUS"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel118">
@@ -2482,7 +2511,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel130">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$140"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -2530,7 +2559,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel55">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AVENIDA KENTUCKY"/>
+                <Property name="text" type="java.lang.String" value="AVENIDA TENNESEE"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel57">
@@ -2555,7 +2584,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel56">
               <Properties>
-                <Property name="text" type="java.lang.String" value="$220"/>
+                <Property name="text" type="java.lang.String" value="$180"/>
               </Properties>
             </Component>
           </SubComponents>
