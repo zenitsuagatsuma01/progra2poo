@@ -1463,6 +1463,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlToolbar.add(btnVenderProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 90, 70));
 
         btnComprarPropActual.setText("Comprar propiedad actual");
+        btnComprarPropActual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprarPropActualActionPerformed(evt);
+            }
+        });
         pnlToolbar.add(btnComprarPropActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 200, 70));
 
         btnLanzarDados.setText("Lanzar Dados");
@@ -2339,6 +2344,17 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnComprarPropActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarPropActualActionPerformed
+        try {
+            // TODO add your handling code here:
+            this.getRefCliente().getHiloCliente().writer.writeInt(13);
+            this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnComprarPropActualActionPerformed
 
     public JLabel getLblStatusPartida() {
         return lblStatusPartida;

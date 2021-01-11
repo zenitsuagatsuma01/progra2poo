@@ -38,8 +38,7 @@ public class Cliente implements Serializable{
             FileManager.writeObject(numJugador, "src/Partida/numjugador.dat");
             hiloCliente.setNumJugador(numJugador);
             System.out.println("numjugador es " + numJugador);
-            //hiloCliente.writer.writeInt(1); //instruccion para el switch del thraed servidor
-            //hiloCliente.writer.writeUTF(nombre); //instruccion para el switch del thraed servidor
+            
         }
         catch(Exception e){
             System.out.println(e.getMessage());

@@ -134,7 +134,7 @@ public class Servidor extends Thread implements Serializable{
         for (int i = 0; i < conexiones.size(); i++) {
             ThreadServidor current = conexiones.get(i);
             current.writer.writeInt(8);
-            current.writer.writeInt(3500);
+            current.writer.writeInt(1500);
         }
     }
     

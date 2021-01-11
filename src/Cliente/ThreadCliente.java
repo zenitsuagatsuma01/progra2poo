@@ -485,6 +485,15 @@ public class ThreadCliente extends Thread implements Serializable{
                         this.getTablero().getCasillas().get(casillaMoverse).getPanel().repaint();
                         
                         break;
+                    case 14:
+                        String nombreComprador = reader.readUTF();
+                        
+                        if (this.getNombre().equals(nombreComprador)){
+                            
+                            
+                        }
+                        
+                        break;
                 }
             } catch (IOException ex) {
                 
