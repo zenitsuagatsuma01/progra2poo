@@ -86,6 +86,78 @@ public class Calles extends Propiedades{
     public void setCantidadEdificios(int cantidadEdificios) {
         this.cantidadEdificios = cantidadEdificios;
     }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getPrecioCasa() {
+        return precioCasa;
+    }
+
+    public void setPrecioCasa(int precioCasa) {
+        this.precioCasa = precioCasa;
+    }
+
+    public int getPrecioHotel() {
+        return precioHotel;
+    }
+
+    public void setPrecioHotel(int precioHotel) {
+        this.precioHotel = precioHotel;
+    }
+
+    public int getPrecio0() {
+        return precio0;
+    }
+
+    public void setPrecio0(int precio0) {
+        this.precio0 = precio0;
+    }
+
+    public int getPrecio1() {
+        return precio1;
+    }
+
+    public void setPrecio1(int precio1) {
+        this.precio1 = precio1;
+    }
+
+    public int getPrecio2() {
+        return precio2;
+    }
+
+    public void setPrecio2(int precio2) {
+        this.precio2 = precio2;
+    }
+
+    public int getPrecio3() {
+        return precio3;
+    }
+
+    public void setPrecio3(int precio3) {
+        this.precio3 = precio3;
+    }
+
+    public int getPrecio4() {
+        return precio4;
+    }
+
+    public void setPrecio4(int precio4) {
+        this.precio4 = precio4;
+    }
+
+    public int getPrecio5() {
+        return precio5;
+    }
+
+    public void setPrecio5(int precio5) {
+        this.precio5 = precio5;
+    }
     
     
     

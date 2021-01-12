@@ -16,6 +16,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -142,7 +143,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblFicha = new javax.swing.JLabel();
         lblNumDinero = new javax.swing.JLabel();
         lblStatusPartida = new javax.swing.JLabel();
-        lblLogo = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         txaHistorial = new javax.swing.JTextArea();
@@ -151,6 +151,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         txaMensajes = new javax.swing.JTextArea();
         lblDinero = new javax.swing.JLabel();
         pnlFicha = new javax.swing.JPanel();
+        lblLogo = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         lblFichaJugador = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pnlTablero = new javax.swing.JPanel();
@@ -319,6 +321,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         spinnerCasa = new javax.swing.JSpinner();
         spinnerHotel = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -326,18 +336,18 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTurno.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblTurno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTurno.setText("nadie");
-        jPanel1.add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 90, 40));
+        jPanel1.add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 90, 40));
         jPanel1.add(lblUsuarioLanzamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 735, -1, 68));
 
         lblHistorial.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblHistorial.setText("Historial");
-        jPanel1.add(lblHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
+        jPanel1.add(lblHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
 
         lblChat.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblChat.setText("Chat comunal");
-        jPanel1.add(lblChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 680, -1, -1));
+        jPanel1.add(lblChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 690, -1, -1));
 
         txfMensaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -354,28 +364,25 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         });
         jPanel1.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 890, 70, 70));
 
-        lblTurnoDe.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblTurnoDe.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTurnoDe.setText("Es turno de:");
         jPanel1.add(lblTurnoDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
-        lblNombreJugador.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblNombreJugador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNombreJugador.setText("Sin nombre...");
-        jPanel1.add(lblNombreJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 140, 40));
+        jPanel1.add(lblNombreJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 100, 30));
 
-        lblFicha.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblFicha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblFicha.setText("Ficha:");
         jPanel1.add(lblFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 70, -1));
 
-        lblNumDinero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblNumDinero.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNumDinero.setText("0 $");
-        jPanel1.add(lblNumDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 120, 29));
+        jPanel1.add(lblNumDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 120, 40));
 
         lblStatusPartida.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblStatusPartida.setText("Esperando para iniciar...");
         jPanel1.add(lblStatusPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 160, 30));
-
-        lblLogo.setIcon(new ImageIcon("src/Imagenes/logosmall.png"));
-        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 370, 130));
 
         txaHistorial.setColumns(20);
         txaHistorial.setRows(5);
@@ -393,26 +400,31 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 710, 380, 180));
 
-        lblDinero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblDinero.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblDinero.setText("Dinero:");
-        jPanel1.add(lblDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
+        jPanel1.add(lblDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, 20));
 
         javax.swing.GroupLayout pnlFichaLayout = new javax.swing.GroupLayout(pnlFicha);
         pnlFicha.setLayout(pnlFichaLayout);
         pnlFichaLayout.setHorizontalGroup(
             pnlFichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFichaLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblFichaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 91, Short.MAX_VALUE)
         );
         pnlFichaLayout.setVerticalGroup(
             pnlFichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFichaLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblFichaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnlFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+        jPanel1.add(pnlFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, 100));
+
+        ImageIcon logoImage = new ImageIcon("src/Imagenes/logosmall.png");
+        lblLogo.setIcon(logoImage);
+        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 350, 130));
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel14.setText("Nombre:");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 209, -1, 30));
+        jPanel1.add(lblFichaJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 91, 112));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 0, 400, 1000));
 
@@ -1473,7 +1485,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnVenderPropActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnVenderProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 90, 70));
+        pnlToolbar.add(btnVenderProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 90, 70));
 
         btnComprarPropActual.setText("Comprar propiedad actual");
         btnComprarPropActual.addActionListener(new java.awt.event.ActionListener() {
@@ -1481,7 +1493,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnComprarPropActualActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnComprarPropActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 200, 70));
+        pnlToolbar.add(btnComprarPropActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 200, 70));
 
         btnLanzarDados.setText("Lanzar Dados");
         btnLanzarDados.addActionListener(new java.awt.event.ActionListener() {
@@ -1489,10 +1501,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnLanzarDadosActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 150, 70));
+        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 120, 70));
 
         btnHipotecar.setText("Hipotecar/deshipotecar");
-        pnlToolbar.add(btnHipotecar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 170, 70));
+        pnlToolbar.add(btnHipotecar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 170, 70));
 
         btnEndTurn.setText("Terminar turno");
         btnEndTurn.addActionListener(new java.awt.event.ActionListener() {
@@ -1500,14 +1512,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnEndTurnActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnEndTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 200, 130, 70));
+        pnlToolbar.add(btnEndTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 130, 60));
 
         lblSeleccionFicha.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblSeleccionFicha.setText("Seleccionar ficha:");
-        pnlToolbar.add(lblSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 170, -1));
+        pnlToolbar.add(lblSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 170, -1));
 
         cbSeleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chikorita", "Slowbro", "Charizard", "Pikachu", "Yamper", "Rayquaza", "Suicune", "Entei", "Raikoui", "Mewtwo", "Espeon", "Ditto", "Cyndaquil", "Totodile" }));
-        pnlToolbar.add(cbSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 230, 30));
+        pnlToolbar.add(cbSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 130, 30));
 
         btnSeleccionFicha.setText("Ficha seleccionada");
         btnSeleccionFicha.addActionListener(new java.awt.event.ActionListener() {
@@ -1515,7 +1527,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnSeleccionFichaActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, 160, 70));
+        pnlToolbar.add(btnSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 140, 30));
 
         lblDado1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblDado1.setForeground(new java.awt.Color(255, 0, 51));
@@ -1536,7 +1548,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addComponent(lblDado1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        pnlToolbar.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 120, -1));
+        pnlToolbar.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 120, -1));
 
         lblDado2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblDado2.setForeground(new java.awt.Color(255, 0, 0));
@@ -1555,11 +1567,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         pnlToolbar.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
 
-        pnlToolbar.add(cbPropiedades, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 360, 30));
+        pnlToolbar.add(cbPropiedades, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 360, 30));
 
         lblAdministrar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblAdministrar.setText("Administrar propiedades:");
-        pnlToolbar.add(lblAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(543, 130, 240, -1));
+        pnlToolbar.add(lblAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 240, -1));
 
         btnCompraCasa.setText("Comprar casa");
         btnCompraCasa.addActionListener(new java.awt.event.ActionListener() {
@@ -1567,16 +1579,16 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnCompraCasaActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnCompraCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, -1, 70));
+        pnlToolbar.add(btnCompraCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, -1, 70));
 
         btnVenderEdificio.setText("Vender");
-        pnlToolbar.add(btnVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 200, 90, 70));
+        pnlToolbar.add(btnVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 230, 90, 70));
 
-        pnlToolbar.add(cbEdificios, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 160, 190, 30));
+        pnlToolbar.add(cbEdificios, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 200, 190, 30));
 
         lblVenderEdificio.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblVenderEdificio.setText("Vender edificios:");
-        pnlToolbar.add(lblVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 130, -1, -1));
+        pnlToolbar.add(lblVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 170, -1, -1));
 
         btnCompraHotel.setText("Comprar hotel");
         btnCompraHotel.addActionListener(new java.awt.event.ActionListener() {
@@ -1584,13 +1596,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnCompraHotelActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 120, 70));
+        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 230, 120, 70));
 
         spinnerCasa.setModel(new javax.swing.SpinnerNumberModel(1, 1, 32, 1));
-        pnlToolbar.add(spinnerCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, -1, -1));
+        pnlToolbar.add(spinnerCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, -1, -1));
 
         spinnerHotel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 32, 1));
-        pnlToolbar.add(spinnerHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 220, -1, -1));
+        pnlToolbar.add(spinnerHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 250, -1, -1));
 
         jButton1.setText("prueba ir a lugar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -1598,7 +1610,49 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 jButton1ActionPerformed(evt);
             }
         });
-        pnlToolbar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
+        pnlToolbar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 110, -1, -1));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setLineWrap(true);
+        jTextArea2.setRows(5);
+        jScrollPane6.setViewportView(jTextArea2);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+        );
+
+        pnlToolbar.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, 180, 220));
+
+        jButton2.setText("=>");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 230, -1, -1));
+
+        jButton3.setText("<=");
+        pnlToolbar.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 230, -1, -1));
+
+        pnlToolbar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 50, 150, 30));
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel12.setText("Consultar propiedades");
+        pnlToolbar.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 210, -1));
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel13.setText("Jugador:");
+        pnlToolbar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 50, -1, 30));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
@@ -1975,6 +2029,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private void btnLanzarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanzarDadosActionPerformed
 
         if (this.getRefCliente().getHiloCliente().isTurnoConseguido()){
+            if (!this.getLblNombreJugador().getText().equals(this.getLblTurno().getText())){
+                
+                this.getTxaHistorial().append("Error: No puede lanzar los dados porque no es su turno.\n");
+                return;
+            }
+            
             Random random = new Random();
             int dado1 = random.nextInt(6); // se hace pasar de 0-5 a 1-6 sumandole 1 al resultado
             dado1 = dado1 + 1;
@@ -2038,6 +2098,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnSeleccionFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionFichaActionPerformed
         // TODO add your handling code here:
+        if (this.getRefCliente().getHiloCliente().getFicha() != null){
+            
+            this.getTxaHistorial().append("Error: No puede seleccionar una ficha porque ya seleccionó una.\n");
+            return;
+        }
+        
         String seleccion = this.cbSeleccion.getSelectedItem().toString();
         System.out.println(seleccion);
         ArrayList<Ficha> listaFichas = (ArrayList<Ficha>)FileManager.readObject("src/Partida/listafichas.dat");
@@ -2354,6 +2420,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnEndTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEndTurnActionPerformed
         // TODO add your handling code here:
+        if (!this.getLblNombreJugador().getText().equals(this.getLblTurno().getText())){
+            
+            this.getTxaHistorial().append("Error: No puede terminar su turno porque no es su turno.\n");
+            return;
+        }
+        
         try {
                 this.getRefCliente().getHiloCliente().writer.writeInt(9);
                 this.getRefCliente().getHiloCliente().writer.writeUTF(this.getLblNombreJugador().getText());
@@ -2375,11 +2447,19 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnComprarPropActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarPropActualActionPerformed
+        if (!this.getRefCliente().getHiloCliente().isVueltaDada()){
+            
+            this.getTxaHistorial().append("Error: No puede comprar una propiedad todavia ya que no ha dado una vuelta.\n");
+            return;
+        }
+        
         try {
             // TODO add your handling code here:
             this.getRefCliente().getHiloCliente().writer.writeInt(13);
             String nombreComprador = this.getRefCliente().getHiloCliente().getNombre();
-            this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+            this.getRefCliente().getHiloCliente().writer.writeUTF(nombreComprador);
+            this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getDinero());
+            this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getFicha().getPosicionActual());
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2400,12 +2480,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private void txfMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfMensajeActionPerformed
         try {
             // TODO add your handling code here:
-            this.getRefCliente().getHiloCliente().getWriter().writeInt(2);
-            this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getTxfMensaje().getText());
+            refCliente.hiloCliente.writer.writeInt(2);      // Se envia al servidor la accion de enviar un mensaje por chat y se envia el mensaje
+            refCliente.hiloCliente.writer.writeUTF(this.getLblNombreJugador().getText());
+            refCliente.hiloCliente.writer.writeUTF(txfMensaje.getText());
         } catch (IOException ex) {
-            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+
         }
-        
         this.getTxfMensaje().setText("");
     }//GEN-LAST:event_txfMensajeActionPerformed
 
@@ -2416,6 +2496,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private void btnVenderPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderPropActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVenderPropActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public JLabel getLblStatusPartida() {
         return lblStatusPartida;
@@ -2429,6 +2513,40 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         return cbSeleccion;
     }
 
+    public JComboBox<String> getCbEdificios() {
+        return cbEdificios;
+    }
+
+    public void setCbEdificios(JComboBox<String> cbEdificios) {
+        this.cbEdificios = cbEdificios;
+    }
+
+    public JComboBox<String> getCbPropiedades() {
+        return cbPropiedades;
+    }
+
+    public void setCbPropiedades(JComboBox<String> cbPropiedades) {
+        this.cbPropiedades = cbPropiedades;
+    }
+
+    public JSpinner getSpinnerCasa() {
+        return spinnerCasa;
+    }
+
+    public void setSpinnerCasa(JSpinner spinnerCasa) {
+        this.spinnerCasa = spinnerCasa;
+    }
+
+    public JSpinner getSpinnerHotel() {
+        return spinnerHotel;
+    }
+
+    public void setSpinnerHotel(JSpinner spinnerHotel) {
+        this.spinnerHotel = spinnerHotel;
+    }
+
+    
+    
     public void setCbSeleccion(JComboBox<String> cbSeleccion) {
         this.cbSeleccion = cbSeleccion;
     }
@@ -2541,6 +2659,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JComboBox<String> cbPropiedades;
     private javax.swing.JComboBox<String> cbSeleccion;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -2562,6 +2683,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel115;
     private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel119;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
@@ -2572,8 +2694,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel133;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2637,6 +2761,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel53;
@@ -2651,6 +2776,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel lblAdministrar;
     private javax.swing.JPanel lblCasilla1;
     private javax.swing.JPanel lblCasilla10;

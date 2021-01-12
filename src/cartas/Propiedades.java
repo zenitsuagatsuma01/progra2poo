@@ -24,6 +24,30 @@ public abstract class Propiedades extends Cartas{
         this.panel = panel;
     }
 
+    public int getPrecioCompra() {
+        return precioCompra;
+    }
+
+    public void setPrecioCompra(int precioCompra) {
+        this.precioCompra = precioCompra;
+    }
+
+    public int getValorHipoteca() {
+        return valorHipoteca;
+    }
+
+    public void setValorHipoteca(int valorHipoteca) {
+        this.valorHipoteca = valorHipoteca;
+    }
+
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+
     
     
     public abstract int cobrar();

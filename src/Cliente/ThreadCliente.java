@@ -54,6 +54,7 @@ public class ThreadCliente extends Thread implements Serializable{
     private int numJugador = 0;
     private boolean turnoConseguido = false;
     private Tablero tablero;
+    private boolean vueltaDada = false;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -66,6 +67,7 @@ public class ThreadCliente extends Thread implements Serializable{
         numPropiedades = 0;
         banco = new Banco();
         tablero = new Tablero();
+        propiedades = new ArrayList<Calles>();
     }
     
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla, String nombreCargado, int dineroCargado, int numCasasCargado, int numHotelesCargado, int numPropiedadesCargado, boolean quebradoCargado) throws IOException {
@@ -422,6 +424,14 @@ public class ThreadCliente extends Thread implements Serializable{
                                 this.getTablero().getCasillas().get(39).getPanel().revalidate();
                                 this.getTablero().getCasillas().get(39).getPanel().repaint();
                                 
+                                if (this.getFicha().getNombre().equals(nombreFicha)){
+                                    
+                                    this.setVueltaDada(true);
+                                    System.out.println("vueltaDada del jugador es: " + this.isVueltaDada());
+                                    System.out.println("Mi nombre es: " + this.getNombre());
+                                }
+                                
+                                
                                 this.getTablero().getCasillas().get(0).getPanel().add(fichaMover.getLabelFicha());
                                 this.getTablero().getCasillas().get(0).getPanel().revalidate();
                                 this.getTablero().getCasillas().get(0).getPanel().repaint();
@@ -487,10 +497,19 @@ public class ThreadCliente extends Thread implements Serializable{
                         break;
                     case 14:
                         String nombreComprador = reader.readUTF();
+                        cantidadDinero = reader.readInt();
+                        int casillaTablero = reader.readInt();
                         
                         if (this.getNombre().equals(nombreComprador)){
+                            Calles propiedadComprar = (Calles)this.getTablero().getCasillas().get(casillaTablero);
+                            int precioPropiedad = propiedadComprar.getPrecioCompra();
+                            System.out.println("Dinero del jugador antes de la compra: " + cantidadDinero);
+                            this.getBanco().retirarDinero(this, precioPropiedad);
+                            System.out.println("Dinero luego de compra: " + this.getDinero());
                             
-                            this.getBanco().retirarDinero(this, 120);
+                            this.getPropiedades().add(propiedadComprar);
+                            System.out.println("Propiedad comprada: " + propiedadComprar);
+                            this.getRefPantalla().getCbPropiedades().addItem(propiedadComprar.getNombre());
                             
                         }
                         
@@ -513,6 +532,8 @@ public class ThreadCliente extends Thread implements Serializable{
             }
         }
     }
+    
+   
 
     public Tablero getTablero() {
         return tablero;
@@ -520,6 +541,22 @@ public class ThreadCliente extends Thread implements Serializable{
 
     public void setTablero(Tablero tablero) {
         this.tablero = tablero;
+    }
+
+    public ArrayList<Calles> getPropiedades() {
+        return propiedades;
+    }
+
+    public void setPropiedades(ArrayList<Calles> propiedades) {
+        this.propiedades = propiedades;
+    }
+
+    public boolean isVueltaDada() {
+        return vueltaDada;
+    }
+
+    public void setVueltaDada(boolean vueltaDada) {
+        this.vueltaDada = vueltaDada;
     }
 
     

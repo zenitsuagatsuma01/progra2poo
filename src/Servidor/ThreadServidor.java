@@ -566,11 +566,15 @@ public class ThreadServidor extends Thread implements Serializable{
                         break;
                     case 13:
                         String nombreComprador = reader.readUTF();
+                        cantidadDinero = reader.readInt();
+                        int casillaTablero = reader.readInt();
                         
                         for (int i = 0; i < server.conexiones.size(); i++) {
                             ThreadServidor current = server.conexiones.get(i);
                             current.writer.writeInt(14);
                             current.writer.writeUTF(nombreComprador);
+                            current.writer.writeInt(cantidadDinero);
+                            current.writer.writeInt(casillaTablero);
                         }
                             break;
                     case 14: //compra de casas
