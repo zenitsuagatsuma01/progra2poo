@@ -338,6 +338,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblChat.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblChat.setText("Chat comunal");
         jPanel1.add(lblChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 680, -1, -1));
+
+        txfMensaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txfMensajeActionPerformed(evt);
+            }
+        });
         jPanel1.add(txfMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 890, 310, 70));
 
         btnEnviar.setText("Enviar");
@@ -2380,6 +2386,18 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnCompraCasaActionPerformed
+
+    private void txfMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfMensajeActionPerformed
+        try {
+            // TODO add your handling code here:
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(2);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getTxfMensaje().getText());
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        this.getTxfMensaje().setText("");
+    }//GEN-LAST:event_txfMensajeActionPerformed
 
     public JLabel getLblStatusPartida() {
         return lblStatusPartida;
