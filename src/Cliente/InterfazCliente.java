@@ -2,6 +2,9 @@ package Cliente;
 
 import Partida.FileManager;
 import static Partida.MenuPrincipal.infoBox;
+import Servidor.PantallaServidor;
+import Servidor.Servidor;
+import cartas.Calles;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.IOException;
@@ -150,9 +153,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jScrollPane1 = new javax.swing.JScrollPane();
         txaMensajes = new javax.swing.JTextArea();
         lblDinero = new javax.swing.JLabel();
-        pnlFicha = new javax.swing.JPanel();
         lblLogo = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        pnlFicha = new javax.swing.JPanel();
         lblFichaJugador = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pnlTablero = new javax.swing.JPanel();
@@ -191,7 +194,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla10 = new javax.swing.JPanel();
         jLabel71 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         lblCasilla2 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -328,14 +330,28 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         spinnerCasa = new javax.swing.JSpinner();
         spinnerHotel = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        pnlTituloPropiedad = new javax.swing.JPanel();
+        lblCadaHotelCuesta = new javax.swing.JLabel();
+        lblCadaCasaCuesta = new javax.swing.JLabel();
+        lblHipotecaTitulo = new javax.swing.JLabel();
+        lblConHotel = new javax.swing.JLabel();
+        lblCon4Casas = new javax.swing.JLabel();
+        lblCon3Casas = new javax.swing.JLabel();
+        lblCon2Casas = new javax.swing.JLabel();
+        lblCon1Casa = new javax.swing.JLabel();
+        lblAlquileresTitulo = new javax.swing.JLabel();
+        btnConsultarDerecha = new javax.swing.JButton();
+        btnConsultarIzquierda = new javax.swing.JButton();
+        cbConsultarPropiedades = new javax.swing.JComboBox<>();
+        lblConsultarPropiedades = new javax.swing.JLabel();
+        lblConsultarJugador = new javax.swing.JLabel();
+        btnConsultarPropiedad = new javax.swing.JButton();
+        pnlColorTituloPropiedad = new javax.swing.JPanel();
+        lblTituloDePropiedad = new javax.swing.JLabel();
+        lblNombreTituloPropiedad = new javax.swing.JLabel();
+        lblTituloColor = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -411,19 +427,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblDinero.setText("Dinero:");
         jPanel1.add(lblDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, 20));
 
-        javax.swing.GroupLayout pnlFichaLayout = new javax.swing.GroupLayout(pnlFicha);
-        pnlFicha.setLayout(pnlFichaLayout);
-        pnlFichaLayout.setHorizontalGroup(
-            pnlFichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-        pnlFichaLayout.setVerticalGroup(
-            pnlFichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(pnlFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, 100));
-
         ImageIcon logoImage = new ImageIcon("src/Imagenes/logosmall.png");
         lblLogo.setIcon(logoImage);
         jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 350, 130));
@@ -431,7 +434,19 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel14.setText("Nombre:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 209, -1, 30));
-        jPanel1.add(lblFichaJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 91, 112));
+
+        javax.swing.GroupLayout pnlFichaLayout = new javax.swing.GroupLayout(pnlFicha);
+        pnlFicha.setLayout(pnlFichaLayout);
+        pnlFichaLayout.setHorizontalGroup(
+            pnlFichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblFichaJugador, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        );
+        pnlFichaLayout.setVerticalGroup(
+            pnlFichaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblFichaJugador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(pnlFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 110, 120));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 0, 400, 1000));
 
@@ -471,7 +486,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla1.add(jLabel1);
 
         pnlTablero.add(lblCasilla1);
-        lblCasilla1.setBounds(1229, 588, 140, 70);
+        lblCasilla1.setBounds(1230, 590, 140, 70);
 
         lblCasilla3.setBackground(new java.awt.Color(255, 255, 255));
         lblCasilla3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -684,9 +699,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jLabel85.setAlignmentX(0.1F);
         jLabel85.setAlignmentY(0.1F);
         lblCasilla10.add(jLabel85);
-
-        jLabel16.setText("jLabel16");
-        lblCasilla10.add(jLabel16);
 
         pnlTablero.add(lblCasilla10);
         lblCasilla10.setBounds(1250, 60, 118, 60);
@@ -1270,12 +1282,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla31.setLayout(new javax.swing.OverlayLayout(lblCasilla31));
 
-        jLabel113.setText("LA CÁRCEL");
+        jLabel113.setText("LA");
         jLabel113.setAlignmentY(1.0F);
         lblCasilla31.add(jLabel113);
 
         jLabel114.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel114.setText("$140");
+        jLabel114.setText("CÁRCEL");
         jLabel114.setAlignmentX(0.1F);
         jLabel114.setAlignmentY(0.1F);
         lblCasilla31.add(jLabel114);
@@ -1401,7 +1413,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblCasilla35);
         lblCasilla35.setBounds(560, 600, 120, 60);
 
-        jPanel9.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel9.setBackground(new java.awt.Color(102, 0, 0));
         jPanel9.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -1427,7 +1439,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla37.add(jLabel128);
 
         jLabel129.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel129.setText("$260");
+        jLabel129.setText("$200");
         jLabel129.setAlignmentX(0.1F);
         jLabel129.setAlignmentY(0.1F);
         lblCasilla37.add(jLabel129);
@@ -1452,7 +1464,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblCasilla40);
         lblCasilla40.setBounds(1100, 600, 130, 60);
 
-        jPanel11.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel11.setBackground(new java.awt.Color(102, 0, 0));
         jPanel11.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -1569,7 +1581,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnVenderPropActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnVenderProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 90, 70));
+        pnlToolbar.add(btnVenderProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 90, 70));
 
         btnComprarPropActual.setText("Comprar propiedad actual");
         btnComprarPropActual.addActionListener(new java.awt.event.ActionListener() {
@@ -1577,7 +1589,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnComprarPropActualActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnComprarPropActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 200, 70));
+        pnlToolbar.add(btnComprarPropActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 180, 40));
 
         btnLanzarDados.setText("Lanzar Dados");
         btnLanzarDados.addActionListener(new java.awt.event.ActionListener() {
@@ -1585,10 +1597,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnLanzarDadosActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 120, 70));
+        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 120, 70));
 
         btnHipotecar.setText("Hipotecar/deshipotecar");
-        pnlToolbar.add(btnHipotecar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 170, 70));
+        pnlToolbar.add(btnHipotecar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 170, 70));
 
         btnEndTurn.setText("Terminar turno");
         btnEndTurn.addActionListener(new java.awt.event.ActionListener() {
@@ -1596,7 +1608,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnEndTurnActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnEndTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 130, 60));
+        pnlToolbar.add(btnEndTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 130, 60));
 
         lblSeleccionFicha.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblSeleccionFicha.setText("Seleccionar ficha:");
@@ -1632,7 +1644,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 .addComponent(lblDado1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        pnlToolbar.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 120, -1));
+        pnlToolbar.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 120, -1));
 
         lblDado2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblDado2.setForeground(new java.awt.Color(255, 0, 0));
@@ -1651,11 +1663,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         pnlToolbar.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
 
-        pnlToolbar.add(cbPropiedades, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 360, 30));
+        pnlToolbar.add(cbPropiedades, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 360, 30));
 
         lblAdministrar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblAdministrar.setText("Administrar propiedades:");
-        pnlToolbar.add(lblAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 240, -1));
+        pnlToolbar.add(lblAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 240, -1));
 
         btnCompraCasa.setText("Comprar casa");
         btnCompraCasa.addActionListener(new java.awt.event.ActionListener() {
@@ -1663,16 +1675,16 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnCompraCasaActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnCompraCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, -1, 70));
+        pnlToolbar.add(btnCompraCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, -1, 70));
 
         btnVenderEdificio.setText("Vender");
-        pnlToolbar.add(btnVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 230, 90, 70));
+        pnlToolbar.add(btnVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 180, 90, 30));
 
-        pnlToolbar.add(cbEdificios, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 200, 190, 30));
+        pnlToolbar.add(cbEdificios, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 150, 190, 30));
 
         lblVenderEdificio.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblVenderEdificio.setText("Vender edificios:");
-        pnlToolbar.add(lblVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 170, -1, -1));
+        pnlToolbar.add(lblVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, -1, -1));
 
         btnCompraHotel.setText("Comprar hotel");
         btnCompraHotel.addActionListener(new java.awt.event.ActionListener() {
@@ -1680,13 +1692,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnCompraHotelActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 230, 120, 70));
+        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, 120, 70));
 
         spinnerCasa.setModel(new javax.swing.SpinnerNumberModel(1, 1, 32, 1));
-        pnlToolbar.add(spinnerCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, -1, -1));
+        pnlToolbar.add(spinnerCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, -1, -1));
 
         spinnerHotel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 32, 1));
-        pnlToolbar.add(spinnerHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 250, -1, -1));
+        pnlToolbar.add(spinnerHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, -1, -1));
 
         jButton1.setText("prueba ir a lugar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -1694,49 +1706,172 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 jButton1ActionPerformed(evt);
             }
         });
-        pnlToolbar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 110, -1, -1));
+        pnlToolbar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, -1, -1));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(5);
-        jScrollPane6.setViewportView(jTextArea2);
+        pnlTituloPropiedad.setBackground(new java.awt.Color(255, 255, 255));
+        pnlTituloPropiedad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        lblCadaHotelCuesta.setForeground(new java.awt.Color(0, 0, 0));
+        lblCadaHotelCuesta.setText("Cada hotel cuesta:");
+
+        lblCadaCasaCuesta.setForeground(new java.awt.Color(0, 0, 0));
+        lblCadaCasaCuesta.setText("Cada casa cuesta:");
+
+        lblHipotecaTitulo.setForeground(new java.awt.Color(0, 0, 0));
+        lblHipotecaTitulo.setText("Valor de hipoteca:");
+
+        lblConHotel.setForeground(new java.awt.Color(0, 0, 0));
+        lblConHotel.setText("Con hotel:");
+
+        lblCon4Casas.setForeground(new java.awt.Color(0, 0, 0));
+        lblCon4Casas.setText("Con 4 casas:");
+
+        lblCon3Casas.setForeground(new java.awt.Color(0, 0, 0));
+        lblCon3Casas.setText("Con 3 casas:");
+
+        lblCon2Casas.setForeground(new java.awt.Color(0, 0, 0));
+        lblCon2Casas.setText("Con 2 casas:");
+
+        lblCon1Casa.setForeground(new java.awt.Color(0, 0, 0));
+        lblCon1Casa.setText("Con 1 casa: ");
+
+        lblAlquileresTitulo.setForeground(new java.awt.Color(0, 0, 0));
+        lblAlquileresTitulo.setText("Alquileres: ");
+
+        javax.swing.GroupLayout pnlTituloPropiedadLayout = new javax.swing.GroupLayout(pnlTituloPropiedad);
+        pnlTituloPropiedad.setLayout(pnlTituloPropiedadLayout);
+        pnlTituloPropiedadLayout.setHorizontalGroup(
+            pnlTituloPropiedadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTituloPropiedadLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                .addGroup(pnlTituloPropiedadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCon1Casa)
+                    .addComponent(lblCon2Casas)
+                    .addComponent(lblCon3Casas)
+                    .addComponent(lblCon4Casas)
+                    .addComponent(lblConHotel)
+                    .addComponent(lblCadaCasaCuesta)
+                    .addComponent(lblCadaHotelCuesta)
+                    .addComponent(lblAlquileresTitulo)
+                    .addComponent(lblHipotecaTitulo))
+                .addContainerGap(117, Short.MAX_VALUE))
+        );
+        pnlTituloPropiedadLayout.setVerticalGroup(
+            pnlTituloPropiedadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTituloPropiedadLayout.createSequentialGroup()
+                .addComponent(lblAlquileresTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCon1Casa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCon2Casas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCon3Casas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblCon4Casas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblConHotel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblHipotecaTitulo)
+                .addGap(8, 8, 8)
+                .addComponent(lblCadaCasaCuesta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCadaHotelCuesta)
+                .addGap(12, 12, 12))
+        );
+
+        pnlToolbar.add(pnlTituloPropiedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 70, 230, 200));
+
+        btnConsultarDerecha.setText("=>");
+        btnConsultarDerecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarDerechaActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(btnConsultarDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 270, -1, -1));
+
+        btnConsultarIzquierda.setText("<=");
+        btnConsultarIzquierda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarIzquierdaActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(btnConsultarIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 270, -1, -1));
+
+        pnlToolbar.add(cbConsultarPropiedades, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 50, 160, 30));
+
+        lblConsultarPropiedades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblConsultarPropiedades.setText("Consultar propiedades:");
+        pnlToolbar.add(lblConsultarPropiedades, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 210, -1));
+
+        lblConsultarJugador.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblConsultarJugador.setText("Jugador:");
+        pnlToolbar.add(lblConsultarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 50, -1, 30));
+
+        btnConsultarPropiedad.setText("Consultar");
+        btnConsultarPropiedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarPropiedadActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(btnConsultarPropiedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 80, -1, -1));
+
+        pnlColorTituloPropiedad.setBackground(new java.awt.Color(255, 255, 255));
+        pnlColorTituloPropiedad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblTituloDePropiedad.setForeground(new java.awt.Color(0, 0, 0));
+        lblTituloDePropiedad.setText("Titulo de propiedad");
+
+        lblNombreTituloPropiedad.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombreTituloPropiedad.setText("Nombre:");
+
+        lblTituloColor.setForeground(new java.awt.Color(0, 0, 0));
+        lblTituloColor.setText("Color: ");
+
+        javax.swing.GroupLayout pnlColorTituloPropiedadLayout = new javax.swing.GroupLayout(pnlColorTituloPropiedad);
+        pnlColorTituloPropiedad.setLayout(pnlColorTituloPropiedadLayout);
+        pnlColorTituloPropiedadLayout.setHorizontalGroup(
+            pnlColorTituloPropiedadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlColorTituloPropiedadLayout.createSequentialGroup()
+                .addGroup(pnlColorTituloPropiedadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlColorTituloPropiedadLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblNombreTituloPropiedad))
+                    .addGroup(pnlColorTituloPropiedadLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(lblTituloDePropiedad))
+                    .addGroup(pnlColorTituloPropiedadLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblTituloColor)))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        pnlColorTituloPropiedadLayout.setVerticalGroup(
+            pnlColorTituloPropiedadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlColorTituloPropiedadLayout.createSequentialGroup()
+                .addComponent(lblTituloDePropiedad)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNombreTituloPropiedad)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTituloColor)
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-        );
 
-        pnlToolbar.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, 180, 220));
+        pnlToolbar.add(pnlColorTituloPropiedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 10, 230, -1));
 
-        jButton2.setText("=>");
+        jButton2.setText("Abrir server");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        pnlToolbar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 230, -1, -1));
+        pnlToolbar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
-        jButton3.setText("<=");
-        pnlToolbar.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 230, -1, -1));
-
-        pnlToolbar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 40, 160, 30));
-
-        jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel12.setText("Consultar propiedades:");
-        pnlToolbar.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 210, -1));
-
-        jLabel13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel13.setText("Jugador:");
-        pnlToolbar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 40, -1, 30));
+        jButton3.setText("Conectarse al server");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
@@ -2581,13 +2716,243 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVenderPropActionPerformed
 
+    private void btnConsultarDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarDerechaActionPerformed
+        // TODO add your handling code here:
+        String consultarJugador = this.getCbConsultarPropiedades().getSelectedItem().toString();
+        this.getRefCliente().getHiloCliente().setNombreConsultar(consultarJugador);
+        
+        ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
+        
+        if (propiedadesConsultadas.size() == 0){
+            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.");
+            return;
+        }
+        
+        int numeroConsultar = this.getRefCliente().getHiloCliente().getContadorConsultar();
+        
+        
+        if (numeroConsultar+1 >= propiedadesConsultadas.size()){
+            this.getTxaHistorial().append("Error: El jugador que está consultando no tiene más propiedades.");
+            return;
+        }
+        
+        numeroConsultar = numeroConsultar + 1;
+        this.getRefCliente().getHiloCliente().setContadorConsultar(numeroConsultar);
+        
+        this.getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(numeroConsultar).getNombre());
+        this.getLblTituloColor().setText("Color: " + propiedadesConsultadas.get(0).getColor());
+        this.getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(numeroConsultar).getPrecio0());
+        this.getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(numeroConsultar).getPrecio1());
+        this.getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio2());
+        this.getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio3());
+        this.getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio4());
+        this.getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(numeroConsultar).getPrecio5());
+        this.getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(numeroConsultar).getValorHipoteca());
+        this.getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioCasa());
+        this.getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioHotel());
+    }//GEN-LAST:event_btnConsultarDerechaActionPerformed
+
+    private void btnConsultarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarPropiedadActionPerformed
+        // TODO add your handling code here:
+        String consultarJugador = this.getCbConsultarPropiedades().getSelectedItem().toString();
+        this.getRefCliente().getHiloCliente().setNombreConsultar(consultarJugador);
+        
+        ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
+        
+        if (propiedadesConsultadas.size() == 0){
+            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.");
+            return;
+        }
+        
+        this.getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(0).getNombre());
+        this.getLblTituloColor().setText("Color: " + propiedadesConsultadas.get(0).getColor());
+        this.getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(0).getPrecio0());
+        this.getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(0).getPrecio1());
+        this.getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(0).getPrecio2());
+        this.getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(0).getPrecio3());
+        this.getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(0).getPrecio4());
+        this.getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(0).getPrecio5());
+        this.getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(0).getValorHipoteca());
+        this.getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(0).getPrecioCasa());
+        this.getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(0).getPrecioHotel());
+    }//GEN-LAST:event_btnConsultarPropiedadActionPerformed
+
+    private void btnConsultarIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarIzquierdaActionPerformed
+        // TODO add your handling code here:
+        String consultarJugador = this.getCbConsultarPropiedades().getSelectedItem().toString();
+        this.getRefCliente().getHiloCliente().setNombreConsultar(consultarJugador);
+        
+        ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
+        
+        if (propiedadesConsultadas.size() == 0){
+            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.\n");
+            return;
+        }
+        
+        int numeroConsultar = this.getRefCliente().getHiloCliente().getContadorConsultar();
+        
+        
+        if (numeroConsultar == 0){
+            this.getTxaHistorial().append("Error: Ya no se puede devolver más en la lista de títulos de propiedad.\n");
+            return;
+        }
+        
+        numeroConsultar = numeroConsultar - 1;
+        this.getRefCliente().getHiloCliente().setContadorConsultar(numeroConsultar);
+
+        this.getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(numeroConsultar).getNombre());
+        this.getLblTituloColor().setText("Color: " + propiedadesConsultadas.get(0).getColor());
+        this.getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(numeroConsultar).getPrecio0());
+        this.getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(numeroConsultar).getPrecio1());
+        this.getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio2());
+        this.getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio3());
+        this.getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio4());
+        this.getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(numeroConsultar).getPrecio5());
+        this.getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(numeroConsultar).getValorHipoteca());
+        this.getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioCasa());
+        this.getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioHotel());
+    }//GEN-LAST:event_btnConsultarIzquierdaActionPerformed
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        PantallaServidor pantalla = new PantallaServidor();
+        Servidor srv = new Servidor(pantalla);
+        pantalla.setVisible(true);
+        pantalla.setTitle("Servidor Pokenopoly");
+        srv.start();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        String nombre = JOptionPane.showInputDialog("Escriba su nombre:");
+        this.getRefCliente().conectar(nombre);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     public JLabel getLblStatusPartida() {
         return lblStatusPartida;
     }
+
+    public JLabel getLblTituloColor() {
+        return lblTituloColor;
+    }
+
+    public void setLblTituloColor(JLabel lblTituloColor) {
+        this.lblTituloColor = lblTituloColor;
+    }
+    
+    public JComboBox<String> getCbConsultarPropiedades() {
+        return cbConsultarPropiedades;
+    }
+
+    public void setCbConsultarPropiedades(JComboBox<String> cbConsultarPropiedades) {
+        this.cbConsultarPropiedades = cbConsultarPropiedades;
+    }
+
+    public JPanel getPnlColorTituloPropiedad() {
+        return pnlColorTituloPropiedad;
+    }
+
+    public void setPnlColorTituloPropiedad(JPanel pnlColorTituloPropiedad) {
+        this.pnlColorTituloPropiedad = pnlColorTituloPropiedad;
+    }
+
+    public JPanel getPnlTituloPropiedad() {
+        return pnlTituloPropiedad;
+    }
+
+    public void setPnlTituloPropiedad(JPanel pnlTituloPropiedad) {
+        this.pnlTituloPropiedad = pnlTituloPropiedad;
+    }
+
+    public JLabel getLblAlquileresTitulo() {
+        return lblAlquileresTitulo;
+    }
+
+    public void setLblAlquileresTitulo(JLabel lblAlquileresTitulo) {
+        this.lblAlquileresTitulo = lblAlquileresTitulo;
+    }
+
+    public JLabel getLblCadaCasaCuesta() {
+        return lblCadaCasaCuesta;
+    }
+
+    public void setLblCadaCasaCuesta(JLabel lblCadaCasaCuesta) {
+        this.lblCadaCasaCuesta = lblCadaCasaCuesta;
+    }
+
+    public JLabel getLblCadaHotelCuesta() {
+        return lblCadaHotelCuesta;
+    }
+
+    public void setLblCadaHotelCuesta(JLabel lblCadaHotelCuesta) {
+        this.lblCadaHotelCuesta = lblCadaHotelCuesta;
+    }
+
+    public JLabel getLblCon1Casa() {
+        return lblCon1Casa;
+    }
+
+    public void setLblCon1Casa(JLabel lblCon1Casa) {
+        this.lblCon1Casa = lblCon1Casa;
+    }
+
+    public JLabel getLblCon2Casas() {
+        return lblCon2Casas;
+    }
+
+    public void setLblCon2Casas(JLabel lblCon2Casas) {
+        this.lblCon2Casas = lblCon2Casas;
+    }
+
+    public JLabel getLblCon3Casas() {
+        return lblCon3Casas;
+    }
+
+    public void setLblCon3Casas(JLabel lblCon3Casas) {
+        this.lblCon3Casas = lblCon3Casas;
+    }
+
+    public JLabel getLblCon4Casas() {
+        return lblCon4Casas;
+    }
+
+    public void setLblCon4Casas(JLabel lblCon4Casas) {
+        this.lblCon4Casas = lblCon4Casas;
+    }
+
+    public JLabel getLblConHotel() {
+        return lblConHotel;
+    }
+
+    public void setLblConHotel(JLabel lblConHotel) {
+        this.lblConHotel = lblConHotel;
+    }
+
+    public JLabel getLblHipotecaTitulo() {
+        return lblHipotecaTitulo;
+    }
+
+    public void setLblHipotecaTitulo(JLabel lblHipotecaTitulo) {
+        this.lblHipotecaTitulo = lblHipotecaTitulo;
+    }
+
+    public JLabel getLblNombreTituloPropiedad() {
+        return lblNombreTituloPropiedad;
+    }
+
+    public void setLblNombreTituloPropiedad(JLabel lblNombreTituloPropiedad) {
+        this.lblNombreTituloPropiedad = lblNombreTituloPropiedad;
+    }
+
+    public JLabel getLblTituloDePropiedad() {
+        return lblTituloDePropiedad;
+    }
+
+    public void setLblTituloDePropiedad(JLabel lblTituloDePropiedad) {
+        this.lblTituloDePropiedad = lblTituloDePropiedad;
+    }
+    
+    
 
     public void setLblStatusPartida(JLabel lblStatusPartida) {
         this.lblStatusPartida = lblStatusPartida;
@@ -2732,6 +3097,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JButton btnCompraCasa;
     private javax.swing.JButton btnCompraHotel;
     private javax.swing.JButton btnComprarPropActual;
+    private javax.swing.JButton btnConsultarDerecha;
+    private javax.swing.JButton btnConsultarIzquierda;
+    private javax.swing.JButton btnConsultarPropiedad;
     private javax.swing.JButton btnEndTurn;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JButton btnHipotecar;
@@ -2739,13 +3107,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JButton btnSeleccionFicha;
     private javax.swing.JButton btnVenderEdificio;
     private javax.swing.JButton btnVenderProp;
+    private javax.swing.JComboBox<String> cbConsultarPropiedades;
     private javax.swing.JComboBox<String> cbEdificios;
     private javax.swing.JComboBox<String> cbPropiedades;
     private javax.swing.JComboBox<String> cbSeleccion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -2767,7 +3135,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel115;
     private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel119;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
@@ -2778,11 +3145,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2846,7 +3211,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel53;
@@ -2861,10 +3225,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel lblAdministrar;
+    private javax.swing.JLabel lblAlquileresTitulo;
     private javax.swing.JLabel lblArcaComunal;
+    private javax.swing.JLabel lblCadaCasaCuesta;
+    private javax.swing.JLabel lblCadaHotelCuesta;
     private javax.swing.JPanel lblCasilla1;
     private javax.swing.JPanel lblCasilla10;
     private javax.swing.JPanel lblCasilla11;
@@ -2906,28 +3271,41 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JPanel lblCasilla8;
     private javax.swing.JPanel lblCasilla9;
     private javax.swing.JLabel lblChat;
+    private javax.swing.JLabel lblCon1Casa;
+    private javax.swing.JLabel lblCon2Casas;
+    private javax.swing.JLabel lblCon3Casas;
+    private javax.swing.JLabel lblCon4Casas;
+    private javax.swing.JLabel lblConHotel;
+    private javax.swing.JLabel lblConsultarJugador;
+    private javax.swing.JLabel lblConsultarPropiedades;
     private javax.swing.JLabel lblDado1;
     private javax.swing.JLabel lblDado2;
     private javax.swing.JLabel lblDinero;
     private javax.swing.JLabel lblFicha;
     private javax.swing.JLabel lblFichaJugador;
     private javax.swing.JLabel lblFortuna;
+    private javax.swing.JLabel lblHipotecaTitulo;
     private javax.swing.JLabel lblHistorial;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblLogoMonopoly;
     private javax.swing.JLabel lblNombreJugador;
+    private javax.swing.JLabel lblNombreTituloPropiedad;
     private javax.swing.JLabel lblNumDinero;
     private javax.swing.JLabel lblSeleccionFicha;
     private javax.swing.JLabel lblStatusPartida;
+    private javax.swing.JLabel lblTituloColor;
+    private javax.swing.JLabel lblTituloDePropiedad;
     private javax.swing.JLabel lblTurno;
     private javax.swing.JLabel lblTurnoDe;
     private javax.swing.JLabel lblUsuarioLanzamiento;
     private javax.swing.JLabel lblVenderEdificio;
     private javax.swing.JPanel pnlArcaComunal;
+    private javax.swing.JPanel pnlColorTituloPropiedad;
     private javax.swing.JPanel pnlFicha;
     private javax.swing.JPanel pnlFortuna;
     private javax.swing.JPanel pnlLogoMonopoly;
     private javax.swing.JPanel pnlTablero;
+    private javax.swing.JPanel pnlTituloPropiedad;
     private javax.swing.JPanel pnlToolbar;
     private javax.swing.JSpinner spinnerCasa;
     private javax.swing.JSpinner spinnerHotel;

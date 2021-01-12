@@ -55,6 +55,8 @@ public class ThreadCliente extends Thread implements Serializable{
     private boolean turnoConseguido = false;
     private Tablero tablero;
     private boolean vueltaDada = false;
+    private String nombreConsultar;
+    private int contadorConsultar = 0;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -68,6 +70,7 @@ public class ThreadCliente extends Thread implements Serializable{
         banco = new Banco();
         tablero = new Tablero();
         propiedades = new ArrayList<Calles>();
+        nombreConsultar = "";
     }
     
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla, String nombreCargado, int dineroCargado, int numCasasCargado, int numHotelesCargado, int numPropiedadesCargado, boolean quebradoCargado) throws IOException {
@@ -84,6 +87,16 @@ public class ThreadCliente extends Thread implements Serializable{
         quebrado = quebradoCargado;
     }
 
+    public int getContadorConsultar() {
+        return contadorConsultar;
+    }
+
+    public void setContadorConsultar(int contadorConsultar) {
+        this.contadorConsultar = contadorConsultar;
+    }
+    
+    
+
     public int getTotalRoll() {
         return totalRoll;
     }
@@ -91,6 +104,16 @@ public class ThreadCliente extends Thread implements Serializable{
     public void setTotalRoll(int totalRoll) {
         this.totalRoll = totalRoll;
     }
+
+    public String getNombreConsultar() {
+        return nombreConsultar;
+    }
+
+    public void setNombreConsultar(String nombreConsultar) {
+        this.nombreConsultar = nombreConsultar;
+    }
+    
+    
 
     public int getNumOrden() {
         return numOrden;
@@ -234,9 +257,9 @@ public class ThreadCliente extends Thread implements Serializable{
                         Calles casilla7 = new Calles("Avenida Oriental", this.getRefPantalla().getLblCasilla35(), "Avenida Oriental", 100, 50, "Celeste", 50, 50, 6, 30, 90 ,270,400,550);
                         Ferrocarriles casilla6 = new Ferrocarriles("Ferrocarril Reading", this.getRefPantalla().getLblCasilla36(), "Ferrocarril Reading", 200, 100);
                         Calles casilla5 = new Calles("Impuestos 2", this.getRefPantalla().getLblCasilla37(), "Impuestos 2", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0);
-                        Calles casilla4 = new Calles("Avenida Báltica", this.getRefPantalla().getLblCasilla38(), "Avenida Báltica", 60, 30, "Morado", 50, 50, 4, 20, 60 ,180,320,450);
+                        Calles casilla4 = new Calles("Avenida Báltica", this.getRefPantalla().getLblCasilla38(), "Avenida Báltica", 60, 30, "Rojo oscuro", 50, 50, 4, 20, 60 ,180,320,450);
                         Calles casilla3 = new Calles("Arca Comunal 3", this.getRefPantalla().getLblCasilla39(), "Arca Comunal 3", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0);
-                        Calles casilla2 = new Calles("Avenida Mediterránea", this.getRefPantalla().getLblCasilla40(), "Avenida Mediterránea", 60, 30, "Morado", 50, 50, 2, 10, 30 ,90,160,250);
+                        Calles casilla2 = new Calles("Avenida Mediterránea", this.getRefPantalla().getLblCasilla40(), "Avenida Mediterránea", 60, 30, "Rojo oscuro", 50, 50, 2, 10, 30 ,90,160,250);
                         
                         ArrayList<Cartas> casillas = new ArrayList<Cartas>();
                         casillas.add(casilla1);
@@ -327,6 +350,9 @@ public class ThreadCliente extends Thread implements Serializable{
                             int contPos = 1;
                             for (int i = 0; i < nombresOrden.size(); i++){
                                 this.refPantalla.getTxaHistorial().append(contPos + ". " + nombresOrden.get(i) + "\n");
+                                this.refPantalla.getCbConsultarPropiedades().addItem(nombresOrden.get(i));
+                                ArrayList<Calles> propiedadesJugador = new ArrayList<Calles>();
+                                FileManager.writeObject(propiedadesJugador, "src/Partida/propiedades" + nombresOrden.get(i) + ".dat");
                                 contPos = contPos + 1;
                             }
                             refPantalla.setNombreTurno(nombresOrden.get(0));
@@ -503,13 +529,28 @@ public class ThreadCliente extends Thread implements Serializable{
                         if (this.getNombre().equals(nombreComprador)){
                             Calles propiedadComprar = (Calles)this.getTablero().getCasillas().get(casillaTablero);
                             int precioPropiedad = propiedadComprar.getPrecioCompra();
-                            System.out.println("Dinero del jugador antes de la compra: " + cantidadDinero);
-                            this.getBanco().retirarDinero(this, precioPropiedad);
-                            System.out.println("Dinero luego de compra: " + this.getDinero());
                             
-                            this.getPropiedades().add(propiedadComprar);
-                            System.out.println("Propiedad comprada: " + propiedadComprar);
-                            this.getRefPantalla().getCbPropiedades().addItem(propiedadComprar.getNombre());
+                            if (this.getDinero() > precioPropiedad){
+                                
+                                System.out.println("Dinero del jugador antes de la compra: " + cantidadDinero);
+                                this.getBanco().retirarDinero(this, precioPropiedad);
+                                System.out.println("Dinero luego de compra: " + this.getDinero());
+                            
+                                this.getPropiedades().add(propiedadComprar);
+                                System.out.println("Propiedad comprada: " + propiedadComprar);
+                                this.getRefPantalla().getCbPropiedades().addItem(propiedadComprar.getNombre());
+                                System.out.println(this.getRefPantalla().getLblNombreJugador().getText());
+                                ArrayList<Calles> propiedadesLeidas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + this.getRefPantalla().getLblNombreJugador().getText() + ".dat");
+                                propiedadesLeidas.add(propiedadComprar);
+                                FileManager.writeObject(propiedadesLeidas, "src/Partida/propiedades" + this.getRefPantalla().getLblNombreJugador().getText() + ".dat");
+                                System.out.println(propiedadesLeidas);
+                            }
+                            else if (this.getDinero() <= precioPropiedad){
+                                
+                                this.getRefPantalla().getTxaHistorial().append("Error: No puede comprar esta propiedad ya que no tiene suficiente dinero para hacerlo.\n");
+                            }
+                            
+                            
                             
                         }
                         

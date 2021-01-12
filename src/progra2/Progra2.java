@@ -56,6 +56,7 @@ public class Progra2 {
         FileManager.writeObject(nombresOrden, "src/Partida/nombresorden.dat");
         ArrayList<String> listaNombres = new ArrayList<String>();
         FileManager.writeObject(listaNombres, "src/Partida/listanombres.dat");
+        
         MenuPrincipal menu = new MenuPrincipal();
         menu.pack();
         menu.setVisible(true);

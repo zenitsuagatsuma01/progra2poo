@@ -5,10 +5,13 @@
  */
 package Servidor;
 
+import Cliente.Cliente;
+import Cliente.InterfazCliente;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class PantallaServidor extends javax.swing.JFrame implements Serializable{
     
@@ -125,11 +128,17 @@ public class PantallaServidor extends javax.swing.JFrame implements Serializable
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        try {
-            // TODO add your handling code here:
-            srv.guardarPartida();   // Guarda la partida
-        } catch (IOException ex) {
-            Logger.getLogger(PantallaServidor.class.getName()).log(Level.SEVERE, null, ex);
+        String nombre = JOptionPane.showInputDialog("Escriba su nombre:");
+        try{
+        InterfazCliente pantalla = new InterfazCliente();
+        Cliente c = new Cliente(pantalla);
+        pantalla.pack();
+        pantalla.setVisible(true); 
+        c.conectar(nombre);
+               
+        }
+        catch(Exception e){
+            
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 

@@ -5,13 +5,14 @@
  */
 package cartas;
 
+import java.io.Serializable;
 import javax.swing.JPanel;
 
 /**
  *
  * @author Usuario
  */
-public abstract class Cartas {
+public abstract class Cartas implements Serializable{
     public String imagen;
     public String nombre;
     public JPanel panel;

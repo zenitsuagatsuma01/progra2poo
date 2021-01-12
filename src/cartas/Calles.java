@@ -5,6 +5,7 @@
  */
 package cartas;
 
+import java.io.Serializable;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -12,7 +13,7 @@ import javax.swing.JPanel;
  *
  * @author Usuario
  */
-public class Calles extends Propiedades{
+public class Calles extends Propiedades implements Serializable{
     public String color;
     public int cantidadCasas;
     public int cantidadHoteles;
