@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 // Interfaz grafica que le aparece a cada jugador, el diseno es un placeholder porque ocupamos poner el tablero y el historial (yo hago el historial)
 
@@ -1534,7 +1535,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         pnlLogoMonopoly.setBackground(new java.awt.Color(255, 255, 255));
 
-        ImageIcon logoMonopolyImage = new ImageIcon("src/Imagenes/logomonopoly.png");
+        ImageIcon logoMonopolyImage = new ImageIcon("src/Imagenes/logotablero.png");
         lblLogoMonopoly.setIcon(logoMonopolyImage);
 
         javax.swing.GroupLayout pnlLogoMonopolyLayout = new javax.swing.GroupLayout(pnlLogoMonopoly);
@@ -2282,6 +2283,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             Random random = new Random();
             int dado1 = random.nextInt(6); // se hace pasar de 0-5 a 1-6 sumandole 1 al resultado
             dado1 = dado1 + 1;
+            
             this.getLblNumDado1().setText(""+dado1);
         
             int dado2 = random.nextInt(6); // se hace pasar de 0-5 a 1-6 sumandole 1 al resultado
@@ -2764,33 +2766,51 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         numeroConsultar = numeroConsultar + 1;
         this.getRefCliente().getHiloCliente().setContadorConsultar(numeroConsultar);
         
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Azul"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.blue);
+        Runnable actualizarGUI = new Runnable(){
+            @Override
+            public void run() {
+                // Codigo para actualizar la GUI
+                try{
+                    int numeroConsultar = getRefCliente().getHiloCliente().getContadorConsultar();
+                    if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Azul"))
+            getPnlColorTituloPropiedad().setBackground(Color.blue);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Verde"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.green);
+            getPnlColorTituloPropiedad().setBackground(Color.green);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Amarillo"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.yellow);
+            getPnlColorTituloPropiedad().setBackground(Color.yellow);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rojo"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.red);
+            getPnlColorTituloPropiedad().setBackground(Color.red);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Naranja"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.orange);
+            getPnlColorTituloPropiedad().setBackground(Color.orange);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rosado"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.pink);
+            getPnlColorTituloPropiedad().setBackground(Color.pink);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Celeste"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.cyan);
+            getPnlColorTituloPropiedad().setBackground(Color.cyan);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rojo oscuro"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
+            getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
         
-        this.getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(numeroConsultar).getNombre());
-        this.getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(numeroConsultar).getPrecio0());
-        this.getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(numeroConsultar).getPrecio1());
-        this.getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio2());
-        this.getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio3());
-        this.getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio4());
-        this.getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(numeroConsultar).getPrecio5());
-        this.getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(numeroConsultar).getValorHipoteca());
-        this.getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioCasa());
-        this.getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioHotel());
+        getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(numeroConsultar).getNombre());
+        getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(numeroConsultar).getPrecio0());
+        getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(numeroConsultar).getPrecio1());
+        getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio2());
+        getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio3());
+        getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio4());
+        getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(numeroConsultar).getPrecio5());
+        getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(numeroConsultar).getValorHipoteca());
+        getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioCasa());
+        getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioHotel());
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+            
+        };
+        // Llamar el invokeLater 
+        SwingUtilities.invokeLater(actualizarGUI);
+        // Fin
+        
+        
     }//GEN-LAST:event_btnConsultarDerechaActionPerformed
 
     private void btnConsultarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarPropiedadActionPerformed
@@ -2805,33 +2825,49 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             return;
         }
         
-        if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Azul"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.blue);
+        Runnable actualizarGUI = new Runnable(){
+            @Override
+            public void run() {
+                // Codigo para actualizar la GUI
+                try{
+                    if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Azul"))
+            getPnlColorTituloPropiedad().setBackground(Color.blue);
         if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Verde"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.green);
+            getPnlColorTituloPropiedad().setBackground(Color.green);
         if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Amarillo"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.yellow);
+            getPnlColorTituloPropiedad().setBackground(Color.yellow);
         if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Rojo"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.red);
+            getPnlColorTituloPropiedad().setBackground(Color.red);
         if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Naranja"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.orange);
+            getPnlColorTituloPropiedad().setBackground(Color.orange);
         if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Rosado"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.pink);
+            getPnlColorTituloPropiedad().setBackground(Color.pink);
         if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Celeste"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.cyan);
+            getPnlColorTituloPropiedad().setBackground(Color.cyan);
         if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Rojo oscuro"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
+            getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
         
-        this.getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(0).getNombre());
-        this.getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(0).getPrecio0());
-        this.getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(0).getPrecio1());
-        this.getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(0).getPrecio2());
-        this.getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(0).getPrecio3());
-        this.getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(0).getPrecio4());
-        this.getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(0).getPrecio5());
-        this.getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(0).getValorHipoteca());
-        this.getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(0).getPrecioCasa());
-        this.getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(0).getPrecioHotel());
+        getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(0).getNombre());
+        getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(0).getPrecio0());
+        getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(0).getPrecio1());
+        getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(0).getPrecio2());
+        getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(0).getPrecio3());
+        getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(0).getPrecio4());
+        getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(0).getPrecio5());
+        getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(0).getValorHipoteca());
+        getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(0).getPrecioCasa());
+        getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(0).getPrecioHotel());
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+            
+        };
+        // Llamar el invokeLater 
+        SwingUtilities.invokeLater(actualizarGUI);
+        // Fin
+        
     }//GEN-LAST:event_btnConsultarPropiedadActionPerformed
 
     private void btnConsultarIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarIzquierdaActionPerformed
@@ -2850,40 +2886,58 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         
         
         if (numeroConsultar == 0){
-            this.getTxaHistorial().append("Error: Ya no se puede devolver más en la lista de títulos de propiedad.\n");
+            //this.getTxaHistorial().append("Error: Ya no se puede devolver más en la lista de títulos de propiedad.\n");
             return;
         }
         
         numeroConsultar = numeroConsultar - 1;
         this.getRefCliente().getHiloCliente().setContadorConsultar(numeroConsultar);
         
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Azul"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.blue);
+        Runnable actualizarGUI = new Runnable(){
+            @Override
+            public void run() {
+                // Codigo para actualizar la GUI
+                try{
+                    int numeroConsultar = getRefCliente().getHiloCliente().getContadorConsultar();
+                    if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Azul"))
+            getPnlColorTituloPropiedad().setBackground(Color.blue);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Verde"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.green);
+            getPnlColorTituloPropiedad().setBackground(Color.green);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Amarillo"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.yellow);
+            getPnlColorTituloPropiedad().setBackground(Color.yellow);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rojo"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.red);
+            getPnlColorTituloPropiedad().setBackground(Color.red);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Naranja"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.orange);
+            getPnlColorTituloPropiedad().setBackground(Color.orange);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rosado"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.pink);
+            getPnlColorTituloPropiedad().setBackground(Color.pink);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Celeste"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.cyan);
+            getPnlColorTituloPropiedad().setBackground(Color.cyan);
         if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rojo oscuro"))
-            this.getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
+            getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
 
-        this.getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(numeroConsultar).getNombre());
-        this.getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(numeroConsultar).getPrecio0());
-        this.getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(numeroConsultar).getPrecio1());
-        this.getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio2());
-        this.getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio3());
-        this.getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio4());
-        this.getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(numeroConsultar).getPrecio5());
-        this.getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(numeroConsultar).getValorHipoteca());
-        this.getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioCasa());
-        this.getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioHotel());
+        getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(numeroConsultar).getNombre());
+        getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(numeroConsultar).getPrecio0());
+        getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(numeroConsultar).getPrecio1());
+        getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio2());
+        getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio3());
+        getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio4());
+        getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(numeroConsultar).getPrecio5());
+        getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(numeroConsultar).getValorHipoteca());
+        getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioCasa());
+        getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioHotel());
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+            
+        };
+        // Llamar el invokeLater 
+        SwingUtilities.invokeLater(actualizarGUI);
+        // Fin
+        
+        
     }//GEN-LAST:event_btnConsultarIzquierdaActionPerformed
 
     private void btnAbrirServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbrirServerActionPerformed
