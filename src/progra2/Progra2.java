@@ -5,7 +5,9 @@
  */
 package progra2;
 
+import Cliente.Cliente;
 import Cliente.Ficha;
+import Cliente.InterfazCliente;
 import Partida.FileManager;
 import Partida.MenuPrincipal;
 import Servidor.PantallaServidor;
@@ -57,10 +59,16 @@ public class Progra2 {
         ArrayList<String> listaNombres = new ArrayList<String>();
         FileManager.writeObject(listaNombres, "src/Partida/listanombres.dat");
         
-        MenuPrincipal menu = new MenuPrincipal();
-        menu.pack();
-        menu.setVisible(true);
-        menu.setTitle("Menu Principal Pokenopoly");
+        try{
+        InterfazCliente pantalla = new InterfazCliente();
+        Cliente c = new Cliente(pantalla);
+        pantalla.pack();
+        pantalla.setVisible(true); 
+               
+        }
+        catch(Exception e){
+            
+        }
     }
     
 }
