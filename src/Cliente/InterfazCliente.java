@@ -191,6 +191,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla10 = new javax.swing.JPanel();
         jLabel71 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         lblCasilla2 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -298,6 +299,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla8 = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        pnlArcaComunal = new javax.swing.JPanel();
+        lblArcaComunal = new javax.swing.JLabel();
+        pnlLogoMonopoly = new javax.swing.JPanel();
+        lblLogoMonopoly = new javax.swing.JLabel();
+        pnlFortuna = new javax.swing.JPanel();
+        lblFortuna = new javax.swing.JLabel();
         pnlToolbar = new javax.swing.JPanel();
         btnVenderProp = new javax.swing.JButton();
         btnComprarPropActual = new javax.swing.JButton();
@@ -430,6 +437,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         jPanel2.setLayout(new javax.swing.OverlayLayout(jPanel2));
 
+        pnlTablero.setBackground(new java.awt.Color(255, 255, 255));
         pnlTablero.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         pnlTablero.setLayout(null);
 
@@ -454,7 +462,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasilla1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblCasilla1.setLayout(new javax.swing.OverlayLayout(lblCasilla1));
 
-        jLabel59.setText("GO");
+        jLabel59.setText("<== GO");
         jLabel59.setAlignmentY(1.0F);
         lblCasilla1.add(jLabel59);
 
@@ -676,6 +684,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jLabel85.setAlignmentX(0.1F);
         jLabel85.setAlignmentY(0.1F);
         lblCasilla10.add(jLabel85);
+
+        jLabel16.setText("jLabel16");
+        lblCasilla10.add(jLabel16);
 
         pnlTablero.add(lblCasilla10);
         lblCasilla10.setBounds(1250, 60, 118, 60);
@@ -1473,6 +1484,79 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblCasilla8);
         lblCasilla8.setBounds(1228, 170, 140, 50);
 
+        pnlArcaComunal.setBackground(new java.awt.Color(255, 255, 255));
+        pnlArcaComunal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        ImageIcon arcaImage = new ImageIcon("src/Imagenes/arcacomunal.png");
+        lblArcaComunal.setIcon(arcaImage);
+
+        javax.swing.GroupLayout pnlArcaComunalLayout = new javax.swing.GroupLayout(pnlArcaComunal);
+        pnlArcaComunal.setLayout(pnlArcaComunalLayout);
+        pnlArcaComunalLayout.setHorizontalGroup(
+            pnlArcaComunalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlArcaComunalLayout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
+                .addComponent(lblArcaComunal, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+        );
+        pnlArcaComunalLayout.setVerticalGroup(
+            pnlArcaComunalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlArcaComunalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblArcaComunal, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
+        );
+
+        pnlTablero.add(pnlArcaComunal);
+        pnlArcaComunal.setBounds(580, 80, 240, 140);
+
+        pnlLogoMonopoly.setBackground(new java.awt.Color(255, 255, 255));
+
+        ImageIcon logoMonopolyImage = new ImageIcon("src/Imagenes/logomonopoly.png");
+        lblLogoMonopoly.setIcon(logoMonopolyImage);
+
+        javax.swing.GroupLayout pnlLogoMonopolyLayout = new javax.swing.GroupLayout(pnlLogoMonopoly);
+        pnlLogoMonopoly.setLayout(pnlLogoMonopolyLayout);
+        pnlLogoMonopolyLayout.setHorizontalGroup(
+            pnlLogoMonopolyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlLogoMonopolyLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLogoMonopoly, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlLogoMonopolyLayout.setVerticalGroup(
+            pnlLogoMonopolyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLogoMonopolyLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLogoMonopoly, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pnlTablero.add(pnlLogoMonopoly);
+        pnlLogoMonopoly.setBounds(340, 230, 750, 190);
+
+        pnlFortuna.setBackground(new java.awt.Color(255, 255, 255));
+        pnlFortuna.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        ImageIcon fortunaImage = new ImageIcon("src/Imagenes/fortuna.png");
+        lblFortuna.setIcon(fortunaImage);
+
+        javax.swing.GroupLayout pnlFortunaLayout = new javax.swing.GroupLayout(pnlFortuna);
+        pnlFortuna.setLayout(pnlFortunaLayout);
+        pnlFortunaLayout.setHorizontalGroup(
+            pnlFortunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFortunaLayout.createSequentialGroup()
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addComponent(lblFortuna, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        pnlFortunaLayout.setVerticalGroup(
+            pnlFortunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblFortuna, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+        );
+
+        pnlTablero.add(pnlFortuna);
+        pnlFortuna.setBounds(570, 430, 250, 140);
+
         jPanel2.add(pnlTablero);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1380, 660));
@@ -1644,15 +1728,15 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jButton3.setText("<=");
         pnlToolbar.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 230, -1, -1));
 
-        pnlToolbar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 50, 150, 30));
+        pnlToolbar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 40, 160, 30));
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel12.setText("Consultar propiedades");
+        jLabel12.setText("Consultar propiedades:");
         pnlToolbar.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 210, -1));
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel13.setText("Jugador:");
-        pnlToolbar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 50, -1, 30));
+        pnlToolbar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 40, -1, 30));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
@@ -2698,6 +2782,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2779,6 +2864,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel lblAdministrar;
+    private javax.swing.JLabel lblArcaComunal;
     private javax.swing.JPanel lblCasilla1;
     private javax.swing.JPanel lblCasilla10;
     private javax.swing.JPanel lblCasilla11;
@@ -2825,8 +2911,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel lblDinero;
     private javax.swing.JLabel lblFicha;
     private javax.swing.JLabel lblFichaJugador;
+    private javax.swing.JLabel lblFortuna;
     private javax.swing.JLabel lblHistorial;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblLogoMonopoly;
     private javax.swing.JLabel lblNombreJugador;
     private javax.swing.JLabel lblNumDinero;
     private javax.swing.JLabel lblSeleccionFicha;
@@ -2835,7 +2923,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel lblTurnoDe;
     private javax.swing.JLabel lblUsuarioLanzamiento;
     private javax.swing.JLabel lblVenderEdificio;
+    private javax.swing.JPanel pnlArcaComunal;
     private javax.swing.JPanel pnlFicha;
+    private javax.swing.JPanel pnlFortuna;
+    private javax.swing.JPanel pnlLogoMonopoly;
     private javax.swing.JPanel pnlTablero;
     private javax.swing.JPanel pnlToolbar;
     private javax.swing.JSpinner spinnerCasa;
