@@ -37,6 +37,8 @@ public class Servidor extends Thread implements Serializable{
     private int numTirado = 0;
     private ArrayList<String> nombreOrder;
     private ArrayList<String> listaPerdedores;
+    private int totalCasas;
+    private int totalHoteles;
 
     public Servidor(PantallaServidor refPantalla) {
         this.refPantalla = refPantalla;
@@ -99,6 +101,21 @@ public class Servidor extends Thread implements Serializable{
         this.nombreOrder = nombreOrder;
     }
 
+    public int getTotalCasas() {
+        return totalCasas;
+    }
+
+    public void setTotalCasas(int cantCasas) {
+        this.totalCasas = cantCasas;
+    }
+    
+    public int getTotalHoteles() {
+        return totalHoteles;
+    }
+
+    public void setTotalHoteles(int cantHoteles) {
+        this.totalHoteles = cantHoteles;
+    }
     
     
     public void iniciarPartida() {          // Se empieza la partida

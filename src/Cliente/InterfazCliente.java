@@ -317,6 +317,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblVenderEdificio = new javax.swing.JLabel();
         btnCompraHotel = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        spinnerCasa = new javax.swing.JSpinner();
+        spinnerHotel = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1460,7 +1462,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlToolbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVenderProp.setText("Vender");
-        pnlToolbar.add(btnVenderProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 90, 70));
+        pnlToolbar.add(btnVenderProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 90, 70));
 
         btnComprarPropActual.setText("Comprar propiedad actual");
         btnComprarPropActual.addActionListener(new java.awt.event.ActionListener() {
@@ -1479,7 +1481,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 150, 70));
 
         btnHipotecar.setText("Hipotecar/deshipotecar");
-        pnlToolbar.add(btnHipotecar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 170, 70));
+        pnlToolbar.add(btnHipotecar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 170, 70));
 
         btnEndTurn.setText("Terminar turno");
         btnEndTurn.addActionListener(new java.awt.event.ActionListener() {
@@ -1549,7 +1551,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlToolbar.add(lblAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(543, 130, 240, -1));
 
         btnCompraCasa.setText("Comprar casa");
-        pnlToolbar.add(btnCompraCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, -1, 70));
+        btnCompraCasa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCompraCasaActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(btnCompraCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, -1, 70));
 
         btnVenderEdificio.setText("Vender");
         pnlToolbar.add(btnVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 200, 90, 70));
@@ -1561,7 +1568,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlToolbar.add(lblVenderEdificio, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 130, -1, -1));
 
         btnCompraHotel.setText("Comprar hotel");
-        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 120, 70));
+        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 200, 120, 70));
 
         jButton1.setText("prueba ir a lugar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -1570,6 +1577,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             }
         });
         pnlToolbar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
+
+        spinnerCasa.setModel(new javax.swing.SpinnerNumberModel(1, 1, 32, 1));
+        pnlToolbar.add(spinnerCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, -1, -1));
+
+        spinnerHotel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 32, 1));
+        pnlToolbar.add(spinnerHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, -1, -1));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
@@ -2357,6 +2370,17 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         
     }//GEN-LAST:event_btnComprarPropActualActionPerformed
 
+    private void btnCompraCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraCasaActionPerformed
+        try {
+            int num = (Integer)spinnerCasa.getValue();
+            this.getRefCliente().getHiloCliente().writer.writeInt(14);
+            this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+            
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnCompraCasaActionPerformed
+
     public JLabel getLblStatusPartida() {
         return lblStatusPartida;
     }
@@ -2651,6 +2675,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JPanel pnlFicha;
     private javax.swing.JPanel pnlTablero;
     private javax.swing.JPanel pnlToolbar;
+    private javax.swing.JSpinner spinnerCasa;
+    private javax.swing.JSpinner spinnerHotel;
     private javax.swing.JTextArea txaHistorial;
     private javax.swing.JTextArea txaMensajes;
     private javax.swing.JTextField txfMensaje;

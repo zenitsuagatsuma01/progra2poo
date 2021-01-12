@@ -43,7 +43,7 @@ public class ThreadCliente extends Thread implements Serializable{
     private int numPropiedades;
     private Ficha ficha;
     private Banco banco;
-    //private ArrayList<Propiedad> propiedades;
+    private ArrayList<Calles> propiedades;
     //private ArrayList<Casas> casas;
     //private ArrayList<Hotel> hoteles;
     protected boolean quebrado = false;
@@ -491,6 +491,16 @@ public class ThreadCliente extends Thread implements Serializable{
                         if (this.getNombre().equals(nombreComprador)){
                             
                             this.getBanco().retirarDinero(this, 120);
+                            
+                        }
+                        
+                        break;
+                    case 15:
+                        String nombrePersona = reader.readUTF();
+                        
+                        if (this.getNombre().equals(nombrePersona)){
+                            
+                            //if(this.);
                             
                         }
                         
