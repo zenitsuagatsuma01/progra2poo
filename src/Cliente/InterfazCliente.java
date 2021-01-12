@@ -310,6 +310,108 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblLogoMonopoly = new javax.swing.JLabel();
         pnlFortuna = new javax.swing.JPanel();
         lblFortuna = new javax.swing.JLabel();
+        lblLibreCasilla1 = new javax.swing.JLabel();
+        lblAlquilerCasilla1 = new javax.swing.JLabel();
+        lblCasasCasilla1 = new javax.swing.JLabel();
+        lblHotelCasillas1 = new javax.swing.JLabel();
+        lblLibreCasilla2 = new javax.swing.JLabel();
+        lblAlquilerCasilla2 = new javax.swing.JLabel();
+        lblCasasCasilla2 = new javax.swing.JLabel();
+        lblHotelCasillas2 = new javax.swing.JLabel();
+        lblLibreCasilla3 = new javax.swing.JLabel();
+        lblAlquilerCasilla3 = new javax.swing.JLabel();
+        lblCasasCasilla3 = new javax.swing.JLabel();
+        lblHotelCasillas3 = new javax.swing.JLabel();
+        lblLibreCasilla4 = new javax.swing.JLabel();
+        lblAlquilerCasilla4 = new javax.swing.JLabel();
+        lblLibreCasilla5 = new javax.swing.JLabel();
+        lblAlquilerCasilla5 = new javax.swing.JLabel();
+        lblCasasCasilla5 = new javax.swing.JLabel();
+        lblHotelCasillas5 = new javax.swing.JLabel();
+        lblLibreCasilla39 = new javax.swing.JLabel();
+        lblAlquilerCasilla39 = new javax.swing.JLabel();
+        lblCasasCasilla39 = new javax.swing.JLabel();
+        lblHotelCasillas39 = new javax.swing.JLabel();
+        lblLibreCasilla0 = new javax.swing.JLabel();
+        lblAlquilerCasilla0 = new javax.swing.JLabel();
+        lblCasasCasilla0 = new javax.swing.JLabel();
+        lblHotelCasillas0 = new javax.swing.JLabel();
+        lblLibreCasilla7 = new javax.swing.JLabel();
+        lblAlquilerCasilla7 = new javax.swing.JLabel();
+        lblCasasCasilla7 = new javax.swing.JLabel();
+        lblHotelCasillas7 = new javax.swing.JLabel();
+        lblLibreCasilla8 = new javax.swing.JLabel();
+        lblAlquilerCasilla8 = new javax.swing.JLabel();
+        lblCasasCasilla8 = new javax.swing.JLabel();
+        lblHotelCasillas8 = new javax.swing.JLabel();
+        lblLibreCasilla9 = new javax.swing.JLabel();
+        lblAlquilerCasilla9 = new javax.swing.JLabel();
+        lblLibreCasilla10 = new javax.swing.JLabel();
+        lblCasasCasilla10 = new javax.swing.JLabel();
+        lblAlquilerCasilla10 = new javax.swing.JLabel();
+        lblHotelCasillas10 = new javax.swing.JLabel();
+        lblLibreCasilla11 = new javax.swing.JLabel();
+        lblCasasCasilla11 = new javax.swing.JLabel();
+        lblAlquilerCasilla11 = new javax.swing.JLabel();
+        lblHotelCasillas11 = new javax.swing.JLabel();
+        lblLibreCasilla12 = new javax.swing.JLabel();
+        lblCasasCasilla12 = new javax.swing.JLabel();
+        lblAlquilerCasilla12 = new javax.swing.JLabel();
+        lblHotelCasillas12 = new javax.swing.JLabel();
+        lblLibreCasilla13 = new javax.swing.JLabel();
+        lblCasasCasilla13 = new javax.swing.JLabel();
+        lblAlquilerCasilla13 = new javax.swing.JLabel();
+        lblHotelCasillas13 = new javax.swing.JLabel();
+        lblLibreCasilla14 = new javax.swing.JLabel();
+        lblCasasCasilla14 = new javax.swing.JLabel();
+        lblAlquilerCasilla14 = new javax.swing.JLabel();
+        lblHotelCasillas14 = new javax.swing.JLabel();
+        lblLibreCasilla15 = new javax.swing.JLabel();
+        lblCasasCasilla15 = new javax.swing.JLabel();
+        lblAlquilerCasilla15 = new javax.swing.JLabel();
+        lblHotelCasillas15 = new javax.swing.JLabel();
+        lblLibreCasilla16 = new javax.swing.JLabel();
+        lblCasasCasilla16 = new javax.swing.JLabel();
+        lblAlquilerCasilla16 = new javax.swing.JLabel();
+        lblHotelCasillas16 = new javax.swing.JLabel();
+        lblLibreCasilla17 = new javax.swing.JLabel();
+        lblCasasCasilla17 = new javax.swing.JLabel();
+        lblAlquilerCasilla17 = new javax.swing.JLabel();
+        lblHotelCasillas17 = new javax.swing.JLabel();
+        lblLibreCasilla18 = new javax.swing.JLabel();
+        lblCasasCasilla18 = new javax.swing.JLabel();
+        lblAlquilerCasilla18 = new javax.swing.JLabel();
+        lblHotelCasillas18 = new javax.swing.JLabel();
+        lblLibreCasilla19 = new javax.swing.JLabel();
+        lblAlquilerCasilla19 = new javax.swing.JLabel();
+        lblLibreCasilla20 = new javax.swing.JLabel();
+        lblAlquilerCasilla20 = new javax.swing.JLabel();
+        lblLibreCasilla21 = new javax.swing.JLabel();
+        lblAlquilerCasilla21 = new javax.swing.JLabel();
+        lblCasasCasilla21 = new javax.swing.JLabel();
+        lblHotelCasillas21 = new javax.swing.JLabel();
+        lblLibreCasilla22 = new javax.swing.JLabel();
+        lblAlquilerCasilla22 = new javax.swing.JLabel();
+        lblCasasCasilla22 = new javax.swing.JLabel();
+        lblHotelCasillas22 = new javax.swing.JLabel();
+        lblLibreCasilla23 = new javax.swing.JLabel();
+        lblAlquilerCasilla23 = new javax.swing.JLabel();
+        lblCasasCasilla23 = new javax.swing.JLabel();
+        lblHotelCasillas23 = new javax.swing.JLabel();
+        lblLibreCasilla24 = new javax.swing.JLabel();
+        lblAlquilerCasilla24 = new javax.swing.JLabel();
+        lblCasasCasilla24 = new javax.swing.JLabel();
+        lblHotelCasillas24 = new javax.swing.JLabel();
+        lblLibreCasilla25 = new javax.swing.JLabel();
+        lblAlquilerCasilla25 = new javax.swing.JLabel();
+        lblLibreCasilla26 = new javax.swing.JLabel();
+        lblAlquilerCasilla26 = new javax.swing.JLabel();
+        lblCasasCasilla26 = new javax.swing.JLabel();
+        lblHotelCasillas26 = new javax.swing.JLabel();
+        lblLibreCasilla27 = new javax.swing.JLabel();
+        lblAlquilerCasilla27 = new javax.swing.JLabel();
+        lblCasasCasilla27 = new javax.swing.JLabel();
+        lblHotelCasillas27 = new javax.swing.JLabel();
         pnlToolbar = new javax.swing.JPanel();
         btnVenderProp = new javax.swing.JButton();
         btnComprarPropActual = new javax.swing.JButton();
@@ -1525,13 +1627,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         pnlArcaComunalLayout.setVerticalGroup(
             pnlArcaComunalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlArcaComunalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblArcaComunal, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlArcaComunalLayout.createSequentialGroup()
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(lblArcaComunal, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pnlTablero.add(pnlArcaComunal);
-        pnlArcaComunal.setBounds(580, 80, 240, 140);
+        pnlArcaComunal.setBounds(580, 120, 240, 100);
 
         pnlLogoMonopoly.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1575,11 +1677,419 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
         pnlFortunaLayout.setVerticalGroup(
             pnlFortunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblFortuna, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+            .addComponent(lblFortuna, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
         );
 
         pnlTablero.add(pnlFortuna);
-        pnlFortuna.setBounds(570, 430, 250, 140);
+        pnlFortuna.setBounds(570, 430, 250, 100);
+
+        lblLibreCasilla1.setText("Libre");
+        pnlTablero.add(lblLibreCasilla1);
+        lblLibreCasilla1.setBounds(1060, 520, 70, 20);
+
+        lblAlquilerCasilla1.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla1);
+        lblAlquilerCasilla1.setBounds(1060, 540, 90, 20);
+
+        lblCasasCasilla1.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla1);
+        lblCasasCasilla1.setBounds(1060, 560, 90, 16);
+
+        lblHotelCasillas1.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas1);
+        lblHotelCasillas1.setBounds(1060, 580, 80, 10);
+
+        lblLibreCasilla2.setText("Libre");
+        pnlTablero.add(lblLibreCasilla2);
+        lblLibreCasilla2.setBounds(900, 520, 100, 20);
+
+        lblAlquilerCasilla2.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla2);
+        lblAlquilerCasilla2.setBounds(900, 540, 110, 20);
+
+        lblCasasCasilla2.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla2);
+        lblCasasCasilla2.setBounds(900, 560, 110, 16);
+
+        lblHotelCasillas2.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas2);
+        lblHotelCasillas2.setBounds(900, 570, 110, 20);
+
+        lblLibreCasilla3.setText("Libre");
+        pnlTablero.add(lblLibreCasilla3);
+        lblLibreCasilla3.setBounds(560, 530, 120, 20);
+
+        lblAlquilerCasilla3.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla3);
+        lblAlquilerCasilla3.setBounds(560, 550, 120, 10);
+
+        lblCasasCasilla3.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla3);
+        lblCasasCasilla3.setBounds(560, 560, 120, 10);
+
+        lblHotelCasillas3.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas3);
+        lblHotelCasillas3.setBounds(560, 570, 120, 20);
+
+        lblLibreCasilla4.setText("Libre");
+        pnlTablero.add(lblLibreCasilla4);
+        lblLibreCasilla4.setBounds(680, 540, 140, 20);
+
+        lblAlquilerCasilla4.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla4);
+        lblAlquilerCasilla4.setBounds(680, 560, 140, 30);
+
+        lblLibreCasilla5.setText("Libre");
+        pnlTablero.add(lblLibreCasilla5);
+        lblLibreCasilla5.setBounds(1120, 400, 110, 20);
+
+        lblAlquilerCasilla5.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla5);
+        lblAlquilerCasilla5.setBounds(1120, 420, 110, 20);
+
+        lblCasasCasilla5.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla5);
+        lblCasasCasilla5.setBounds(1120, 440, 110, 20);
+
+        lblHotelCasillas5.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas5);
+        lblHotelCasillas5.setBounds(1120, 460, 110, 20);
+
+        lblLibreCasilla39.setText("Libre");
+        pnlTablero.add(lblLibreCasilla39);
+        lblLibreCasilla39.setBounds(1150, 520, 90, 20);
+
+        lblAlquilerCasilla39.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla39);
+        lblAlquilerCasilla39.setBounds(1150, 540, 90, 10);
+
+        lblCasasCasilla39.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla39);
+        lblCasasCasilla39.setBounds(1150, 550, 80, 20);
+
+        lblHotelCasillas39.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas39);
+        lblHotelCasillas39.setBounds(1150, 570, 80, 20);
+
+        lblLibreCasilla0.setText("Libre");
+        pnlTablero.add(lblLibreCasilla0);
+        lblLibreCasilla0.setBounds(410, 520, 120, 20);
+
+        lblAlquilerCasilla0.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla0);
+        lblAlquilerCasilla0.setBounds(410, 540, 120, 20);
+
+        lblCasasCasilla0.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla0);
+        lblCasasCasilla0.setBounds(410, 560, 120, 10);
+
+        lblHotelCasillas0.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas0);
+        lblHotelCasillas0.setBounds(410, 570, 130, 20);
+
+        lblLibreCasilla7.setText("Libre");
+        pnlTablero.add(lblLibreCasilla7);
+        lblLibreCasilla7.setBounds(290, 520, 110, 20);
+
+        lblAlquilerCasilla7.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla7);
+        lblAlquilerCasilla7.setBounds(290, 540, 110, 20);
+
+        lblCasasCasilla7.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla7);
+        lblCasasCasilla7.setBounds(290, 560, 110, 10);
+
+        lblHotelCasillas7.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas7);
+        lblHotelCasillas7.setBounds(290, 570, 110, 20);
+
+        lblLibreCasilla8.setText("Libre");
+        pnlTablero.add(lblLibreCasilla8);
+        lblLibreCasilla8.setBounds(180, 530, 70, 20);
+
+        lblAlquilerCasilla8.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla8);
+        lblAlquilerCasilla8.setBounds(180, 550, 80, 10);
+
+        lblCasasCasilla8.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla8);
+        lblCasasCasilla8.setBounds(180, 560, 90, 16);
+
+        lblHotelCasillas8.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas8);
+        lblHotelCasillas8.setBounds(180, 570, 90, 20);
+
+        lblLibreCasilla9.setText("Libre");
+        pnlTablero.add(lblLibreCasilla9);
+        lblLibreCasilla9.setBounds(180, 470, 100, 20);
+
+        lblAlquilerCasilla9.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla9);
+        lblAlquilerCasilla9.setBounds(180, 500, 100, 20);
+
+        lblLibreCasilla10.setText("Libre");
+        pnlTablero.add(lblLibreCasilla10);
+        lblLibreCasilla10.setBounds(180, 400, 100, 20);
+
+        lblCasasCasilla10.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla10);
+        lblCasasCasilla10.setBounds(180, 430, 90, 10);
+
+        lblAlquilerCasilla10.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla10);
+        lblAlquilerCasilla10.setBounds(180, 420, 100, 10);
+
+        lblHotelCasillas10.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas10);
+        lblHotelCasillas10.setBounds(180, 440, 100, 20);
+
+        lblLibreCasilla11.setText("Libre");
+        pnlTablero.add(lblLibreCasilla11);
+        lblLibreCasilla11.setBounds(180, 340, 120, 20);
+
+        lblCasasCasilla11.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla11);
+        lblCasasCasilla11.setBounds(180, 370, 130, 10);
+
+        lblAlquilerCasilla11.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla11);
+        lblAlquilerCasilla11.setBounds(180, 360, 130, 10);
+
+        lblHotelCasillas11.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas11);
+        lblHotelCasillas11.setBounds(180, 380, 140, 20);
+
+        lblLibreCasilla12.setText("Libre");
+        pnlTablero.add(lblLibreCasilla12);
+        lblLibreCasilla12.setBounds(180, 300, 130, 10);
+
+        lblCasasCasilla12.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla12);
+        lblCasasCasilla12.setBounds(180, 320, 120, 10);
+
+        lblAlquilerCasilla12.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla12);
+        lblAlquilerCasilla12.setBounds(180, 310, 120, 10);
+
+        lblHotelCasillas12.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas12);
+        lblHotelCasillas12.setBounds(180, 330, 110, 10);
+
+        lblLibreCasilla13.setText("Libre");
+        pnlTablero.add(lblLibreCasilla13);
+        lblLibreCasilla13.setBounds(180, 230, 100, 20);
+
+        lblCasasCasilla13.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla13);
+        lblCasasCasilla13.setBounds(180, 260, 110, 10);
+
+        lblAlquilerCasilla13.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla13);
+        lblAlquilerCasilla13.setBounds(180, 250, 110, 10);
+
+        lblHotelCasillas13.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas13);
+        lblHotelCasillas13.setBounds(180, 270, 90, 20);
+
+        lblLibreCasilla14.setText("Libre");
+        pnlTablero.add(lblLibreCasilla14);
+        lblLibreCasilla14.setBounds(180, 130, 90, 20);
+
+        lblCasasCasilla14.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla14);
+        lblCasasCasilla14.setBounds(180, 160, 80, 10);
+
+        lblAlquilerCasilla14.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla14);
+        lblAlquilerCasilla14.setBounds(180, 150, 90, 10);
+
+        lblHotelCasillas14.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas14);
+        lblHotelCasillas14.setBounds(180, 170, 80, 20);
+
+        lblLibreCasilla15.setText("Libre");
+        pnlTablero.add(lblLibreCasilla15);
+        lblLibreCasilla15.setBounds(180, 60, 100, 20);
+
+        lblCasasCasilla15.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla15);
+        lblCasasCasilla15.setBounds(180, 90, 90, 10);
+
+        lblAlquilerCasilla15.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla15);
+        lblAlquilerCasilla15.setBounds(180, 80, 90, 10);
+
+        lblHotelCasillas15.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas15);
+        lblHotelCasillas15.setBounds(180, 100, 90, 20);
+
+        lblLibreCasilla16.setText("Libre");
+        pnlTablero.add(lblLibreCasilla16);
+        lblLibreCasilla16.setBounds(280, 60, 110, 20);
+
+        lblCasasCasilla16.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla16);
+        lblCasasCasilla16.setBounds(280, 94, 110, 16);
+
+        lblAlquilerCasilla16.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla16);
+        lblAlquilerCasilla16.setBounds(280, 80, 110, 10);
+
+        lblHotelCasillas16.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas16);
+        lblHotelCasillas16.setBounds(280, 110, 100, 10);
+
+        lblLibreCasilla17.setText("Libre");
+        pnlTablero.add(lblLibreCasilla17);
+        lblLibreCasilla17.setBounds(420, 60, 130, 20);
+
+        lblCasasCasilla17.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla17);
+        lblCasasCasilla17.setBounds(420, 100, 120, 10);
+
+        lblAlquilerCasilla17.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla17);
+        lblAlquilerCasilla17.setBounds(420, 80, 120, 20);
+
+        lblHotelCasillas17.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas17);
+        lblHotelCasillas17.setBounds(420, 110, 120, 20);
+
+        lblLibreCasilla18.setText("Libre");
+        pnlTablero.add(lblLibreCasilla18);
+        lblLibreCasilla18.setBounds(530, 60, 120, 20);
+
+        lblCasasCasilla18.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla18);
+        lblCasasCasilla18.setBounds(530, 90, 120, 10);
+
+        lblAlquilerCasilla18.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla18);
+        lblAlquilerCasilla18.setBounds(530, 80, 120, 10);
+
+        lblHotelCasillas18.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas18);
+        lblHotelCasillas18.setBounds(530, 100, 120, 20);
+
+        lblLibreCasilla19.setText("Libre");
+        pnlTablero.add(lblLibreCasilla19);
+        lblLibreCasilla19.setBounds(650, 60, 130, 20);
+
+        lblAlquilerCasilla19.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla19);
+        lblAlquilerCasilla19.setBounds(650, 90, 130, 20);
+
+        lblLibreCasilla20.setText("Libre");
+        pnlTablero.add(lblLibreCasilla20);
+        lblLibreCasilla20.setBounds(1120, 310, 110, 20);
+
+        lblAlquilerCasilla20.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla20);
+        lblAlquilerCasilla20.setBounds(1120, 330, 110, 20);
+
+        lblLibreCasilla21.setText("Libre");
+        pnlTablero.add(lblLibreCasilla21);
+        lblLibreCasilla21.setBounds(1120, 230, 100, 20);
+
+        lblAlquilerCasilla21.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla21);
+        lblAlquilerCasilla21.setBounds(1120, 250, 100, 10);
+
+        lblCasasCasilla21.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla21);
+        lblCasasCasilla21.setBounds(1120, 260, 100, 20);
+
+        lblHotelCasillas21.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas21);
+        lblHotelCasillas21.setBounds(1120, 280, 100, 10);
+
+        lblLibreCasilla22.setText("Libre");
+        pnlTablero.add(lblLibreCasilla22);
+        lblLibreCasilla22.setBounds(1120, 130, 110, 20);
+
+        lblAlquilerCasilla22.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla22);
+        lblAlquilerCasilla22.setBounds(1120, 150, 110, 10);
+
+        lblCasasCasilla22.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla22);
+        lblCasasCasilla22.setBounds(1120, 160, 110, 10);
+
+        lblHotelCasillas22.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas22);
+        lblHotelCasillas22.setBounds(1120, 170, 110, 20);
+
+        lblLibreCasilla23.setText("Libre");
+        pnlTablero.add(lblLibreCasilla23);
+        lblLibreCasilla23.setBounds(780, 60, 130, 20);
+
+        lblAlquilerCasilla23.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla23);
+        lblAlquilerCasilla23.setBounds(780, 80, 130, 10);
+
+        lblCasasCasilla23.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla23);
+        lblCasasCasilla23.setBounds(780, 90, 130, 10);
+
+        lblHotelCasillas23.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas23);
+        lblHotelCasillas23.setBounds(780, 100, 130, 20);
+
+        lblLibreCasilla24.setText("Libre");
+        pnlTablero.add(lblLibreCasilla24);
+        lblLibreCasilla24.setBounds(900, 60, 100, 20);
+
+        lblAlquilerCasilla24.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla24);
+        lblAlquilerCasilla24.setBounds(900, 80, 130, 20);
+
+        lblCasasCasilla24.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla24);
+        lblCasasCasilla24.setBounds(900, 100, 130, 20);
+
+        lblHotelCasillas24.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas24);
+        lblHotelCasillas24.setBounds(900, 120, 130, 20);
+
+        lblLibreCasilla25.setText("Libre");
+        pnlTablero.add(lblLibreCasilla25);
+        lblLibreCasilla25.setBounds(1000, 60, 70, 20);
+
+        lblAlquilerCasilla25.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla25);
+        lblAlquilerCasilla25.setBounds(1000, 90, 80, 20);
+
+        lblLibreCasilla26.setText("Libre");
+        pnlTablero.add(lblLibreCasilla26);
+        lblLibreCasilla26.setBounds(1070, 60, 80, 10);
+
+        lblAlquilerCasilla26.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla26);
+        lblAlquilerCasilla26.setBounds(1070, 74, 80, 16);
+
+        lblCasasCasilla26.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla26);
+        lblCasasCasilla26.setBounds(1070, 90, 80, 16);
+
+        lblHotelCasillas26.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas26);
+        lblHotelCasillas26.setBounds(1070, 110, 80, 10);
+
+        lblLibreCasilla27.setText("Libre");
+        pnlTablero.add(lblLibreCasilla27);
+        lblLibreCasilla27.setBounds(1150, 60, 80, 10);
+
+        lblAlquilerCasilla27.setText("Alquiler:");
+        pnlTablero.add(lblAlquilerCasilla27);
+        lblAlquilerCasilla27.setBounds(1150, 74, 80, 16);
+
+        lblCasasCasilla27.setText("Casas:");
+        pnlTablero.add(lblCasasCasilla27);
+        lblCasasCasilla27.setBounds(1150, 90, 80, 10);
+
+        lblHotelCasillas27.setText("Hotel:");
+        pnlTablero.add(lblHotelCasillas27);
+        lblHotelCasillas27.setBounds(1150, 110, 80, 10);
 
         jPanel2.add(pnlTablero);
 
@@ -3482,10 +3992,61 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel lblAdministrar;
+    private javax.swing.JLabel lblAlquilerCasilla0;
+    private javax.swing.JLabel lblAlquilerCasilla1;
+    private javax.swing.JLabel lblAlquilerCasilla10;
+    private javax.swing.JLabel lblAlquilerCasilla11;
+    private javax.swing.JLabel lblAlquilerCasilla12;
+    private javax.swing.JLabel lblAlquilerCasilla13;
+    private javax.swing.JLabel lblAlquilerCasilla14;
+    private javax.swing.JLabel lblAlquilerCasilla15;
+    private javax.swing.JLabel lblAlquilerCasilla16;
+    private javax.swing.JLabel lblAlquilerCasilla17;
+    private javax.swing.JLabel lblAlquilerCasilla18;
+    private javax.swing.JLabel lblAlquilerCasilla19;
+    private javax.swing.JLabel lblAlquilerCasilla2;
+    private javax.swing.JLabel lblAlquilerCasilla20;
+    private javax.swing.JLabel lblAlquilerCasilla21;
+    private javax.swing.JLabel lblAlquilerCasilla22;
+    private javax.swing.JLabel lblAlquilerCasilla23;
+    private javax.swing.JLabel lblAlquilerCasilla24;
+    private javax.swing.JLabel lblAlquilerCasilla25;
+    private javax.swing.JLabel lblAlquilerCasilla26;
+    private javax.swing.JLabel lblAlquilerCasilla27;
+    private javax.swing.JLabel lblAlquilerCasilla3;
+    private javax.swing.JLabel lblAlquilerCasilla39;
+    private javax.swing.JLabel lblAlquilerCasilla4;
+    private javax.swing.JLabel lblAlquilerCasilla5;
+    private javax.swing.JLabel lblAlquilerCasilla7;
+    private javax.swing.JLabel lblAlquilerCasilla8;
+    private javax.swing.JLabel lblAlquilerCasilla9;
     private javax.swing.JLabel lblAlquileresTitulo;
     private javax.swing.JLabel lblArcaComunal;
     private javax.swing.JLabel lblCadaCasaCuesta;
     private javax.swing.JLabel lblCadaHotelCuesta;
+    private javax.swing.JLabel lblCasasCasilla0;
+    private javax.swing.JLabel lblCasasCasilla1;
+    private javax.swing.JLabel lblCasasCasilla10;
+    private javax.swing.JLabel lblCasasCasilla11;
+    private javax.swing.JLabel lblCasasCasilla12;
+    private javax.swing.JLabel lblCasasCasilla13;
+    private javax.swing.JLabel lblCasasCasilla14;
+    private javax.swing.JLabel lblCasasCasilla15;
+    private javax.swing.JLabel lblCasasCasilla16;
+    private javax.swing.JLabel lblCasasCasilla17;
+    private javax.swing.JLabel lblCasasCasilla18;
+    private javax.swing.JLabel lblCasasCasilla2;
+    private javax.swing.JLabel lblCasasCasilla21;
+    private javax.swing.JLabel lblCasasCasilla22;
+    private javax.swing.JLabel lblCasasCasilla23;
+    private javax.swing.JLabel lblCasasCasilla24;
+    private javax.swing.JLabel lblCasasCasilla26;
+    private javax.swing.JLabel lblCasasCasilla27;
+    private javax.swing.JLabel lblCasasCasilla3;
+    private javax.swing.JLabel lblCasasCasilla39;
+    private javax.swing.JLabel lblCasasCasilla5;
+    private javax.swing.JLabel lblCasasCasilla7;
+    private javax.swing.JLabel lblCasasCasilla8;
     private javax.swing.JPanel lblCasilla1;
     private javax.swing.JPanel lblCasilla10;
     private javax.swing.JPanel lblCasilla11;
@@ -3541,6 +4102,57 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel lblFortuna;
     private javax.swing.JLabel lblHipotecaTitulo;
     private javax.swing.JLabel lblHistorial;
+    private javax.swing.JLabel lblHotelCasillas0;
+    private javax.swing.JLabel lblHotelCasillas1;
+    private javax.swing.JLabel lblHotelCasillas10;
+    private javax.swing.JLabel lblHotelCasillas11;
+    private javax.swing.JLabel lblHotelCasillas12;
+    private javax.swing.JLabel lblHotelCasillas13;
+    private javax.swing.JLabel lblHotelCasillas14;
+    private javax.swing.JLabel lblHotelCasillas15;
+    private javax.swing.JLabel lblHotelCasillas16;
+    private javax.swing.JLabel lblHotelCasillas17;
+    private javax.swing.JLabel lblHotelCasillas18;
+    private javax.swing.JLabel lblHotelCasillas2;
+    private javax.swing.JLabel lblHotelCasillas21;
+    private javax.swing.JLabel lblHotelCasillas22;
+    private javax.swing.JLabel lblHotelCasillas23;
+    private javax.swing.JLabel lblHotelCasillas24;
+    private javax.swing.JLabel lblHotelCasillas26;
+    private javax.swing.JLabel lblHotelCasillas27;
+    private javax.swing.JLabel lblHotelCasillas3;
+    private javax.swing.JLabel lblHotelCasillas39;
+    private javax.swing.JLabel lblHotelCasillas5;
+    private javax.swing.JLabel lblHotelCasillas7;
+    private javax.swing.JLabel lblHotelCasillas8;
+    private javax.swing.JLabel lblLibreCasilla0;
+    private javax.swing.JLabel lblLibreCasilla1;
+    private javax.swing.JLabel lblLibreCasilla10;
+    private javax.swing.JLabel lblLibreCasilla11;
+    private javax.swing.JLabel lblLibreCasilla12;
+    private javax.swing.JLabel lblLibreCasilla13;
+    private javax.swing.JLabel lblLibreCasilla14;
+    private javax.swing.JLabel lblLibreCasilla15;
+    private javax.swing.JLabel lblLibreCasilla16;
+    private javax.swing.JLabel lblLibreCasilla17;
+    private javax.swing.JLabel lblLibreCasilla18;
+    private javax.swing.JLabel lblLibreCasilla19;
+    private javax.swing.JLabel lblLibreCasilla2;
+    private javax.swing.JLabel lblLibreCasilla20;
+    private javax.swing.JLabel lblLibreCasilla21;
+    private javax.swing.JLabel lblLibreCasilla22;
+    private javax.swing.JLabel lblLibreCasilla23;
+    private javax.swing.JLabel lblLibreCasilla24;
+    private javax.swing.JLabel lblLibreCasilla25;
+    private javax.swing.JLabel lblLibreCasilla26;
+    private javax.swing.JLabel lblLibreCasilla27;
+    private javax.swing.JLabel lblLibreCasilla3;
+    private javax.swing.JLabel lblLibreCasilla39;
+    private javax.swing.JLabel lblLibreCasilla4;
+    private javax.swing.JLabel lblLibreCasilla5;
+    private javax.swing.JLabel lblLibreCasilla7;
+    private javax.swing.JLabel lblLibreCasilla8;
+    private javax.swing.JLabel lblLibreCasilla9;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblLogoMonopoly;
     private javax.swing.JLabel lblNombreJugador;

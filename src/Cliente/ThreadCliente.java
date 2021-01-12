@@ -531,6 +531,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             
                             if (this.getDinero() > precioPropiedad){
                                 
+                                
                                 System.out.println("Dinero del jugador antes de la compra: " + cantidadDinero);
                                 this.getBanco().retirarDinero(this, precioPropiedad);
                                 System.out.println("Dinero luego de compra: " + this.getDinero());
