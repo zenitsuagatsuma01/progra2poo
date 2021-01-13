@@ -1041,6 +1041,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlFicha = new javax.swing.JPanel();
         lblFichaJugador = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        lblQuedanCasas = new javax.swing.JLabel();
+        lblQuedanHoteles = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pnlTablero = new javax.swing.JPanel();
         jPanel70 = new javax.swing.JPanel();
@@ -1310,7 +1312,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         cbEdificios = new javax.swing.JComboBox<>();
         lblVenderEdificio = new javax.swing.JLabel();
         btnCompraHotel = new javax.swing.JButton();
-        spinnerCasa = new javax.swing.JSpinner();
         pnlTituloPropiedad = new javax.swing.JPanel();
         lblCadaHotelCuesta = new javax.swing.JLabel();
         lblCadaCasaCuesta = new javax.swing.JLabel();
@@ -1439,7 +1440,15 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
+
+        lblQuedanCasas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblQuedanCasas.setText("Quedan 32 casas");
+        jPanel1.add(lblQuedanCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 170, -1));
+
+        lblQuedanHoteles.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblQuedanHoteles.setText("Quedan 12 hoteles");
+        jPanel1.add(lblQuedanHoteles, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 170, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 0, 400, 1000));
 
@@ -3043,7 +3052,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblAdministrar.setText("Administrar propiedades:");
         pnlToolbar.add(lblAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 240, -1));
 
-        btnCompraCasa.setText("Comprar casas");
+        btnCompraCasa.setText("Comprar casa");
         btnCompraCasa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCompraCasaActionPerformed(evt);
@@ -3066,10 +3075,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnCompraHotelActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 120, 70));
-
-        spinnerCasa.setModel(new javax.swing.SpinnerNumberModel(1, 1, 4, 1));
-        pnlToolbar.add(spinnerCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 250, 40, -1));
+        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 120, 70));
 
         pnlTituloPropiedad.setBackground(new java.awt.Color(255, 255, 255));
         pnlTituloPropiedad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -3237,16 +3243,16 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         });
         pnlToolbar.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 240, -1, 50));
 
-        lblNumDado1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        lblNumDado1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblNumDado1.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(lblNumDado1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(lblNumDado1, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3257,7 +3263,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         pnlToolbar.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
-        lblNumDado2.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        lblNumDado2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblNumDado2.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -3265,8 +3271,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(lblNumDado2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(lblNumDado2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4112,16 +4119,15 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnCompraCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraCasaActionPerformed
         if (this.getCbPropiedades().getItemCount() == 0){
-            this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.");
+            this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.\n");
             return;
         }
         
-        int numCasas = (Integer)spinnerCasa.getValue();
         String nombrePropiedad = this.getCbPropiedades().getSelectedItem().toString();
         Propiedades propiedadComprarCasa;
         
         if (nombrePropiedad.contains("Ferrocarril") || nombrePropiedad.contains("Servicios")){
-            this.getTxaHistorial().append("Error: No se pueden poner casas ni hoteles en esta propiedad.");
+            this.getTxaHistorial().append("Error: No se pueden poner casas ni hoteles en esta propiedad.\n");
             return;
         }
         
@@ -4130,54 +4136,54 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
            
            if (propiedadActual.getNombre().equalsIgnoreCase(nombrePropiedad)){
                if (propiedadActual.getCantidadCasas() == 4){
-                   this.getTxaHistorial().append("Error: No puede poner más casas en esta propiedad.");
+                   this.getTxaHistorial().append("Error: No puede poner más casas en esta propiedad.\n");
                    return;
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Azul") && this.getRefCliente().getHiloCliente().getContadorAzul() != 2){
-                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color azul para poner edificios en esta propiedad.");
+                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color azul para poner edificios en esta propiedad.\n");
                    return;
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Verde") && this.getRefCliente().getHiloCliente().getContadorVerde() != 3){
-                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color verde para poner edificios.");
+                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color verde para poner edificios.\n");
                    return;
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Amarillo") && this.getRefCliente().getHiloCliente().getContadorAmarillo() != 3){
-                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color amarillo para poner edificios.");
+                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color amarillo para poner edificios.\n");
                    return;
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Naranja") && this.getRefCliente().getHiloCliente().getContadorNaranja() != 3){
-                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color naranja para poner edificios.");
+                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color naranja para poner edificios.\n");
                    return;
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Rojo") && this.getRefCliente().getHiloCliente().getContadorRojo() != 3){
-                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color rojo para poner edificios.");
+                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color rojo para poner edificios.\n");
                    return;
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Rosado") && this.getRefCliente().getHiloCliente().getContadorRosado() != 3){
-                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color rosado para poner edificios.");
+                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color rosado para poner edificios.\n");
                    return;
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Celeste") && this.getRefCliente().getHiloCliente().getContadorCeleste() != 3){
-                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color celeste para poner edificios.");
+                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color celeste para poner edificios.\n");
                    return;
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Rojo oscuro") && this.getRefCliente().getHiloCliente().getContadorRojoOscuro() != 2){
-                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color rojo oscuro para poner edificios.");
+                   this.getTxaHistorial().append("Error: Necesita todas las propiedades del grupo de color rojo oscuro para poner edificios.\n");
                    return;
                }
                
                
                
                if (propiedadActual.getColor().equalsIgnoreCase("Amarillo") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesAmarillo()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.");
+                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
                    return;
                }
                else if (propiedadActual.getColor().equalsIgnoreCase("Amarillo") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesAmarillo()){
@@ -4194,7 +4200,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                        numCasasPosibles = numCasasPosibles + 1;
                        if (numCasasPosibles == 5){
                            this.getRefCliente().getHiloCliente().setNumCasasPosiblesAmarillo(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.");
+                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
                            return;
                        }
                        this.getRefCliente().getHiloCliente().setNumCasasPosiblesAmarillo(numCasasPosibles);
@@ -4204,7 +4210,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Azul") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesAzul()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.");
+                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
                    return;
                }
                else if (propiedadActual.getColor().equalsIgnoreCase("Azul") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesAzul()){
@@ -4221,7 +4227,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                        numCasasPosibles = numCasasPosibles + 1;
                        if (numCasasPosibles == 5){
                            this.getRefCliente().getHiloCliente().setNumCasasPosiblesAzul(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.");
+                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
                            return;
                        }
                        this.getRefCliente().getHiloCliente().setNumCasasPosiblesAzul(numCasasPosibles);
@@ -4231,7 +4237,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Celeste") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesCeleste()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.");
+                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
                    return;
                }
                else if (propiedadActual.getColor().equalsIgnoreCase("Celeste") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesCeleste()){
@@ -4248,7 +4254,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                        numCasasPosibles = numCasasPosibles + 1;
                        if (numCasasPosibles == 5){
                            this.getRefCliente().getHiloCliente().setNumCasasPosiblesCeleste(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.");
+                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
                            return;
                        }
                        this.getRefCliente().getHiloCliente().setNumCasasPosiblesCeleste(numCasasPosibles);
@@ -4258,7 +4264,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Naranja") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesNaranja()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.");
+                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
                    return;
                }
                else if (propiedadActual.getColor().equalsIgnoreCase("Naranja") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesNaranja()){
@@ -4275,7 +4281,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                        numCasasPosibles = numCasasPosibles + 1;
                        if (numCasasPosibles == 5){
                            this.getRefCliente().getHiloCliente().setNumCasasPosiblesNaranja(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.");
+                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
                            return;
                        }
                        this.getRefCliente().getHiloCliente().setNumCasasPosiblesNaranja(numCasasPosibles);
@@ -4285,7 +4291,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Rojo") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojo()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.");
+                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
                    return;
                }
                else if (propiedadActual.getColor().equalsIgnoreCase("Rojo") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojo()){
@@ -4302,7 +4308,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                        numCasasPosibles = numCasasPosibles + 1;
                        if (numCasasPosibles == 5){
                            this.getRefCliente().getHiloCliente().setNumCasasPosiblesRojo(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.");
+                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
                            return;
                        }
                        this.getRefCliente().getHiloCliente().setNumCasasPosiblesRojo(numCasasPosibles);
@@ -4312,7 +4318,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("RojoOscuro") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojoOscuro()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.");
+                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
                    return;
                }
                else if (propiedadActual.getColor().equalsIgnoreCase("RojoOscuro") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojoOscuro()){
@@ -4329,7 +4335,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                        numCasasPosibles = numCasasPosibles + 1;
                        if (numCasasPosibles == 5){
                            this.getRefCliente().getHiloCliente().setNumCasasPosiblesRojoOscuro(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.");
+                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
                            return;
                        }
                        this.getRefCliente().getHiloCliente().setNumCasasPosiblesRojoOscuro(numCasasPosibles);
@@ -4339,7 +4345,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Rosado") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesRosado()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.");
+                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
                    return;
                }
                else if (propiedadActual.getColor().equalsIgnoreCase("Rosado") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesRosado()){
@@ -4356,7 +4362,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                        numCasasPosibles = numCasasPosibles + 1;
                        if (numCasasPosibles == 5){
                            this.getRefCliente().getHiloCliente().setNumCasasPosiblesRosado(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.");
+                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
                            return;
                        }
                        this.getRefCliente().getHiloCliente().setNumCasasPosiblesRosado(numCasasPosibles);
@@ -4366,7 +4372,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                }
                
                if (propiedadActual.getColor().equalsIgnoreCase("Verde") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesVerde()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.");
+                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
                    return;
                }
                else if (propiedadActual.getColor().equalsIgnoreCase("Verde") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesVerde()){
@@ -4383,7 +4389,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                        numCasasPosibles = numCasasPosibles + 1;
                        if (numCasasPosibles == 5){
                            this.getRefCliente().getHiloCliente().setNumCasasPosiblesVerde(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.");
+                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
                            return;
                        }
                        this.getRefCliente().getHiloCliente().setNumCasasPosiblesVerde(numCasasPosibles);
@@ -4398,14 +4404,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         
         System.out.println("Casa comprada succesfully");
         
-       // try {
-       //     this.getRefCliente().getHiloCliente().writer.writeInt(14);
-       //     this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
-       //     this.getRefCliente().getHiloCliente().writer.writeInt(numCasas);
+        try {
+            this.getRefCliente().getHiloCliente().writer.writeInt(14);
+            this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+            this.getRefCliente().getHiloCliente().writer.writeUTF(nombrePropiedad);
             
-       // } catch (IOException ex) {
-       //     Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
-       // }
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnCompraCasaActionPerformed
 
     private void txfMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfMensajeActionPerformed
@@ -4453,7 +4459,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
         
         if (propiedadesConsultadas.size() == 0){
-            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.");
+            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.\n");
             return;
         }
         
@@ -4461,7 +4467,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         
         
         if (numeroConsultar+1 >= propiedadesConsultadas.size()){
-            this.getTxaHistorial().append("Error: El jugador que está consultando no tiene más propiedades.");
+            this.getTxaHistorial().append("Error: El jugador que está consultando no tiene más propiedades.\n");
             return;
         }
         
@@ -4523,7 +4529,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
         
         if (propiedadesConsultadas.size() == 0){
-            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.");
+            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.\n");
             return;
         }
         
@@ -4762,6 +4768,24 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         return btnLanzarDados;
     }
 
+    public JLabel getLblQuedanCasas() {
+        return lblQuedanCasas;
+    }
+
+    public void setLblQuedanCasas(JLabel lblQuedanCasas) {
+        this.lblQuedanCasas = lblQuedanCasas;
+    }
+
+    public JLabel getLblQuedanHoteles() {
+        return lblQuedanHoteles;
+    }
+
+    public void setLblQuedanHoteles(JLabel lblQuedanHoteles) {
+        this.lblQuedanHoteles = lblQuedanHoteles;
+    }
+
+    
+    
     public void setBtnLanzarDados(JButton btnLanzarDados) {
         this.btnLanzarDados = btnLanzarDados;
     }
@@ -4932,14 +4956,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     public void setCbPropiedades(JComboBox<String> cbPropiedades) {
         this.cbPropiedades = cbPropiedades;
-    }
-
-    public JSpinner getSpinnerCasa() {
-        return spinnerCasa;
-    }
-
-    public void setSpinnerCasa(JSpinner spinnerCasa) {
-        this.spinnerCasa = spinnerCasa;
     }
     
     public void setCbSeleccion(JComboBox<String> cbSeleccion) {
@@ -5341,6 +5357,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel lblNumDado1;
     private javax.swing.JLabel lblNumDado2;
     private javax.swing.JLabel lblNumDinero;
+    private javax.swing.JLabel lblQuedanCasas;
+    private javax.swing.JLabel lblQuedanHoteles;
     private javax.swing.JLabel lblSeleccionFicha;
     private javax.swing.JLabel lblStatusPartida;
     private javax.swing.JLabel lblTituloDePropiedad;
@@ -5356,7 +5374,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JPanel pnlTablero;
     private javax.swing.JPanel pnlTituloPropiedad;
     private javax.swing.JPanel pnlToolbar;
-    private javax.swing.JSpinner spinnerCasa;
     private javax.swing.JTextArea txaHistorial;
     private javax.swing.JTextArea txaMensajes;
     private javax.swing.JTextField txfMensaje;

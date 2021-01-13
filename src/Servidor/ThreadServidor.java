@@ -581,21 +581,26 @@ public class ThreadServidor extends Thread implements Serializable{
                             break;
                     case 14: //compra de casas
                         String nombrePersona = reader.readUTF();
+                        String nombrePropiedad = reader.readUTF();
+                        int casasAcabadas = 0;
+                        int quedanCasas = server.getTotalCasas();
                         
-                        if(server.getTotalCasas() < 32){
-                            
-                            for (int i = 0; i < server.conexiones.size(); i++) {
-                                ThreadServidor current = server.conexiones.get(i);
-                                current.writer.writeInt(15);
-                                current.writer.writeUTF(nombrePersona);
-                            }
+                        if (quedanCasas <= 0){
+                            casasAcabadas = 1;
                         }
-                        else{
+                        
+                        quedanCasas = quedanCasas - 1;
+                        server.setTotalCasas(quedanCasas);
                             
+                        for (int i = 0; i < server.conexiones.size(); i++) {
+                           ThreadServidor current = server.conexiones.get(i);
+                            current.writer.writeInt(15);
+                            current.writer.writeUTF(nombrePersona);
+                            current.writer.writeUTF(nombrePropiedad);
+                            current.writer.writeInt(casasAcabadas);
+                            current.writer.writeInt(quedanCasas);
                         }
                             
-                        
-                        
                         break;
                     case 15:
                         String propiedadVender = reader.readUTF();

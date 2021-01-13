@@ -688,6 +688,9 @@ public class ThreadCliente extends Thread implements Serializable{
                                 
                                 if (this.getFicha().getNombre().equals(nombreFicha)){
                                     
+                                    this.getBanco().darDinero(this, 200);
+                                    this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                    
                                     this.setVueltaDada(true);
                                     System.out.println("vueltaDada del jugador es: " + this.isVueltaDada());
                                     System.out.println("Mi nombre es: " + this.getNombre());
@@ -857,16 +860,51 @@ public class ThreadCliente extends Thread implements Serializable{
                         break;
                     case 15:
                         String nombrePersona = reader.readUTF();
+                        String nombrePropiedad = reader.readUTF();
+                        int casasAcabadas = reader.readInt();
+                        int quedanCasas = reader.readInt();
                         
-                        if (this.getNombre().equals(nombrePersona)){
+                        Calles propiedadComprarCasa;
+                        
+                        if (casasAcabadas == 1){
+                            this.getRefPantalla().getTxaHistorial().append("Se han acabado las 32 casas y por ende no se podrán construir más.");
+                        }
+                        
+                        else if (casasAcabadas != 0){
                             
-                            //if(this.);
+                            for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                                Propiedades propiedadActual = (Propiedades)this.getTablero().getCasillas().get(i);
+                                
+                                if (propiedadActual.getNombre().equalsIgnoreCase(nombrePropiedad)){
+                                    propiedadComprarCasa = (Calles)propiedadActual;
+                                    
+                                    int numCasasPropiedad = propiedadComprarCasa.getCantidadCasas();
+                                    numCasasPropiedad = numCasasPropiedad + 1;
+                                    propiedadComprarCasa.setCantidadCasas(numCasasPropiedad);
+                                    
+                                    int numEdificios = propiedadComprarCasa.getCantidadEdificios();
+                                    numEdificios = numEdificios + 1;
+                                    propiedadComprarCasa.setCantidadEdificios(numEdificios);
+                                    
+                                    propiedadComprarCasa.getLblCasas().setText("Casas: " + propiedadComprarCasa.getCantidadCasas());
+                                    this.getRefPantalla().getLblQuedanCasas().setText("Quedan " + quedanCasas + " casas");
+                                    
+                                    if (this.getNombre().equals(nombrePersona)){
+                            
+                                        this.getBanco().retirarDinero(this, propiedadComprarCasa.getPrecioCasa());
+                            
+                                    }
+                                }
+                                
+                            }
+                            
+                            
                             
                         }
                         
                         break;
                     case 16:
-                        String nombrePropiedad = reader.readUTF();
+                        nombrePropiedad = reader.readUTF();
                         nombreJugador = reader.readUTF();
                         Propiedades propiedadVender;
                         

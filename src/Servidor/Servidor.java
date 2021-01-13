@@ -37,8 +37,8 @@ public class Servidor extends Thread implements Serializable{
     private int numTirado = 0;
     private ArrayList<String> nombreOrder;
     private ArrayList<String> listaPerdedores;
-    private int totalCasas;
-    private int totalHoteles;
+    private int totalCasas = 32;
+    private int totalHoteles = 12;
 
     public Servidor(PantallaServidor refPantalla) {
         this.refPantalla = refPantalla;
