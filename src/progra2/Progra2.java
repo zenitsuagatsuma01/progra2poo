@@ -12,6 +12,7 @@ import Partida.FileManager;
 import Partida.MenuPrincipal;
 import Servidor.PantallaServidor;
 import Servidor.Servidor;
+import cartas.Propiedades;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;

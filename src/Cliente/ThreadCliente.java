@@ -57,7 +57,6 @@ public class ThreadCliente extends Thread implements Serializable{
     private int contadorConsultar = 0;
     private int cantidadFerrocarriles = 0;
     private int cantidadServicios = 0;
-    
     private int contadorVerde = 0;
     private int contadorRojo = 0;
     private int contadorRojoOscuro = 0;
@@ -66,24 +65,6 @@ public class ThreadCliente extends Thread implements Serializable{
     private int contadorRosado = 0;
     private int contadorNaranja = 0;
     private int contadorAmarillo = 0;
-    
-    private int numCasasPosiblesVerde = 1;
-    private int numCasasPosiblesRojo = 1;
-    private int numCasasPosiblesRojoOscuro = 1;
-    private int numCasasPosiblesAzul = 1;
-    private int numCasasPosiblesCeleste = 1;
-    private int numCasasPosiblesRosado = 1;
-    private int numCasasPosiblesNaranja = 1;
-    private int numCasasPosiblesAmarillo = 1;
-    
-    private int contadorCompradoVerde = 0;
-    private int contadorCompradoRojo = 0;
-    private int contadorCompradoRojoOscuro = 0;
-    private int contadorCompradoAzul = 0;
-    private int contadorCompradoCeleste = 0;
-    private int contadorCompradoRosado = 0;
-    private int contadorCompradoNaranja = 0;
-    private int contadorCompradoAmarillo = 0;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -113,136 +94,6 @@ public class ThreadCliente extends Thread implements Serializable{
         numPropiedades = numPropiedadesCargado;
         quebrado = quebradoCargado;
     }
-
-    public int getNumCasasPosiblesVerde() {
-        return numCasasPosiblesVerde;
-    }
-
-    public void setNumCasasPosiblesVerde(int numCasasPosiblesVerde) {
-        this.numCasasPosiblesVerde = numCasasPosiblesVerde;
-    }
-
-    public int getNumCasasPosiblesRojo() {
-        return numCasasPosiblesRojo;
-    }
-
-    public void setNumCasasPosiblesRojo(int numCasasPosiblesRojo) {
-        this.numCasasPosiblesRojo = numCasasPosiblesRojo;
-    }
-
-    public int getNumCasasPosiblesRojoOscuro() {
-        return numCasasPosiblesRojoOscuro;
-    }
-
-    public void setNumCasasPosiblesRojoOscuro(int numCasasPosiblesRojoOscuro) {
-        this.numCasasPosiblesRojoOscuro = numCasasPosiblesRojoOscuro;
-    }
-
-    public int getNumCasasPosiblesAzul() {
-        return numCasasPosiblesAzul;
-    }
-
-    public void setNumCasasPosiblesAzul(int numCasasPosiblesAzul) {
-        this.numCasasPosiblesAzul = numCasasPosiblesAzul;
-    }
-
-    public int getNumCasasPosiblesCeleste() {
-        return numCasasPosiblesCeleste;
-    }
-
-    public void setNumCasasPosiblesCeleste(int numCasasPosiblesCeleste) {
-        this.numCasasPosiblesCeleste = numCasasPosiblesCeleste;
-    }
-
-    public int getNumCasasPosiblesRosado() {
-        return numCasasPosiblesRosado;
-    }
-
-    public void setNumCasasPosiblesRosado(int numCasasPosiblesRosado) {
-        this.numCasasPosiblesRosado = numCasasPosiblesRosado;
-    }
-
-    public int getNumCasasPosiblesNaranja() {
-        return numCasasPosiblesNaranja;
-    }
-
-    public void setNumCasasPosiblesNaranja(int numCasasPosiblesNaranja) {
-        this.numCasasPosiblesNaranja = numCasasPosiblesNaranja;
-    }
-
-    public int getNumCasasPosiblesAmarillo() {
-        return numCasasPosiblesAmarillo;
-    }
-
-    public void setNumCasasPosiblesAmarillo(int numCasasPosiblesAmarillo) {
-        this.numCasasPosiblesAmarillo = numCasasPosiblesAmarillo;
-    }
-
-    public int getContadorCompradoVerde() {
-        return contadorCompradoVerde;
-    }
-
-    public void setContadorCompradoVerde(int contadorCompradoVerde) {
-        this.contadorCompradoVerde = contadorCompradoVerde;
-    }
-
-    public int getContadorCompradoRojo() {
-        return contadorCompradoRojo;
-    }
-
-    public void setContadorCompradoRojo(int contadorCompradoRojo) {
-        this.contadorCompradoRojo = contadorCompradoRojo;
-    }
-
-    public int getContadorCompradoRojoOscuro() {
-        return contadorCompradoRojoOscuro;
-    }
-
-    public void setContadorCompradoRojoOscuro(int contadorCompradoRojoOscuro) {
-        this.contadorCompradoRojoOscuro = contadorCompradoRojoOscuro;
-    }
-
-    public int getContadorCompradoAzul() {
-        return contadorCompradoAzul;
-    }
-
-    public void setContadorCompradoAzul(int contadorCompradoAzul) {
-        this.contadorCompradoAzul = contadorCompradoAzul;
-    }
-
-    public int getContadorCompradoCeleste() {
-        return contadorCompradoCeleste;
-    }
-
-    public void setContadorCompradoCeleste(int contadorCompradoCeleste) {
-        this.contadorCompradoCeleste = contadorCompradoCeleste;
-    }
-
-    public int getContadorCompradoRosado() {
-        return contadorCompradoRosado;
-    }
-
-    public void setContadorCompradoRosado(int contadorCompradoRosado) {
-        this.contadorCompradoRosado = contadorCompradoRosado;
-    }
-
-    public int getContadorCompradoNaranja() {
-        return contadorCompradoNaranja;
-    }
-
-    public void setContadorCompradoNaranja(int contadorCompradoNaranja) {
-        this.contadorCompradoNaranja = contadorCompradoNaranja;
-    }
-
-    public int getContadorCompradoAmarillo() {
-        return contadorCompradoAmarillo;
-    }
-
-    public void setContadorCompradoAmarillo(int contadorCompradoAmarillo) {
-        this.contadorCompradoAmarillo = contadorCompradoAmarillo;
-    }
-    
-    
 
     public int getContadorConsultar() {
         return contadorConsultar;
@@ -795,7 +646,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         if (!propiedadComprar.getNombre().contains("Ferrocarril") && !propiedadComprar.getNombre().contains("Servicios")){
                             Calles propiedadCalle = (Calles)propiedadComprar;
                             propiedadCalle.getLblAlquiler().setText("Alquiler: " + propiedadCalle.cobrar());
-                            propiedadCalle.getLblCasas().setText("Casas: " + propiedadCalle.getCantidadCasas());
+                            propiedadCalle.getLblCasas().setText(""+propiedadCalle.getCantidadCasas());
                             propiedadCalle.getLblHotel().setText("Hotel: " + propiedadCalle.getCantidadHoteles());
                             
                             if (propiedadCalle.getColor().equalsIgnoreCase("Verde")){
@@ -886,13 +737,13 @@ public class ThreadCliente extends Thread implements Serializable{
                                     numEdificios = numEdificios + 1;
                                     propiedadComprarCasa.setCantidadEdificios(numEdificios);
                                     
-                                    propiedadComprarCasa.getLblCasas().setText("Casas: " + propiedadComprarCasa.getCantidadCasas());
+                                    propiedadComprarCasa.getLblCasas().setText("" + propiedadComprarCasa.getCantidadCasas());
                                     propiedadComprarCasa.getLblCasas().revalidate();
                                     propiedadComprarCasa.getLblCasas().repaint();
                                     this.getRefPantalla().getLblQuedanCasas().setText("Quedan " + quedanCasas + " casas");
                                     this.getRefPantalla().getLblQuedanCasas().revalidate();
                                     this.getRefPantalla().getLblQuedanCasas().repaint();
-                                    System.out.println("Ha comprado una casa en " + propiedadActual.getNombre() + " y ahora esta tiene " + quedanCasas);
+                                    System.out.println("Ha comprado una casa en " + propiedadActual.getNombre() + " y ahora esta tiene " + propiedadActual.getCantidadCasas());
                                     
                                     if (this.getNombre().equals(nombrePersona)){
                             
@@ -952,7 +803,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                 if (!propiedadVender.getNombre().contains("Ferrocarril") && !propiedadVender.getNombre().contains("Servicios")){
                                     Calles propiedadCalle = (Calles)propiedadVender;
                                     propiedadCalle.getLblAlquiler().setText("Alquiler: 0");
-                                    propiedadCalle.getLblCasas().setText("Casas: 0");
+                                    propiedadCalle.getLblCasas().setText("0");
                                     propiedadCalle.getLblHotel().setText("Hotel: 0");
                                 }
                                 else if (propiedadVender.getNombre().contains("Ferrocarril")){

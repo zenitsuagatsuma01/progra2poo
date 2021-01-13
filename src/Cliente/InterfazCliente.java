@@ -1234,7 +1234,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblAlquilerCasilla13 = new javax.swing.JLabel();
         lblHotelCasillas13 = new javax.swing.JLabel();
         lblLibreCasilla14 = new javax.swing.JLabel();
-        lblCasasCasilla14 = new javax.swing.JLabel();
         lblAlquilerCasilla14 = new javax.swing.JLabel();
         lblHotelCasillas14 = new javax.swing.JLabel();
         lblLibreCasilla15 = new javax.swing.JLabel();
@@ -1294,6 +1293,28 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCasasCasilla31 = new javax.swing.JLabel();
         lblHotelCasillas31 = new javax.swing.JLabel();
         lblNothing = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        lblCasasCasilla14 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
         pnlToolbar = new javax.swing.JPanel();
         btnVenderProp = new javax.swing.JButton();
         btnComprarPropActual = new javax.swing.JButton();
@@ -2533,9 +2554,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlLogoMonopolyLayout.setHorizontalGroup(
             pnlLogoMonopolyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlLogoMonopolyLayout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(lblLogoMonopoly, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
-                .addGap(201, 201, 201))
+                .addGap(231, 231, 231)
+                .addComponent(lblLogoMonopoly, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                .addGap(350, 350, 350))
         );
         pnlLogoMonopolyLayout.setVerticalGroup(
             pnlLogoMonopolyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2579,9 +2600,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla1);
         lblAlquilerCasilla1.setBounds(1060, 540, 90, 20);
 
-        lblCasasCasilla1.setText("Casas: 0");
+        lblCasasCasilla1.setText("0");
         pnlTablero.add(lblCasasCasilla1);
-        lblCasasCasilla1.setBounds(1060, 560, 90, 16);
+        lblCasasCasilla1.setBounds(1110, 560, 40, 16);
 
         lblHotelCasillas1.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas1);
@@ -2595,9 +2616,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla3);
         lblAlquilerCasilla3.setBounds(900, 540, 110, 20);
 
-        lblCasasCasilla3.setText("Casas: 0");
+        lblCasasCasilla3.setText("0");
         pnlTablero.add(lblCasasCasilla3);
-        lblCasasCasilla3.setBounds(900, 560, 110, 16);
+        lblCasasCasilla3.setBounds(950, 560, 40, 16);
 
         lblHotelCasillas3.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas3);
@@ -2611,9 +2632,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla6);
         lblAlquilerCasilla6.setBounds(560, 550, 120, 10);
 
-        lblCasasCasilla6.setText("Casas: 0");
+        lblCasasCasilla6.setText("0");
         pnlTablero.add(lblCasasCasilla6);
-        lblCasasCasilla6.setBounds(560, 560, 120, 10);
+        lblCasasCasilla6.setBounds(610, 560, 50, 20);
 
         lblHotelCasillas6.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas6);
@@ -2635,9 +2656,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla37);
         lblAlquilerCasilla37.setBounds(1120, 420, 110, 20);
 
-        lblCasasCasilla37.setText("Casas: 0");
+        lblCasasCasilla37.setText("0");
         pnlTablero.add(lblCasasCasilla37);
-        lblCasasCasilla37.setBounds(1120, 440, 110, 20);
+        lblCasasCasilla37.setBounds(1170, 440, 50, 20);
 
         lblHotelCasillas37.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas37);
@@ -2651,9 +2672,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla39);
         lblAlquilerCasilla39.setBounds(1150, 540, 90, 10);
 
-        lblCasasCasilla39.setText("Casas: 0");
+        lblCasasCasilla39.setText("0");
         pnlTablero.add(lblCasasCasilla39);
-        lblCasasCasilla39.setBounds(1150, 550, 80, 20);
+        lblCasasCasilla39.setBounds(1190, 550, 40, 20);
 
         lblHotelCasillas39.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas39);
@@ -2683,9 +2704,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla9);
         lblAlquilerCasilla9.setBounds(290, 540, 110, 20);
 
-        lblCasasCasilla9.setText("Casas: 0");
+        lblCasasCasilla9.setText("0");
         pnlTablero.add(lblCasasCasilla9);
-        lblCasasCasilla9.setBounds(290, 560, 110, 10);
+        lblCasasCasilla9.setBounds(340, 560, 40, 20);
 
         lblHotelCasillas9.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas9);
@@ -2699,9 +2720,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla11);
         lblAlquilerCasilla11.setBounds(180, 550, 80, 10);
 
-        lblCasasCasilla11.setText("Casas: 0");
+        lblCasasCasilla11.setText("0");
         pnlTablero.add(lblCasasCasilla11);
-        lblCasasCasilla11.setBounds(180, 560, 90, 20);
+        lblCasasCasilla11.setBounds(230, 560, 30, 20);
 
         lblHotelCasillas11.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas11);
@@ -2719,9 +2740,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblLibreCasilla13);
         lblLibreCasilla13.setBounds(180, 400, 100, 20);
 
-        lblCasasCasilla13.setText("Casas: 0");
+        lblCasasCasilla13.setText("0");
         pnlTablero.add(lblCasasCasilla13);
-        lblCasasCasilla13.setBounds(180, 430, 90, 10);
+        lblCasasCasilla13.setBounds(220, 430, 90, 20);
 
         lblAlquilerCasilla13.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla13);
@@ -2734,10 +2755,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblLibreCasilla14.setText("Dueno:");
         pnlTablero.add(lblLibreCasilla14);
         lblLibreCasilla14.setBounds(180, 340, 120, 20);
-
-        lblCasasCasilla14.setText("Casas: 0");
-        pnlTablero.add(lblCasasCasilla14);
-        lblCasasCasilla14.setBounds(180, 370, 130, 10);
 
         lblAlquilerCasilla14.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla14);
@@ -2759,9 +2776,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblLibreCasilla16);
         lblLibreCasilla16.setBounds(180, 230, 100, 20);
 
-        lblCasasCasilla16.setText("Casas: 0");
+        lblCasasCasilla16.setText("0");
         pnlTablero.add(lblCasasCasilla16);
-        lblCasasCasilla16.setBounds(180, 260, 110, 10);
+        lblCasasCasilla16.setBounds(220, 260, 70, 20);
 
         lblAlquilerCasilla16.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla16);
@@ -2775,9 +2792,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblLibreCasilla18);
         lblLibreCasilla18.setBounds(180, 130, 90, 20);
 
-        lblCasasCasilla18.setText("Casas: 0");
+        lblCasasCasilla18.setText("0");
         pnlTablero.add(lblCasasCasilla18);
-        lblCasasCasilla18.setBounds(180, 160, 80, 10);
+        lblCasasCasilla18.setBounds(220, 160, 80, 20);
 
         lblAlquilerCasilla18.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla18);
@@ -2791,9 +2808,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblLibreCasilla19);
         lblLibreCasilla19.setBounds(180, 60, 100, 20);
 
-        lblCasasCasilla19.setText("Casas: 0");
+        lblCasasCasilla19.setText("0");
         pnlTablero.add(lblCasasCasilla19);
-        lblCasasCasilla19.setBounds(180, 90, 90, 10);
+        lblCasasCasilla19.setBounds(220, 90, 40, 16);
 
         lblAlquilerCasilla19.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla19);
@@ -2807,9 +2824,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblLibreCasilla21);
         lblLibreCasilla21.setBounds(280, 60, 110, 20);
 
-        lblCasasCasilla21.setText("Casas: 0");
+        lblCasasCasilla21.setText("0");
         pnlTablero.add(lblCasasCasilla21);
-        lblCasasCasilla21.setBounds(280, 94, 110, 16);
+        lblCasasCasilla21.setBounds(330, 90, 40, 16);
 
         lblAlquilerCasilla21.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla21);
@@ -2823,9 +2840,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblLibreCasilla23);
         lblLibreCasilla23.setBounds(420, 60, 110, 20);
 
-        lblCasasCasilla23.setText("Casas: 0");
+        lblCasasCasilla23.setText("0");
         pnlTablero.add(lblCasasCasilla23);
-        lblCasasCasilla23.setBounds(420, 100, 110, 10);
+        lblCasasCasilla23.setBounds(470, 100, 40, 10);
 
         lblAlquilerCasilla23.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla23);
@@ -2839,9 +2856,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblLibreCasilla24);
         lblLibreCasilla24.setBounds(530, 60, 120, 20);
 
-        lblCasasCasilla24.setText("Casas: 0");
+        lblCasasCasilla24.setText("0");
         pnlTablero.add(lblCasasCasilla24);
-        lblCasasCasilla24.setBounds(530, 90, 120, 10);
+        lblCasasCasilla24.setBounds(580, 90, 50, 10);
 
         lblAlquilerCasilla24.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla24);
@@ -2875,9 +2892,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla34);
         lblAlquilerCasilla34.setBounds(1120, 250, 100, 10);
 
-        lblCasasCasilla34.setText("Casas: 0");
+        lblCasasCasilla34.setText("0");
         pnlTablero.add(lblCasasCasilla34);
-        lblCasasCasilla34.setBounds(1120, 260, 100, 20);
+        lblCasasCasilla34.setBounds(1160, 260, 40, 20);
 
         lblHotelCasillas34.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas34);
@@ -2891,9 +2908,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla32);
         lblAlquilerCasilla32.setBounds(1120, 150, 110, 10);
 
-        lblCasasCasilla32.setText("Casas: 0");
+        lblCasasCasilla32.setText("0");
         pnlTablero.add(lblCasasCasilla32);
-        lblCasasCasilla32.setBounds(1120, 160, 110, 10);
+        lblCasasCasilla32.setBounds(1170, 160, 30, 20);
 
         lblHotelCasillas32.setText("Hotel 0");
         pnlTablero.add(lblHotelCasillas32);
@@ -2907,9 +2924,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla26);
         lblAlquilerCasilla26.setBounds(780, 80, 130, 10);
 
-        lblCasasCasilla26.setText("Casas: 0");
+        lblCasasCasilla26.setText("0");
         pnlTablero.add(lblCasasCasilla26);
-        lblCasasCasilla26.setBounds(780, 90, 130, 10);
+        lblCasasCasilla26.setBounds(830, 90, 50, 10);
 
         lblHotelCasillas26.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas26);
@@ -2923,9 +2940,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla27);
         lblAlquilerCasilla27.setBounds(900, 80, 100, 20);
 
-        lblCasasCasilla27.setText("Casas: 0");
+        lblCasasCasilla27.setText("0");
         pnlTablero.add(lblCasasCasilla27);
-        lblCasasCasilla27.setBounds(900, 100, 100, 20);
+        lblCasasCasilla27.setBounds(950, 100, 50, 20);
 
         lblHotelCasillas27.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas27);
@@ -2947,9 +2964,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla29);
         lblAlquilerCasilla29.setBounds(1070, 74, 80, 16);
 
-        lblCasasCasilla29.setText("Casas: 0");
+        lblCasasCasilla29.setText("0");
         pnlTablero.add(lblCasasCasilla29);
-        lblCasasCasilla29.setBounds(1070, 90, 80, 16);
+        lblCasasCasilla29.setBounds(1120, 90, 30, 16);
 
         lblHotelCasillas29.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas29);
@@ -2963,15 +2980,103 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlTablero.add(lblAlquilerCasilla31);
         lblAlquilerCasilla31.setBounds(1150, 74, 80, 16);
 
-        lblCasasCasilla31.setText("Casas: 0");
+        lblCasasCasilla31.setText("0");
         pnlTablero.add(lblCasasCasilla31);
-        lblCasasCasilla31.setBounds(1150, 90, 80, 10);
+        lblCasasCasilla31.setBounds(1200, 90, 30, 10);
 
         lblHotelCasillas31.setText("Hotel: 0");
         pnlTablero.add(lblHotelCasillas31);
         lblHotelCasillas31.setBounds(1150, 110, 80, 10);
         pnlTablero.add(lblNothing);
         lblNothing.setBounds(970, 450, 70, 30);
+
+        jLabel12.setText("Casas:");
+        pnlTablero.add(jLabel12);
+        jLabel12.setBounds(900, 560, 39, 16);
+
+        jLabel13.setText("Casas:");
+        pnlTablero.add(jLabel13);
+        jLabel13.setBounds(1060, 560, 39, 16);
+
+        jLabel15.setText("Casas:");
+        pnlTablero.add(jLabel15);
+        jLabel15.setBounds(1150, 550, 40, 20);
+
+        jLabel16.setText("Casas:");
+        pnlTablero.add(jLabel16);
+        jLabel16.setBounds(560, 560, 48, 16);
+
+        jLabel17.setText("Casas:");
+        pnlTablero.add(jLabel17);
+        jLabel17.setBounds(290, 560, 48, 16);
+
+        jLabel18.setText("Casas:");
+        pnlTablero.add(jLabel18);
+        jLabel18.setBounds(180, 560, 48, 16);
+
+        jLabel19.setText("Casas:");
+        pnlTablero.add(jLabel19);
+        jLabel19.setBounds(180, 430, 48, 16);
+
+        lblCasasCasilla14.setText("0");
+        pnlTablero.add(lblCasasCasilla14);
+        lblCasasCasilla14.setBounds(230, 370, 140, 16);
+
+        jLabel20.setText("Casas:");
+        pnlTablero.add(jLabel20);
+        jLabel20.setBounds(180, 370, 48, 16);
+
+        jLabel21.setText("Casas:");
+        pnlTablero.add(jLabel21);
+        jLabel21.setBounds(180, 260, 48, 16);
+
+        jLabel22.setText("Casas:");
+        pnlTablero.add(jLabel22);
+        jLabel22.setBounds(180, 160, 48, 16);
+
+        jLabel23.setText("Casas:");
+        pnlTablero.add(jLabel23);
+        jLabel23.setBounds(180, 90, 48, 16);
+
+        jLabel24.setText("Casas:");
+        pnlTablero.add(jLabel24);
+        jLabel24.setBounds(280, 90, 48, 16);
+
+        jLabel25.setText("Casas:");
+        pnlTablero.add(jLabel25);
+        jLabel25.setBounds(420, 96, 48, 20);
+
+        jLabel26.setText("Casas:");
+        pnlTablero.add(jLabel26);
+        jLabel26.setBounds(530, 90, 50, 16);
+
+        jLabel27.setText("Casas:");
+        pnlTablero.add(jLabel27);
+        jLabel27.setBounds(780, 90, 48, 16);
+
+        jLabel28.setText("Casas:");
+        pnlTablero.add(jLabel28);
+        jLabel28.setBounds(900, 100, 48, 16);
+
+        jLabel29.setText("Casas:");
+        pnlTablero.add(jLabel29);
+        jLabel29.setBounds(1070, 90, 48, 16);
+
+        jLabel30.setText("Casas:");
+        pnlTablero.add(jLabel30);
+        jLabel30.setBounds(1150, 90, 39, 16);
+
+        jLabel31.setText("Casas:");
+        pnlTablero.add(jLabel31);
+        jLabel31.setBounds(1120, 160, 48, 16);
+
+        jLabel32.setText("Casas:");
+        pnlTablero.add(jLabel32);
+        jLabel32.setBounds(1120, 260, 48, 16);
+
+        jLabel33.setText("Casas:");
+        pnlTablero.add(jLabel33);
+        jLabel33.setBounds(1120, 440, 48, 16);
 
         jPanel2.add(pnlTablero);
 
@@ -4133,10 +4238,16 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         
         for (int i = 0; i < this.getRefCliente().getHiloCliente().getTablero().getCasillas().size(); i++){
            Propiedades propiedadActual = (Propiedades)this.getRefCliente().getHiloCliente().getTablero().getCasillas().get(i);
+           int precioLblCasa = Integer.parseInt(propiedadActual.getLblCasas().getText());
            
            if (propiedadActual.getNombre().equalsIgnoreCase(nombrePropiedad)){
                if (propiedadActual.getCantidadCasas() == 4){
                    this.getTxaHistorial().append("Error: No puede poner más casas en esta propiedad.\n");
+                   return;
+               }
+               
+               if (precioLblCasa >= this.getRefCliente().getHiloCliente().getDinero()){
+                   this.getTxaHistorial().append("No tiene suficiente dinero para comprar una casa en esta propiedad.\n");
                    return;
                }
                
@@ -4180,224 +4291,31 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                    return;
                }
                
-               
-               
-               if (propiedadActual.getColor().equalsIgnoreCase("Amarillo") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesAmarillo()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
-                   return;
-               }
-               else if (propiedadActual.getColor().equalsIgnoreCase("Amarillo") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesAmarillo()){
-                   int numCasasPropiedad = propiedadActual.getCantidadCasas();
-                   numCasasPropiedad = numCasasPropiedad + 1;
-                   propiedadActual.setCantidadCasas(numCasasPropiedad);
-                   
-                   int contCompradas = this.getRefCliente().getHiloCliente().getContadorCompradoAmarillo();
-                   contCompradas = contCompradas + 1;
-                   this.getRefCliente().getHiloCliente().setContadorCompradoAmarillo(contCompradas);
-                   
-                   if (contCompradas == 3){
-                       int numCasasPosibles = this.getRefCliente().getHiloCliente().getNumCasasPosiblesAmarillo();
-                       numCasasPosibles = numCasasPosibles + 1;
-                       if (numCasasPosibles == 5){
-                           this.getRefCliente().getHiloCliente().setNumCasasPosiblesAmarillo(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
-                           return;
-                       }
-                       this.getRefCliente().getHiloCliente().setNumCasasPosiblesAmarillo(numCasasPosibles);
-                       this.getRefCliente().getHiloCliente().setContadorCompradoAmarillo(0);
-                   }
-                   
-               }
-               
-               if (propiedadActual.getColor().equalsIgnoreCase("Azul") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesAzul()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
-                   return;
-               }
-               else if (propiedadActual.getColor().equalsIgnoreCase("Azul") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesAzul()){
-                   int numCasasPropiedad = propiedadActual.getCantidadCasas();
-                   numCasasPropiedad = numCasasPropiedad + 1;
-                   propiedadActual.setCantidadCasas(numCasasPropiedad);
-                   
-                   int contCompradas = this.getRefCliente().getHiloCliente().getContadorCompradoAzul();
-                   contCompradas = contCompradas + 1;
-                   this.getRefCliente().getHiloCliente().setContadorCompradoAzul(contCompradas);
-                   
-                   if (contCompradas == 3){
-                       int numCasasPosibles = this.getRefCliente().getHiloCliente().getNumCasasPosiblesAzul();
-                       numCasasPosibles = numCasasPosibles + 1;
-                       if (numCasasPosibles == 5){
-                           this.getRefCliente().getHiloCliente().setNumCasasPosiblesAzul(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
-                           return;
-                       }
-                       this.getRefCliente().getHiloCliente().setNumCasasPosiblesAzul(numCasasPosibles);
-                       this.getRefCliente().getHiloCliente().setContadorCompradoAzul(0);
-                   }
-                   
-               }
-               
-               if (propiedadActual.getColor().equalsIgnoreCase("Celeste") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesCeleste()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
-                   return;
-               }
-               else if (propiedadActual.getColor().equalsIgnoreCase("Celeste") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesCeleste()){
-                   int numCasasPropiedad = propiedadActual.getCantidadCasas();
-                   numCasasPropiedad = numCasasPropiedad + 1;
-                   propiedadActual.setCantidadCasas(numCasasPropiedad);
-                   
-                   int contCompradas = this.getRefCliente().getHiloCliente().getContadorCompradoCeleste();
-                   contCompradas = contCompradas + 1;
-                   this.getRefCliente().getHiloCliente().setContadorCompradoCeleste(contCompradas);
-                   
-                   if (contCompradas == 3){
-                       int numCasasPosibles = this.getRefCliente().getHiloCliente().getNumCasasPosiblesCeleste();
-                       numCasasPosibles = numCasasPosibles + 1;
-                       if (numCasasPosibles == 5){
-                           this.getRefCliente().getHiloCliente().setNumCasasPosiblesCeleste(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
-                           return;
-                       }
-                       this.getRefCliente().getHiloCliente().setNumCasasPosiblesCeleste(numCasasPosibles);
-                       this.getRefCliente().getHiloCliente().setContadorCompradoCeleste(0);
-                   }
-                   
-               }
-               
-               if (propiedadActual.getColor().equalsIgnoreCase("Naranja") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesNaranja()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
-                   return;
-               }
-               else if (propiedadActual.getColor().equalsIgnoreCase("Naranja") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesNaranja()){
-                   int numCasasPropiedad = propiedadActual.getCantidadCasas();
-                   numCasasPropiedad = numCasasPropiedad + 1;
-                   propiedadActual.setCantidadCasas(numCasasPropiedad);
-                   
-                   int contCompradas = this.getRefCliente().getHiloCliente().getContadorCompradoNaranja();
-                   contCompradas = contCompradas + 1;
-                   this.getRefCliente().getHiloCliente().setContadorCompradoNaranja(contCompradas);
-                   
-                   if (contCompradas == 3){
-                       int numCasasPosibles = this.getRefCliente().getHiloCliente().getNumCasasPosiblesNaranja();
-                       numCasasPosibles = numCasasPosibles + 1;
-                       if (numCasasPosibles == 5){
-                           this.getRefCliente().getHiloCliente().setNumCasasPosiblesNaranja(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
-                           return;
-                       }
-                       this.getRefCliente().getHiloCliente().setNumCasasPosiblesNaranja(numCasasPosibles);
-                       this.getRefCliente().getHiloCliente().setContadorCompradoNaranja(0);
-                   }
-                   
-               }
-               
-               if (propiedadActual.getColor().equalsIgnoreCase("Rojo") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojo()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
-                   return;
-               }
-               else if (propiedadActual.getColor().equalsIgnoreCase("Rojo") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojo()){
-                   int numCasasPropiedad = propiedadActual.getCantidadCasas();
-                   numCasasPropiedad = numCasasPropiedad + 1;
-                   propiedadActual.setCantidadCasas(numCasasPropiedad);
-                   
-                   int contCompradas = this.getRefCliente().getHiloCliente().getContadorCompradoRojo();
-                   contCompradas = contCompradas + 1;
-                   this.getRefCliente().getHiloCliente().setContadorCompradoRojo(contCompradas);
-                   
-                   if (contCompradas == 3){
-                       int numCasasPosibles = this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojo();
-                       numCasasPosibles = numCasasPosibles + 1;
-                       if (numCasasPosibles == 5){
-                           this.getRefCliente().getHiloCliente().setNumCasasPosiblesRojo(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
-                           return;
-                       }
-                       this.getRefCliente().getHiloCliente().setNumCasasPosiblesRojo(numCasasPosibles);
-                       this.getRefCliente().getHiloCliente().setContadorCompradoRojo(0);
-                   }
-                   
-               }
-               
-               if (propiedadActual.getColor().equalsIgnoreCase("RojoOscuro") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojoOscuro()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
-                   return;
-               }
-               else if (propiedadActual.getColor().equalsIgnoreCase("RojoOscuro") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojoOscuro()){
-                   int numCasasPropiedad = propiedadActual.getCantidadCasas();
-                   numCasasPropiedad = numCasasPropiedad + 1;
-                   propiedadActual.setCantidadCasas(numCasasPropiedad);
-                   
-                   int contCompradas = this.getRefCliente().getHiloCliente().getContadorCompradoRojoOscuro();
-                   contCompradas = contCompradas + 1;
-                   this.getRefCliente().getHiloCliente().setContadorCompradoRojoOscuro(contCompradas);
-                   
-                   if (contCompradas == 3){
-                       int numCasasPosibles = this.getRefCliente().getHiloCliente().getNumCasasPosiblesRojoOscuro();
-                       numCasasPosibles = numCasasPosibles + 1;
-                       if (numCasasPosibles == 5){
-                           this.getRefCliente().getHiloCliente().setNumCasasPosiblesRojoOscuro(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
-                           return;
-                       }
-                       this.getRefCliente().getHiloCliente().setNumCasasPosiblesRojoOscuro(numCasasPosibles);
-                       this.getRefCliente().getHiloCliente().setContadorCompradoRojoOscuro(0);
-                   }
-                   
-               }
-               
-               if (propiedadActual.getColor().equalsIgnoreCase("Rosado") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesRosado()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
-                   return;
-               }
-               else if (propiedadActual.getColor().equalsIgnoreCase("Rosado") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesRosado()){
-                   int numCasasPropiedad = propiedadActual.getCantidadCasas();
-                   numCasasPropiedad = numCasasPropiedad + 1;
-                   propiedadActual.setCantidadCasas(numCasasPropiedad);
-                   
-                   int contCompradas = this.getRefCliente().getHiloCliente().getContadorCompradoRosado();
-                   contCompradas = contCompradas + 1;
-                   this.getRefCliente().getHiloCliente().setContadorCompradoRosado(contCompradas);
-                   
-                   if (contCompradas == 3){
-                       int numCasasPosibles = this.getRefCliente().getHiloCliente().getNumCasasPosiblesRosado();
-                       numCasasPosibles = numCasasPosibles + 1;
-                       if (numCasasPosibles == 5){
-                           this.getRefCliente().getHiloCliente().setNumCasasPosiblesRosado(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
-                           return;
-                       }
-                       this.getRefCliente().getHiloCliente().setNumCasasPosiblesRosado(numCasasPosibles);
-                       this.getRefCliente().getHiloCliente().setContadorCompradoRosado(0);
-                   }
-                   
-               }
-               
-               if (propiedadActual.getColor().equalsIgnoreCase("Verde") && propiedadActual.getCantidadCasas()+1 != this.getRefCliente().getHiloCliente().getNumCasasPosiblesVerde()){
-                   this.getTxaHistorial().append("Error: Las propiedades de este grupo de color deben tener una cantidad pareja de edificios.\n");
-                   return;
-               }
-               else if (propiedadActual.getColor().equalsIgnoreCase("Verde") && propiedadActual.getCantidadCasas()+1 == this.getRefCliente().getHiloCliente().getNumCasasPosiblesVerde()){
-                   int numCasasPropiedad = propiedadActual.getCantidadCasas();
-                   numCasasPropiedad = numCasasPropiedad + 1;
-                   propiedadActual.setCantidadCasas(numCasasPropiedad);
-                   
-                   int contCompradas = this.getRefCliente().getHiloCliente().getContadorCompradoVerde();
-                   contCompradas = contCompradas + 1;
-                   this.getRefCliente().getHiloCliente().setContadorCompradoVerde(contCompradas);
-                   
-                   if (contCompradas == 3){
-                       int numCasasPosibles = this.getRefCliente().getHiloCliente().getNumCasasPosiblesVerde();
-                       numCasasPosibles = numCasasPosibles + 1;
-                       if (numCasasPosibles == 5){
-                           this.getRefCliente().getHiloCliente().setNumCasasPosiblesVerde(numCasasPosibles);
-                           this.getTxaHistorial().append("Ha comprado 4 casas en todas las propiedades de este color. Ya no puede poner más casas en ellas.\n");
-                           return;
-                       }
-                       this.getRefCliente().getHiloCliente().setNumCasasPosiblesVerde(numCasasPosibles);
-                       this.getRefCliente().getHiloCliente().setContadorCompradoVerde(0);
-                   }
-                   
-               }
-               
+              ArrayList<Propiedades> propiedadesColor = new ArrayList<Propiedades>();
+              for (int j = 0; j < this.getRefCliente().getHiloCliente().getTablero().getCasillas().size(); j++){
+                  
+                  Propiedades propiedadCurrent = (Propiedades)this.getRefCliente().getHiloCliente().getTablero().getCasillas().get(j);
+                  if (propiedadCurrent.getColor().equalsIgnoreCase(propiedadActual.getColor())){
+                      propiedadesColor.add(propiedadCurrent);
+                      System.out.println(propiedadCurrent);
+                  }
+                  
+              }
+              System.out.println(propiedadesColor);
+              
+              for (int k = 0; k < propiedadesColor.size(); k++){
+                  int numCasasActual = Integer.parseInt(propiedadActual.getLblCasas().getText());
+                  int numCasasOtro = Integer.parseInt(propiedadesColor.get(k).getLblCasas().getText());
+                  System.out.println(numCasasActual);
+                  System.out.println(numCasasOtro);
+                  
+                  if (numCasasActual+1 != numCasasOtro && numCasasActual+1 != numCasasOtro+1){
+                      this.getTxaHistorial().append("Todas sus propiedades de este color deben tener uniformidad en el numero de casas.\n");
+                      return;
+                  }
+                  
+              }
+              
            }
             
         }
@@ -5098,6 +5016,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel115;
     private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel119;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
@@ -5108,11 +5027,31 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
