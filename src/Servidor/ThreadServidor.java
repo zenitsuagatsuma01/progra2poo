@@ -580,8 +580,10 @@ public class ThreadServidor extends Thread implements Serializable{
                         }
                             break;
                     case 14: //compra de casas
+                        String nombrePersona = reader.readUTF();
+                        
                         if(server.getTotalCasas() < 32){
-                            String nombrePersona = reader.readUTF();
+                            
                             for (int i = 0; i < server.conexiones.size(); i++) {
                                 ThreadServidor current = server.conexiones.get(i);
                                 current.writer.writeInt(15);

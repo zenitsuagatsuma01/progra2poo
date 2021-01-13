@@ -16,7 +16,7 @@ public class Ferrocarriles extends Propiedades{
     public int cantidadDeFerrocarriles;
 
     public Ferrocarriles(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHotel) {
-        super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHotel);
+        super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHotel, "Ferrocarril", 0, 0, 0);
         this.cantidadDeFerrocarriles = 0;
     }
     
@@ -29,8 +29,10 @@ public class Ferrocarriles extends Propiedades{
                 return 50;
             case 3:
                 return 100;
-            default:
+            case 4:
                 return 200;
+            default:
+                return 25;
         }
     }
 

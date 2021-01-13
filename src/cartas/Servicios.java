@@ -16,7 +16,7 @@ public class Servicios extends Propiedades{
     public int cantidadDeServicios;
 
     public Servicios(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHoteles) {
-        super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHoteles);
+        super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHoteles, "Servicios", 0,0 ,0);
         this.cantidadDeServicios = 0;
 
     }

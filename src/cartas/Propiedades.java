@@ -24,8 +24,12 @@ public abstract class Propiedades extends Cartas implements Serializable{
     public String dueno = "";
     public boolean comprada = false;
     public boolean hipotecada = false;
+    public String color;
+    public int cantidadCasas = 0;
+    public int cantidadHoteles = 0;
+    public int cantidadEdificios = 0;
 
-    public Propiedades(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHotel) {
+    public Propiedades(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHotel, String color, int cantidadCasas, int cantidadHoteles, int cantidadEdificios) {
         super(imagen, panel, nombre);
         this.precioCompra = precioCompra;
         this.valorHipoteca = valorHipoteca;
@@ -34,6 +38,42 @@ public abstract class Propiedades extends Cartas implements Serializable{
         this.lblAlquiler = lblAlquiler;
         this.lblCasas = lblCasas;
         this.lblHotel = lblHotel;
+        this.color = color;
+        this.cantidadCasas = cantidadCasas;
+        this.cantidadHoteles = cantidadHoteles;
+        this.cantidadEdificios = cantidadEdificios;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getCantidadCasas() {
+        return cantidadCasas;
+    }
+
+    public void setCantidadCasas(int cantidadCasas) {
+        this.cantidadCasas = cantidadCasas;
+    }
+
+    public int getCantidadHoteles() {
+        return cantidadHoteles;
+    }
+
+    public void setCantidadHoteles(int cantidadHoteles) {
+        this.cantidadHoteles = cantidadHoteles;
+    }
+
+    public int getCantidadEdificios() {
+        return cantidadEdificios;
+    }
+
+    public void setCantidadEdificios(int cantidadEdificios) {
+        this.cantidadEdificios = cantidadEdificios;
     }
     
     

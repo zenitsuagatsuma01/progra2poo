@@ -44,8 +44,6 @@ public class ThreadCliente extends Thread implements Serializable{
     private Ficha ficha;
     private Banco banco;
     private ArrayList<Propiedades> propiedades;
-    //private ArrayList<Casas> casas;
-    //private ArrayList<Hotel> hoteles;
     protected boolean quebrado = false;
     private boolean running = true;
     transient public InterfazCliente refPantalla;
@@ -57,6 +55,35 @@ public class ThreadCliente extends Thread implements Serializable{
     private boolean vueltaDada = false;
     private String nombreConsultar;
     private int contadorConsultar = 0;
+    private int cantidadFerrocarriles = 0;
+    private int cantidadServicios = 0;
+    
+    private int contadorVerde = 0;
+    private int contadorRojo = 0;
+    private int contadorRojoOscuro = 0;
+    private int contadorAzul = 0;
+    private int contadorCeleste = 0;
+    private int contadorRosado = 0;
+    private int contadorNaranja = 0;
+    private int contadorAmarillo = 0;
+    
+    private int numCasasPosiblesVerde = 1;
+    private int numCasasPosiblesRojo = 1;
+    private int numCasasPosiblesRojoOscuro = 1;
+    private int numCasasPosiblesAzul = 1;
+    private int numCasasPosiblesCeleste = 1;
+    private int numCasasPosiblesRosado = 1;
+    private int numCasasPosiblesNaranja = 1;
+    private int numCasasPosiblesAmarillo = 1;
+    
+    private int contadorCompradoVerde = 0;
+    private int contadorCompradoRojo = 0;
+    private int contadorCompradoRojoOscuro = 0;
+    private int contadorCompradoAzul = 0;
+    private int contadorCompradoCeleste = 0;
+    private int contadorCompradoRosado = 0;
+    private int contadorCompradoNaranja = 0;
+    private int contadorCompradoAmarillo = 0;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -87,12 +114,222 @@ public class ThreadCliente extends Thread implements Serializable{
         quebrado = quebradoCargado;
     }
 
+    public int getNumCasasPosiblesVerde() {
+        return numCasasPosiblesVerde;
+    }
+
+    public void setNumCasasPosiblesVerde(int numCasasPosiblesVerde) {
+        this.numCasasPosiblesVerde = numCasasPosiblesVerde;
+    }
+
+    public int getNumCasasPosiblesRojo() {
+        return numCasasPosiblesRojo;
+    }
+
+    public void setNumCasasPosiblesRojo(int numCasasPosiblesRojo) {
+        this.numCasasPosiblesRojo = numCasasPosiblesRojo;
+    }
+
+    public int getNumCasasPosiblesRojoOscuro() {
+        return numCasasPosiblesRojoOscuro;
+    }
+
+    public void setNumCasasPosiblesRojoOscuro(int numCasasPosiblesRojoOscuro) {
+        this.numCasasPosiblesRojoOscuro = numCasasPosiblesRojoOscuro;
+    }
+
+    public int getNumCasasPosiblesAzul() {
+        return numCasasPosiblesAzul;
+    }
+
+    public void setNumCasasPosiblesAzul(int numCasasPosiblesAzul) {
+        this.numCasasPosiblesAzul = numCasasPosiblesAzul;
+    }
+
+    public int getNumCasasPosiblesCeleste() {
+        return numCasasPosiblesCeleste;
+    }
+
+    public void setNumCasasPosiblesCeleste(int numCasasPosiblesCeleste) {
+        this.numCasasPosiblesCeleste = numCasasPosiblesCeleste;
+    }
+
+    public int getNumCasasPosiblesRosado() {
+        return numCasasPosiblesRosado;
+    }
+
+    public void setNumCasasPosiblesRosado(int numCasasPosiblesRosado) {
+        this.numCasasPosiblesRosado = numCasasPosiblesRosado;
+    }
+
+    public int getNumCasasPosiblesNaranja() {
+        return numCasasPosiblesNaranja;
+    }
+
+    public void setNumCasasPosiblesNaranja(int numCasasPosiblesNaranja) {
+        this.numCasasPosiblesNaranja = numCasasPosiblesNaranja;
+    }
+
+    public int getNumCasasPosiblesAmarillo() {
+        return numCasasPosiblesAmarillo;
+    }
+
+    public void setNumCasasPosiblesAmarillo(int numCasasPosiblesAmarillo) {
+        this.numCasasPosiblesAmarillo = numCasasPosiblesAmarillo;
+    }
+
+    public int getContadorCompradoVerde() {
+        return contadorCompradoVerde;
+    }
+
+    public void setContadorCompradoVerde(int contadorCompradoVerde) {
+        this.contadorCompradoVerde = contadorCompradoVerde;
+    }
+
+    public int getContadorCompradoRojo() {
+        return contadorCompradoRojo;
+    }
+
+    public void setContadorCompradoRojo(int contadorCompradoRojo) {
+        this.contadorCompradoRojo = contadorCompradoRojo;
+    }
+
+    public int getContadorCompradoRojoOscuro() {
+        return contadorCompradoRojoOscuro;
+    }
+
+    public void setContadorCompradoRojoOscuro(int contadorCompradoRojoOscuro) {
+        this.contadorCompradoRojoOscuro = contadorCompradoRojoOscuro;
+    }
+
+    public int getContadorCompradoAzul() {
+        return contadorCompradoAzul;
+    }
+
+    public void setContadorCompradoAzul(int contadorCompradoAzul) {
+        this.contadorCompradoAzul = contadorCompradoAzul;
+    }
+
+    public int getContadorCompradoCeleste() {
+        return contadorCompradoCeleste;
+    }
+
+    public void setContadorCompradoCeleste(int contadorCompradoCeleste) {
+        this.contadorCompradoCeleste = contadorCompradoCeleste;
+    }
+
+    public int getContadorCompradoRosado() {
+        return contadorCompradoRosado;
+    }
+
+    public void setContadorCompradoRosado(int contadorCompradoRosado) {
+        this.contadorCompradoRosado = contadorCompradoRosado;
+    }
+
+    public int getContadorCompradoNaranja() {
+        return contadorCompradoNaranja;
+    }
+
+    public void setContadorCompradoNaranja(int contadorCompradoNaranja) {
+        this.contadorCompradoNaranja = contadorCompradoNaranja;
+    }
+
+    public int getContadorCompradoAmarillo() {
+        return contadorCompradoAmarillo;
+    }
+
+    public void setContadorCompradoAmarillo(int contadorCompradoAmarillo) {
+        this.contadorCompradoAmarillo = contadorCompradoAmarillo;
+    }
+    
+    
+
     public int getContadorConsultar() {
         return contadorConsultar;
     }
 
     public void setContadorConsultar(int contadorConsultar) {
         this.contadorConsultar = contadorConsultar;
+    }
+
+    public int getCantidadFerrocarriles() {
+        return cantidadFerrocarriles;
+    }
+
+    public void setCantidadFerrocarriles(int cantidadFerrocarriles) {
+        this.cantidadFerrocarriles = cantidadFerrocarriles;
+    }
+
+    public int getCantidadServicios() {
+        return cantidadServicios;
+    }
+
+    public void setCantidadServicios(int cantidadServicios) {
+        this.cantidadServicios = cantidadServicios;
+    }
+
+    public int getContadorVerde() {
+        return contadorVerde;
+    }
+
+    public void setContadorVerde(int contadorVerde) {
+        this.contadorVerde = contadorVerde;
+    }
+
+    public int getContadorRojo() {
+        return contadorRojo;
+    }
+
+    public void setContadorRojo(int contadorRojo) {
+        this.contadorRojo = contadorRojo;
+    }
+
+    public int getContadorRojoOscuro() {
+        return contadorRojoOscuro;
+    }
+
+    public void setContadorRojoOscuro(int contadorRojoOscuro) {
+        this.contadorRojoOscuro = contadorRojoOscuro;
+    }
+
+    public int getContadorAzul() {
+        return contadorAzul;
+    }
+
+    public void setContadorAzul(int contadorAzul) {
+        this.contadorAzul = contadorAzul;
+    }
+
+    public int getContadorCeleste() {
+        return contadorCeleste;
+    }
+
+    public void setContadorCeleste(int contadorCeleste) {
+        this.contadorCeleste = contadorCeleste;
+    }
+
+    public int getContadorRosado() {
+        return contadorRosado;
+    }
+
+    public void setContadorRosado(int contadorRosado) {
+        this.contadorRosado = contadorRosado;
+    }
+
+    public int getContadorNaranja() {
+        return contadorNaranja;
+    }
+
+    public void setContadorNaranja(int contadorNaranja) {
+        this.contadorNaranja = contadorNaranja;
+    }
+
+    public int getContadorAmarillo() {
+        return contadorAmarillo;
+    }
+
+    public void setContadorAmarillo(int contadorAmarillo) {
+        this.contadorAmarillo = contadorAmarillo;
     }
     
     
@@ -557,6 +794,56 @@ public class ThreadCliente extends Thread implements Serializable{
                             propiedadCalle.getLblAlquiler().setText("Alquiler: " + propiedadCalle.cobrar());
                             propiedadCalle.getLblCasas().setText("Casas: " + propiedadCalle.getCantidadCasas());
                             propiedadCalle.getLblHotel().setText("Hotel: " + propiedadCalle.getCantidadHoteles());
+                            
+                            if (propiedadCalle.getColor().equalsIgnoreCase("Verde")){
+                                int contColor = this.getContadorVerde();
+                                contColor = contColor + 1;
+                                this.setContadorVerde(contColor);
+                                System.out.println("Contador verde luego de comprar: " + this.getContadorVerde());
+                            }
+                            else if (propiedadCalle.getColor().equalsIgnoreCase("Rojo")){
+                                int contColor = this.getContadorRojo();
+                                contColor = contColor + 1;
+                                this.setContadorRojo(contColor);
+                                System.out.println("Contador rojo luego de comprar: " + this.getContadorRojo());
+                            }
+                            else if (propiedadCalle.getColor().equalsIgnoreCase("Rojo oscuro")){
+                                int contColor = this.getContadorRojoOscuro();
+                                contColor = contColor + 1;
+                                this.setContadorRojoOscuro(contColor);
+                                System.out.println("Contador rojo oscuro luego de comprar: " + this.getContadorRojoOscuro());
+                            }
+                            else if (propiedadCalle.getColor().equalsIgnoreCase("Amarillo")){
+                                int contColor = this.getContadorAmarillo();
+                                contColor = contColor + 1;
+                                this.setContadorAmarillo(contColor);
+                                System.out.println("Contador amarillo luego de comprar: " + this.getContadorAmarillo());
+                            }
+                            else if (propiedadCalle.getColor().equalsIgnoreCase("Naranja")){
+                                int contColor = this.getContadorNaranja();
+                                contColor = contColor + 1;
+                                this.setContadorNaranja(contColor);
+                                System.out.println("Contador naranja luego de comprar: " + this.getContadorNaranja());
+                            }
+                            else if (propiedadCalle.getColor().equalsIgnoreCase("Azul")){
+                                int contColor = this.getContadorAzul();
+                                contColor = contColor + 1;
+                                this.setContadorAzul(contColor);
+                                System.out.println("Contador azul luego de comprar: " + this.getContadorAzul());
+                            }
+                            else if (propiedadCalle.getColor().equalsIgnoreCase("Celeste")){
+                                int contColor = this.getContadorCeleste();
+                                contColor = contColor + 1;
+                                this.setContadorCeleste(contColor);
+                                System.out.println("Contador celeste luego de comprar: " + this.getContadorCeleste());
+                            }
+                            else if (propiedadCalle.getColor().equalsIgnoreCase("Rosado")){
+                                int contColor = this.getContadorRosado();
+                                contColor = contColor + 1;
+                                this.setContadorRosado(contColor);
+                                System.out.println("Contador rosado luego de comprar: " + this.getContadorRosado());
+                            }
+                            
                         }
                         else if (propiedadComprar.getNombre().contains("Ferrocarril")){
                             Ferrocarriles propiedadFerrocarril = (Ferrocarriles)propiedadComprar;

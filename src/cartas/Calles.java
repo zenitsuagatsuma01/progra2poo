@@ -14,10 +14,6 @@ import javax.swing.JPanel;
  * @author Usuario
  */
 public class Calles extends Propiedades implements Serializable{
-    public String color;
-    public int cantidadCasas;
-    public int cantidadHoteles;
-    public int cantidadEdificios;
     public int precioCasa;
     public int precioHotel;
     public int precio0;
@@ -28,11 +24,7 @@ public class Calles extends Propiedades implements Serializable{
     public int precio5;
 
     public Calles(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, String color, int precioCasas, int precioHoteles, int precio0, int precio1, int precio2, int precio3, int precio4, int precio5, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHotel) {
-        super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHotel);
-        this.color = color;
-        this.cantidadCasas = 0;
-        this.cantidadHoteles = 0;
-        this.cantidadEdificios = 0;
+        super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHotel, color, 0, 0, 0);
         this.precioCasa = precioCasas;
         this.precioHotel = precioHoteles;
         this.precio0 = precio0;
