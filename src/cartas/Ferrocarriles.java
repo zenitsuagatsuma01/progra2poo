@@ -15,10 +15,9 @@ import javax.swing.JPanel;
 public class Ferrocarriles extends Propiedades{
     public int cantidadDeFerrocarriles;
 
-    public Ferrocarriles(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca) {
-        super(imagen, panel, nombre, precioCompra, valorHipoteca);
+    public Ferrocarriles(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHotel) {
+        super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHotel);
         this.cantidadDeFerrocarriles = 0;
-        
     }
     
     @Override
@@ -50,6 +49,47 @@ public class Ferrocarriles extends Propiedades{
     public void setPanel(JPanel panel) {
         this.panel = panel;
     }
+
+    public JLabel getLblLibre() {
+        return lblLibre;
+    }
+
+    public void setLblLibre(JLabel lblLibre) {
+        this.lblLibre = lblLibre;
+    }
+
+    public JLabel getLblAlquiler() {
+        return lblAlquiler;
+    }
+
+    public void setLblAlquiler(JLabel lblAlquiler) {
+        this.lblAlquiler = lblAlquiler;
+    }
+
+    public int getPrecioCompra() {
+        return precioCompra;
+    }
+
+    public void setPrecioCompra(int precioCompra) {
+        this.precioCompra = precioCompra;
+    }
+
+    public int getValorHipoteca() {
+        return valorHipoteca;
+    }
+
+    public void setValorHipoteca(int valorHipoteca) {
+        this.valorHipoteca = valorHipoteca;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     
     
 }

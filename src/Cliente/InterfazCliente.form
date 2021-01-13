@@ -3434,8 +3434,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
-                          <Component id="lblLogoMonopoly" pref="612" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblLogoMonopoly" pref="417" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3500,7 +3500,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3510,7 +3510,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3520,7 +3520,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3530,7 +3530,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3540,7 +3540,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3550,7 +3550,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3560,7 +3560,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3570,7 +3570,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3580,7 +3580,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla6">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3590,7 +3590,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla6">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3600,7 +3600,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla6">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3610,7 +3610,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas6">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3620,7 +3620,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3630,7 +3630,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3640,7 +3640,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla37">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3650,7 +3650,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla37">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3660,7 +3660,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla37">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3670,7 +3670,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas37">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3680,7 +3680,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla39">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3690,7 +3690,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla39">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3700,7 +3700,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla39">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3710,7 +3710,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas39">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3720,7 +3720,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3730,7 +3730,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3740,7 +3740,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3750,7 +3750,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3760,7 +3760,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3770,7 +3770,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3780,7 +3780,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3790,7 +3790,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3800,7 +3800,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3810,7 +3810,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3820,27 +3820,27 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="180" y="560" width="90" height="-1"/>
+                  <AbsoluteConstraints x="180" y="560" width="90" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="180" y="570" width="90" height="20"/>
+                  <AbsoluteConstraints x="180" y="580" width="90" height="10"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla12">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3850,17 +3850,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla12">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="180" y="500" width="100" height="20"/>
+                  <AbsoluteConstraints x="180" y="490" width="100" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla13">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3870,7 +3870,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla13">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3880,7 +3880,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla13">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3890,7 +3890,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas13">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3900,7 +3900,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla14">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3910,7 +3910,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla14">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3920,7 +3920,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla14">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3930,7 +3930,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas14">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3940,7 +3940,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla15">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3950,17 +3950,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla15">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="180" y="320" width="120" height="20"/>
+                  <AbsoluteConstraints x="180" y="310" width="120" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla16">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3970,7 +3970,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla16">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3980,7 +3980,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla16">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3990,7 +3990,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas16">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4000,7 +4000,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla18">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4010,7 +4010,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla18">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4020,7 +4020,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla18">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4030,7 +4030,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas18">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4040,7 +4040,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla19">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4050,7 +4050,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla19">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4060,27 +4060,27 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla19">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="180" y="80" width="90" height="10"/>
+                  <AbsoluteConstraints x="180" y="80" width="100" height="10"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas19">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="180" y="100" width="90" height="20"/>
+                  <AbsoluteConstraints x="180" y="104" width="90" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla21">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4090,7 +4090,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla21">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4100,7 +4100,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla21">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4110,7 +4110,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas21">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4120,47 +4120,47 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla23">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="420" y="60" width="130" height="20"/>
+                  <AbsoluteConstraints x="420" y="60" width="110" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla23">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="420" y="100" width="120" height="10"/>
+                  <AbsoluteConstraints x="420" y="100" width="110" height="10"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla23">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="420" y="80" width="120" height="20"/>
+                  <AbsoluteConstraints x="420" y="80" width="110" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas23">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="420" y="110" width="120" height="20"/>
+                  <AbsoluteConstraints x="420" y="110" width="110" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla24">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4170,7 +4170,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla24">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4180,7 +4180,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla24">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4190,7 +4190,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas24">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4200,7 +4200,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla25">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4210,7 +4210,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla25">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4220,7 +4220,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla35">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4230,7 +4230,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla35">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4240,7 +4240,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4250,7 +4250,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4260,7 +4260,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4270,7 +4270,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4280,7 +4280,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla32">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4290,7 +4290,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla32">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4300,7 +4300,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla32">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4310,7 +4310,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas32">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4320,7 +4320,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla26">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4330,7 +4330,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla26">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4340,7 +4340,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla26">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4350,7 +4350,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas26">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4360,7 +4360,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla27">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4370,37 +4370,37 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla27">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="900" y="80" width="130" height="20"/>
+                  <AbsoluteConstraints x="900" y="80" width="100" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla27">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="900" y="100" width="130" height="20"/>
+                  <AbsoluteConstraints x="900" y="100" width="100" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas27">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="900" y="120" width="130" height="20"/>
+                  <AbsoluteConstraints x="900" y="120" width="120" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla28">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4410,7 +4410,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla28">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4420,7 +4420,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla29">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4430,7 +4430,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla29">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4440,7 +4440,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla29">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4450,7 +4450,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas29">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4460,7 +4460,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibreCasilla31">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Libre"/>
+                <Property name="text" type="java.lang.String" value="Dueno:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4470,7 +4470,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAlquilerCasilla31">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alquiler:"/>
+                <Property name="text" type="java.lang.String" value="Alquiler: $0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4480,7 +4480,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCasasCasilla31">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Casas:"/>
+                <Property name="text" type="java.lang.String" value="Casas: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4490,11 +4490,18 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHotelCasillas31">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hotel:"/>
+                <Property name="text" type="java.lang.String" value="Hotel: 0"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="1150" y="110" width="80" height="10"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNothing">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="970" y="450" width="70" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>

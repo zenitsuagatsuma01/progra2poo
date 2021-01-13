@@ -15,9 +15,10 @@ import javax.swing.JPanel;
 public class Servicios extends Propiedades{
     public int cantidadDeServicios;
 
-    public Servicios(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca) {
-        super(imagen, panel, nombre, precioCompra, valorHipoteca);
+    public Servicios(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHoteles) {
+        super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHoteles);
         this.cantidadDeServicios = 0;
+
     }
     
     public int cobrar(int dados){
@@ -34,6 +35,54 @@ public class Servicios extends Propiedades{
     public int cobrar() {
         return 0;
      }
+
+    public int getCantidadDeServicios() {
+        return cantidadDeServicios;
+    }
+
+    public void setCantidadDeServicios(int cantidadDeServicios) {
+        this.cantidadDeServicios = cantidadDeServicios;
+    }
+
+    public JLabel getLblLibre() {
+        return lblLibre;
+    }
+
+    public void setLblLibre(JLabel lblLibre) {
+        this.lblLibre = lblLibre;
+    }
+
+    public JLabel getLblAlquiler() {
+        return lblAlquiler;
+    }
+
+    public void setLblAlquiler(JLabel lblAlquiler) {
+        this.lblAlquiler = lblAlquiler;
+    }
+
+    public int getPrecioCompra() {
+        return precioCompra;
+    }
+
+    public void setPrecioCompra(int precioCompra) {
+        this.precioCompra = precioCompra;
+    }
+
+    public int getValorHipoteca() {
+        return valorHipoteca;
+    }
+
+    public void setValorHipoteca(int valorHipoteca) {
+        this.valorHipoteca = valorHipoteca;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
     
     

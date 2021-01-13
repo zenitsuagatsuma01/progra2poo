@@ -27,8 +27,8 @@ public class Calles extends Propiedades implements Serializable{
     public int precio4;
     public int precio5;
 
-    public Calles(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, String color, int precioCasas, int precioHoteles, int precio0, int precio1, int precio2, int precio3, int precio4, int precio5) {
-        super(imagen, panel, nombre, precioCompra, valorHipoteca);
+    public Calles(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, String color, int precioCasas, int precioHoteles, int precio0, int precio1, int precio2, int precio3, int precio4, int precio5, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHotel) {
+        super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHotel);
         this.color = color;
         this.cantidadCasas = 0;
         this.cantidadHoteles = 0;
@@ -41,7 +41,6 @@ public class Calles extends Propiedades implements Serializable{
         this.precio3 = precio3;
         this.precio4 = precio4;
         this.precio5 = precio5;
-        
     }
     
     @Override
@@ -63,6 +62,64 @@ public class Calles extends Propiedades implements Serializable{
         
 
     }
+
+    public JLabel getLblLibre() {
+        return lblLibre;
+    }
+
+    public void setLblLibre(JLabel lblLibre) {
+        this.lblLibre = lblLibre;
+    }
+
+    public JLabel getLblAlquiler() {
+        return lblAlquiler;
+    }
+
+    public void setLblAlquiler(JLabel lblAlquiler) {
+        this.lblAlquiler = lblAlquiler;
+    }
+
+    public JLabel getLblCasas() {
+        return lblCasas;
+    }
+
+    public void setLblCasas(JLabel lblCasas) {
+        this.lblCasas = lblCasas;
+    }
+
+    public JLabel getLblHotel() {
+        return lblHotel;
+    }
+
+    public void setLblHotel(JLabel lblHotel) {
+        this.lblHotel = lblHotel;
+    }
+
+    public int getPrecioCompra() {
+        return precioCompra;
+    }
+
+    public void setPrecioCompra(int precioCompra) {
+        this.precioCompra = precioCompra;
+    }
+
+    public int getValorHipoteca() {
+        return valorHipoteca;
+    }
+
+    public void setValorHipoteca(int valorHipoteca) {
+        this.valorHipoteca = valorHipoteca;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
 
     public int getCantidadCasas() {
         return cantidadCasas;
