@@ -4143,6 +4143,23 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnVenderPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderPropActionPerformed
         // TODO add your handling code here:
+        int propiedadVenderInt = this.getCbPropiedades().getSelectedIndex();
+        String propiedadVenderNombre = this.getCbPropiedades().getSelectedItem().toString();
+        this.getCbPropiedades().removeItemAt(propiedadVenderInt);
+        this.getCbPropiedades().repaint();
+        this.getCbPropiedades().revalidate();
+        
+        System.out.println(propiedadVenderNombre);
+        
+        
+        try {
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(15);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(propiedadVenderNombre);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btnVenderPropActionPerformed
 
     private void btnConsultarDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarDerechaActionPerformed

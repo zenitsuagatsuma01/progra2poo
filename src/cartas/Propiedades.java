@@ -22,6 +22,8 @@ public abstract class Propiedades extends Cartas implements Serializable{
     public JLabel lblCasas;
     public JLabel lblHotel;
     public String dueno = "";
+    public boolean comprada = false;
+    public boolean hipotecada = false;
 
     public Propiedades(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHotel) {
         super(imagen, panel, nombre);
@@ -33,6 +35,8 @@ public abstract class Propiedades extends Cartas implements Serializable{
         this.lblCasas = lblCasas;
         this.lblHotel = lblHotel;
     }
+    
+    
 
     public JLabel getLblCasas() {
         return lblCasas;
@@ -56,6 +60,22 @@ public abstract class Propiedades extends Cartas implements Serializable{
 
     public void setDueno(String dueno) {
         this.dueno = dueno;
+    }
+
+    public boolean isComprada() {
+        return comprada;
+    }
+
+    public void setComprada(boolean comprada) {
+        this.comprada = comprada;
+    }
+
+    public boolean isHipotecada() {
+        return hipotecada;
+    }
+
+    public void setHipotecada(boolean hipotecada) {
+        this.hipotecada = hipotecada;
     }
     
     
