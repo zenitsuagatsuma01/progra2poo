@@ -870,7 +870,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             this.getRefPantalla().getTxaHistorial().append("Se han acabado las 32 casas y por ende no se podrán construir más.");
                         }
                         
-                        else if (casasAcabadas != 0){
+                        else if (casasAcabadas == 0){
                             
                             for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
                                 Propiedades propiedadActual = (Propiedades)this.getTablero().getCasillas().get(i);
@@ -887,11 +887,19 @@ public class ThreadCliente extends Thread implements Serializable{
                                     propiedadComprarCasa.setCantidadEdificios(numEdificios);
                                     
                                     propiedadComprarCasa.getLblCasas().setText("Casas: " + propiedadComprarCasa.getCantidadCasas());
+                                    propiedadComprarCasa.getLblCasas().revalidate();
+                                    propiedadComprarCasa.getLblCasas().repaint();
                                     this.getRefPantalla().getLblQuedanCasas().setText("Quedan " + quedanCasas + " casas");
+                                    this.getRefPantalla().getLblQuedanCasas().revalidate();
+                                    this.getRefPantalla().getLblQuedanCasas().repaint();
+                                    System.out.println("Ha comprado una casa en " + propiedadActual.getNombre() + " y ahora esta tiene " + quedanCasas);
                                     
                                     if (this.getNombre().equals(nombrePersona)){
                             
                                         this.getBanco().retirarDinero(this, propiedadComprarCasa.getPrecioCasa());
+                                        this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                        this.getRefPantalla().getLblNumDinero().revalidate();
+                                        this.getRefPantalla().getLblNumDinero().repaint();
                             
                                     }
                                 }
