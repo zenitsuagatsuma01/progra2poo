@@ -468,22 +468,22 @@ public class ThreadCliente extends Thread implements Serializable{
                         ArrayList<Cartas> cartasFortuna = new ArrayList<Cartas>();
                         
                         ArrayList<Cartas> cartasArcaComunal = new ArrayList<Cartas>();
-                        ArcaComunal arcaComunal1 = new ArcaComunal("Arca comunal 1",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 1",4,200,5,"Carta de arca comunal activada. Efecto: Avance a Go y páguese $200.\n");
-                        ArcaComunal arcaComunal2 = new ArcaComunal("Arca comunal 2",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 2",1,200,0,"Carta de arca comunal activada. Efecto: Error del banco a su favor. Páguese $200.\n");
-                        ArcaComunal arcaComunal3 = new ArcaComunal("Arca comunal 3",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 3",2,50,0,"Carta de arca comunal activada. Efecto: Fue a una cita médica y pagó los honorarios médicos. Pague $50.\n");
-                        ArcaComunal arcaComunal4 = new ArcaComunal("Arca comunal 4",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 4",1,50,0,"Carta de arca comunal activada. Efecto: Gracias a la venta de sus acciones, páguese $50.\n");
-                        ArcaComunal arcaComunal5 = new ArcaComunal("Arca comunal 5",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 5",5,50,0,"Carta de arca comunal activada. Efecto: Ha conseguido una tarjeta de salir de la cárcel gratis.\n");
-                        ArcaComunal arcaComunal6 = new ArcaComunal("Arca comunal 6",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 6",3,50,10,"Carta de arca comunal activada. Efecto: Vaya directo a la cárcel No se pague nada aunque pase por Go.\n");
-                        ArcaComunal arcaComunal7 = new ArcaComunal("Arca comunal 7",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 7",1,(50*numeroJugadores),10,"Carta de arca comunal activada. Efecto: Páguese 50 dólares de cada jugador\n");
-                        ArcaComunal arcaComunal8 = new ArcaComunal("Arca comunal 8",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 8",1,100,10,"Carta de arca comunal activada. Efecto: Recibió el aguinaldo. Páguese 100 dólares.\n");
-                        ArcaComunal arcaComunal9 = new ArcaComunal("Arca comunal 9",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 9",1,20,10,"Carta de arca comunal activada. Efecto: Devolución de impuestos. Páguese 20 dólares.\n");
-                        ArcaComunal arcaComunal10 = new ArcaComunal("Arca comunal 10",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 10",1,10,10,"Carta de arca comunal activada. Efecto: Es su cumpleanos. Páguese 10 dólares de cada jugador.\n");
-                        ArcaComunal arcaComunal11 = new ArcaComunal("Arca comunal 11",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 11",1,100,10,"Carta de arca comunal activada. Efecto: Devoluciónes de seguro de vida. Páguese 100 dólares.\n");
-                        ArcaComunal arcaComunal12 = new ArcaComunal("Arca comunal 12",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 12",2,50,10,"Carta de arca comunal activada. Efecto: Tuvo que ir al hospital tras un accidente. Pague 50 dólares.\n");
-                        ArcaComunal arcaComunal13 = new ArcaComunal("Arca comunal 13",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 13",2,50,10,"Carta de arca comunal activada. Efecto: Debe pagar el costo del semestre universitario. Pague 50 dólares.\n");
-                        ArcaComunal arcaComunal14 = new ArcaComunal("Arca comunal 14",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 14",1,25,10,"Carta de arca comunal activada. Efecto: Recibió una cuota de consultoría. Páguese 25 dólares.\n");
-                        ArcaComunal arcaComunal15 = new ArcaComunal("Arca comunal 15",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 15",2,10,10,"Carta de arca comunal activada. Efecto: Decidió hacer reparaciones de sus propiedades. Pague $45 por cada casa y $115 por cada hotel que tenga.\n");
-                        ArcaComunal arcaComunal16 = new ArcaComunal("Arca comunal 16",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 16",1,100,10,"Carta de arca comunal activada. Efecto: Ha heredado 100 dólares. Páguese 100 dólares.\n");
+                        ArcaComunal arcaComunal1 = new ArcaComunal("Arca comunal 1",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 1",4,200,5,"Carta de arca comunal activada. Efecto: Avance a Go y páguese $200.");
+                        ArcaComunal arcaComunal2 = new ArcaComunal("Arca comunal 2",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 2",1,200,0,"Carta de arca comunal activada. Efecto: Error del banco a su favor. Páguese $200.");
+                        ArcaComunal arcaComunal3 = new ArcaComunal("Arca comunal 3",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 3",2,50,0,"Carta de arca comunal activada. Efecto: Fue a una cita médica y pagó los honorarios médicos. Pague $50.");
+                        ArcaComunal arcaComunal4 = new ArcaComunal("Arca comunal 4",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 4",1,50,0,"Carta de arca comunal activada. Efecto: Logró vender unas acciones que tenía, páguese $50.");
+                        ArcaComunal arcaComunal5 = new ArcaComunal("Arca comunal 5",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 5",5,50,0,"Carta de arca comunal activada. Efecto: Ha conseguido una tarjeta de salir de la cárcel gratis.");
+                        ArcaComunal arcaComunal6 = new ArcaComunal("Arca comunal 6",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 6",3,50,10,"Carta de arca comunal activada. Efecto: Vaya directo a la cárcel. No se pague nada aunque pase por Go.");
+                        ArcaComunal arcaComunal7 = new ArcaComunal("Arca comunal 7",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 7",1,(50*numeroJugadores),10,"Carta de arca comunal activada. Efecto: Páguese 50 dólares por cada jugador que hay.");
+                        ArcaComunal arcaComunal8 = new ArcaComunal("Arca comunal 8",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 8",1,100,10,"Carta de arca comunal activada. Efecto: Recibió el aguinaldo. Páguese 100 dólares.");
+                        ArcaComunal arcaComunal9 = new ArcaComunal("Arca comunal 9",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 9",1,20,10,"Carta de arca comunal activada. Efecto: Devolución de impuestos. Páguese 20 dólares.");
+                        ArcaComunal arcaComunal10 = new ArcaComunal("Arca comunal 10",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 10",1,10,10,"Carta de arca comunal activada. Efecto: Es su cumpleanos. Páguese 10 dólares por cada jugador que hay.");
+                        ArcaComunal arcaComunal11 = new ArcaComunal("Arca comunal 11",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 11",1,100,10,"Carta de arca comunal activada. Efecto: Devoluciónes de seguro de vida. Páguese 100 dólares.");
+                        ArcaComunal arcaComunal12 = new ArcaComunal("Arca comunal 12",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 12",2,50,10,"Carta de arca comunal activada. Efecto: Tuvo que ir al hospital tras un accidente. Pague 50 dólares.");
+                        ArcaComunal arcaComunal13 = new ArcaComunal("Arca comunal 13",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 13",2,50,10,"Carta de arca comunal activada. Efecto: Debe pagar el costo del semestre universitario. Pague 50 dólares.");
+                        ArcaComunal arcaComunal14 = new ArcaComunal("Arca comunal 14",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 14",1,25,10,"Carta de arca comunal activada. Efecto: Recibió una cuota de consultoría. Páguese 25 dólares.");
+                        ArcaComunal arcaComunal15 = new ArcaComunal("Arca comunal 15",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 15",2,10,10,"Carta de arca comunal activada. Efecto: Decidió hacer reparaciones de sus propiedades. Pague $45 por cada casa y $115 por cada hotel que tenga.");
+                        ArcaComunal arcaComunal16 = new ArcaComunal("Arca comunal 16",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 16",1,100,10,"Carta de arca comunal activada. Efecto: Ha heredado 100 dólares. Páguese 100 dólares.");
                         
                         cartasArcaComunal.add(arcaComunal1);
                         cartasArcaComunal.add(arcaComunal2);
@@ -684,12 +684,28 @@ public class ThreadCliente extends Thread implements Serializable{
                                     cartaSacada.setIndiceCasillaDestino(39-casillaFinal);
                                 }
                                 if (this.getContadorArcaComunal() == 5){
-                                    cartaSacada.setIndiceCasillaDestino(10-casillaFinal);
+                                    
+                                    int cantidadMoverse = 0;
+                                    for (int i = casillaFinal; i != 10; i++){
+                                        
+                                        if (i+1 > 39){
+                                            i = 0;
+                                        }
+                                        
+                                        cantidadMoverse = cantidadMoverse + 1;
+                                        System.out.println(cantidadMoverse);
+                                    }
+                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    System.out.println(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
                                 if (this.getContadorArcaComunal() == 14){
-                                    cartaSacada.setMonto( (45*this.getContadorCasas()) + (115*this.getContadorHoteles()) );
+                                    int montoCasas = 45*this.getContadorCasas();
+                                    int montoHoteles = 115*this.getContadorHoteles();
+                                    int montoTotal = montoCasas + montoHoteles;
+                                    cartaSacada.setMonto( montoTotal );
                                     System.out.println("Casas: " + this.getContadorCasas() + " y hoteles: " + this.getContadorHoteles());
-                                    System.out.println("Pagó " + (45*this.getContadorCasas()) + " por las casas y " + (115*this.getContadorHoteles()) + " por los hoteles. En total pagó " + (45*this.getContadorCasas()) + (115*this.getContadorHoteles()));
+                                    System.out.println("Pagó " + montoCasas + " por las casas y " + montoHoteles + " por los hoteles. En total pagó " + montoTotal);
                                 }
                                 
                                 if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){

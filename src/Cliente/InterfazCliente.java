@@ -1040,7 +1040,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jLabel14 = new javax.swing.JLabel();
         pnlFicha = new javax.swing.JPanel();
         lblFichaJugador = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         lblQuedanCasas = new javax.swing.JLabel();
         lblQuedanHoteles = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -1457,14 +1456,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         );
 
         jPanel1.add(pnlFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 110, 120));
-
-        jButton1.setText("prueba ir a lugar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
 
         lblQuedanCasas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblQuedanCasas.setText("Quedan 32 casas");
@@ -3104,7 +3095,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnComprarPropActualActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnComprarPropActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 180, 60));
+        pnlToolbar.add(btnComprarPropActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 180, 70));
 
         btnLanzarDados.setText("Lanzar Dados");
         btnLanzarDados.addActionListener(new java.awt.event.ActionListener() {
@@ -3112,7 +3103,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnLanzarDadosActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 120, 50));
+        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 120, 80));
 
         btnHipotecar.setText("Hipotecar/deshipotecar");
         btnHipotecar.addActionListener(new java.awt.event.ActionListener() {
@@ -3128,7 +3119,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnEndTurnActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnEndTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 180, 130, 60));
+        pnlToolbar.add(btnEndTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 140, 130, 90));
 
         lblSeleccionFicha.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblSeleccionFicha.setText("Seleccionar ficha:");
@@ -3143,7 +3134,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnSeleccionFichaActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 160, 50));
+        pnlToolbar.add(btnSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 160, 70));
 
         lblDado2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblDado2.setForeground(new java.awt.Color(255, 0, 0));
@@ -3340,7 +3331,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnAbrirServerActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnAbrirServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 110, 50));
+        pnlToolbar.add(btnAbrirServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 110, 70));
 
         btnConectarse.setText("Conectarse");
         btnConectarse.addActionListener(new java.awt.event.ActionListener() {
@@ -3348,7 +3339,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnConectarseActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnConectarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 60, 110, 50));
+        pnlToolbar.add(btnConectarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 60, 110, 70));
 
         btnExit.setText("Salir");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -4197,18 +4188,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_btnEndTurnActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            // TODO add your handling code here:
-            this.getRefCliente().getHiloCliente().writer.writeInt(12);
-            this.getRefCliente().getHiloCliente().writer.writeInt(30);
-            this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getFicha().getNombre());
-            this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getFicha().getPosicionActual());
-        } catch (IOException ex) {
-            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnComprarPropActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarPropActualActionPerformed
         if (!this.getRefCliente().getHiloCliente().isVueltaDada()){
@@ -5184,7 +5163,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JComboBox<String> cbConsultarPropiedades;
     private javax.swing.JComboBox<String> cbPropiedades;
     private javax.swing.JComboBox<String> cbSeleccion;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
