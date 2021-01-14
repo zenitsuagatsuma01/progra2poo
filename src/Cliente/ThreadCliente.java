@@ -99,10 +99,13 @@ public class ThreadCliente extends Thread implements Serializable{
     
     public void moverFicha(int casillaDestino) throws IOException{
             // TODO add your handling code here:
-            this.writer.writeInt(12);
-            this.writer.writeInt(casillaDestino);
-            this.writer.writeUTF(this.getFicha().getNombre());
-            this.writer.writeInt(this.getFicha().getPosicionActual());
+            String nombreFicha = this.getFicha().getNombre();
+            int posFicha = this.getFicha().getPosicionActual();
+            
+            this.getWriter().writeInt(11);
+            this.getWriter().writeInt(casillaDestino);
+            this.getWriter().writeUTF(nombreFicha);
+            this.getWriter().writeInt(posFicha);
 
     }
     
@@ -428,7 +431,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         ArrayList<Cartas> cartasFortuna = new ArrayList<Cartas>();
                         
                         ArrayList<Cartas> cartasArcaComunal = new ArrayList<Cartas>();
-                        ArcaComunal arcaComunal1 = new ArcaComunal("Arca comunal 1",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 1",4,200,0,"Carta de arca comunal activada. Efecto: Avance a Go y páguese $200.\n");
+                        ArcaComunal arcaComunal1 = new ArcaComunal("Arca comunal 1",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 1",4,200,5,"Carta de arca comunal activada. Efecto: Avance a Go y páguese $200.\n");
                         ArcaComunal arcaComunal2 = new ArcaComunal("Arca comunal 2",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 2",1,200,0,"Carta de arca comunal activada. Efecto: Error del banco a su favor. Páguese $200.\n");
                         ArcaComunal arcaComunal3 = new ArcaComunal("Arca comunal 3",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 3",2,50,0,"Carta de arca comunal activada. Efecto: Fue a una cita médica y pagó los honorarios médicos. Pague $50.\n");
                         ArcaComunal arcaComunal4 = new ArcaComunal("Arca comunal 4",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 4",1,50,0,"Carta de arca comunal activada. Efecto: Gracias a la venta de sus acciones, páguese $50.\n");
@@ -632,8 +635,9 @@ public class ThreadCliente extends Thread implements Serializable{
                             System.out.println("Casilla actual de ficha es " + casillaFinal);
                         }
                         
-                        if (casillaFinal == 2 || casillaFinal == 3 || casillaFinal == 4 || casillaFinal == 5 || casillaFinal == 6 || casillaFinal == 7 || casillaFinal == 8 || casillaFinal == 9 || casillaFinal == 10){
+                        if (casillaFinal == 8 || casillaFinal == 9 || casillaFinal == 10){
                                 ArcaComunal cartaSacada = (ArcaComunal)this.getTablero().getCartasArcaComunal().get(0);
+                                cartaSacada.setIndiceCasillaDestino(39-casillaFinal);
                                 System.out.println(cartaSacada.getEfecto());
                                 
                                 if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){

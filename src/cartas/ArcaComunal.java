@@ -75,13 +75,14 @@ public class ArcaComunal extends Cartas{
                 jugador.mandarMensaje(efecto);
                 break;
             case 3:
-                jugador.moverFicha(indiceCasillaDestino); // solo moverse
                 jugador.mandarMensaje(efecto);
+                jugador.moverFicha(indiceCasillaDestino); // solo moverse
+                
                 break;
             case 4:
-                jugador.moverFicha(indiceCasillaDestino); // moverse y recibir dinero
-                banco.darDinero(jugador, monto);
                 jugador.mandarMensaje(efecto);
+                jugador.moverFicha(indiceCasillaDestino); // moverse y recibir dinero
+                
                 break;
             case 5:
                 jugador.setGetOutOfJailFree(true); // get out of jail free
