@@ -391,7 +391,11 @@ public class ThreadCliente extends Thread implements Serializable{
                         casillas.add(casilla39);
                         casillas.add(casilla40);
                         
-                        Tablero newTablero = new Tablero(casillas);
+                        ArrayList<Cartas> cartasFortuna = new ArrayList<Cartas>();
+                        
+                        ArrayList<Cartas> cartasArcaComunal = new ArrayList<Cartas>();
+                        
+                        Tablero newTablero = new Tablero(casillas,cartasFortuna,cartasArcaComunal);
                         System.out.println(newTablero);
                         this.setTablero(newTablero);
                         

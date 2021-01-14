@@ -32,7 +32,7 @@ public class ArcaComunal extends Cartas{
                 banco.retirarDinero(jugador, monto);
                 break;
             case 3:
-                // Mover
+                // Mover (ya está hecho)
                 break;
             case 4:
                 // Mover
