@@ -309,6 +309,10 @@ public class Servidor extends Thread implements Serializable{
                             refPantalla.addMessage("-El límite máximo de jugadores para esta partida es " + limiteMax + ". Cantidad actual de jugadores: " + contadorDeConexiones);
                             refPantalla.addMessage("-Cantidad máxima de jugadores alcanzada. No se permitirán más conexiones.");
                             refPantalla.addMessage("-Iniciando partida...");
+                            ArrayList<Integer> numeroJugadores = new ArrayList<Integer>();
+                            numeroJugadores.add(limiteMax);
+                            FileManager.writeObject(numeroJugadores, "src/Partida/numerojugadores.dat");
+                            System.out.println(numeroJugadores.get(0));
                             this.setMaximoAlcanzado(true);
                             srv.close();
                             this.signalIniciarPartida();

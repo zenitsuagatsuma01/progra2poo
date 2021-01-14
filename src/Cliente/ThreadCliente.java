@@ -8,6 +8,7 @@ package Cliente;
 import Partida.FileManager;
 import Servidor.Banco;
 import Servidor.ThreadServidor;
+import cartas.ArcaComunal;
 import cartas.Calles;
 import cartas.Cartas;
 import cartas.Ferrocarriles;
@@ -65,6 +66,7 @@ public class ThreadCliente extends Thread implements Serializable{
     private int contadorRosado = 0;
     private int contadorNaranja = 0;
     private int contadorAmarillo = 0;
+    private boolean getOutOfJailFree = false;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -94,6 +96,35 @@ public class ThreadCliente extends Thread implements Serializable{
         numPropiedades = numPropiedadesCargado;
         quebrado = quebradoCargado;
     }
+    
+    public void moverFicha(int casillaDestino) throws IOException{
+            // TODO add your handling code here:
+            this.writer.writeInt(12);
+            this.writer.writeInt(casillaDestino);
+            this.writer.writeUTF(this.getFicha().getNombre());
+            this.writer.writeInt(this.getFicha().getPosicionActual());
+
+    }
+    
+    public void mandarMensaje(String msg){
+        try {
+            // TODO add your handling code here:
+            this.writer.writeInt(7);
+            this.writer.writeUTF(msg);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public boolean isGetOutOfJailFree() {
+        return getOutOfJailFree;
+    }
+
+    public void setGetOutOfJailFree(boolean getOutOfJailFree) {
+        this.getOutOfJailFree = getOutOfJailFree;
+    }
+    
+    
 
     public int getContadorConsultar() {
         return contadorConsultar;
@@ -391,9 +422,45 @@ public class ThreadCliente extends Thread implements Serializable{
                         casillas.add(casilla39);
                         casillas.add(casilla40);
                         
+                        ArrayList<Integer> numeroJugadoresFile = (ArrayList<Integer>)FileManager.readObject("src/Partida/numerojugadores.dat");
+                        int numeroJugadores = numeroJugadoresFile.get(0);
+                        
                         ArrayList<Cartas> cartasFortuna = new ArrayList<Cartas>();
                         
                         ArrayList<Cartas> cartasArcaComunal = new ArrayList<Cartas>();
+                        ArcaComunal arcaComunal1 = new ArcaComunal("Arca comunal 1",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 1",4,200,0,"Carta de arca comunal activada. Efecto: Avance a Go y páguese $200.\n");
+                        ArcaComunal arcaComunal2 = new ArcaComunal("Arca comunal 2",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 2",1,200,0,"Carta de arca comunal activada. Efecto: Error del banco a su favor. Páguese $200.\n");
+                        ArcaComunal arcaComunal3 = new ArcaComunal("Arca comunal 3",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 3",2,50,0,"Carta de arca comunal activada. Efecto: Fue a una cita médica y pagó los honorarios médicos. Pague $50.\n");
+                        ArcaComunal arcaComunal4 = new ArcaComunal("Arca comunal 4",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 4",1,50,0,"Carta de arca comunal activada. Efecto: Gracias a la venta de sus acciones, páguese $50.\n");
+                        ArcaComunal arcaComunal5 = new ArcaComunal("Arca comunal 5",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 5",5,50,0,"Carta de arca comunal activada. Efecto: Ha conseguido una tarjeta de salir de la cárcel gratis.\n");
+                        ArcaComunal arcaComunal6 = new ArcaComunal("Arca comunal 6",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 6",3,50,10,"Carta de arca comunal activada. Efecto: Vaya directo a la cárcel No se pague nada aunque pase por Go.\n");
+                        ArcaComunal arcaComunal7 = new ArcaComunal("Arca comunal 7",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 7",1,(50*numeroJugadores),10,"Carta de arca comunal activada. Efecto: Páguese 50 dólares de cada jugador\n");
+                        ArcaComunal arcaComunal8 = new ArcaComunal("Arca comunal 8",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 8",1,100,10,"Carta de arca comunal activada. Efecto: Recibió el aguinaldo. Páguese 100 dólares.\n");
+                        ArcaComunal arcaComunal9 = new ArcaComunal("Arca comunal 9",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 9",1,20,10,"Carta de arca comunal activada. Efecto: Devolución de impuestos. Páguese 20 dólares.\n");
+                        ArcaComunal arcaComunal10 = new ArcaComunal("Arca comunal 10",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 10",1,10,10,"Carta de arca comunal activada. Efecto: Es su cumpleanos. Páguese 10 dólares de cada jugador.\n");
+                        ArcaComunal arcaComunal11 = new ArcaComunal("Arca comunal 11",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 11",1,100,10,"Carta de arca comunal activada. Efecto: Devoluciónes de seguro de vida. Páguese 100 dólares.\n");
+                        ArcaComunal arcaComunal12 = new ArcaComunal("Arca comunal 12",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 12",2,50,10,"Carta de arca comunal activada. Efecto: Tuvo que ir al hospital tras un accidente. Pague 50 dólares.\n");
+                        ArcaComunal arcaComunal13 = new ArcaComunal("Arca comunal 13",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 13",2,50,10,"Carta de arca comunal activada. Efecto: Debe pagar el costo del semestre universitario. Pague 50 dólares.\n");
+                        ArcaComunal arcaComunal14 = new ArcaComunal("Arca comunal 14",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 14",1,25,10,"Carta de arca comunal activada. Efecto: Recibió una cuota de consultoría. Páguese 25 dólares.\n");
+                        ArcaComunal arcaComunal15 = new ArcaComunal("Arca comunal 15",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 15",1,10,10,"Carta de arca comunal activada. Efecto: Ha ganado el premio de segundo lugar en un concurso de belleza. Páguese 10 dólares.\n");
+                        ArcaComunal arcaComunal16 = new ArcaComunal("Arca comunal 16",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 16",1,100,10,"Carta de arca comunal activada. Efecto: Ha heredado 100 dólares. Páguese 100 dólares.\n");
+                        
+                        cartasArcaComunal.add(arcaComunal1);
+                        cartasArcaComunal.add(arcaComunal2);
+                        cartasArcaComunal.add(arcaComunal3);
+                        cartasArcaComunal.add(arcaComunal4);
+                        cartasArcaComunal.add(arcaComunal5);
+                        cartasArcaComunal.add(arcaComunal6);
+                        cartasArcaComunal.add(arcaComunal7);
+                        cartasArcaComunal.add(arcaComunal8);
+                        cartasArcaComunal.add(arcaComunal9);
+                        cartasArcaComunal.add(arcaComunal10);
+                        cartasArcaComunal.add(arcaComunal11);
+                        cartasArcaComunal.add(arcaComunal12);
+                        cartasArcaComunal.add(arcaComunal13);
+                        cartasArcaComunal.add(arcaComunal14);
+                        cartasArcaComunal.add(arcaComunal15);
+                        cartasArcaComunal.add(arcaComunal16);
                         
                         Tablero newTablero = new Tablero(casillas,cartasFortuna,cartasArcaComunal);
                         System.out.println(newTablero);
@@ -511,6 +578,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         }
                         
                         int contMovido = 0;
+                        int casillaFinal = posicionActual;
                         for (int i = posicionActual+1; contMovido < numMoverse ; i++){
                             
                             System.out.println("Ficha originalmente estaba en: " + this.getTablero().getCasillas().get(i).getPanel().getComponents());
@@ -527,12 +595,14 @@ public class ThreadCliente extends Thread implements Serializable{
                             
                             if (i + 1 > 39){
                                 i = 0;
+                                casillaFinal = 0;
                             }
                             
                             if (this.getFicha().getNombre().equals(fichaMover.getNombre())){
                                 this.getFicha().setPosicionActual(i);
                             }
                             contMovido = contMovido + 1;
+                            casillaFinal = casillaFinal + 1;
                             TimeUnit.SECONDS.sleep(1);
                             
                             if (i == 0){
@@ -558,6 +628,23 @@ public class ThreadCliente extends Thread implements Serializable{
                                 TimeUnit.SECONDS.sleep(1);
                                 contMovido = contMovido + 1;
                             }
+                            
+                            System.out.println("Casilla actual de ficha es " + casillaFinal);
+                        }
+                        
+                        if (casillaFinal == 2 || casillaFinal == 3 || casillaFinal == 4 || casillaFinal == 5 || casillaFinal == 6 || casillaFinal == 7 || casillaFinal == 8 || casillaFinal == 9 || casillaFinal == 10){
+                                ArcaComunal cartaSacada = (ArcaComunal)this.getTablero().getCartasArcaComunal().get(0);
+                                System.out.println(cartaSacada.getEfecto());
+                                
+                                if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                    System.out.println(fichaMover.getNombreJugador());
+                                    cartaSacada.funcionArca(banco, this);
+                                }
+                                
+                                this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                this.getRefPantalla().getLblNumDinero().revalidate();
+                                this.getRefPantalla().getLblNumDinero().repaint();
+                                
                         }
                         
                         break;

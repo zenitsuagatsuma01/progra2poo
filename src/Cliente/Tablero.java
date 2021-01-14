@@ -25,6 +25,22 @@ public class Tablero {
 
     public Tablero() {
     }
+
+    public ArrayList<Cartas> getCartasFortuna() {
+        return cartasFortuna;
+    }
+
+    public void setCartasFortuna(ArrayList<Cartas> cartasFortuna) {
+        this.cartasFortuna = cartasFortuna;
+    }
+
+    public ArrayList<Cartas> getCartasArcaComunal() {
+        return cartasArcaComunal;
+    }
+
+    public void setCartasArcaComunal(ArrayList<Cartas> cartasArcaComunal) {
+        this.cartasArcaComunal = cartasArcaComunal;
+    }
     
     
 

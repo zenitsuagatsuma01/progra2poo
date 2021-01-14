@@ -4971,6 +4971,24 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         this.lblCon1Casa = lblCon1Casa;
     }
 
+    public JPanel getPnlArcaComunal() {
+        return pnlArcaComunal;
+    }
+
+    public void setPnlArcaComunal(JPanel pnlArcaComunal) {
+        this.pnlArcaComunal = pnlArcaComunal;
+    }
+
+    public JPanel getPnlFortuna() {
+        return pnlFortuna;
+    }
+
+    public void setPnlFortuna(JPanel pnlFortuna) {
+        this.pnlFortuna = pnlFortuna;
+    }
+    
+    
+
     public JLabel getLblCon2Casas() {
         return lblCon2Casas;
     }
