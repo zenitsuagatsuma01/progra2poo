@@ -613,6 +613,18 @@ public class ThreadServidor extends Thread implements Serializable{
                             current.writer.writeUTF(vendedorNombre);
                         }
                         break;
+                    case 16:
+                        String nombreCasaVender = reader.readUTF();
+                        String nombreVendedorCasa = reader.readUTF();
+                        
+                        for (int i = 0; i < server.conexiones.size(); i++){
+                            ThreadServidor current = server.conexiones.get(i);
+                            current.writer.writeInt(17);
+                            current.writer.writeUTF(nombreCasaVender);
+                            current.writer.writeUTF(nombreVendedorCasa);
+                        }
+                        
+                        break;
                         
                 }
             } catch (IOException ex) {

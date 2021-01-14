@@ -821,6 +821,41 @@ public class ThreadCliente extends Thread implements Serializable{
                         
                         
                         break;
+                    case 17:
+                        String nombreCasaVender = reader.readUTF();
+                        String nombreVendedorCasa = reader.readUTF();
+                        
+                        for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                            Propiedades propiedadActual = (Propiedades)this.getTablero().getCasillas().get(i);
+                            
+                            if (propiedadActual.getNombre().equalsIgnoreCase(nombreCasaVender)){
+                                int numCasasVender = propiedadActual.getCantidadCasas();
+                                numCasasVender = numCasasVender - 1;
+                                propiedadActual.setCantidadCasas(numCasasVender);
+                                
+                                int numEdificiosVender = propiedadActual.getCantidadEdificios();
+                                numEdificiosVender = numEdificiosVender - 1;
+                                propiedadActual.setCantidadEdificios(numEdificiosVender);
+                                
+                                propiedadActual.getLblCasas().setText("" + propiedadActual.getCantidadCasas());
+                                propiedadActual.getLblCasas().revalidate();
+                                propiedadActual.getLblCasas().repaint();
+
+                                System.out.println("Ha vendido una casa en " + propiedadActual.getNombre() + " y ahora esta tiene " + propiedadActual.getCantidadCasas());
+                                    
+                                if (this.getNombre().equals(nombreVendedorCasa)){
+                                    Calles calleActual = (Calles)propiedadActual;
+                                    this.getBanco().darDinero( this, (calleActual.getPrecioCasa()/2) );
+                                    this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                    this.getRefPantalla().getLblNumDinero().revalidate();
+                                    this.getRefPantalla().getLblNumDinero().repaint();
+                            
+                                }
+                            }
+                            
+                        }
+                        
+                        break;
                 }
             } catch (IOException ex) {
                 
