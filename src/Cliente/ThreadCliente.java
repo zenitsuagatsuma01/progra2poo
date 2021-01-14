@@ -480,7 +480,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         Fortuna fortuna11 = new Fortuna("Fortuna 11",this.getRefPantalla().getPnlFortuna(),"Fortuna 11",2,15,5,"Carta de fortuna activada. Efecto: Debe pagar impuestos. Pague 15 dólares.");
                         Fortuna fortuna12 = new Fortuna("Fortuna 12",this.getRefPantalla().getPnlFortuna(),"Fortuna 12",4,15,5,"Carta de fortuna activada. Efecto: Viaje hacia el ferrocarril Reading. Si pasa Go páguese 200 dólares.");
                         Fortuna fortuna13 = new Fortuna("Fortuna 13",this.getRefPantalla().getPnlFortuna(),"Fortuna 13",4,15,5,"Carta de fortuna activada. Efecto: Viaje al muelle. Vaya hacia el muelle.");
-                        Fortuna fortuna14 = new Fortuna("Fortuna 14",this.getRefPantalla().getPnlFortuna(),"Fortuna 14",2,15,5,"Carta de fortuna activada. Efecto: Ha sido elegido presidente del Comité. Pague $50 por cada jugador.");
+                        Fortuna fortuna14 = new Fortuna("Fortuna 14",this.getRefPantalla().getPnlFortuna(),"Fortuna 14",2,(50*numeroJugadores),5,"Carta de fortuna activada. Efecto: Ha sido elegido presidente del Comité. Pague $50 por cada jugador.");
                         Fortuna fortuna15 = new Fortuna("Fortuna 15",this.getRefPantalla().getPnlFortuna(),"Fortuna 15",1,150,5,"Carta de fortuna activada. Efecto: Su préstamo ha vencido. Páguese 150 dólares.");
                         Fortuna fortuna16 = new Fortuna("Fortuna 16",this.getRefPantalla().getPnlFortuna(),"Fortuna 16",1,100,5,"Carta de fortuna activada. Efecto: Ha ganado una competencia de crucigramas. Páguese 100 dólares.");
                         
@@ -678,7 +678,8 @@ public class ThreadCliente extends Thread implements Serializable{
                             }
                             contMovido = contMovido + 1;
                             casillaFinal = casillaFinal + 1;
-                            TimeUnit.SECONDS.sleep(1);
+                            if (arcaJail !=2)
+                                TimeUnit.SECONDS.sleep(1);
                             
                             if (i == 0){
                                 System.out.println("Vuelta al tablero");
@@ -754,6 +755,167 @@ public class ThreadCliente extends Thread implements Serializable{
                                 int numArca = this.getContadorArcaComunal();
                                 numArca = numArca + 1;
                                 this.setContadorArcaComunal(numArca);
+                        }
+                        if (casillaFinal == 7 || casillaFinal == 22 || casillaFinal == 36){
+                            if (this.getContadorFortuna() > 15){
+                                    this.setContadorFortuna(0);
+                                }
+                                Fortuna cartaSacada = (Fortuna)this.getTablero().getCartasFortuna().get(this.getContadorFortuna());
+                                
+                                if (this.getContadorFortuna() == 0){
+                                    cartaSacada.setIndiceCasillaDestino(39-casillaFinal);
+                                }
+                                
+                                if (this.getContadorFortuna() == 1){
+                                    
+                                    int cantidadMoverse = 0;
+                                    for (int i = casillaFinal; i != 24; i++){
+                                        
+                                        if (i+1 > 39){
+                                            i = 0;
+                                        }
+                                        
+                                        cantidadMoverse = cantidadMoverse + 1;
+                                        System.out.println(cantidadMoverse);
+                                    }
+                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    System.out.println(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
+                                }
+                                
+                                if (this.getContadorFortuna() == 2){
+                                    
+                                    int cantidadMoverse = 0;
+                                    for (int i = casillaFinal; i != 11; i++){
+                                        
+                                        if (i+1 > 39){
+                                            i = 0;
+                                        }
+                                        
+                                        cantidadMoverse = cantidadMoverse + 1;
+                                        System.out.println(cantidadMoverse);
+                                    }
+                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    System.out.println(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
+                                }
+                                
+                                if (this.getContadorFortuna() == 3){
+                                    
+                                    int cantidadMoverse = 0;
+                                    for (int i = casillaFinal; !this.getTablero().getCasillas().get(i).getNombre().contains("Servicios"); i++){
+                                        
+                                        if (i+1 > 39){
+                                            i = 0;
+                                        }
+                                        
+                                        cantidadMoverse = cantidadMoverse + 1;
+                                        System.out.println(cantidadMoverse);
+                                    }
+                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    System.out.println(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
+                                }
+                                
+                                if (this.getContadorFortuna() == 4){
+                                    
+                                    Ferrocarriles ferrocarrilActual = null;
+                                    int casillaFerrocarril = 0;
+                                    int cantidadMoverse = 0;
+                                    for (int i = casillaFinal; !this.getTablero().getCasillas().get(i).getNombre().contains("Ferrocarril"); i++){
+                                        
+                                        if (i+1 > 39){
+                                            i = 0;
+                                        }
+                                        
+                                        casillaFerrocarril = i;
+                                        cantidadMoverse = cantidadMoverse + 1;
+                                        System.out.println(cantidadMoverse);
+                                    }
+                                    casillaFerrocarril = casillaFerrocarril + 1;
+                                    ferrocarrilActual = (Ferrocarriles)this.getTablero().getCasillas().get(casillaFerrocarril);
+                                    ferrocarrilActual.setDobleAlquiler(true);
+                                    System.out.println(ferrocarrilActual.getNombre());
+                                    System.out.println(ferrocarrilActual.isDobleAlquiler());
+                                    
+                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    System.out.println(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
+                                }
+                                
+                                if (this.getContadorFortuna() == 7){
+                                    cartaSacada.setIndiceCasillaDestino(37);
+                                }
+                                
+                                if (this.getContadorFortuna() == 8){
+                                    int cantidadMoverse = 0;
+                                    for (int i = casillaFinal; i != 10; i++){
+                                        
+                                        if (i+1 > 39){
+                                            i = 0;
+                                        }
+                                        
+                                        cantidadMoverse = cantidadMoverse + 1;
+                                        System.out.println(cantidadMoverse);
+                                    }
+                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    System.out.println(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
+                                }
+                                
+                                if (this.getContadorFortuna() == 9){
+                                    int montoCasas = 25*this.getContadorCasas();
+                                    int montoHoteles = 100*this.getContadorHoteles();
+                                    int montoTotal = montoCasas + montoHoteles;
+                                    cartaSacada.setMonto( montoTotal );
+                                    System.out.println("Casas: " + this.getContadorCasas() + " y hoteles: " + this.getContadorHoteles());
+                                    System.out.println("Pagó " + montoCasas + " por las casas y " + montoHoteles + " por los hoteles. En total pagó " + montoTotal);
+                                }
+                                
+                                if (this.getContadorFortuna() == 11){
+                                    int cantidadMoverse = 0;
+                                    for (int i = casillaFinal; i != 5; i++){
+                                        
+                                        if (i+1 > 39){
+                                            i = 0;
+                                        }
+                                        
+                                        cantidadMoverse = cantidadMoverse + 1;
+                                        System.out.println(cantidadMoverse);
+                                    }
+                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    System.out.println(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
+                                }
+                                
+                                if (this.getContadorFortuna() == 12){
+                                    int cantidadMoverse = 0;
+                                    for (int i = casillaFinal; i != 39; i++){
+                                        
+                                        if (i+1 > 39){
+                                            i = 0;
+                                        }
+                                        
+                                        cantidadMoverse = cantidadMoverse + 1;
+                                        System.out.println(cantidadMoverse);
+                                    }
+                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    System.out.println(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
+                                }
+                                
+                                if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                    System.out.println(fichaMover.getNombreJugador());
+                                    cartaSacada.funcionFortuna(banco, this);
+                                }
+                                
+                                this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                this.getRefPantalla().getLblNumDinero().revalidate();
+                                this.getRefPantalla().getLblNumDinero().repaint();
+                                
+                                int numFortuna = this.getContadorFortuna();
+                                numFortuna = numFortuna + 1;
+                                this.setContadorFortuna(numFortuna);
                         }
                         
                         break;

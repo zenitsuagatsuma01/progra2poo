@@ -14,6 +14,7 @@ import javax.swing.JPanel;
  */
 public class Ferrocarriles extends Propiedades{
     public int cantidadDeFerrocarriles;
+    public boolean dobleAlquiler = false;
 
     public Ferrocarriles(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHotel) {
         super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHotel, "Ferrocarril", 0, 0, 0);
@@ -35,6 +36,16 @@ public class Ferrocarriles extends Propiedades{
                 return 25;
         }
     }
+
+    public boolean isDobleAlquiler() {
+        return dobleAlquiler;
+    }
+
+    public void setDobleAlquiler(boolean dobleAlquiler) {
+        this.dobleAlquiler = dobleAlquiler;
+    }
+    
+    
 
     public int getCantidadDeFerrocarriles() {
         return cantidadDeFerrocarriles;
