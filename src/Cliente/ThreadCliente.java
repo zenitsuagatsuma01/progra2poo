@@ -645,7 +645,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         propiedadComprar.getLblAlquiler().setText("Alquiler: ");
                         if (!propiedadComprar.getNombre().contains("Ferrocarril") && !propiedadComprar.getNombre().contains("Servicios")){
                             Calles propiedadCalle = (Calles)propiedadComprar;
-                            propiedadCalle.getLblAlquiler().setText("Alquiler: " + propiedadCalle.cobrar());
+                            propiedadCalle.getLblAlquiler().setText("Alquiler: " + propiedadCalle.cobrar() + " $");
                             propiedadCalle.getLblCasas().setText(""+propiedadCalle.getCantidadCasas());
                             propiedadCalle.getLblHotel().setText("Hotel: " + propiedadCalle.getCantidadHoteles());
                             
@@ -701,11 +701,11 @@ public class ThreadCliente extends Thread implements Serializable{
                         }
                         else if (propiedadComprar.getNombre().contains("Ferrocarril")){
                             Ferrocarriles propiedadFerrocarril = (Ferrocarriles)propiedadComprar;
-                            propiedadFerrocarril.getLblAlquiler().setText("Alquiler: " + propiedadFerrocarril.cobrar());
+                            propiedadFerrocarril.getLblAlquiler().setText("Alquiler: " + propiedadFerrocarril.cobrar() + " $");
                         }
                         else if (propiedadComprar.getNombre().contains("Servicios")){
                             Servicios propiedadServicios = (Servicios)propiedadComprar;
-                            propiedadServicios.getLblAlquiler().setText("Alquiler: " + propiedadServicios.cobrar(numDadoCobrar));
+                            propiedadServicios.getLblAlquiler().setText("Alquiler: " + propiedadServicios.cobrar(numDadoCobrar) + " $");
                         }
                         
                         break;
@@ -740,6 +740,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     propiedadComprarCasa.getLblCasas().setText("" + propiedadComprarCasa.getCantidadCasas());
                                     propiedadComprarCasa.getLblCasas().revalidate();
                                     propiedadComprarCasa.getLblCasas().repaint();
+                                    propiedadComprarCasa.getLblAlquiler().setText("Alquiler: " + propiedadComprarCasa.cobrar() + " $");
                                     this.getRefPantalla().getLblQuedanCasas().setText("Quedan " + quedanCasas + " casas");
                                     this.getRefPantalla().getLblQuedanCasas().revalidate();
                                     this.getRefPantalla().getLblQuedanCasas().repaint();
@@ -795,24 +796,65 @@ public class ThreadCliente extends Thread implements Serializable{
                                     FileManager.writeObject(propiedadesLeidas, "src/Partida/propiedades" + this.getRefPantalla().getLblNombreJugador().getText() + ".dat");
                                     this.getBanco().darDinero(this, (propiedadVender.getPrecioCompra()/2) );
                                     this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                    
+                                    if (propiedadVender.getColor().equalsIgnoreCase("Rojo")){
+                                        int contadorColor = this.getContadorRojo();
+                                        contadorColor = contadorColor - 1;
+                                        this.setContadorRojo(contadorColor);
+                                    }
+                                    if (propiedadVender.getColor().equalsIgnoreCase("Amarillo")){
+                                        int contadorColor = this.getContadorAmarillo();
+                                        contadorColor = contadorColor - 1;
+                                        this.setContadorAmarillo(contadorColor);
+                                    }
+                                    if (propiedadVender.getColor().equalsIgnoreCase("Celeste")){
+                                        int contadorColor = this.getContadorCeleste();
+                                        contadorColor = contadorColor - 1;
+                                        this.setContadorCeleste(contadorColor);
+                                    }
+                                    if (propiedadVender.getColor().equalsIgnoreCase("Azul")){
+                                        int contadorColor = this.getContadorAzul();
+                                        contadorColor = contadorColor - 1;
+                                        this.setContadorAzul(contadorColor);
+                                    }
+                                    if (propiedadVender.getColor().equalsIgnoreCase("Naranja")){
+                                        int contadorColor = this.getContadorNaranja();
+                                        contadorColor = contadorColor - 1;
+                                        this.setContadorNaranja(contadorColor);
+                                    }
+                                    if (propiedadVender.getColor().equalsIgnoreCase("Rojo oscuro")){
+                                        int contadorColor = this.getContadorRojoOscuro();
+                                        contadorColor = contadorColor - 1;
+                                        this.setContadorRojoOscuro(contadorColor);
+                                    }
+                                    if (propiedadVender.getColor().equalsIgnoreCase("Verde")){
+                                        int contadorColor = this.getContadorVerde();
+                                        contadorColor = contadorColor - 1;
+                                        this.setContadorVerde(contadorColor);
+                                    }
+                                    if (propiedadVender.getColor().equalsIgnoreCase("Rosado")){
+                                        int contadorColor = this.getContadorRosado();
+                                        contadorColor = contadorColor - 1;
+                                        this.setContadorRosado(contadorColor);
+                                    }
                             
                                 }
-                                
                                 propiedadVender.getLblLibre().setText("Dueno: " + propiedadVender.getDueno());
                                 propiedadVender.getLblAlquiler().setText("Alquiler: ");
+                                
                                 if (!propiedadVender.getNombre().contains("Ferrocarril") && !propiedadVender.getNombre().contains("Servicios")){
                                     Calles propiedadCalle = (Calles)propiedadVender;
-                                    propiedadCalle.getLblAlquiler().setText("Alquiler: 0");
+                                    propiedadCalle.getLblAlquiler().setText("Alquiler: 0 $");
                                     propiedadCalle.getLblCasas().setText("0");
                                     propiedadCalle.getLblHotel().setText("Hotel: 0");
                                 }
                                 else if (propiedadVender.getNombre().contains("Ferrocarril")){
                                     Ferrocarriles propiedadFerrocarril = (Ferrocarriles)propiedadVender;
-                                    propiedadFerrocarril.getLblAlquiler().setText("Alquiler: 0");
+                                    propiedadFerrocarril.getLblAlquiler().setText("Alquiler: 0 $");
                                 }
                                 else if (propiedadVender.getNombre().contains("Servicios")){
                                     Servicios propiedadServicios = (Servicios)propiedadVender;
-                                    propiedadServicios.getLblAlquiler().setText("Alquiler: 0");
+                                    propiedadServicios.getLblAlquiler().setText("Alquiler: 0 $");
                                 }
                                 
                             }
@@ -851,6 +893,85 @@ public class ThreadCliente extends Thread implements Serializable{
                                     this.getRefPantalla().getLblNumDinero().repaint();
                             
                                 }
+                            }
+                            
+                        }
+                        
+                        break;
+                    case 18:
+                        String nombreHotelComprar = reader.readUTF();
+                        String nombreCompradorHotel = reader.readUTF();
+                        int hotelesAcabados = reader.readInt();
+                        int numQuedanHoteles = reader.readInt();
+                        
+                        if (hotelesAcabados == 1){
+                            this.getRefPantalla().getTxaHistorial().append("No se pueden comprar más hoteles ya que se acabaron.\n");
+                        }
+                        else if (hotelesAcabados == 0){
+                            
+                            for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                            Propiedades propiedadActual = (Propiedades)this.getTablero().getCasillas().get(i);
+                            
+                            if (propiedadActual.getNombre().equalsIgnoreCase(nombreHotelComprar)){
+                                
+                                propiedadActual.setCantidadHoteles(1);
+                                propiedadActual.setCantidadEdificios(5);
+                                propiedadActual.getLblHotel().setText("Hotel: 1");
+                                propiedadActual.getLblHotel().revalidate();
+                                propiedadActual.getLblHotel().repaint();
+                                propiedadActual.getLblAlquiler().setText("Alquiler: " + propiedadActual.cobrar() + " $");
+                                propiedadActual.getLblAlquiler().revalidate();
+                                propiedadActual.getLblAlquiler().repaint();
+                                this.getRefPantalla().getLblQuedanHoteles().setText("Quedan " + numQuedanHoteles + " hoteles");
+                                this.getRefPantalla().getLblQuedanHoteles().revalidate();
+                                this.getRefPantalla().getLblQuedanHoteles().repaint();
+                                
+                                if (this.getNombre().equalsIgnoreCase(nombreCompradorHotel)){
+                                    
+                                    Calles calleActual = (Calles)propiedadActual;
+                                    this.getBanco().retirarDinero(this, calleActual.getPrecioHotel());
+                                    this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                    this.getRefPantalla().getLblNumDinero().revalidate();
+                                    this.getRefPantalla().getLblNumDinero().repaint();
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                            
+                    }
+                        
+                        break;
+                    case 19:
+                        String nombreHotelVender = reader.readUTF();
+                        String nombreVendedorHotel = reader.readUTF();
+                        
+                        for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                            Propiedades propiedadActual = (Propiedades)this.getTablero().getCasillas().get(i);
+                            
+                            if (propiedadActual.getNombre().equalsIgnoreCase(nombreHotelVender)){
+                                
+                                propiedadActual.setCantidadHoteles(0);
+                                propiedadActual.setCantidadEdificios(4);
+                                propiedadActual.getLblHotel().setText("Hotel: 0");
+                                propiedadActual.getLblHotel().revalidate();
+                                propiedadActual.getLblHotel().repaint();
+                                propiedadActual.getLblAlquiler().setText("Alquiler: " + propiedadActual.cobrar() + " $");
+                                propiedadActual.getLblAlquiler().revalidate();
+                                propiedadActual.getLblAlquiler().repaint();
+                                
+                                System.out.println("El jugador " + nombreVendedorHotel + " vendió un hotel en la propiedad " + propiedadActual + " y ahora no tiene hoteles en esa propiedad.");
+                                
+                                if (this.getNombre().equals(nombreVendedorHotel)){
+                                    Calles calleActual = (Calles)propiedadActual;
+                                    this.getBanco().darDinero( this, (calleActual.getPrecioHotel()/2) );
+                                    this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                    this.getRefPantalla().getLblNumDinero().revalidate();
+                                    this.getRefPantalla().getLblNumDinero().repaint();
+                            
+                                }
+                                
                             }
                             
                         }

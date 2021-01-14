@@ -591,6 +591,10 @@ public class ThreadServidor extends Thread implements Serializable{
                         
                         quedanCasas = quedanCasas - 1;
                         server.setTotalCasas(quedanCasas);
+                        
+                        if (quedanCasas == 0){
+                            server.enviarMensaje("El jugador " + nombrePersona + " ha comprado la última casa.");
+                        }
                             
                         for (int i = 0; i < server.conexiones.size(); i++) {
                            ThreadServidor current = server.conexiones.get(i);
@@ -625,7 +629,45 @@ public class ThreadServidor extends Thread implements Serializable{
                         }
                         
                         break;
+                    case 17:
+                        String nombreCompradorHotel = reader.readUTF();
+                        String nombreHotelComprar = reader.readUTF();
                         
+                        int hotelesAcabados = 0;
+                        int numQuedanHoteles = server.getTotalHoteles();
+                        
+                        if (numQuedanHoteles == 0)
+                            hotelesAcabados = 1;
+                        
+                        numQuedanHoteles = numQuedanHoteles - 1;
+                        server.setTotalHoteles(numQuedanHoteles);
+                        
+                        if (numQuedanHoteles == 0){
+                            server.enviarMensaje("El jugador " + nombreCompradorHotel + "ha comprado el último hotel.");
+                        }
+                        
+                        for (int i = 0; i < server.conexiones.size(); i++){
+                            ThreadServidor current = server.conexiones.get(i);
+                            current.writer.writeInt(18);
+                            current.writer.writeUTF(nombreHotelComprar);
+                            current.writer.writeUTF(nombreCompradorHotel);
+                            current.writer.writeInt(hotelesAcabados);
+                            current.writer.writeInt(numQuedanHoteles);
+                        }
+                        
+                        break;
+                    case 18:
+                        String nombreHotelVender = reader.readUTF();
+                        String nombreVendedorHotel = reader.readUTF();
+                        
+                        for (int i = 0; i < server.conexiones.size(); i++){
+                            ThreadServidor current = server.conexiones.get(i);
+                            current.writer.writeInt(19);
+                            current.writer.writeUTF(nombreHotelVender);
+                            current.writer.writeUTF(nombreVendedorHotel);
+                        }
+                        
+                        break;
                 }
             } catch (IOException ex) {
                 

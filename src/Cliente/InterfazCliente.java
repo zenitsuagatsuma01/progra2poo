@@ -2994,11 +2994,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         jLabel12.setText("Casas:");
         pnlTablero.add(jLabel12);
-        jLabel12.setBounds(900, 560, 39, 16);
+        jLabel12.setBounds(900, 560, 50, 16);
 
         jLabel13.setText("Casas:");
         pnlTablero.add(jLabel13);
-        jLabel13.setBounds(1060, 560, 39, 16);
+        jLabel13.setBounds(1060, 560, 50, 16);
 
         jLabel15.setText("Casas:");
         pnlTablero.add(jLabel15);
@@ -3066,7 +3066,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         jLabel30.setText("Casas:");
         pnlTablero.add(jLabel30);
-        jLabel30.setBounds(1150, 90, 39, 16);
+        jLabel30.setBounds(1150, 90, 50, 16);
 
         jLabel31.setText("Casas:");
         pnlTablero.add(jLabel31);
@@ -3177,7 +3177,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnVenderCasaActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnVenderCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 240, 110, 60));
+        pnlToolbar.add(btnVenderCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, 110, 60));
 
         btnCompraHotel.setText("Comprar hotel");
         btnCompraHotel.addActionListener(new java.awt.event.ActionListener() {
@@ -3185,7 +3185,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnCompraHotelActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, 120, 60));
+        pnlToolbar.add(btnCompraHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 240, 120, 60));
 
         pnlTituloPropiedad.setBackground(new java.awt.Color(255, 255, 255));
         pnlTituloPropiedad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -3384,6 +3384,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlToolbar.add(lblNumDado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 20, 100, 100));
 
         btnVenderHotel.setText("Vender hotel");
+        btnVenderHotel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVenderHotelActionPerformed(evt);
+            }
+        });
         pnlToolbar.add(btnVenderHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, -1, 60));
 
         jLabel34.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -4360,6 +4365,37 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnCompraHotelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraHotelActionPerformed
         // TODO add your handling code here:
+        if (this.getCbPropiedades().getItemCount() == 0){
+            this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.\n");
+            return;
+        }
+        
+        String nombrePropiedad = this.getCbPropiedades().getSelectedItem().toString();
+        Propiedades propiedadComprarHotel;
+        
+        for (int i = 0; i < this.getRefCliente().getHiloCliente().getTablero().getCasillas().size(); i++){
+            Propiedades propiedadActual = (Propiedades)this.getRefCliente().getHiloCliente().getTablero().getCasillas().get(i);
+            
+            if (propiedadActual.getNombre().equalsIgnoreCase(nombrePropiedad)){
+                
+                if (propiedadActual.getCantidadCasas() != 4){
+                    this.getTxaHistorial().append("No puede comprar un hotel en esta propiedad ya que esta no tiene 4 casas todavía.\n");
+                    return;
+                }
+                propiedadComprarHotel = propiedadActual;
+                
+            }
+            
+        }
+        
+        try {
+            // TODO add your handling code here:
+            refCliente.hiloCliente.writer.writeInt(17);      // Se envia al servidor la accion de enviar un mensaje por chat y se envia el mensaje
+            refCliente.hiloCliente.writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+            refCliente.hiloCliente.writer.writeUTF(nombrePropiedad);
+        } catch (IOException ex) {
+
+        }
     }//GEN-LAST:event_btnCompraHotelActionPerformed
 
     private void btnVenderPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderPropActionPerformed
@@ -4624,7 +4660,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             if (propiedadActual.getNombre().equalsIgnoreCase(nombrePropiedad)){
                 
                 if (propiedadActual.getCantidadCasas() == 0){
-                    this.getTxaHistorial().append("No puede vender una casa en esta propiedad porque no tiene casas.\n");
+                    this.getTxaHistorial().append("No puede vender una casa en esta propiedad porque esta no tiene casas.\n");
                     return;
                 }
                 propiedadVenderCasa = propiedadActual;
@@ -4642,6 +4678,45 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         }
         
     }//GEN-LAST:event_btnVenderCasaActionPerformed
+
+    private void btnVenderHotelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderHotelActionPerformed
+        // TODO add your handling code here:
+        if (this.getCbPropiedades().getItemCount() == 0){
+            this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.\n");
+            return;
+        }
+        
+        String nombrePropiedad = this.getCbPropiedades().getSelectedItem().toString();
+        Propiedades propiedadVenderHotel;
+        
+        if (nombrePropiedad.contains("Ferrocarril") || nombrePropiedad.contains("Servicios")){
+            this.getTxaHistorial().append("Error: Los ferrocarriles y los servicios no pueden tener hoteles.\n");
+            return;
+        }
+        
+        for (int i = 0; i < this.getRefCliente().getHiloCliente().getTablero().getCasillas().size(); i++){
+            Propiedades propiedadActual = (Propiedades)this.getRefCliente().getHiloCliente().getTablero().getCasillas().get(i);
+            if (propiedadActual.getNombre().equalsIgnoreCase(nombrePropiedad)){
+                
+                if (propiedadActual.getCantidadHoteles() == 0){
+                    this.getTxaHistorial().append("No puede vender un hotel en esta propiedad porque esta no tiene hoteles.\n");
+                    return;
+                }
+                propiedadVenderHotel = propiedadActual;
+                
+            }
+            
+        }
+        
+        try {
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(18);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombrePropiedad);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnVenderHotelActionPerformed
 
     public JButton getBtnAbrirServer() {
         return btnAbrirServer;
