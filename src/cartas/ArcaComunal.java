@@ -76,12 +76,12 @@ public class ArcaComunal extends Cartas{
                 break;
             case 3:
                 jugador.mandarMensaje(efecto);
-                jugador.moverFicha(indiceCasillaDestino); // solo moverse
+                jugador.moverFicha(indiceCasillaDestino,1); // solo moverse
                 
                 break;
             case 4:
                 jugador.mandarMensaje(efecto);
-                jugador.moverFicha(indiceCasillaDestino); // moverse y recibir dinero
+                jugador.moverFicha(indiceCasillaDestino,0); // moverse y recibir dinero
                 
                 break;
             case 5:

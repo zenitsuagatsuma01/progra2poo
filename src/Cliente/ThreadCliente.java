@@ -67,6 +67,10 @@ public class ThreadCliente extends Thread implements Serializable{
     private int contadorNaranja = 0;
     private int contadorAmarillo = 0;
     private boolean getOutOfJailFree = false;
+    private int contadorCasas = 0;
+    private int contadorHoteles = 0;
+    private int contadorArcaComunal = 0;
+    private int contadorFortuna = 0;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -97,7 +101,7 @@ public class ThreadCliente extends Thread implements Serializable{
         quebrado = quebradoCargado;
     }
     
-    public void moverFicha(int casillaDestino) throws IOException{
+    public void moverFicha(int casillaDestino, int arcaJail) throws IOException{
             // TODO add your handling code here:
             String nombreFicha = this.getFicha().getNombre();
             int posFicha = this.getFicha().getPosicionActual();
@@ -106,6 +110,7 @@ public class ThreadCliente extends Thread implements Serializable{
             this.getWriter().writeInt(casillaDestino);
             this.getWriter().writeUTF(nombreFicha);
             this.getWriter().writeInt(posFicha);
+            this.getWriter().writeInt(arcaJail);
 
     }
     
@@ -255,6 +260,38 @@ public class ThreadCliente extends Thread implements Serializable{
 
     public void setTurnoConseguido(boolean turnoConseguido) {
         this.turnoConseguido = turnoConseguido;
+    }
+
+    public int getContadorCasas() {
+        return contadorCasas;
+    }
+
+    public void setContadorCasas(int contadorCasas) {
+        this.contadorCasas = contadorCasas;
+    }
+
+    public int getContadorHoteles() {
+        return contadorHoteles;
+    }
+
+    public void setContadorHoteles(int contadorHoteles) {
+        this.contadorHoteles = contadorHoteles;
+    }
+
+    public int getContadorArcaComunal() {
+        return contadorArcaComunal;
+    }
+
+    public void setContadorArcaComunal(int contadorArcaComunal) {
+        this.contadorArcaComunal = contadorArcaComunal;
+    }
+
+    public int getContadorFortuna() {
+        return contadorFortuna;
+    }
+
+    public void setContadorFortuna(int contadorFortuna) {
+        this.contadorFortuna = contadorFortuna;
     }
     
     
@@ -445,7 +482,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         ArcaComunal arcaComunal12 = new ArcaComunal("Arca comunal 12",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 12",2,50,10,"Carta de arca comunal activada. Efecto: Tuvo que ir al hospital tras un accidente. Pague 50 dólares.\n");
                         ArcaComunal arcaComunal13 = new ArcaComunal("Arca comunal 13",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 13",2,50,10,"Carta de arca comunal activada. Efecto: Debe pagar el costo del semestre universitario. Pague 50 dólares.\n");
                         ArcaComunal arcaComunal14 = new ArcaComunal("Arca comunal 14",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 14",1,25,10,"Carta de arca comunal activada. Efecto: Recibió una cuota de consultoría. Páguese 25 dólares.\n");
-                        ArcaComunal arcaComunal15 = new ArcaComunal("Arca comunal 15",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 15",1,10,10,"Carta de arca comunal activada. Efecto: Ha ganado el premio de segundo lugar en un concurso de belleza. Páguese 10 dólares.\n");
+                        ArcaComunal arcaComunal15 = new ArcaComunal("Arca comunal 15",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 15",2,10,10,"Carta de arca comunal activada. Efecto: Decidió hacer reparaciones de sus propiedades. Pague $45 por cada casa y $115 por cada hotel que tenga.\n");
                         ArcaComunal arcaComunal16 = new ArcaComunal("Arca comunal 16",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 16",1,100,10,"Carta de arca comunal activada. Efecto: Ha heredado 100 dólares. Páguese 100 dólares.\n");
                         
                         cartasArcaComunal.add(arcaComunal1);
@@ -535,6 +572,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         int numMoverse = reader.readInt();
                         String nombreFicha = reader.readUTF();
                         int posFicha = reader.readInt();
+                        int arcaJail = reader.readInt();
                         
                         listaFichas = (ArrayList<Ficha>)FileManager.readObject("src/Partida/listafichas.dat");
                         Ficha fichaMover = null;
@@ -616,7 +654,8 @@ public class ThreadCliente extends Thread implements Serializable{
                                 
                                 if (this.getFicha().getNombre().equals(nombreFicha)){
                                     
-                                    this.getBanco().darDinero(this, 200);
+                                    if (arcaJail != 1)
+                                        this.getBanco().darDinero(this, 200);
                                     this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                     
                                     this.setVueltaDada(true);
@@ -635,10 +674,23 @@ public class ThreadCliente extends Thread implements Serializable{
                             System.out.println("Casilla actual de ficha es " + casillaFinal);
                         }
                         
-                        if (casillaFinal == 8 || casillaFinal == 9 || casillaFinal == 10){
-                                ArcaComunal cartaSacada = (ArcaComunal)this.getTablero().getCartasArcaComunal().get(0);
-                                cartaSacada.setIndiceCasillaDestino(39-casillaFinal);
-                                System.out.println(cartaSacada.getEfecto());
+                        if (casillaFinal == 2 || casillaFinal == 17 || casillaFinal == 33){ // si cae en una casilla de arca comunal saca la carta necesaria
+                                if (this.getContadorArcaComunal() > 15){
+                                    this.setContadorArcaComunal(0);
+                                }
+                                ArcaComunal cartaSacada = (ArcaComunal)this.getTablero().getCartasArcaComunal().get(this.getContadorArcaComunal());
+                                
+                                if (this.getContadorArcaComunal() == 0){
+                                    cartaSacada.setIndiceCasillaDestino(39-casillaFinal);
+                                }
+                                if (this.getContadorArcaComunal() == 5){
+                                    cartaSacada.setIndiceCasillaDestino(10-casillaFinal);
+                                }
+                                if (this.getContadorArcaComunal() == 14){
+                                    cartaSacada.setMonto( (45*this.getContadorCasas()) + (115*this.getContadorHoteles()) );
+                                    System.out.println("Casas: " + this.getContadorCasas() + " y hoteles: " + this.getContadorHoteles());
+                                    System.out.println("Pagó " + (45*this.getContadorCasas()) + " por las casas y " + (115*this.getContadorHoteles()) + " por los hoteles. En total pagó " + (45*this.getContadorCasas()) + (115*this.getContadorHoteles()));
+                                }
                                 
                                 if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                     System.out.println(fichaMover.getNombreJugador());
@@ -649,6 +701,9 @@ public class ThreadCliente extends Thread implements Serializable{
                                 this.getRefPantalla().getLblNumDinero().revalidate();
                                 this.getRefPantalla().getLblNumDinero().repaint();
                                 
+                                int numArca = this.getContadorArcaComunal();
+                                numArca = numArca + 1;
+                                this.setContadorArcaComunal(contadorArcaComunal);
                         }
                         
                         break;
@@ -847,6 +902,9 @@ public class ThreadCliente extends Thread implements Serializable{
                                         this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                         this.getRefPantalla().getLblNumDinero().revalidate();
                                         this.getRefPantalla().getLblNumDinero().repaint();
+                                        int numCasasJugador = this.getContadorCasas();
+                                        numCasasJugador = numCasasJugador + 1;
+                                        this.setContadorCasas(numCasasJugador);
                             
                                     }
                                 }
@@ -1028,6 +1086,9 @@ public class ThreadCliente extends Thread implements Serializable{
                                     this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                     this.getRefPantalla().getLblNumDinero().revalidate();
                                     this.getRefPantalla().getLblNumDinero().repaint();
+                                    int numHotelesJugador = this.getContadorHoteles();
+                                    numHotelesJugador = numHotelesJugador + 1;
+                                    this.setContadorHoteles(numHotelesJugador);
                                     
                                 }
                                 

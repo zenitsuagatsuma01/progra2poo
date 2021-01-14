@@ -3809,11 +3809,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             String nombreFicha = this.getRefCliente().getHiloCliente().getFicha().getNombre();
             int posFicha = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual();
             
+            int arcaJail = 0;
+            
             try {
                 this.getRefCliente().getHiloCliente().getWriter().writeInt(11);
                 this.getRefCliente().getHiloCliente().getWriter().writeInt(dadoTotal);
                 this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombreFicha);
                 this.getRefCliente().getHiloCliente().getWriter().writeInt(posFicha);
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(arcaJail);
                 
             } catch (IOException ex) {
                 Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
