@@ -12,6 +12,7 @@ import cartas.ArcaComunal;
 import cartas.Calles;
 import cartas.Cartas;
 import cartas.Ferrocarriles;
+import cartas.Fortuna;
 import cartas.Propiedades;
 import cartas.Servicios;
 import java.awt.Color;
@@ -466,6 +467,39 @@ public class ThreadCliente extends Thread implements Serializable{
                         int numeroJugadores = numeroJugadoresFile.get(0);
                         
                         ArrayList<Cartas> cartasFortuna = new ArrayList<Cartas>();
+                        Fortuna fortuna1 = new Fortuna("Fortuna 1",this.getRefPantalla().getPnlFortuna(),"Fortuna 1",4,200,5,"Carta de fortuna activada. Efecto: Avance a Go y páguese $200.");
+                        Fortuna fortuna2 = new Fortuna("Fortuna 2",this.getRefPantalla().getPnlFortuna(),"Fortuna 2",4,200,5,"Carta de fortuna activada. Efecto: Avance a Avenida Illinois y si pasa por Go páguese 200.");
+                        Fortuna fortuna3 = new Fortuna("Fortuna 3",this.getRefPantalla().getPnlFortuna(),"Fortuna 3",4,200,5,"Carta de fortuna activada. Efecto: Avance a Plaza San Carlos y si pasa por Go páguese 200.");
+                        Fortuna fortuna4 = new Fortuna("Fortuna 4",this.getRefPantalla().getPnlFortuna(),"Fortuna 4",4,200,5,"Carta de fortuna activada. Efecto: Avance al servicio más cercano. Si no tiene dueno puede comprarlo.");
+                        Fortuna fortuna5 = new Fortuna("Fortuna 5",this.getRefPantalla().getPnlFortuna(),"Fortuna 5",7,200,5,"Carta de fortuna activada. Efecto: Avance al servicio más cercano. Si no tiene dueno puede comprarlo.");
+                        Fortuna fortuna6 = new Fortuna("Fortuna 6",this.getRefPantalla().getPnlFortuna(),"Fortuna 6",1,50,5,"Carta de fortuna activada. Efecto: El banco le pagó 50 dólares en dividendos bancarios. Páguese 50 dólares.");
+                        Fortuna fortuna7 = new Fortuna("Fortuna 7",this.getRefPantalla().getPnlFortuna(),"Fortuna 7",5,50,5,"Carta de fortuna activada. Efecto: Ha sacado una carta de salir de la cárcel gratis.");
+                        Fortuna fortuna8 = new Fortuna("Fortuna 8",this.getRefPantalla().getPnlFortuna(),"Fortuna 8",6,50,5,"Carta de fortuna activada. Efecto: Devuélvase tres espacios.");
+                        Fortuna fortuna9 = new Fortuna("Fortuna 9",this.getRefPantalla().getPnlFortuna(),"Fortuna 9",3,50,5,"Carta de fortuna activada. Efecto: Vaya directo a la cárcel. Si pasa por Go, no se pague los 200 dólares.");
+                        Fortuna fortuna10 = new Fortuna("Fortuna 10",this.getRefPantalla().getPnlFortuna(),"Fortuna 10",2,50,5,"Carta de fortuna activada. Efecto: Hizo reparaciones en todas sus propiedades. Pague $25 por cada casa y $100 por cada hotel.");
+                        Fortuna fortuna11 = new Fortuna("Fortuna 11",this.getRefPantalla().getPnlFortuna(),"Fortuna 11",2,15,5,"Carta de fortuna activada. Efecto: Debe pagar impuestos. Pague 15 dólares.");
+                        Fortuna fortuna12 = new Fortuna("Fortuna 12",this.getRefPantalla().getPnlFortuna(),"Fortuna 12",4,15,5,"Carta de fortuna activada. Efecto: Viaje hacia el ferrocarril Reading. Si pasa Go páguese 200 dólares.");
+                        Fortuna fortuna13 = new Fortuna("Fortuna 13",this.getRefPantalla().getPnlFortuna(),"Fortuna 13",4,15,5,"Carta de fortuna activada. Efecto: Viaje al muelle. Vaya hacia el muelle.");
+                        Fortuna fortuna14 = new Fortuna("Fortuna 14",this.getRefPantalla().getPnlFortuna(),"Fortuna 14",2,15,5,"Carta de fortuna activada. Efecto: Ha sido elegido presidente del Comité. Pague $50 por cada jugador.");
+                        Fortuna fortuna15 = new Fortuna("Fortuna 15",this.getRefPantalla().getPnlFortuna(),"Fortuna 15",1,150,5,"Carta de fortuna activada. Efecto: Su préstamo ha vencido. Páguese 150 dólares.");
+                        Fortuna fortuna16 = new Fortuna("Fortuna 16",this.getRefPantalla().getPnlFortuna(),"Fortuna 16",1,100,5,"Carta de fortuna activada. Efecto: Ha ganado una competencia de crucigramas. Páguese 100 dólares.");
+                        
+                        cartasFortuna.add(fortuna1);
+                        cartasFortuna.add(fortuna2);
+                        cartasFortuna.add(fortuna3);
+                        cartasFortuna.add(fortuna4);
+                        cartasFortuna.add(fortuna5);
+                        cartasFortuna.add(fortuna6);
+                        cartasFortuna.add(fortuna7);
+                        cartasFortuna.add(fortuna8);
+                        cartasFortuna.add(fortuna9);
+                        cartasFortuna.add(fortuna10);
+                        cartasFortuna.add(fortuna11);
+                        cartasFortuna.add(fortuna12);
+                        cartasFortuna.add(fortuna13);
+                        cartasFortuna.add(fortuna14);
+                        cartasFortuna.add(fortuna15);
+                        cartasFortuna.add(fortuna16);
                         
                         ArrayList<Cartas> cartasArcaComunal = new ArrayList<Cartas>();
                         ArcaComunal arcaComunal1 = new ArcaComunal("Arca comunal 1",this.getRefPantalla().getPnlArcaComunal(),"Arca comunal 1",4,200,5,"Carta de arca comunal activada. Efecto: Avance a Go y páguese $200.");

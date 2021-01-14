@@ -41,8 +41,6 @@ public class Tablero {
     public void setCartasArcaComunal(ArrayList<Cartas> cartasArcaComunal) {
         this.cartasArcaComunal = cartasArcaComunal;
     }
-    
-    
 
     public ArrayList<Cartas> getCasillas() {
         return casillas;
