@@ -3115,6 +3115,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 120, 50));
 
         btnHipotecar.setText("Hipotecar/deshipotecar");
+        btnHipotecar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHipotecarActionPerformed(evt);
+            }
+        });
         pnlToolbar.add(btnHipotecar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 170, 60));
 
         btnEndTurn.setText("Terminar turno");
@@ -4717,6 +4722,46 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         }
         
     }//GEN-LAST:event_btnVenderHotelActionPerformed
+
+    private void btnHipotecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHipotecarActionPerformed
+        // TODO add your handling code here:
+        if (this.getCbPropiedades().getItemCount() == 0){
+            this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.\n");
+            return;
+        }
+        
+        String nombrePropiedad = this.getCbPropiedades().getSelectedItem().toString();
+        System.out.println("Prueba 1");
+        
+        for (int i = 0; i < this.getRefCliente().getHiloCliente().getTablero().getCasillas().size(); i++){
+            Propiedades propiedadActual = (Propiedades)this.getRefCliente().getHiloCliente().getTablero().getCasillas().get(i);
+            
+            if (propiedadActual.getNombre().contains(nombrePropiedad)){
+                System.out.println("Prueba 2");
+                if (propiedadActual.isHipotecada()){
+                    System.out.println("Holaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                    double valorDeshipotecar = propiedadActual.getValorHipoteca() + (double)(propiedadActual.getValorHipoteca()/10);
+                    System.out.println("El valor total para deshipotecar la propiedad es: " + valorDeshipotecar);
+                    if (this.getRefCliente().getHiloCliente().getDinero() <= valorDeshipotecar){
+                        this.getTxaHistorial().append("No puede deshipotecar esta propiedad ya que no tiene suficiente dinero para hacerlo.\n");
+                        return;
+                    }
+                }
+                
+            }
+            
+        }
+        
+        try {
+            System.out.println("Again xd");
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(19);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombrePropiedad);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnHipotecarActionPerformed
 
     public JButton getBtnAbrirServer() {
         return btnAbrirServer;

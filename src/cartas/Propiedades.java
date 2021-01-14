@@ -43,7 +43,7 @@ public abstract class Propiedades extends Cartas implements Serializable{
         this.cantidadHoteles = cantidadHoteles;
         this.cantidadEdificios = cantidadEdificios;
     }
-
+    
     public String getColor() {
         return color;
     }

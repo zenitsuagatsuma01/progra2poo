@@ -977,6 +977,74 @@ public class ThreadCliente extends Thread implements Serializable{
                         }
                         
                         break;
+                    case 20:
+                        String nombrePropiedadHipotecada = reader.readUTF();
+                        String nombreHipotecador = reader.readUTF();
+                        
+                        for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                            Propiedades propiedadActual = (Propiedades)this.getTablero().getCasillas().get(i);
+                            
+                            if (propiedadActual.getNombre().contains(nombrePropiedadHipotecada)){
+                                
+                                if (propiedadActual.isHipotecada()){
+                                    System.out.println("Alo???");
+                                    propiedadActual.setHipotecada(false);
+                                    propiedadActual.getLblAlquiler().setText("Alquiler: " + propiedadActual.cobrar());
+                                    propiedadActual.getLblAlquiler().revalidate();
+                                    propiedadActual.getLblAlquiler().repaint();
+                                    
+                                    if (this.getNombre().equalsIgnoreCase(nombreHipotecador)){
+                                        double valorDeshipotecar = propiedadActual.getValorHipoteca() + (double)(propiedadActual.getValorHipoteca()/10);
+                                        System.out.println("El valor total para deshipotecar la propiedad es: " + valorDeshipotecar);
+                                        this.getBanco().retirarDinero(this, (int)valorDeshipotecar);
+                                        this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                        this.getRefPantalla().getLblNumDinero().revalidate();
+                                        this.getRefPantalla().getLblNumDinero().repaint();
+                                    }
+                                }
+                                else if (!propiedadActual.isHipotecada()){
+                                    
+                                    for (int z = 0; z < this.getTablero().getCasillas().size(); z++){
+                                        Propiedades currentProperty = (Propiedades)this.getTablero().getCasillas().get(z);
+                                        
+                                        if (currentProperty.getColor().equalsIgnoreCase(propiedadActual.getColor()) && currentProperty.getDueno().equalsIgnoreCase(propiedadActual.getDueno())){
+                                            
+                                            currentProperty.setCantidadCasas(0);
+                                            currentProperty.setCantidadEdificios(0);
+                                            currentProperty.setCantidadHoteles(0);
+                                            
+                                            currentProperty.getLblAlquiler().setText("Alquiler: " + currentProperty.cobrar() + " $");
+                                            currentProperty.getLblAlquiler().revalidate();
+                                            currentProperty.getLblAlquiler().repaint();
+                                            
+                                            currentProperty.getLblCasas().setText(""+currentProperty.getCantidadCasas());
+                                            currentProperty.getLblHotel().setText(""+currentProperty.getCantidadHoteles());
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                    propiedadActual.setHipotecada(true);
+                                    
+                                    propiedadActual.getLblAlquiler().setText("Hipotecada");
+                                    propiedadActual.getLblAlquiler().revalidate();
+                                    propiedadActual.getLblAlquiler().repaint();
+                                    
+                                    if (this.getNombre().equalsIgnoreCase(nombreHipotecador)){
+                                        System.out.println("El valor total que se le pagó por hipotecar es: " + propiedadActual.getValorHipoteca());
+                                        this.getBanco().darDinero(this, propiedadActual.getValorHipoteca());
+                                        this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                        this.getRefPantalla().getLblNumDinero().revalidate();
+                                        this.getRefPantalla().getLblNumDinero().repaint();
+                                    }
+                                    
+                                    System.out.println(propiedadActual.isHipotecada());
+                                }
+                            }
+                            
+                        }
+                        
+                        break;
                 }
             } catch (IOException ex) {
                 
