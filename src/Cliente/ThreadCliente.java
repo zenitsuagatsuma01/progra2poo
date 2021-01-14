@@ -703,7 +703,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                 
                                 int numArca = this.getContadorArcaComunal();
                                 numArca = numArca + 1;
-                                this.setContadorArcaComunal(contadorArcaComunal);
+                                this.setContadorArcaComunal(numArca);
                         }
                         
                         break;
