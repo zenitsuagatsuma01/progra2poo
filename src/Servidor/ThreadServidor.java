@@ -702,11 +702,7 @@ public class ThreadServidor extends Thread implements Serializable{
                         this.server.setContadorPerdedor(contPerdedor);
                         this.server.enviarMensaje(mensaje);
                             
-                        for (int i = 0; i < this.server.getNombreOrder().size(); i++){
-                            if (this.server.getNombreOrder().contains(perdedor)){
-                                this.server.getNombreOrder().remove(this.server.getNombreOrder().get(i));
-                            }
-                        }
+                        
                             
                         if (contPerdedor >= this.server.getLimiteMax()-1){
                             this.server.enviarMensaje("Partida terminada.");

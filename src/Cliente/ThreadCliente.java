@@ -821,7 +821,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                         System.out.println(cantidadMoverse);
                                     }
                                     cantidadMoverse = cantidadMoverse + 0; // falta 1 para llegar a la carcel
-                                    System.out.println(cantidadMoverse);
+                                    System.out.println("Cantidad para moverse a la carcel es " + cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
                                 if (this.getContadorArcaComunal() == 14){
@@ -1067,7 +1067,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             }
                         }
                         
-                        
+                        this.revisarPerder(this.getPerdioPor());
                         
                         break;
                     case 13:
@@ -1106,8 +1106,8 @@ public class ThreadCliente extends Thread implements Serializable{
                         if (fichaQuitar == 5)
                             indicePnl = 7;
                         
-                        System.out.println("indicePnl es :" + indicePnl);
-                        System.out.println("ComponentCount es: " + this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount());
+                        if (posicionActual > 40)
+                            
                         if (this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount()-1 < indicePnl)
                             indicePnl = indicePnl - 1;
 
@@ -1532,7 +1532,6 @@ public class ThreadCliente extends Thread implements Serializable{
                             if (propiedadActual.getNombre().contains(nombrePropiedadHipotecada)){
                                 
                                 if (propiedadActual.isHipotecada()){
-                                    System.out.println("Alo???");
                                     propiedadActual.setHipotecada(false);
                                     propiedadActual.getLblAlquiler().setText("Alquiler: " + propiedadActual.cobrar());
                                     propiedadActual.getLblAlquiler().revalidate();
@@ -1594,10 +1593,6 @@ public class ThreadCliente extends Thread implements Serializable{
                         if (this.perdido == true && this.yaPerdio == false){
                             this.setYaPerdio(true);
                             System.out.println(this.isYaPerdio());
-                            this.writer.writeInt(21);
-                            this.writer.writeUTF(nombre);
-                            this.writer.writeUTF(this.perdioPor);
-                            this.writer.writeUTF("El jugador " + nombre + " ha perdido. Fue aniquilado por el jugador " + this.perdioPor + ".");
                             //ArrayList<String> logLeida = (ArrayList<String>)FileManager.readObject("src/Archivos/log.dat");
                             //logLeida.add("El jugador " + nombre + " ha perdido. Fue aniquilado por el jugador " + this.perdioPor + ".\n");
                             //FileManager.writeObject(logLeida, "src/Archivos/log.dat");
@@ -1623,6 +1618,10 @@ public class ThreadCliente extends Thread implements Serializable{
                         }
                         ArrayList<Propiedades> propiedadesConsultadas = (ArrayList<Propiedades>)FileManager.readObject("src/Partida/propiedades" + perdedor + ".dat");
                         propiedadesConsultadas.clear();
+                        
+                        break;
+                    case 23:
+                        refPantalla.setFinalPartida();
                         
                         break;
                 }

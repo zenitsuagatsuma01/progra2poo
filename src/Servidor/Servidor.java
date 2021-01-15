@@ -174,7 +174,7 @@ public class Servidor extends Thread implements Serializable{
     public void signalTerminarPartida() throws IOException{
         for (int i = 0; i < conexiones.size(); i++) {
             ThreadServidor current = conexiones.get(i);
-            current.writer.writeInt(13);
+            current.writer.writeInt(23);
         }
     }
     
@@ -192,14 +192,9 @@ public class Servidor extends Thread implements Serializable{
     public void proximoTurno(String turnoActual) throws IOException{
         String nombreTurno = "";
         System.out.println("El turnoActual de proximoTurno al comienzo es " + turnoActual);
-        if (this.nombreOrder.size() == 1){
-            //ArrayList<String> logLeida = (ArrayList<String>)FileManager.readObject("src/Archivos/log.dat");
-            this.enviarMensaje("El jugador " + nombreOrder.get(0) + " ha ganado la partida!");
-            //logLeida.add("El jugador " + nombreOrder.get(0) + " ha ganado la partida!\n");
-            //FileManager.writeObject(logLeida, "src/Archivos/log.dat");
-            this.signalTerminarPartida();
-            return;
-        }
+        
+        System.out.println("NombreOrder es " + this.getNombreOrder());
+        System.out.println("TurnoActual es " + turnoActual);
         
         for (int i = 0; i < nombreOrder.size(); i++) {
             if (turnoActual.contains(nombreOrder.get(i))){
@@ -210,6 +205,25 @@ public class Servidor extends Thread implements Serializable{
                 else
                     nombreTurno = nombreOrder.get(i+1);
             }
+            if (this.getListaPerdedores().contains(turnoActual)){
+                
+                for (int x = 0; x < this.getNombreOrder().size(); x++){
+                    if (this.getNombreOrder().get(x).equalsIgnoreCase(turnoActual)){
+                        this.getNombreOrder().remove(this.getNombreOrder().get(x));
+                        nombreTurno = this.getNombreOrder().get(x);
+                    }
+                }
+                
+            }
+        }
+        
+        if (this.nombreOrder.size() == 1){
+            //ArrayList<String> logLeida = (ArrayList<String>)FileManager.readObject("src/Archivos/log.dat");
+            this.enviarMensaje("El jugador " + nombreOrder.get(0) + " ha ganado la partida!");
+            //logLeida.add("El jugador " + nombreOrder.get(0) + " ha ganado la partida!\n");
+            //FileManager.writeObject(logLeida, "src/Archivos/log.dat");
+            this.signalTerminarPartida();
+            return;
         }
         
         System.out.println("El nuevo turno de proximoTurno es " + nombreTurno);

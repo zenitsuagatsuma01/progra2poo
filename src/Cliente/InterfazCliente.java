@@ -3849,6 +3849,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                         Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     
+                    try {
+                    // TODO add your handling code here:
+                        this.getRefCliente().getHiloCliente().revisarPerder(this.getRefCliente().getHiloCliente().getPerdioPor());
+                        this.getRefCliente().getHiloCliente().writer.writeInt(20);
+                    } catch (IOException ex) {
+                        Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
                     this.getRefCliente().getHiloCliente().setDadosTirados(true);
                     return;
                 }
@@ -3877,6 +3885,31 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 
             } catch (IOException ex) {
                 Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            try {
+                    // TODO add your handling code here:
+                this.getRefCliente().getHiloCliente().revisarPerder(this.getRefCliente().getHiloCliente().getPerdioPor());
+                this.getRefCliente().getHiloCliente().writer.writeInt(20);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            if (this.getRefCliente().getHiloCliente().isPerdido()){
+                if (this.getRefCliente().getHiloCliente().getDinero() <= 0)
+                    this.getRefCliente().getHiloCliente().setDinero(0);
+                this.getLblNumDinero().setText(this.getRefCliente().getHiloCliente().getDinero() + " $");
+                this.getLblNumDinero().revalidate();
+                this.getLblNumDinero().repaint();
+                try {
+                    this.getRefCliente().getHiloCliente().writer.writeInt(21);
+                    this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+                    this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getPerdioPor());
+                    this.getRefCliente().getHiloCliente().writer.writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " ha perdido. Fue aniquilado por " + this.getRefCliente().getHiloCliente().getPerdioPor() + ".");
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
             }
             
             if (dado1 != dado2){
@@ -4340,14 +4373,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             
             this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getDinero());
             this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getFicha().getPosicionActual());
-        } catch (IOException ex) {
-            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            // TODO add your handling code here:
-            this.getRefCliente().getHiloCliente().revisarPerder(this.getRefCliente().getHiloCliente().getPerdioPor());
-            this.getRefCliente().getHiloCliente().writer.writeInt(20);
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -5253,6 +5278,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     
     public void setFinalPartida(){
         this.lblStatusPartida.setText("Partida terminada");
+        this.lblTurno.setText("Terminado");
     }
 
     

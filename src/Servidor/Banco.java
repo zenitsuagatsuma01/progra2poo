@@ -17,6 +17,12 @@ public class Banco implements Serializable{
     
     private ArrayList<ThreadCliente> enQuiebra;
     // El banco tiene dinero ilimitado
+
+    public Banco() {
+        this.enQuiebra = new ArrayList<ThreadCliente>();
+    }
+    
+    
     
     public void darDinero(ThreadCliente jugador, int dineroDado){           // Se agrega la cantidad pedida al dinero del jugador solicitado
         
