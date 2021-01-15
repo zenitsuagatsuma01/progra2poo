@@ -3103,7 +3103,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnLanzarDadosActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 120, 80));
+        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 120, 90));
 
         btnHipotecar.setText("Hipotecar/deshipotecar");
         btnHipotecar.addActionListener(new java.awt.event.ActionListener() {
@@ -3779,7 +3779,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnLanzarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanzarDadosActionPerformed
 
-        if (this.getRefCliente().getHiloCliente().isTurnoConseguido()){
+        if (this.getRefCliente().getHiloCliente().isTurnoConseguido() && !this.getRefCliente().getHiloCliente().isDadosTirados()){
             if (!this.getLblNombreJugador().getText().equals(this.getLblTurno().getText())){
                 
                 this.getTxaHistorial().append("Error: No puede lanzar los dados porque no es su turno.\n");
@@ -3813,6 +3813,55 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
             
+            if (dado1 != dado2){
+                this.getRefCliente().getHiloCliente().setDadosTirados(true);
+            }
+            
+            else if (dado1 == dado2){
+                int vecesDobles = this.getRefCliente().getHiloCliente().getVecesDobles();
+                vecesDobles = vecesDobles + 1;
+                this.getRefCliente().getHiloCliente().setVecesDobles(vecesDobles);
+                
+                if (vecesDobles == 3){
+                    this.getRefCliente().getHiloCliente().setDadosTirados(true);
+                    try {
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                        this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " sacó triples y fue a la cárcel.");
+                        
+                        int cantidadMoverse = 0;
+                        for (int i = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual(); i != 10; i++){
+                                        
+                            if (i+1 > 39){
+                                i = 0;
+                            }
+                                        
+                            cantidadMoverse = cantidadMoverse + 1;
+                            System.out.println(cantidadMoverse);
+                        }
+                        cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                        System.out.println(cantidadMoverse);
+                        
+                        this.getRefCliente().getHiloCliente().moverFicha(cantidadMoverse, 1);
+                    } catch (IOException ex) {
+                        Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else{
+                    try {
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                        this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " sacó dobles y tirará otra vez.");
+                    } catch (IOException ex) {
+                    Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
+            }
+            
+            
+        }
+        else if (this.getRefCliente().getHiloCliente().isTurnoConseguido() && this.getRefCliente().getHiloCliente().isDadosTirados()){
+            this.getTxaHistorial().append("Ya no puede volver a tirar los dados por este turno.\n");
+            return;
         }
         
         else if (!this.getRefCliente().getHiloCliente().isTurnoConseguido()){
@@ -4181,6 +4230,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             return;
         }
         
+        this.getRefCliente().getHiloCliente().setDadosTirados(false);        
         try {
                 this.getRefCliente().getHiloCliente().writer.writeInt(9);
                 this.getRefCliente().getHiloCliente().writer.writeUTF(this.getLblNombreJugador().getText());

@@ -72,6 +72,9 @@ public class ThreadCliente extends Thread implements Serializable{
     private int contadorHoteles = 0;
     private int contadorArcaComunal = 0;
     private int contadorFortuna = 0;
+    private boolean dadosTirados = false;
+    private int vecesDobles = 0;
+    private boolean enLaCarcel = false;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -125,12 +128,40 @@ public class ThreadCliente extends Thread implements Serializable{
         }
     }
 
+    public boolean isEnLaCarcel() {
+        return enLaCarcel;
+    }
+
+    public void setEnLaCarcel(boolean enLaCarcel) {
+        this.enLaCarcel = enLaCarcel;
+    }
+    
+    
+
+    public int getVecesDobles() {
+        return vecesDobles;
+    }
+
+    public void setVecesDobles(int vecesDobles) {
+        this.vecesDobles = vecesDobles;
+    }
+    
+    
+
     public boolean isGetOutOfJailFree() {
         return getOutOfJailFree;
     }
 
     public void setGetOutOfJailFree(boolean getOutOfJailFree) {
         this.getOutOfJailFree = getOutOfJailFree;
+    }
+
+    public boolean isDadosTirados() {
+        return dadosTirados;
+    }
+
+    public void setDadosTirados(boolean dadosTirados) {
+        this.dadosTirados = dadosTirados;
     }
     
     
@@ -379,7 +410,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         
                         Calles casilla1 = new Calles("Go", this.getRefPantalla().getLblCasilla1() ,"Go",0,0,"Ninguno",0,0,0,0,0,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla40 = new Calles("El Muelle", this.getRefPantalla().getLblCasilla2(), "El Muelle", 400, 200, "Azul", 200, 200, 50, 200, 600 ,1400,1700,2000, this.getRefPantalla().getLblLibreCasilla39(), this.getRefPantalla().getLblAlquilerCasilla39(), this.getRefPantalla().getLblCasasCasilla39(), this.getRefPantalla().getLblHotelCasillas39());
-                        Calles casilla39 = new Calles("Impuestos 1", this.getRefPantalla().getLblCasilla3(), "Impuestos 1", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
+                        Calles casilla39 = new Calles("Impuestos 1", this.getRefPantalla().getLblCasilla3(), "Impuestos 1", 200, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla38 = new Calles("Plaza Park", this.getRefPantalla().getLblCasilla4(), "Plaza Park", 350, 175, "Azul", 200, 200, 35, 175, 500 ,1100,1300,1500, this.getRefPantalla().getLblLibreCasilla37(), this.getRefPantalla().getLblAlquilerCasilla37(), this.getRefPantalla().getLblCasasCasilla37(), this.getRefPantalla().getLblHotelCasillas37());
                         Calles casilla37 = new Calles("Fortuna 1", this.getRefPantalla().getLblCasilla5(), "Fortuna 1", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Ferrocarriles casilla36 = new Ferrocarriles("Ferrocarril Vía Rápida", this.getRefPantalla().getLblCasilla6(), "Ferrocarril Vía Rápida", 200, 100, this.getRefPantalla().getLblLibreCasilla35(), this.getRefPantalla().getLblAlquilerCasilla35(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
@@ -416,7 +447,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         Calles casilla8 = new Calles("Fortuna 3", this.getRefPantalla().getLblCasilla34(), "Fortuna 3", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla7 = new Calles("Avenida Oriental", this.getRefPantalla().getLblCasilla35(), "Avenida Oriental", 100, 50, "Celeste", 50, 50, 6, 30, 90 ,270,400,550, this.getRefPantalla().getLblLibreCasilla6(), this.getRefPantalla().getLblAlquilerCasilla6(), this.getRefPantalla().getLblCasasCasilla6(), this.getRefPantalla().getLblHotelCasillas6());
                         Ferrocarriles casilla6 = new Ferrocarriles("Ferrocarril Reading", this.getRefPantalla().getLblCasilla36(), "Ferrocarril Reading", 200, 100, this.getRefPantalla().getLblLibreCasilla5(), this.getRefPantalla().getLblAlquilerCasilla5(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
-                        Calles casilla5 = new Calles("Impuestos 2", this.getRefPantalla().getLblCasilla37(), "Impuestos 2", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
+                        Calles casilla5 = new Calles("Impuestos 2", this.getRefPantalla().getLblCasilla37(), "Impuestos 2", 100, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla4 = new Calles("Avenida Báltica", this.getRefPantalla().getLblCasilla38(), "Avenida Báltica", 60, 30, "Rojo oscuro", 50, 50, 4, 20, 60 ,180,320,450, this.getRefPantalla().getLblLibreCasilla3(), this.getRefPantalla().getLblAlquilerCasilla3(), this.getRefPantalla().getLblCasasCasilla3(), this.getRefPantalla().getLblHotelCasillas3());
                         Calles casilla3 = new Calles("Arca Comunal 3", this.getRefPantalla().getLblCasilla39(), "Arca Comunal 3", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla2 = new Calles("Avenida Mediterránea", this.getRefPantalla().getLblCasilla40(), "Avenida Mediterránea", 60, 30, "Rojo oscuro", 50, 50, 2, 10, 30 ,90,160,250, this.getRefPantalla().getLblLibreCasilla1(), this.getRefPantalla().getLblAlquilerCasilla1(), this.getRefPantalla().getLblCasasCasilla1(), this.getRefPantalla().getLblHotelCasillas1());
@@ -693,7 +724,8 @@ public class ThreadCliente extends Thread implements Serializable{
                                         this.getBanco().darDinero(this, 200);
                                     this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                     
-                                    this.setVueltaDada(true);
+                                    if (arcaJail != 1)
+                                        this.setVueltaDada(true);
                                     System.out.println("vueltaDada del jugador es: " + this.isVueltaDada());
                                     System.out.println("Mi nombre es: " + this.getNombre());
                                 }
@@ -757,7 +789,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                 numArca = numArca + 1;
                                 this.setContadorArcaComunal(numArca);
                         }
-                        if (casillaFinal > 0){ // casillas de fortuna
+                        else if (casillaFinal == 7 || casillaFinal == 22 || casillaFinal == 36){ // casillas de fortuna
                             if (this.getContadorFortuna() > 15){
                                     this.setContadorFortuna(0);
                                 }
@@ -911,6 +943,33 @@ public class ThreadCliente extends Thread implements Serializable{
                                 int numFortuna = this.getContadorFortuna();
                                 numFortuna = numFortuna + 1;
                                 this.setContadorFortuna(numFortuna);
+                        }
+                        
+                        
+                        else if (casillaFinal == 4 || casillaFinal == 38){
+                            Calles casillaImpuestos = (Calles)this.getTablero().getCasillas().get(casillaFinal);
+                            if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                    System.out.println(fichaMover.getNombreJugador());
+                                    this.getBanco().retirarDinero(this, casillaImpuestos.getPrecioCompra());
+                            }
+                            
+                            this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                            this.getRefPantalla().getLblNumDinero().revalidate();
+                            this.getRefPantalla().getLblNumDinero().repaint();
+                            
+                        }
+                        
+                        else{
+                            Propiedades casillaPropiedad = (Propiedades)this.getTablero().getCasillas().get(casillaFinal);
+                            if (casillaPropiedad.isComprada()){
+                                if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                    System.out.println(fichaMover.getNombreJugador());
+                                    this.getBanco().retirarDinero(this, casillaPropiedad.cobrar());
+                                }
+                                this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                this.getRefPantalla().getLblNumDinero().revalidate();
+                                this.getRefPantalla().getLblNumDinero().repaint();
+                            }
                         }
                         
                         break;
