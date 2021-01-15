@@ -14,11 +14,12 @@ import javax.swing.JPanel;
  */
 public class Servicios extends Propiedades{
     public int cantidadDeServicios;
+    public int dados;
 
     public Servicios(String imagen, JPanel panel, String nombre, int precioCompra, int valorHipoteca, JLabel lblLibre, JLabel lblAlquiler, JLabel lblCasas, JLabel lblHoteles) {
         super(imagen, panel, nombre, precioCompra, valorHipoteca, lblLibre, lblAlquiler, lblCasas, lblHoteles, "Servicios", 0,0 ,0);
         this.cantidadDeServicios = 0;
-
+        this.dados = 0;
     }
     
     public int cobrar(int dados){
@@ -33,8 +34,23 @@ public class Servicios extends Propiedades{
 
     @Override
     public int cobrar() {
-        return 0;
+        if(cantidadDeServicios == 1){
+            return dados * 4;
+        }
+        else{
+            return dados * 10;
+        }
      }
+
+    public int getDados() {
+        return dados;
+    }
+
+    public void setDados(int dados) {
+        this.dados = dados;
+    }
+    
+    
 
     public int getCantidadDeServicios() {
         return cantidadDeServicios;

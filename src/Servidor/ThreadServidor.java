@@ -717,6 +717,18 @@ public class ThreadServidor extends Thread implements Serializable{
                         }
                         
                         break;
+                    case 22:
+                        String consultarJugador = reader.readUTF();
+                        String nombreConsultador = reader.readUTF();
+                        
+                        for (int i = 0; i < server.conexiones.size(); i++) {
+                                ThreadServidor current = server.conexiones.get(i);
+                                current.writer.writeInt(24);
+                                current.writer.writeUTF(consultarJugador);
+                                current.writer.writeUTF(nombreConsultador);
+                        }
+                        
+                        break;
                 }
             } catch (IOException ex) {
                 

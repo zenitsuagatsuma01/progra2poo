@@ -4564,7 +4564,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private void btnConsultarDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarDerechaActionPerformed
         // TODO add your handling code here:
         String consultarJugador = this.getCbConsultarPropiedades().getSelectedItem().toString();
-        this.getRefCliente().getHiloCliente().setNombreConsultar(consultarJugador);
         
         ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
         
@@ -4634,68 +4633,20 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private void btnConsultarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarPropiedadActionPerformed
         // TODO add your handling code here:
         String consultarJugador = this.getCbConsultarPropiedades().getSelectedItem().toString();
-        this.getRefCliente().getHiloCliente().setNombreConsultar(consultarJugador);
+        String nombreConsultador = this.getRefCliente().getHiloCliente().getNombre();
         
-        ArrayList<Propiedades> propiedadesConsultadas = (ArrayList<Propiedades>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
-        
-        if (propiedadesConsultadas.size() == 0){
-            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.\n");
-            return;
+        try {
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(22);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(consultarJugador);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombreConsultador);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        Runnable actualizarGUI = new Runnable(){
-            @Override
-            public void run() {
-                // Codigo para actualizar la GUI
-                try{
-                    if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Azul"))
-            getPnlColorTituloPropiedad().setBackground(Color.blue);
-        if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Verde"))
-            getPnlColorTituloPropiedad().setBackground(Color.green);
-        if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Amarillo"))
-            getPnlColorTituloPropiedad().setBackground(Color.yellow);
-        if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Rojo"))
-            getPnlColorTituloPropiedad().setBackground(Color.red);
-        if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Naranja"))
-            getPnlColorTituloPropiedad().setBackground(Color.orange);
-        if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Rosado"))
-            getPnlColorTituloPropiedad().setBackground(Color.pink);
-        if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Celeste"))
-            getPnlColorTituloPropiedad().setBackground(Color.cyan);
-        if(propiedadesConsultadas.get(0).getColor().equalsIgnoreCase("Rojo oscuro"))
-            getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
-        
-        getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(0).getNombre());
-        getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(0).cobrar());
-        if (!propiedadesConsultadas.get(0).getNombre().contains("Ferrocarril") || propiedadesConsultadas.get(0).getNombre().contains("Servicios")){
-            Calles callesProp = (Calles)propiedadesConsultadas.get(0);
-            getLblCon1Casa().setText("Con 1 casa: " + callesProp.getPrecio1());
-            getLblCon2Casas().setText("Con 2 casas: " + callesProp.getPrecio2());
-            getLblCon3Casas().setText("Con 3 casas: " + callesProp.getPrecio3());
-            getLblCon4Casas().setText("Con 4 casas: " + callesProp.getPrecio4());
-            getLblConHotel().setText("Con hotel: " + callesProp.getPrecio5());
-            getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + callesProp.getPrecioCasa());
-            getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + callesProp.getPrecioHotel());
-        }
-        getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(0).getValorHipoteca());
-        
-                }
-                catch(Exception e){
-                    e.printStackTrace();
-                }
-            }
-            
-        };
-        // Llamar el invokeLater 
-        SwingUtilities.invokeLater(actualizarGUI);
-        // Fin
-        
     }//GEN-LAST:event_btnConsultarPropiedadActionPerformed
 
     private void btnConsultarIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarIzquierdaActionPerformed
         // TODO add your handling code here:
         String consultarJugador = this.getCbConsultarPropiedades().getSelectedItem().toString();
-        this.getRefCliente().getHiloCliente().setNombreConsultar(consultarJugador);
         
         ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
         

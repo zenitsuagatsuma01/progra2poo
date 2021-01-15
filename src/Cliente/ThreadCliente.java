@@ -55,7 +55,6 @@ public class ThreadCliente extends Thread implements Serializable{
     private boolean turnoConseguido = false;
     private Tablero tablero;
     private boolean vueltaDada = false;
-    private String nombreConsultar;
     private int contadorConsultar = 0;
     private int cantidadFerrocarriles = 0;
     private int cantidadServicios = 0;
@@ -92,7 +91,6 @@ public class ThreadCliente extends Thread implements Serializable{
         banco = new Banco();
         tablero = new Tablero();
         propiedades = new ArrayList<Propiedades>();
-        nombreConsultar = "";
     }
     
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla, String nombreCargado, int dineroCargado, int numCasasCargado, int numHotelesCargado, int numPropiedadesCargado, boolean quebradoCargado) throws IOException {
@@ -305,16 +303,6 @@ public class ThreadCliente extends Thread implements Serializable{
     public void setTotalRoll(int totalRoll) {
         this.totalRoll = totalRoll;
     }
-
-    public String getNombreConsultar() {
-        return nombreConsultar;
-    }
-
-    public void setNombreConsultar(String nombreConsultar) {
-        this.nombreConsultar = nombreConsultar;
-    }
-    
-    
 
     public int getNumOrden() {
         return numOrden;
@@ -803,26 +791,45 @@ public class ThreadCliente extends Thread implements Serializable{
                                 if (this.getContadorArcaComunal() == 0){
                                     cartaSacada.setIndiceCasillaDestino(39-casillaFinal);
                                 }
-                                if (this.getContadorArcaComunal() == 5){
+                                if (this.getContadorArcaComunal() == 5 && casillaFinal == 2){
                                     if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                         System.out.println(fichaMover.getNombreJugador());
                                         this.setEnLaCarcel(true);
                                         System.out.println(this.isEnLaCarcel());
                                     }
                                     
-                                    int cantidadMoverse = 0;
-                                    for (int i = casillaFinal; i != 10; i++){
-                                        
-                                        if (i+1 > 39){
-                                            i = 0;
-                                        }
-                                        
-                                        cantidadMoverse = cantidadMoverse + 1;
-                                        System.out.println(cantidadMoverse);
+                                    System.out.println("Cantidad para moverse a la carcel es " + 8);
+                                    cartaSacada.setIndiceCasillaDestino(8);
+                                }
+                                if (this.getContadorArcaComunal() == 5 && casillaFinal == 2){
+                                    if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                        System.out.println(fichaMover.getNombreJugador());
+                                        this.setEnLaCarcel(true);
+                                        System.out.println(this.isEnLaCarcel());
                                     }
-                                    cantidadMoverse = cantidadMoverse + 0; // falta 1 para llegar a la carcel
-                                    System.out.println("Cantidad para moverse a la carcel es " + cantidadMoverse);
-                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
+                                    
+                                    System.out.println("Cantidad para moverse a la carcel es " + 8);
+                                    cartaSacada.setIndiceCasillaDestino(8);
+                                }
+                                if (this.getContadorArcaComunal() == 5 && casillaFinal == 17){
+                                    if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                        System.out.println(fichaMover.getNombreJugador());
+                                        this.setEnLaCarcel(true);
+                                        System.out.println(this.isEnLaCarcel());
+                                    }
+                                    
+                                    System.out.println("Cantidad para moverse a la carcel es " + 33);
+                                    cartaSacada.setIndiceCasillaDestino(33);
+                                }
+                                if (this.getContadorArcaComunal() == 5 && casillaFinal == 33){
+                                    if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                        System.out.println(fichaMover.getNombreJugador());
+                                        this.setEnLaCarcel(true);
+                                        System.out.println(this.isEnLaCarcel());
+                                    }
+                                    
+                                    System.out.println("Cantidad para moverse a la carcel es " + 17);
+                                    cartaSacada.setIndiceCasillaDestino(17);
                                 }
                                 if (this.getContadorArcaComunal() == 14){
                                     int montoCasas = 45*this.getContadorCasas();
@@ -936,26 +943,29 @@ public class ThreadCliente extends Thread implements Serializable{
                                     cartaSacada.setIndiceCasillaDestino(36);
                                 }
                                 
-                                if (this.getContadorFortuna() == 8){
+                                if (this.getContadorFortuna() == 8 && casillaFinal == 7){
                                     if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                         System.out.println(fichaMover.getNombreJugador());
                                         this.setEnLaCarcel(true);
                                         System.out.println(this.isEnLaCarcel());
                                     }
-                                    
-                                    int cantidadMoverse = 0;
-                                    for (int i = casillaFinal; i != 10; i++){
-                                        
-                                        if (i+1 > 39){
-                                            i = 0;
-                                        }
-                                        
-                                        cantidadMoverse = cantidadMoverse + 1;
-                                        System.out.println(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(3);
+                                }
+                                if (this.getContadorFortuna() == 8 && casillaFinal == 22){
+                                    if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                        System.out.println(fichaMover.getNombreJugador());
+                                        this.setEnLaCarcel(true);
+                                        System.out.println(this.isEnLaCarcel());
                                     }
-                                    cantidadMoverse = cantidadMoverse + 0;
-                                    System.out.println(cantidadMoverse);
-                                    cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
+                                    cartaSacada.setIndiceCasillaDestino(28);
+                                }
+                                if (this.getContadorFortuna() == 8 && casillaFinal == 36){
+                                    if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                        System.out.println(fichaMover.getNombreJugador());
+                                        this.setEnLaCarcel(true);
+                                        System.out.println(this.isEnLaCarcel());
+                                    }
+                                    cartaSacada.setIndiceCasillaDestino(14);
                                 }
                                 
                                 if (this.getContadorFortuna() == 9){
@@ -1033,19 +1043,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     System.out.println(fichaMover.getNombreJugador());
                                     this.setEnLaCarcel(true);
                             }
-                            int cantidadMoverse = 0;
-                            for (int i = casillaFinal; i != 10; i++){
-                                        
-                                if (i+1 > 39){
-                                    i = 0;
-                                }
-                                        
-                                cantidadMoverse = cantidadMoverse + 1;
-                                System.out.println(cantidadMoverse);
-                            }
-                            cantidadMoverse = cantidadMoverse + 0;
-                            System.out.println(cantidadMoverse);
-                            this.moverFicha(casillaFinal, 1);
+                            this.moverFicha(20, 1);
                         }
                         
                         else{
@@ -1053,6 +1051,13 @@ public class ThreadCliente extends Thread implements Serializable{
                             if (casillaPropiedad.isComprada()){
                                 if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                     System.out.println(fichaMover.getNombreJugador());
+                                    
+                                    if (casillaPropiedad.getNombre().contains("Servicios")){
+                                        Servicios servicioCasilla = (Servicios)casillaPropiedad;
+                                        servicioCasilla.setDados(numMoverse);
+                                        System.out.println("Cobro de alquiler sería " + servicioCasilla.cobrar());
+                                    }
+                                    
                                     this.getBanco().retirarDinero(this, casillaPropiedad.cobrar());
                                     this.setPerdioPor(casillaPropiedad.getDueno());
                                     System.out.println("Perdería por: " + casillaPropiedad.getDueno());
@@ -1616,12 +1621,90 @@ public class ThreadCliente extends Thread implements Serializable{
                             }
                             
                         }
-                        ArrayList<Propiedades> propiedadesConsultadas = (ArrayList<Propiedades>)FileManager.readObject("src/Partida/propiedades" + perdedor + ".dat");
-                        propiedadesConsultadas.clear();
+                        //ArrayList<Propiedades> propiedadesConsultadas = (ArrayList<Propiedades>)FileManager.readObject("src/Partida/propiedades" + perdedor + ".dat");
+                        //propiedadesConsultadas.clear();
                         
                         break;
                     case 23:
                         refPantalla.setFinalPartida();
+                        
+                        break;
+                    case 24:
+                        String consultarJugador = reader.readUTF();
+                        String nombreConsultador = reader.readUTF();
+                        
+                        if (this.getNombre().equalsIgnoreCase(nombreConsultador)){
+                            
+                            ArrayList<Propiedades> propsConsultadas = new ArrayList<Propiedades>();
+                            int numPropsConsultadas = 0;
+                            for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                                Propiedades propActual = (Propiedades)this.getTablero().getCasillas().get(i);
+                                if (propActual.getDueno().equalsIgnoreCase(consultarJugador)){
+                                    numPropsConsultadas = numPropsConsultadas;
+                                    propsConsultadas.add(propActual);
+                                    
+                                }
+                                
+                            }
+                            this.setContadorConsultar(numPropsConsultadas);
+                            
+                            if(propsConsultadas.get(0).getColor().equalsIgnoreCase("Azul"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.blue);
+                            if(propsConsultadas.get(0).getColor().equalsIgnoreCase("Verde"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.green);
+                            if(propsConsultadas.get(0).getColor().equalsIgnoreCase("Amarillo"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.yellow);
+                            if(propsConsultadas.get(0).getColor().equalsIgnoreCase("Rojo"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red);
+                            if(propsConsultadas.get(0).getColor().equalsIgnoreCase("Naranja"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.orange);
+                            if(propsConsultadas.get(0).getColor().equalsIgnoreCase("Rosado"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.pink);
+                            if(propsConsultadas.get(0).getColor().equalsIgnoreCase("Celeste"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.cyan);
+                            if(propsConsultadas.get(0).getColor().equalsIgnoreCase("Rojo oscuro"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
+                            
+                            this.getRefPantalla().getPnlColorTituloPropiedad().revalidate();
+                            this.getRefPantalla().getPnlColorTituloPropiedad().repaint();
+                            
+                            this.getRefPantalla().getLblNombreTituloPropiedad().setText("Nombre: " + propsConsultadas.get(0).getNombre());
+                            this.getRefPantalla().getLblNombreTituloPropiedad().revalidate();
+                            this.getRefPantalla().getLblNombreTituloPropiedad().repaint();
+                            this.getRefPantalla().getLblAlquileresTitulo().setText("Alquileres: " + propsConsultadas.get(0).cobrar());
+                            this.getRefPantalla().getLblAlquileresTitulo().revalidate();
+                            this.getRefPantalla().getLblAlquileresTitulo().repaint();
+                            
+                            if (!propsConsultadas.get(0).getNombre().contains("Ferrocarril") || !propsConsultadas.get(0).getNombre().contains("Servicios")){
+                                Calles callesProp = (Calles)propsConsultadas.get(0);
+                                this.getRefPantalla().getLblCon1Casa().setText("Con 1 casa: " + callesProp.getPrecio1());
+                                this.getRefPantalla().getLblCon1Casa().revalidate();
+                                this.getRefPantalla().getLblCon1Casa().repaint();
+                                this.getRefPantalla().getLblCon2Casas().setText("Con 2 casas: " + callesProp.getPrecio2());
+                                this.getRefPantalla().getLblCon2Casas().revalidate();
+                                this.getRefPantalla().getLblCon2Casas().repaint();
+                                this.getRefPantalla().getLblCon3Casas().setText("Con 3 casas: " + callesProp.getPrecio3());
+                                this.getRefPantalla().getLblCon3Casas().revalidate();
+                                this.getRefPantalla().getLblCon3Casas().repaint();
+                                this.getRefPantalla().getLblCon4Casas().setText("Con 4 casas: " + callesProp.getPrecio4());
+                                this.getRefPantalla().getLblCon4Casas().revalidate();
+                                this.getRefPantalla().getLblCon4Casas().repaint();
+                                this.getRefPantalla().getLblConHotel().setText("Con hotel: " + callesProp.getPrecio5());
+                                this.getRefPantalla().getLblConHotel().revalidate();
+                                this.getRefPantalla().getLblConHotel().repaint();
+                                this.getRefPantalla().getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + callesProp.getPrecioCasa());
+                                this.getRefPantalla().getLblCadaCasaCuesta().revalidate();
+                                this.getRefPantalla().getLblCadaCasaCuesta().repaint();
+                                this.getRefPantalla().getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + callesProp.getPrecioHotel());
+                                this.getRefPantalla().getLblCadaHotelCuesta().revalidate();
+                                this.getRefPantalla().getLblCadaHotelCuesta().repaint();
+                            }
+                            
+                            this.getRefPantalla().getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propsConsultadas.get(0).getValorHipoteca());
+                            this.getRefPantalla().getLblHipotecaTitulo().revalidate();
+                            this.getRefPantalla().getLblHipotecaTitulo().repaint();
+                            
+                        }
                         
                         break;
                 }
