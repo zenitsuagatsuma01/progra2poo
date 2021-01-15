@@ -1363,6 +1363,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblNumDado1 = new javax.swing.JLabel();
         lblCarcel = new javax.swing.JLabel();
         btnLiberadoCarcel = new javax.swing.JButton();
+        getOutOfJailFree = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -3415,7 +3416,15 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnLiberadoCarcelActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnLiberadoCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 150, 50));
+        pnlToolbar.add(btnLiberadoCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 140, 50));
+
+        getOutOfJailFree.setText("Get out of jail free");
+        getOutOfJailFree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                getOutOfJailFreeActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(getOutOfJailFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(797, 110, 130, 50));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
@@ -3864,18 +3873,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 try {
                     this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
                     this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " no sacó doble cinco y perdió su turno.");
-                    this.getRefCliente().getHiloCliente().setDadosTirados(false);
+                    this.getRefCliente().getHiloCliente().setDadosTirados(true);
                     return;
                 } catch (IOException ex) {
                     Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
-                try {
-                    this.getRefCliente().getHiloCliente().writer.writeInt(9);
-                    this.getRefCliente().getHiloCliente().writer.writeUTF(this.getLblNombreJugador().getText());
-                } catch (IOException ex) {
-                    Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
-                }
+
             }
             
             try {
@@ -3907,7 +3910,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                     this.getRefCliente().getHiloCliente().writer.writeInt(21);
                     this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
                     this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getPerdioPor());
-                    this.getRefCliente().getHiloCliente().writer.writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " ha perdido. Fue aniquilado por " + this.getRefCliente().getHiloCliente().getPerdioPor() + ".");
+                    this.getRefCliente().getHiloCliente().writer.writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " ha perdido. Estaba endeudado a " + this.getRefCliente().getHiloCliente().getPerdioPor() + ".");
                 } catch (IOException ex) {
                     Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -3942,9 +3945,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                             cantidadMoverse = cantidadMoverse + 1;
                             System.out.println(cantidadMoverse);
                         }
-                        cantidadMoverse = cantidadMoverse + 1;
                         System.out.println(cantidadMoverse);
-                        
                         this.getRefCliente().getHiloCliente().moverFicha(cantidadMoverse, 1);
                     } catch (IOException ex) {
                         Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
@@ -4768,6 +4769,25 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         }
     }//GEN-LAST:event_btnLiberadoCarcelActionPerformed
 
+    private void getOutOfJailFreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getOutOfJailFreeActionPerformed
+        // TODO add your handling code here:
+        if (this.getRefCliente().getHiloCliente().isGetOutOfJailFree()){
+            
+            this.getRefCliente().getHiloCliente().setGetOutOfJailFree(false);
+            this.getRefCliente().getHiloCliente().setEnLaCarcel(false);
+            this.getRefCliente().getHiloCliente().setDadosTirados(false);
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " usó su tarjeta de salir de la carcel gratis y puede moverse libremente.");
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        
+        
+    }//GEN-LAST:event_getOutOfJailFreeActionPerformed
+
     public JButton getBtnAbrirServer() {
         return btnAbrirServer;
     }
@@ -5188,6 +5208,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JComboBox<String> cbConsultarPropiedades;
     private javax.swing.JComboBox<String> cbPropiedades;
     private javax.swing.JComboBox<String> cbSeleccion;
+    private javax.swing.JButton getOutOfJailFree;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
