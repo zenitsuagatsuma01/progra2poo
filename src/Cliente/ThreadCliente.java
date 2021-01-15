@@ -78,6 +78,7 @@ public class ThreadCliente extends Thread implements Serializable{
     private boolean perdido = false;
     private String perdioPor = "";
     private boolean yaPerdio = false;
+    private int numerosPropConsultar = 0;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -129,6 +130,16 @@ public class ThreadCliente extends Thread implements Serializable{
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public int getNumerosPropConsultar() {
+        return numerosPropConsultar;
+    }
+
+    public void setNumerosPropConsultar(int numerosPropConsultar) {
+        this.numerosPropConsultar = numerosPropConsultar;
+    }
+    
+    
 
     public boolean isYaPerdio() {
         return yaPerdio;
@@ -861,8 +872,14 @@ public class ThreadCliente extends Thread implements Serializable{
                             
                                 Fortuna cartaSacada = (Fortuna)this.getTablero().getCartasFortuna().get(this.getContadorFortuna());
                                 
-                                if (this.getContadorFortuna() == 0){
-                                    cartaSacada.setIndiceCasillaDestino(39-casillaFinal);
+                                if (this.getContadorFortuna() == 0 && casillaFinal == 7){
+                                    cartaSacada.setIndiceCasillaDestino(33);
+                                }
+                                if (this.getContadorFortuna() == 0 && casillaFinal == 22){
+                                    cartaSacada.setIndiceCasillaDestino(18);
+                                }
+                                if (this.getContadorFortuna() == 0 && casillaFinal == 36){
+                                    cartaSacada.setIndiceCasillaDestino(4);
                                 }
                                 
                                 if (this.getContadorFortuna() == 1){
@@ -1042,8 +1059,10 @@ public class ThreadCliente extends Thread implements Serializable{
                             if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                     System.out.println(fichaMover.getNombreJugador());
                                     this.setEnLaCarcel(true);
+                                    ArcaComunal irCarcel = (ArcaComunal)this.getTablero().getCartasArcaComunal().get(5);
+                                    irCarcel.setIndiceCasillaDestino(20);
+                                    irCarcel.funcionArca(this.getBanco(), this);
                             }
-                            this.moverFicha(20, 1);
                         }
                         
                         else{
@@ -1640,13 +1659,17 @@ public class ThreadCliente extends Thread implements Serializable{
                             for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
                                 Propiedades propActual = (Propiedades)this.getTablero().getCasillas().get(i);
                                 if (propActual.getDueno().equalsIgnoreCase(consultarJugador)){
-                                    numPropsConsultadas = numPropsConsultadas;
+                                    numPropsConsultadas = numPropsConsultadas + 1;
                                     propsConsultadas.add(propActual);
                                     
                                 }
                                 
                             }
-                            this.setContadorConsultar(numPropsConsultadas);
+                            if (propsConsultadas.size() == 0){
+                                this.getRefPantalla().getTxaHistorial().append("Este jugador no tiene propiedades que consultar.\n");
+                            }
+                            else if (propsConsultadas.size() > 0){
+                                this.setNumerosPropConsultar(numPropsConsultadas);
                             
                             if(propsConsultadas.get(0).getColor().equalsIgnoreCase("Azul"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.blue);
@@ -1675,7 +1698,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             this.getRefPantalla().getLblAlquileresTitulo().revalidate();
                             this.getRefPantalla().getLblAlquileresTitulo().repaint();
                             
-                            if (!propsConsultadas.get(0).getNombre().contains("Ferrocarril") || !propsConsultadas.get(0).getNombre().contains("Servicios")){
+                            if (!propsConsultadas.get(0).getNombre().contains("Ferrocarril") && !propsConsultadas.get(0).getNombre().contains("Servicios")){
                                 Calles callesProp = (Calles)propsConsultadas.get(0);
                                 this.getRefPantalla().getLblCon1Casa().setText("Con 1 casa: " + callesProp.getPrecio1());
                                 this.getRefPantalla().getLblCon1Casa().revalidate();
@@ -1703,7 +1726,178 @@ public class ThreadCliente extends Thread implements Serializable{
                             this.getRefPantalla().getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propsConsultadas.get(0).getValorHipoteca());
                             this.getRefPantalla().getLblHipotecaTitulo().revalidate();
                             this.getRefPantalla().getLblHipotecaTitulo().repaint();
+                            }
                             
+                        }
+                        
+                        break;
+                    case 25:
+                        consultarJugador = reader.readUTF();
+                        nombreConsultador = reader.readUTF();
+                        int contadorConsulta = reader.readInt();
+                        
+                        if (this.getNombre().equalsIgnoreCase(nombreConsultador)){
+                            
+                            ArrayList<Propiedades> propsConsultadas = new ArrayList<Propiedades>();
+                            int numPropsConsultadas = 0;
+                            for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                                Propiedades propActual = (Propiedades)this.getTablero().getCasillas().get(i);
+                                if (propActual.getDueno().equalsIgnoreCase(consultarJugador)){
+                                    numPropsConsultadas = numPropsConsultadas + 1;
+                                    propsConsultadas.add(propActual);
+                                    
+                                }
+                                
+                            }
+                            if (propsConsultadas.size() <= contadorConsulta){
+                                this.getRefPantalla().getTxaHistorial().append("Este jugador ya no tiene más propiedades.\n");
+                            }
+                            else if (propsConsultadas.size() > contadorConsulta){
+                                contadorConsulta = contadorConsulta + 1;
+                                this.setContadorConsultar(contadorConsulta);
+                                
+                                if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Azul"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.blue);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Verde"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.green);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Amarillo"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.yellow);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Naranja"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.orange);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rosado"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.pink);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Celeste"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.cyan);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo oscuro"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
+                            
+                            this.getRefPantalla().getPnlColorTituloPropiedad().revalidate();
+                            this.getRefPantalla().getPnlColorTituloPropiedad().repaint();
+                            
+                            this.getRefPantalla().getLblNombreTituloPropiedad().setText("Nombre: " + propsConsultadas.get(contadorConsulta).getNombre());
+                            this.getRefPantalla().getLblNombreTituloPropiedad().revalidate();
+                            this.getRefPantalla().getLblNombreTituloPropiedad().repaint();
+                            this.getRefPantalla().getLblAlquileresTitulo().setText("Alquileres: " + propsConsultadas.get(contadorConsulta).cobrar());
+                            this.getRefPantalla().getLblAlquileresTitulo().revalidate();
+                            this.getRefPantalla().getLblAlquileresTitulo().repaint();
+                            
+                            if (!propsConsultadas.get(contadorConsulta).getNombre().contains("Ferrocarril") || !propsConsultadas.get(contadorConsulta).getNombre().contains("Servicios")){
+                                Calles callesProp = (Calles)propsConsultadas.get(contadorConsulta);
+                                this.getRefPantalla().getLblCon1Casa().setText("Con 1 casa: " + callesProp.getPrecio1());
+                                this.getRefPantalla().getLblCon1Casa().revalidate();
+                                this.getRefPantalla().getLblCon1Casa().repaint();
+                                this.getRefPantalla().getLblCon2Casas().setText("Con 2 casas: " + callesProp.getPrecio2());
+                                this.getRefPantalla().getLblCon2Casas().revalidate();
+                                this.getRefPantalla().getLblCon2Casas().repaint();
+                                this.getRefPantalla().getLblCon3Casas().setText("Con 3 casas: " + callesProp.getPrecio3());
+                                this.getRefPantalla().getLblCon3Casas().revalidate();
+                                this.getRefPantalla().getLblCon3Casas().repaint();
+                                this.getRefPantalla().getLblCon4Casas().setText("Con 4 casas: " + callesProp.getPrecio4());
+                                this.getRefPantalla().getLblCon4Casas().revalidate();
+                                this.getRefPantalla().getLblCon4Casas().repaint();
+                                this.getRefPantalla().getLblConHotel().setText("Con hotel: " + callesProp.getPrecio5());
+                                this.getRefPantalla().getLblConHotel().revalidate();
+                                this.getRefPantalla().getLblConHotel().repaint();
+                                this.getRefPantalla().getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + callesProp.getPrecioCasa());
+                                this.getRefPantalla().getLblCadaCasaCuesta().revalidate();
+                                this.getRefPantalla().getLblCadaCasaCuesta().repaint();
+                                this.getRefPantalla().getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + callesProp.getPrecioHotel());
+                                this.getRefPantalla().getLblCadaHotelCuesta().revalidate();
+                                this.getRefPantalla().getLblCadaHotelCuesta().repaint();
+                            }
+                            
+                            this.getRefPantalla().getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propsConsultadas.get(0).getValorHipoteca());
+                            this.getRefPantalla().getLblHipotecaTitulo().revalidate();
+                            this.getRefPantalla().getLblHipotecaTitulo().repaint();
+                            }
+                            
+                        }
+                        
+                        break;
+                    case 26:
+                        consultarJugador = reader.readUTF();
+                        nombreConsultador = reader.readUTF();
+                        contadorConsulta = reader.readInt();
+                        
+                        if (this.getNombre().equalsIgnoreCase(nombreConsultador)){
+                            
+                            ArrayList<Propiedades> propsConsultadas = new ArrayList<Propiedades>();
+                            int numPropsConsultadas = 0;
+                            for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                                Propiedades propActual = (Propiedades)this.getTablero().getCasillas().get(i);
+                                if (propActual.getDueno().equalsIgnoreCase(consultarJugador)){
+                                    numPropsConsultadas = numPropsConsultadas + 1;
+                                    propsConsultadas.add(propActual);
+                                    
+                                }
+                                
+                            }
+                            if (contadorConsulta < 0){
+                                contadorConsulta = 0;
+                                this.getRefPantalla().getTxaHistorial().append("Este jugador ya no tiene más propiedades.\n");
+                            }
+                            else if (contadorConsulta >= 0){
+                                contadorConsulta = contadorConsulta - 1;
+                                this.setContadorConsultar(contadorConsulta);
+                                
+                                if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Azul"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.blue);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Verde"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.green);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Amarillo"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.yellow);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Naranja"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.orange);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rosado"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.pink);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Celeste"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.cyan);
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo oscuro"))
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
+                            
+                            this.getRefPantalla().getPnlColorTituloPropiedad().revalidate();
+                            this.getRefPantalla().getPnlColorTituloPropiedad().repaint();
+                            
+                            this.getRefPantalla().getLblNombreTituloPropiedad().setText("Nombre: " + propsConsultadas.get(contadorConsulta).getNombre());
+                            this.getRefPantalla().getLblNombreTituloPropiedad().revalidate();
+                            this.getRefPantalla().getLblNombreTituloPropiedad().repaint();
+                            this.getRefPantalla().getLblAlquileresTitulo().setText("Alquileres: " + propsConsultadas.get(contadorConsulta).cobrar());
+                            this.getRefPantalla().getLblAlquileresTitulo().revalidate();
+                            this.getRefPantalla().getLblAlquileresTitulo().repaint();
+                            
+                            if (!propsConsultadas.get(contadorConsulta).getNombre().contains("Ferrocarril") || !propsConsultadas.get(contadorConsulta).getNombre().contains("Servicios")){
+                                Calles callesProp = (Calles)propsConsultadas.get(contadorConsulta);
+                                this.getRefPantalla().getLblCon1Casa().setText("Con 1 casa: " + callesProp.getPrecio1());
+                                this.getRefPantalla().getLblCon1Casa().revalidate();
+                                this.getRefPantalla().getLblCon1Casa().repaint();
+                                this.getRefPantalla().getLblCon2Casas().setText("Con 2 casas: " + callesProp.getPrecio2());
+                                this.getRefPantalla().getLblCon2Casas().revalidate();
+                                this.getRefPantalla().getLblCon2Casas().repaint();
+                                this.getRefPantalla().getLblCon3Casas().setText("Con 3 casas: " + callesProp.getPrecio3());
+                                this.getRefPantalla().getLblCon3Casas().revalidate();
+                                this.getRefPantalla().getLblCon3Casas().repaint();
+                                this.getRefPantalla().getLblCon4Casas().setText("Con 4 casas: " + callesProp.getPrecio4());
+                                this.getRefPantalla().getLblCon4Casas().revalidate();
+                                this.getRefPantalla().getLblCon4Casas().repaint();
+                                this.getRefPantalla().getLblConHotel().setText("Con hotel: " + callesProp.getPrecio5());
+                                this.getRefPantalla().getLblConHotel().revalidate();
+                                this.getRefPantalla().getLblConHotel().repaint();
+                                this.getRefPantalla().getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + callesProp.getPrecioCasa());
+                                this.getRefPantalla().getLblCadaCasaCuesta().revalidate();
+                                this.getRefPantalla().getLblCadaCasaCuesta().repaint();
+                                this.getRefPantalla().getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + callesProp.getPrecioHotel());
+                                this.getRefPantalla().getLblCadaHotelCuesta().revalidate();
+                                this.getRefPantalla().getLblCadaHotelCuesta().repaint();
+                            }
+                            
+                            this.getRefPantalla().getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propsConsultadas.get(0).getValorHipoteca());
+                            this.getRefPantalla().getLblHipotecaTitulo().revalidate();
+                            this.getRefPantalla().getLblHipotecaTitulo().repaint();
+                            }
                         }
                         
                         break;

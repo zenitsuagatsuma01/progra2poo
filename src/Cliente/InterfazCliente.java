@@ -3864,6 +3864,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 try {
                     this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
                     this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " no sacó doble cinco y perdió su turno.");
+                    this.getRefCliente().getHiloCliente().setDadosTirados(false);
+                    return;
                 } catch (IOException ex) {
                     Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -4565,68 +4567,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         // TODO add your handling code here:
         String consultarJugador = this.getCbConsultarPropiedades().getSelectedItem().toString();
         
-        ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
-        
-        if (propiedadesConsultadas.size() == 0){
-            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.\n");
-            return;
+        try {
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(23);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(consultarJugador);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(this.getRefCliente().getHiloCliente().getContadorConsultar());
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        int numeroConsultar = this.getRefCliente().getHiloCliente().getContadorConsultar();
-        
-        
-        if (numeroConsultar+1 >= propiedadesConsultadas.size()){
-            this.getTxaHistorial().append("Error: El jugador que está consultando no tiene más propiedades.\n");
-            return;
-        }
-        
-        numeroConsultar = numeroConsultar + 1;
-        this.getRefCliente().getHiloCliente().setContadorConsultar(numeroConsultar);
-        
-        Runnable actualizarGUI = new Runnable(){
-            @Override
-            public void run() {
-                // Codigo para actualizar la GUI
-                try{
-                    int numeroConsultar = getRefCliente().getHiloCliente().getContadorConsultar();
-                    if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Azul"))
-            getPnlColorTituloPropiedad().setBackground(Color.blue);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Verde"))
-            getPnlColorTituloPropiedad().setBackground(Color.green);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Amarillo"))
-            getPnlColorTituloPropiedad().setBackground(Color.yellow);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rojo"))
-            getPnlColorTituloPropiedad().setBackground(Color.red);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Naranja"))
-            getPnlColorTituloPropiedad().setBackground(Color.orange);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rosado"))
-            getPnlColorTituloPropiedad().setBackground(Color.pink);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Celeste"))
-            getPnlColorTituloPropiedad().setBackground(Color.cyan);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rojo oscuro"))
-            getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
-        
-        getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(numeroConsultar).getNombre());
-        getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(numeroConsultar).getPrecio0());
-        getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(numeroConsultar).getPrecio1());
-        getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio2());
-        getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio3());
-        getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio4());
-        getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(numeroConsultar).getPrecio5());
-        getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(numeroConsultar).getValorHipoteca());
-        getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioCasa());
-        getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioHotel());
-                }
-                catch(Exception e){
-                    e.printStackTrace();
-                }
-            }
-            
-        };
-        // Llamar el invokeLater 
-        SwingUtilities.invokeLater(actualizarGUI);
-        // Fin
-        
         
     }//GEN-LAST:event_btnConsultarDerechaActionPerformed
 
@@ -4648,69 +4596,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         // TODO add your handling code here:
         String consultarJugador = this.getCbConsultarPropiedades().getSelectedItem().toString();
         
-        ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
-        
-        if (propiedadesConsultadas.size() == 0){
-            this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.\n");
-            return;
+        try {
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(24);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(consultarJugador);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(this.getRefCliente().getHiloCliente().getContadorConsultar());
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        int numeroConsultar = this.getRefCliente().getHiloCliente().getContadorConsultar();
-        
-        
-        if (numeroConsultar == 0){
-            //this.getTxaHistorial().append("Error: Ya no se puede devolver más en la lista de títulos de propiedad.\n");
-            return;
-        }
-        
-        numeroConsultar = numeroConsultar - 1;
-        this.getRefCliente().getHiloCliente().setContadorConsultar(numeroConsultar);
-        
-        Runnable actualizarGUI = new Runnable(){
-            @Override
-            public void run() {
-                // Codigo para actualizar la GUI
-                try{
-                    int numeroConsultar = getRefCliente().getHiloCliente().getContadorConsultar();
-                    if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Azul"))
-            getPnlColorTituloPropiedad().setBackground(Color.blue);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Verde"))
-            getPnlColorTituloPropiedad().setBackground(Color.green);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Amarillo"))
-            getPnlColorTituloPropiedad().setBackground(Color.yellow);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rojo"))
-            getPnlColorTituloPropiedad().setBackground(Color.red);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Naranja"))
-            getPnlColorTituloPropiedad().setBackground(Color.orange);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rosado"))
-            getPnlColorTituloPropiedad().setBackground(Color.pink);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Celeste"))
-            getPnlColorTituloPropiedad().setBackground(Color.cyan);
-        if (propiedadesConsultadas.get(numeroConsultar).getColor().equalsIgnoreCase("Rojo oscuro"))
-            getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
-
-        getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(numeroConsultar).getNombre());
-        getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(numeroConsultar).getPrecio0());
-        getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(numeroConsultar).getPrecio1());
-        getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio2());
-        getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio3());
-        getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(numeroConsultar).getPrecio4());
-        getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(numeroConsultar).getPrecio5());
-        getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(numeroConsultar).getValorHipoteca());
-        getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioCasa());
-        getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(numeroConsultar).getPrecioHotel());
-                }
-                catch(Exception e){
-                    e.printStackTrace();
-                }
-            }
-            
-        };
-        // Llamar el invokeLater 
-        SwingUtilities.invokeLater(actualizarGUI);
-        // Fin
-        
-        
     }//GEN-LAST:event_btnConsultarIzquierdaActionPerformed
 
     private void btnAbrirServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbrirServerActionPerformed
