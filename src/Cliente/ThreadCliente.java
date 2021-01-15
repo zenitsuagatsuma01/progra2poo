@@ -471,7 +471,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         Fortuna fortuna2 = new Fortuna("Fortuna 2",this.getRefPantalla().getPnlFortuna(),"Fortuna 2",4,200,5,"Carta de fortuna activada. Efecto: Avance a Avenida Illinois y si pasa por Go páguese 200.");
                         Fortuna fortuna3 = new Fortuna("Fortuna 3",this.getRefPantalla().getPnlFortuna(),"Fortuna 3",4,200,5,"Carta de fortuna activada. Efecto: Avance a Plaza San Carlos y si pasa por Go páguese 200.");
                         Fortuna fortuna4 = new Fortuna("Fortuna 4",this.getRefPantalla().getPnlFortuna(),"Fortuna 4",4,200,5,"Carta de fortuna activada. Efecto: Avance al servicio más cercano. Si no tiene dueno puede comprarlo.");
-                        Fortuna fortuna5 = new Fortuna("Fortuna 5",this.getRefPantalla().getPnlFortuna(),"Fortuna 5",7,200,5,"Carta de fortuna activada. Efecto: Avance al servicio más cercano. Si no tiene dueno puede comprarlo.");
+                        Fortuna fortuna5 = new Fortuna("Fortuna 5",this.getRefPantalla().getPnlFortuna(),"Fortuna 5",7,200,5,"Carta de fortuna activada. Efecto: Avance al ferrocarril más cercano. Si no tiene dueno puede comprarlo.");
                         Fortuna fortuna6 = new Fortuna("Fortuna 6",this.getRefPantalla().getPnlFortuna(),"Fortuna 6",1,50,5,"Carta de fortuna activada. Efecto: El banco le pagó 50 dólares en dividendos bancarios. Páguese 50 dólares.");
                         Fortuna fortuna7 = new Fortuna("Fortuna 7",this.getRefPantalla().getPnlFortuna(),"Fortuna 7",5,50,5,"Carta de fortuna activada. Efecto: Ha sacado una carta de salir de la cárcel gratis.");
                         Fortuna fortuna8 = new Fortuna("Fortuna 8",this.getRefPantalla().getPnlFortuna(),"Fortuna 8",6,50,5,"Carta de fortuna activada. Efecto: Devuélvase tres espacios.");
@@ -678,7 +678,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             }
                             contMovido = contMovido + 1;
                             casillaFinal = casillaFinal + 1;
-                            if (arcaJail !=2)
+                            if (arcaJail != 2)
                                 TimeUnit.SECONDS.sleep(1);
                             
                             if (i == 0){
@@ -702,7 +702,8 @@ public class ThreadCliente extends Thread implements Serializable{
                                 this.getTablero().getCasillas().get(0).getPanel().add(fichaMover.getLabelFicha());
                                 this.getTablero().getCasillas().get(0).getPanel().revalidate();
                                 this.getTablero().getCasillas().get(0).getPanel().repaint();
-                                TimeUnit.SECONDS.sleep(1);
+                                if (arcaJail != 2)
+                                    TimeUnit.SECONDS.sleep(1);
                                 contMovido = contMovido + 1;
                             }
                             
@@ -756,7 +757,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                 numArca = numArca + 1;
                                 this.setContadorArcaComunal(numArca);
                         }
-                        if (casillaFinal == 7 || casillaFinal == 22 || casillaFinal == 36){
+                        if (casillaFinal > 0){ // casillas de fortuna
                             if (this.getContadorFortuna() > 15){
                                     this.setContadorFortuna(0);
                                 }
@@ -778,7 +779,6 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
-                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
@@ -795,7 +795,6 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
-                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
@@ -812,7 +811,6 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
-                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
@@ -838,13 +836,12 @@ public class ThreadCliente extends Thread implements Serializable{
                                     System.out.println(ferrocarrilActual.getNombre());
                                     System.out.println(ferrocarrilActual.isDobleAlquiler());
                                     
-                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
                                 
                                 if (this.getContadorFortuna() == 7){
-                                    cartaSacada.setIndiceCasillaDestino(37);
+                                    cartaSacada.setIndiceCasillaDestino(36);
                                 }
                                 
                                 if (this.getContadorFortuna() == 8){
@@ -858,7 +855,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
-                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    cantidadMoverse = cantidadMoverse + 2;
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
@@ -883,7 +880,6 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
-                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
@@ -899,7 +895,6 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
-                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
