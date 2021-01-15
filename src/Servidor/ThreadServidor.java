@@ -682,6 +682,10 @@ public class ThreadServidor extends Thread implements Serializable{
                         }
                         
                         break;
+                    case 20:
+                        
+                        
+                        break;
                 }
             } catch (IOException ex) {
                 

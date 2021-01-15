@@ -4341,6 +4341,23 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        try {
+            // TODO add your handling code here:
+            this.getRefCliente().getHiloCliente().writer.writeInt(13);
+            
+            int numDado1 = Integer.parseInt(this.getLblNumDado1().getText());
+            int numDado2 = Integer.parseInt(this.getLblNumDado2().getText());
+            int numDadoTotal = numDado1 + numDado2;
+            this.getRefCliente().getHiloCliente().writer.writeInt(numDadoTotal);
+            
+            String nombreComprador = this.getRefCliente().getHiloCliente().getNombre();
+            this.getRefCliente().getHiloCliente().writer.writeUTF(nombreComprador);
+            
+            this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getDinero());
+            this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getFicha().getPosicionActual());
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnComprarPropActualActionPerformed
 
     private void btnCompraCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraCasaActionPerformed

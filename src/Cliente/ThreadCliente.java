@@ -76,6 +76,8 @@ public class ThreadCliente extends Thread implements Serializable{
     private int vecesDobles = 0;
     private boolean enLaCarcel = false;
     private int numFailsCarcel = 0;
+    private boolean perdido = false;
+    private String perdioPor = "";
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -129,12 +131,30 @@ public class ThreadCliente extends Thread implements Serializable{
         }
     }
 
+    public boolean isPerdido() {
+        return perdido;
+    }
+
+    public void setPerdido(boolean perdido) {
+        this.perdido = perdido;
+    }
+    
+    
+
     public int getNumFailsCarcel() {
         return numFailsCarcel;
     }
 
     public void setNumFailsCarcel(int numFailsCarcel) {
         this.numFailsCarcel = numFailsCarcel;
+    }
+
+    public String getPerdioPor() {
+        return perdioPor;
+    }
+
+    public void setPerdioPor(String perdioPor) {
+        this.perdioPor = perdioPor;
     }
     
     
@@ -377,7 +397,14 @@ public class ThreadCliente extends Thread implements Serializable{
         this.ficha = ficha;
     }
     
-    
+    public void revisarPerder(String atacador) throws IOException{
+        if (this.getDinero() <= 0){
+            this.perdido = true;
+            System.out.println("perdió!");
+            this.perdioPor = atacador;
+        }
+        
+    }
     
     public void run (){
         
@@ -1010,11 +1037,17 @@ public class ThreadCliente extends Thread implements Serializable{
                                     System.out.println(fichaMover.getNombreJugador());
                                     this.getBanco().retirarDinero(this, casillaPropiedad.cobrar());
                                 }
+                                if (this.getNombre().equalsIgnoreCase(casillaPropiedad.getDueno())){
+                                    System.out.println(casillaPropiedad.getDueno());
+                                    this.getBanco().darDinero(this, casillaPropiedad.cobrar());
+                                }
                                 this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                 this.getRefPantalla().getLblNumDinero().revalidate();
                                 this.getRefPantalla().getLblNumDinero().repaint();
                             }
                         }
+                        
+                        
                         
                         break;
                     case 13:

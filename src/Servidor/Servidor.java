@@ -39,6 +39,7 @@ public class Servidor extends Thread implements Serializable{
     private ArrayList<String> listaPerdedores;
     private int totalCasas = 32;
     private int totalHoteles = 12;
+    private int contadorPerdedor = 0;
 
     public Servidor(PantallaServidor refPantalla) {
         this.refPantalla = refPantalla;
@@ -58,6 +59,16 @@ public class Servidor extends Thread implements Serializable{
         flagCargado = true;
         partidaGuardada = servidorCargado;
     }
+
+    public int getContadorPerdedor() {
+        return contadorPerdedor;
+    }
+
+    public void setContadorPerdedor(int contadorPerdedor) {
+        this.contadorPerdedor = contadorPerdedor;
+    }
+    
+    
 
     public ArrayList<String> getListaPerdedores() {
         return listaPerdedores;
