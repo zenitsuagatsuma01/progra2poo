@@ -752,6 +752,11 @@ public class ThreadCliente extends Thread implements Serializable{
                                     cartaSacada.setIndiceCasillaDestino(39-casillaFinal);
                                 }
                                 if (this.getContadorArcaComunal() == 5){
+                                    if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                        System.out.println(fichaMover.getNombreJugador());
+                                        this.setEnLaCarcel(true);
+                                        System.out.println(this.isEnLaCarcel());
+                                    }
                                     
                                     int cantidadMoverse = 0;
                                     for (int i = casillaFinal; i != 10; i++){
@@ -878,6 +883,12 @@ public class ThreadCliente extends Thread implements Serializable{
                                 }
                                 
                                 if (this.getContadorFortuna() == 8){
+                                    if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                        System.out.println(fichaMover.getNombreJugador());
+                                        this.setEnLaCarcel(true);
+                                        System.out.println(this.isEnLaCarcel());
+                                    }
+                                    
                                     int cantidadMoverse = 0;
                                     for (int i = casillaFinal; i != 10; i++){
                                         
@@ -958,6 +969,27 @@ public class ThreadCliente extends Thread implements Serializable{
                             this.getRefPantalla().getLblNumDinero().revalidate();
                             this.getRefPantalla().getLblNumDinero().repaint();
                             
+                        }
+                        
+                        else if (casillaFinal == 30){
+                            
+                            if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                    System.out.println(fichaMover.getNombreJugador());
+                                    this.setEnLaCarcel(true);
+                            }
+                            int cantidadMoverse = 0;
+                            for (int i = casillaFinal; i != 10; i++){
+                                        
+                                if (i+1 > 39){
+                                    i = 0;
+                                }
+                                        
+                                cantidadMoverse = cantidadMoverse + 1;
+                                System.out.println(cantidadMoverse);
+                            }
+                            cantidadMoverse = cantidadMoverse + 0;
+                            System.out.println(cantidadMoverse);
+                            this.moverFicha(casillaFinal, 1);
                         }
                         
                         else{

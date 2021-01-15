@@ -3827,6 +3827,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                     try {
                         this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
                         this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " sacó triples y fue a la cárcel.");
+                        this.getRefCliente().getHiloCliente().setEnLaCarcel(true);
                         
                         int cantidadMoverse = 0;
                         for (int i = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual(); i != 10; i++){
@@ -3838,7 +3839,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                             cantidadMoverse = cantidadMoverse + 1;
                             System.out.println(cantidadMoverse);
                         }
-                        cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
                         System.out.println(cantidadMoverse);
                         
                         this.getRefCliente().getHiloCliente().moverFicha(cantidadMoverse, 1);
