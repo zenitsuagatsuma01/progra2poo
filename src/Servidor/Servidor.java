@@ -193,10 +193,10 @@ public class Servidor extends Thread implements Serializable{
         String nombreTurno = "";
         System.out.println("El turnoActual de proximoTurno al comienzo es " + turnoActual);
         if (this.nombreOrder.size() == 1){
-            ArrayList<String> logLeida = (ArrayList<String>)FileManager.readObject("src/Archivos/log.dat");
+            //ArrayList<String> logLeida = (ArrayList<String>)FileManager.readObject("src/Archivos/log.dat");
             this.enviarMensaje("El jugador " + nombreOrder.get(0) + " ha ganado la partida!");
-            logLeida.add("El jugador " + nombreOrder.get(0) + " ha ganado la partida!\n");
-            FileManager.writeObject(logLeida, "src/Archivos/log.dat");
+            //logLeida.add("El jugador " + nombreOrder.get(0) + " ha ganado la partida!\n");
+            //FileManager.writeObject(logLeida, "src/Archivos/log.dat");
             this.signalTerminarPartida();
             return;
         }

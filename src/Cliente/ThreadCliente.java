@@ -78,6 +78,7 @@ public class ThreadCliente extends Thread implements Serializable{
     private int numFailsCarcel = 0;
     private boolean perdido = false;
     private String perdioPor = "";
+    private boolean yaPerdio = false;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -131,6 +132,16 @@ public class ThreadCliente extends Thread implements Serializable{
         }
     }
 
+    public boolean isYaPerdio() {
+        return yaPerdio;
+    }
+
+    public void setYaPerdio(boolean yaPerdio) {
+        this.yaPerdio = yaPerdio;
+    }
+
+    
+    
     public boolean isPerdido() {
         return perdido;
     }
@@ -400,7 +411,9 @@ public class ThreadCliente extends Thread implements Serializable{
     public void revisarPerder(String atacador) throws IOException{
         if (this.getDinero() <= 0){
             this.perdido = true;
+            this.setPerdido(true);
             System.out.println("perdió!");
+            this.setPerdioPor(atacador);
             this.perdioPor = atacador;
         }
         
@@ -821,6 +834,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                 
                                 if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                     System.out.println(fichaMover.getNombreJugador());
+                                    this.setPerdioPor("el banco");
                                     cartaSacada.funcionArca(banco, this);
                                 }
                                 
@@ -983,6 +997,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                 
                                 if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                     System.out.println(fichaMover.getNombreJugador());
+                                    this.setPerdioPor("el banco");
                                     cartaSacada.funcionFortuna(banco, this);
                                 }
                                 
@@ -1001,6 +1016,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                     System.out.println(fichaMover.getNombreJugador());
                                     this.getBanco().retirarDinero(this, casillaImpuestos.getPrecioCompra());
+                                    this.setPerdioPor("el banco");
                             }
                             
                             this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
@@ -1036,6 +1052,8 @@ public class ThreadCliente extends Thread implements Serializable{
                                 if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                     System.out.println(fichaMover.getNombreJugador());
                                     this.getBanco().retirarDinero(this, casillaPropiedad.cobrar());
+                                    this.setPerdioPor(casillaPropiedad.getDueno());
+                                    System.out.println("Perdería por: " + casillaPropiedad.getDueno());
                                 }
                                 if (this.getNombre().equalsIgnoreCase(casillaPropiedad.getDueno())){
                                     System.out.println(casillaPropiedad.getDueno());
@@ -1566,6 +1584,27 @@ public class ThreadCliente extends Thread implements Serializable{
                                     System.out.println(propiedadActual.isHipotecada());
                                 }
                             }
+                            
+                        }
+                        
+                        break;
+                    case 21:
+                        if (this.perdido == true && this.yaPerdio == false){
+                            this.setYaPerdio(true);
+                            System.out.println(this.isYaPerdio());
+                            this.writer.writeInt(21);
+                            this.writer.writeUTF(nombre);
+                            this.writer.writeUTF(this.perdioPor);
+                            this.writer.writeUTF("El jugador " + nombre + " ha perdido. Fue aniquilado por el jugador " + this.perdioPor + ".");
+                            //ArrayList<String> logLeida = (ArrayList<String>)FileManager.readObject("src/Archivos/log.dat");
+                            //logLeida.add("El jugador " + nombre + " ha perdido. Fue aniquilado por el jugador " + this.perdioPor + ".\n");
+                            //FileManager.writeObject(logLeida, "src/Archivos/log.dat");
+                        }
+                        
+                        break;
+                    case 22:
+                        String vencidoPor = reader.readUTF();
+                        if (this.getNombre().equalsIgnoreCase(vencidoPor)){
                             
                         }
                         

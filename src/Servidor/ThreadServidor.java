@@ -684,6 +684,36 @@ public class ThreadServidor extends Thread implements Serializable{
                         break;
                     case 20:
                         
+                        for (int i = 0; i < server.conexiones.size(); i++) {
+                                ThreadServidor current = server.conexiones.get(i);
+                                current.writer.writeInt(21);
+                        }
+                        
+                        break;
+                    case 21:
+                        String perdedor = reader.readUTF();
+                        String perdioPor = reader.readUTF();
+                        mensaje = reader.readUTF();
+                            
+                        this.server.getListaPerdedores().add(perdedor);
+                        System.out.println("La lista con el perdedor es ahora " + this.server.getListaPerdedores());
+                        int contPerdedor = this.server.getContadorPerdedor();
+                        contPerdedor = contPerdedor + 1;
+                        this.server.setContadorPerdedor(contPerdedor);
+                        this.server.enviarMensaje(mensaje);
+                            
+                        for (int i = 0; i < this.server.getNombreOrder().size(); i++){
+                            if (this.server.getNombreOrder().contains(perdedor)){
+                                this.server.getNombreOrder().remove(this.server.getNombreOrder().get(i));
+                            }
+                        }
+                            
+                        if (contPerdedor >= this.server.getLimiteMax()-1){
+                            this.server.enviarMensaje("Partida terminada.");
+                        }
+                        this.server.proximoTurno(perdedor);
+                        
+                        
                         
                         break;
                 }
