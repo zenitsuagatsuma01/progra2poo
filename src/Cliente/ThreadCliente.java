@@ -741,7 +741,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             
                             System.out.println("Casilla actual de ficha es " + casillaFinal);
                         }
-                        
+                        System.out.println("Casilla en la que se detuvo es: " + casillaFinal + " se supone que debería ser la 10 cuando llega a la carcel.");
                         if (casillaFinal == 2 || casillaFinal == 17 || casillaFinal == 33){ // si cae en una casilla de arca comunal saca la carta necesaria
                                 if (this.getContadorArcaComunal() > 15){
                                     this.setContadorArcaComunal(0);
@@ -763,7 +763,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
-                                    cantidadMoverse = cantidadMoverse + 1; // falta 1 para llegar a la carcel
+                                    cantidadMoverse = cantidadMoverse + 0; // falta 1 para llegar a la carcel
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
@@ -792,7 +792,8 @@ public class ThreadCliente extends Thread implements Serializable{
                         else if (casillaFinal == 7 || casillaFinal == 22 || casillaFinal == 36){ // casillas de fortuna
                             if (this.getContadorFortuna() > 15){
                                     this.setContadorFortuna(0);
-                                }
+                            }
+                            
                                 Fortuna cartaSacada = (Fortuna)this.getTablero().getCartasFortuna().get(this.getContadorFortuna());
                                 
                                 if (this.getContadorFortuna() == 0){
@@ -887,7 +888,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
-                                    cantidadMoverse = cantidadMoverse + 2;
+                                    cantidadMoverse = cantidadMoverse + 0;
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
