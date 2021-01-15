@@ -75,6 +75,7 @@ public class ThreadCliente extends Thread implements Serializable{
     private boolean dadosTirados = false;
     private int vecesDobles = 0;
     private boolean enLaCarcel = false;
+    private int numFailsCarcel = 0;
 
     public ThreadCliente(Socket socketRef, InterfazCliente refPantalla) throws IOException {
         this.socketRef = socketRef;
@@ -127,6 +128,16 @@ public class ThreadCliente extends Thread implements Serializable{
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public int getNumFailsCarcel() {
+        return numFailsCarcel;
+    }
+
+    public void setNumFailsCarcel(int numFailsCarcel) {
+        this.numFailsCarcel = numFailsCarcel;
+    }
+    
+    
 
     public boolean isEnLaCarcel() {
         return enLaCarcel;
@@ -1150,10 +1161,36 @@ public class ThreadCliente extends Thread implements Serializable{
                         }
                         else if (propiedadComprar.getNombre().contains("Ferrocarril")){
                             Ferrocarriles propiedadFerrocarril = (Ferrocarriles)propiedadComprar;
+                            
+                            for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                                Propiedades current = (Propiedades)this.getTablero().getCasillas().get(i);
+                                
+                                if (current.getNombre().contains("Ferrocarril") && current.getDueno().equalsIgnoreCase(nombreComprador)){
+                                    Ferrocarriles currentRailroad = (Ferrocarriles)current;
+                                    int cantRailroads = currentRailroad.getCantidadDeFerrocarriles();
+                                    cantRailroads = cantRailroads + 1;
+                                    currentRailroad.setCantidadDeFerrocarriles(cantRailroads);
+                                }
+                                
+                            }
+                            
                             propiedadFerrocarril.getLblAlquiler().setText("Alquiler: " + propiedadFerrocarril.cobrar() + " $");
                         }
                         else if (propiedadComprar.getNombre().contains("Servicios")){
                             Servicios propiedadServicios = (Servicios)propiedadComprar;
+                            
+                            for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                                Propiedades current = (Propiedades)this.getTablero().getCasillas().get(i);
+                                
+                                if (current.getNombre().contains("Servicios") && current.getDueno().equalsIgnoreCase(nombreComprador)){
+                                    Servicios currentService = (Servicios)current;
+                                    int cantServicios = currentService.getCantidadDeServicios();
+                                    cantServicios = cantServicios + 1;
+                                    currentService.setCantidadDeServicios(cantServicios);
+                                }
+                                
+                            }
+                            
                             propiedadServicios.getLblAlquiler().setText("Alquiler: " + propiedadServicios.cobrar(numDadoCobrar) + " $");
                         }
                         

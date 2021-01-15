@@ -1361,6 +1361,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         jLabel35 = new javax.swing.JLabel();
         lblConexion = new javax.swing.JLabel();
         lblNumDado1 = new javax.swing.JLabel();
+        lblCarcel = new javax.swing.JLabel();
+        btnLiberadoCarcel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -3331,7 +3333,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnAbrirServerActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnAbrirServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 110, 70));
+        pnlToolbar.add(btnAbrirServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 110, 50));
 
         btnConectarse.setText("Conectarse");
         btnConectarse.addActionListener(new java.awt.event.ActionListener() {
@@ -3339,7 +3341,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnConectarseActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnConectarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 60, 110, 70));
+        pnlToolbar.add(btnConectarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 110, 50));
 
         btnExit.setText("Salir");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -3396,12 +3398,24 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         pnlToolbar.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
 
         lblConexion.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblConexion.setText("Conexion al server:");
+        lblConexion.setText("Conexión al server:");
         pnlToolbar.add(lblConexion, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, -1, -1));
 
         lblNumDado1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblNumDado1.setForeground(new java.awt.Color(255, 0, 0));
         pnlToolbar.add(lblNumDado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 100, 100));
+
+        lblCarcel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblCarcel.setText("Cárcel:");
+        pnlToolbar.add(lblCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, -1, -1));
+
+        btnLiberadoCarcel.setText("Ser liberado ($50)");
+        btnLiberadoCarcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLiberadoCarcelActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(btnLiberadoCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 150, 50));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
@@ -3801,6 +3815,58 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             int posFicha = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual();
             
             int arcaJail = 0;
+            
+            if (this.getRefCliente().getHiloCliente().isEnLaCarcel() && dado1 != 5 && dado2 != 5){
+                int numFailsCarcel = this.getRefCliente().getHiloCliente().getNumFailsCarcel();
+                numFailsCarcel = numFailsCarcel + 1;
+                this.getRefCliente().getHiloCliente().setNumFailsCarcel(numFailsCarcel);
+                
+                if (numFailsCarcel == 3){
+                    this.getRefCliente().getHiloCliente().setNumFailsCarcel(0);
+                    this.getRefCliente().getHiloCliente().getBanco().retirarDinero(this.getRefCliente().getHiloCliente(), 50);
+        
+                    this.getLblNumDinero().setText(this.getRefCliente().getHiloCliente().getDinero() + " $");
+                    this.getLblNumDinero().revalidate();
+                    this.getLblNumDinero().repaint();
+        
+                    this.getRefCliente().getHiloCliente().setEnLaCarcel(false);
+                    this.getRefCliente().getHiloCliente().setDadosTirados(false);
+                    try {
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                        this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " pagó $50 para liberarse de la cárcel y puede moverse.");
+                    } catch (IOException ex) {
+                    Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    try {
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(11);
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(dadoTotal);
+                        this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombreFicha);
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(posFicha);
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(arcaJail);
+                
+                    } catch (IOException ex) {
+                        Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    this.getRefCliente().getHiloCliente().setDadosTirados(true);
+                    return;
+                }
+                
+                try {
+                    this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                    this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " no sacó doble cinco y perdió su turno.");
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                try {
+                    this.getRefCliente().getHiloCliente().writer.writeInt(9);
+                    this.getRefCliente().getHiloCliente().writer.writeUTF(this.getLblNombreJugador().getText());
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
             
             try {
                 this.getRefCliente().getHiloCliente().getWriter().writeInt(11);
@@ -4763,15 +4829,12 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         }
         
         String nombrePropiedad = this.getCbPropiedades().getSelectedItem().toString();
-        System.out.println("Prueba 1");
         
         for (int i = 0; i < this.getRefCliente().getHiloCliente().getTablero().getCasillas().size(); i++){
             Propiedades propiedadActual = (Propiedades)this.getRefCliente().getHiloCliente().getTablero().getCasillas().get(i);
             
             if (propiedadActual.getNombre().contains(nombrePropiedad)){
-                System.out.println("Prueba 2");
                 if (propiedadActual.isHipotecada()){
-                    System.out.println("Holaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                     double valorDeshipotecar = propiedadActual.getValorHipoteca() + (double)(propiedadActual.getValorHipoteca()/10);
                     System.out.println("El valor total para deshipotecar la propiedad es: " + valorDeshipotecar);
                     if (this.getRefCliente().getHiloCliente().getDinero() <= valorDeshipotecar){
@@ -4785,7 +4848,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         }
         
         try {
-            System.out.println("Again xd");
             this.getRefCliente().getHiloCliente().getWriter().writeInt(19);
             this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombrePropiedad);
             this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getRefCliente().getHiloCliente().getNombre());
@@ -4794,6 +4856,34 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         }
         
     }//GEN-LAST:event_btnHipotecarActionPerformed
+
+    private void btnLiberadoCarcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLiberadoCarcelActionPerformed
+        // TODO add your handling code here:
+        if (!this.getRefCliente().getHiloCliente().isEnLaCarcel()){
+            this.getTxaHistorial().append("No puede liberarse porque no está en la cárcel.\n");
+            return;
+        }
+        
+        if (this.getRefCliente().getHiloCliente().isEnLaCarcel() && !this.getLblTurno().getText().equalsIgnoreCase(this.getLblNombreJugador().getText())){
+            this.getTxaHistorial().append("Solo se puede liberar de la cárcel cuando es su turno.\n");
+            return;
+        }
+        
+        this.getRefCliente().getHiloCliente().getBanco().retirarDinero(this.getRefCliente().getHiloCliente(), 50);
+        
+        this.getLblNumDinero().setText(this.getRefCliente().getHiloCliente().getDinero() + " $");
+        this.getLblNumDinero().revalidate();
+        this.getLblNumDinero().repaint();
+        
+        this.getRefCliente().getHiloCliente().setEnLaCarcel(false);
+        this.getRefCliente().getHiloCliente().setDadosTirados(false);
+        try {
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " pagó $50 para liberarse de la cárcel y puede moverse.");
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnLiberadoCarcelActionPerformed
 
     public JButton getBtnAbrirServer() {
         return btnAbrirServer;
@@ -5206,6 +5296,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnHipotecar;
     private javax.swing.JButton btnLanzarDados;
+    private javax.swing.JButton btnLiberadoCarcel;
     private javax.swing.JButton btnSeleccionFicha;
     private javax.swing.JButton btnVenderCasa;
     private javax.swing.JButton btnVenderHotel;
@@ -5382,6 +5473,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel lblArcaComunal;
     private javax.swing.JLabel lblCadaCasaCuesta;
     private javax.swing.JLabel lblCadaHotelCuesta;
+    private javax.swing.JLabel lblCarcel;
     private javax.swing.JLabel lblCasasCasilla1;
     private javax.swing.JLabel lblCasasCasilla11;
     private javax.swing.JLabel lblCasasCasilla13;
