@@ -1047,7 +1047,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     this.getBanco().retirarDinero(this, casillaImpuestos.getPrecioCompra());
                                     this.setPerdioPor("el banco");
                             }
-                            
+                            this.getRefPantalla().getTxaHistorial().append("El jugador " + fichaMover.getNombreJugador() + " pagó " + casillaImpuestos.getPrecioCompra() + "$ de impuestos" + ".\n");
                             this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                             this.getRefPantalla().getLblNumDinero().revalidate();
                             this.getRefPantalla().getLblNumDinero().repaint();
@@ -1085,6 +1085,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     System.out.println(casillaPropiedad.getDueno());
                                     this.getBanco().darDinero(this, casillaPropiedad.cobrar());
                                 }
+                                this.getRefPantalla().getTxaHistorial().append("El jugador " + fichaMover.getNombreJugador() + " pagó de alquiler " + casillaPropiedad.cobrar() + "$ al jugador " + casillaPropiedad.getDueno() + ".\n");
                                 this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                 this.getRefPantalla().getLblNumDinero().revalidate();
                                 this.getRefPantalla().getLblNumDinero().repaint();
@@ -1281,7 +1282,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         Calles propiedadComprarCasa;
                         
                         if (casasAcabadas == 1){
-                            this.getRefPantalla().getTxaHistorial().append("Se han acabado las 32 casas y por ende no se podrán construir más.");
+                            this.getRefPantalla().getTxaHistorial().append("Se han acabado las 32 casas y por ende no se podrán construir más.\n");
                         }
                         
                         else if (casasAcabadas == 0){
@@ -1308,6 +1309,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     this.getRefPantalla().getLblQuedanCasas().revalidate();
                                     this.getRefPantalla().getLblQuedanCasas().repaint();
                                     System.out.println("Ha comprado una casa en " + propiedadActual.getNombre() + " y ahora esta tiene " + propiedadActual.getCantidadCasas());
+                                    this.getRefPantalla().getTxaHistorial().append("El jugador " + nombrePersona + " ha comprado una casa en la propiedad " + nombrePropiedad + " por " + propiedadComprarCasa.getPrecioCasa() + "$.\n");
                                     
                                     if (this.getNombre().equals(nombrePersona)){
                             
@@ -1341,6 +1343,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                 propiedadVender = propiedadActual;
                                 propiedadVender.setComprada(false);
                                 propiedadVender.setDueno("");
+                                this.getRefPantalla().getTxaHistorial().append("El jugador " + nombreJugador + " ha vendido la propiedad " + nombrePropiedad + " por " + (propiedadVender.getPrecioCompra()/2) + "$.\n");
                                 
                                 if (this.getNombre().equalsIgnoreCase(nombreJugador)){
                             
@@ -1450,9 +1453,11 @@ public class ThreadCliente extends Thread implements Serializable{
                                 propiedadActual.getLblCasas().repaint();
 
                                 System.out.println("Ha vendido una casa en " + propiedadActual.getNombre() + " y ahora esta tiene " + propiedadActual.getCantidadCasas());
+                                Calles calleActual = (Calles)propiedadActual;
+                                this.getRefPantalla().getTxaHistorial().append("El jugador " + nombreVendedorCasa + " ha comprado una casa en la propiedad " + propiedadActual.getNombre() + " por " + calleActual.getPrecioCasa() + "$.\n");
                                     
                                 if (this.getNombre().equals(nombreVendedorCasa)){
-                                    Calles calleActual = (Calles)propiedadActual;
+                                    calleActual = (Calles)propiedadActual;
                                     this.getBanco().darDinero( this, (calleActual.getPrecioCasa()/2) );
                                     this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                     this.getRefPantalla().getLblNumDinero().revalidate();
@@ -1492,9 +1497,12 @@ public class ThreadCliente extends Thread implements Serializable{
                                 this.getRefPantalla().getLblQuedanHoteles().revalidate();
                                 this.getRefPantalla().getLblQuedanHoteles().repaint();
                                 
+                                Calles calleActual = (Calles)propiedadActual;
+                                this.getRefPantalla().getTxaHistorial().append("El jugador " + nombreCompradorHotel + " ha comprado un hotel en la propiedad " + propiedadActual.getNombre() + " por " + calleActual.getPrecioHotel() + "$.\n");
+                                
                                 if (this.getNombre().equalsIgnoreCase(nombreCompradorHotel)){
                                     
-                                    Calles calleActual = (Calles)propiedadActual;
+                                    calleActual = (Calles)propiedadActual;
                                     this.getBanco().retirarDinero(this, calleActual.getPrecioHotel());
                                     this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                     this.getRefPantalla().getLblNumDinero().revalidate();
@@ -1530,10 +1538,12 @@ public class ThreadCliente extends Thread implements Serializable{
                                 propiedadActual.getLblAlquiler().revalidate();
                                 propiedadActual.getLblAlquiler().repaint();
                                 
+                                Calles calleActual = (Calles)propiedadActual;
                                 System.out.println("El jugador " + nombreVendedorHotel + " vendió un hotel en la propiedad " + propiedadActual + " y ahora no tiene hoteles en esa propiedad.");
+                                this.getRefPantalla().getTxaHistorial().append("El jugador " + nombreVendedorHotel + " ha vendido un hotel en la propiedad " + propiedadActual.getNombre() + " por " + (calleActual.getPrecioHotel()/2) + "$.\n");
                                 
                                 if (this.getNombre().equals(nombreVendedorHotel)){
-                                    Calles calleActual = (Calles)propiedadActual;
+                                    calleActual = (Calles)propiedadActual;
                                     this.getBanco().darDinero( this, (calleActual.getPrecioHotel()/2) );
                                     this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                     this.getRefPantalla().getLblNumDinero().revalidate();
@@ -1556,19 +1566,22 @@ public class ThreadCliente extends Thread implements Serializable{
                             if (propiedadActual.getNombre().contains(nombrePropiedadHipotecada)){
                                 
                                 if (propiedadActual.isHipotecada()){
+                                    
                                     propiedadActual.setHipotecada(false);
                                     propiedadActual.getLblAlquiler().setText("Alquiler: " + propiedadActual.cobrar());
                                     propiedadActual.getLblAlquiler().revalidate();
                                     propiedadActual.getLblAlquiler().repaint();
                                     
+                                    double valorDeshipotecar = propiedadActual.getValorHipoteca() + (double)(propiedadActual.getValorHipoteca()/10);
                                     if (this.getNombre().equalsIgnoreCase(nombreHipotecador)){
-                                        double valorDeshipotecar = propiedadActual.getValorHipoteca() + (double)(propiedadActual.getValorHipoteca()/10);
+                                        
                                         System.out.println("El valor total para deshipotecar la propiedad es: " + valorDeshipotecar);
                                         this.getBanco().retirarDinero(this, (int)valorDeshipotecar);
                                         this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                         this.getRefPantalla().getLblNumDinero().revalidate();
                                         this.getRefPantalla().getLblNumDinero().repaint();
                                     }
+                                    this.getRefPantalla().getTxaHistorial().append("El jugador " + nombreHipotecador + " ha deshipotecado la propiedad " + nombrePropiedadHipotecada + " por " + valorDeshipotecar + ".\n");
                                 }
                                 else if (!propiedadActual.isHipotecada()){
                                     
@@ -1607,6 +1620,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     }
                                     
                                     System.out.println(propiedadActual.isHipotecada());
+                                    this.getRefPantalla().getTxaHistorial().append("El jugador " + nombreHipotecador + " ha hipotecado la propiedad " + nombrePropiedadHipotecada + " por " + propiedadActual.getValorHipoteca() + "$.\n");
                                 }
                             }
                             

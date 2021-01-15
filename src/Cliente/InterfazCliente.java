@@ -3853,7 +3853,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                         this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombreFicha);
                         this.getRefCliente().getHiloCliente().getWriter().writeInt(posFicha);
                         this.getRefCliente().getHiloCliente().getWriter().writeInt(arcaJail);
-                
+                        
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                        this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " se movió " + dadoTotal + " espacios.");
                     } catch (IOException ex) {
                         Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -3888,6 +3890,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 this.getRefCliente().getHiloCliente().getWriter().writeInt(posFicha);
                 this.getRefCliente().getHiloCliente().getWriter().writeInt(arcaJail);
                 
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " se movió " + dadoTotal + " espacios.");
             } catch (IOException ex) {
                 Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -3934,6 +3938,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                         this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
                         this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " sacó triples y fue a la cárcel.");
                         this.getRefCliente().getHiloCliente().setEnLaCarcel(true);
+                        this.getRefCliente().getHiloCliente().setDadosTirados(true);
                         
                         int cantidadMoverse = 0;
                         for (int i = this.getRefCliente().getHiloCliente().getFicha().getCasillaFinal(); i != 10; i++){
@@ -3987,6 +3992,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getTxaHistorial().append(this.getLblNombreJugador().getText() + ", su resultado de dado es repetido. Por favor lance los dados de nuevo.\n");
             return;
         }
+        this.getTxaHistorial().append(this.getLblNombreJugador().getText() + " obtuvo el resultado de dado " + dadoTotal + ".\n");
         this.getRefCliente().getHiloCliente().setTotalRoll(dadoTotal);
         listaDados.add(dadoTotal);
         System.out.println(listaDados);
@@ -4325,6 +4331,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             }
             this.getLblFichaJugador().setIcon(imageIcon);
         }
+        
+        try {
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " seleccionó la ficha " + seleccion);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btnSeleccionFichaActionPerformed
 
     private void btnEndTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEndTurnActionPerformed
@@ -4339,12 +4353,19 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         try {
                 this.getRefCliente().getHiloCliente().writer.writeInt(9);
                 this.getRefCliente().getHiloCliente().writer.writeUTF(this.getLblNombreJugador().getText());
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " terminó su turno.");
             } catch (IOException ex) {
                 Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_btnEndTurnActionPerformed
 
     private void btnComprarPropActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarPropActualActionPerformed
+        if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
+            this.getTxaHistorial().append("Error: No puede comprar si no es su turno.\n");
+            return;
+        }
+        
         if (!this.getRefCliente().getHiloCliente().isVueltaDada()){
             
             this.getTxaHistorial().append("Error: No puede comprar una propiedad todavia ya que no ha dado una vuelta.\n");
@@ -4355,6 +4376,13 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         int casillaTablero = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual();
         Propiedades propiedadComprar = (Propiedades) this.getRefCliente().getHiloCliente().getTablero().getCasillas().get(casillaTablero);
         int precioPropiedad = propiedadComprar.getPrecioCompra();
+        
+        if (propiedadComprar.getNombre().contains("Impuestos") || propiedadComprar.getNombre().contains("Arca") || propiedadComprar.getNombre().contains("Fortuna") || propiedadComprar.getNombre().contains("Go") || propiedadComprar.getNombre().contains("cárcel")){
+            
+            this.getTxaHistorial().append("Error: No puede comprar la casilla solicitada.\n");
+            return;
+            
+        }
         
         if (this.getRefCliente().getHiloCliente().getDinero() <= precioPropiedad){
             
@@ -4376,12 +4404,20 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             
             this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getDinero());
             this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getFicha().getPosicionActual());
+            
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " compró la propiedad " + propiedadComprar.getNombre() + " por la cantidad " + propiedadComprar.getPrecioCompra() + ".");
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComprarPropActualActionPerformed
 
     private void btnCompraCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraCasaActionPerformed
+        if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
+            this.getTxaHistorial().append("Error: No puede comprar si no es su turno.\n");
+            return;
+        }
+        
         if (this.getCbPropiedades().getItemCount() == 0){
             this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.\n");
             return;
@@ -4486,6 +4522,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().writer.writeInt(14);
             this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
             this.getRefCliente().getHiloCliente().writer.writeUTF(nombrePropiedad);
+                    
+            //this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+            //this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " compró una casa en la propiedad " + nombrePropiedad + ".");
             
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
@@ -4506,6 +4545,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnCompraHotelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraHotelActionPerformed
         // TODO add your handling code here:
+        if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
+            this.getTxaHistorial().append("Error: No puede comprar si no es su turno.\n");
+            return;
+        }
+        
         if (this.getCbPropiedades().getItemCount() == 0){
             this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.\n");
             return;
@@ -4534,6 +4578,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             refCliente.hiloCliente.writer.writeInt(17);      // Se envia al servidor la accion de enviar un mensaje por chat y se envia el mensaje
             refCliente.hiloCliente.writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
             refCliente.hiloCliente.writer.writeUTF(nombrePropiedad);
+            
+            //this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+            //this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " compró un hotel en la propiedad " + nombrePropiedad + ".");
         } catch (IOException ex) {
 
         }
@@ -4541,6 +4588,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnVenderPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderPropActionPerformed
         // TODO add your handling code here:
+        if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
+            this.getTxaHistorial().append("Error: No puede comprar si no es su turno.\n");
+            return;
+        }
+        
         if (this.getCbPropiedades().getItemCount() == 0){
             this.getTxaHistorial().append("Error: No tiene propiedades que vender.\n");
             return;
@@ -4558,6 +4610,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().getWriter().writeInt(15);
             this.getRefCliente().getHiloCliente().getWriter().writeUTF(propiedadVenderNombre);
             this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+            
+            //this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+            //this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " vendió la propiedad " + propiedadVenderNombre);
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -4629,6 +4684,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnVenderCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderCasaActionPerformed
         // TODO add your handling code here:
+        if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
+            this.getTxaHistorial().append("Error: No puede comprar si no es su turno.\n");
+            return;
+        }
+        
         if (this.getCbPropiedades().getItemCount() == 0){
             this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.\n");
             return;
@@ -4660,6 +4720,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().getWriter().writeInt(16);
             this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombrePropiedad);
             this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+            
+            this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " vendió una casa en la propiedad " + nombrePropiedad + ".");
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -4668,6 +4731,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnVenderHotelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderHotelActionPerformed
         // TODO add your handling code here:
+        if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
+            this.getTxaHistorial().append("Error: No puede comprar si no es su turno.\n");
+            return;
+        }
+        
         if (this.getCbPropiedades().getItemCount() == 0){
             this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.\n");
             return;
@@ -4699,6 +4767,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().getWriter().writeInt(18);
             this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombrePropiedad);
             this.getRefCliente().getHiloCliente().getWriter().writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+            
+            //this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+            //this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " vendió un hotel en la propiedad " + nombrePropiedad + ".");
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -4707,6 +4778,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnHipotecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHipotecarActionPerformed
         // TODO add your handling code here:
+        if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
+            this.getTxaHistorial().append("Error: No puede comprar si no es su turno.\n");
+            return;
+        }
+        
         if (this.getCbPropiedades().getItemCount() == 0){
             this.getTxaHistorial().append("Error: Todavía no ha comprado ninguna propiedad.\n");
             return;
@@ -4743,6 +4819,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void btnLiberadoCarcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLiberadoCarcelActionPerformed
         // TODO add your handling code here:
+        if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
+            this.getTxaHistorial().append("Error: No puede liberarse de la carcel si no es su turno.\n");
+            return;
+        }
+        
         if (!this.getRefCliente().getHiloCliente().isEnLaCarcel()){
             this.getTxaHistorial().append("No puede liberarse porque no está en la cárcel.\n");
             return;
@@ -4771,6 +4852,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     private void getOutOfJailFreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getOutOfJailFreeActionPerformed
         // TODO add your handling code here:
+        if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
+            this.getTxaHistorial().append("Error: No puede liberarse de la carcel si no es su turno.\n");
+            return;
+        }
+        
         if (this.getRefCliente().getHiloCliente().isGetOutOfJailFree()){
             
             this.getRefCliente().getHiloCliente().setGetOutOfJailFree(false);
@@ -4784,7 +4870,10 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             }
             
         }
-        
+        else{
+            this.getTxaHistorial().append("No puede usar una tarjeta de Get out of jail free porque no tiene una todavía.\n");
+            return;
+        }
         
     }//GEN-LAST:event_getOutOfJailFreeActionPerformed
 
