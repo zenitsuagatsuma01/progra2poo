@@ -736,7 +736,7 @@ public class ThreadServidor extends Thread implements Serializable{
                         
                         for (int i = 0; i < server.conexiones.size(); i++) {
                                 ThreadServidor current = server.conexiones.get(i);
-                                current.writer.writeInt(24);
+                                current.writer.writeInt(25);
                                 current.writer.writeUTF(consultarJugador);
                                 current.writer.writeUTF(nombreConsultador);
                                 current.writer.writeInt(contadorConsulta);
