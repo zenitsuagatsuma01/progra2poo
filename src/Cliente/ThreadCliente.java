@@ -461,7 +461,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         
                         Calles casilla1 = new Calles("Go", this.getRefPantalla().getLblCasilla1() ,"Go",0,0,"Ninguno",0,0,0,0,0,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla40 = new Calles("El Muelle", this.getRefPantalla().getLblCasilla2(), "El Muelle", 400, 200, "Azul", 200, 200, 50, 200, 600 ,1400,1700,2000, this.getRefPantalla().getLblLibreCasilla39(), this.getRefPantalla().getLblAlquilerCasilla39(), this.getRefPantalla().getLblCasasCasilla39(), this.getRefPantalla().getLblHotelCasillas39());
-                        Calles casilla39 = new Calles("Impuestos 1", this.getRefPantalla().getLblCasilla3(), "Impuestos 1", 200, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
+                        Calles casilla39 = new Calles("Impuestos 1", this.getRefPantalla().getLblCasilla3(), "Impuestos 1", 100, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla38 = new Calles("Plaza Park", this.getRefPantalla().getLblCasilla4(), "Plaza Park", 350, 175, "Azul", 200, 200, 35, 175, 500 ,1100,1300,1500, this.getRefPantalla().getLblLibreCasilla37(), this.getRefPantalla().getLblAlquilerCasilla37(), this.getRefPantalla().getLblCasasCasilla37(), this.getRefPantalla().getLblHotelCasillas37());
                         Calles casilla37 = new Calles("Fortuna 1", this.getRefPantalla().getLblCasilla5(), "Fortuna 1", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Ferrocarriles casilla36 = new Ferrocarriles("Ferrocarril Vía Rápida", this.getRefPantalla().getLblCasilla6(), "Ferrocarril Vía Rápida", 200, 100, this.getRefPantalla().getLblLibreCasilla35(), this.getRefPantalla().getLblAlquilerCasilla35(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
@@ -498,7 +498,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         Calles casilla8 = new Calles("Fortuna 3", this.getRefPantalla().getLblCasilla34(), "Fortuna 3", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla7 = new Calles("Avenida Oriental", this.getRefPantalla().getLblCasilla35(), "Avenida Oriental", 100, 50, "Celeste", 50, 50, 6, 30, 90 ,270,400,550, this.getRefPantalla().getLblLibreCasilla6(), this.getRefPantalla().getLblAlquilerCasilla6(), this.getRefPantalla().getLblCasasCasilla6(), this.getRefPantalla().getLblHotelCasillas6());
                         Ferrocarriles casilla6 = new Ferrocarriles("Ferrocarril Reading", this.getRefPantalla().getLblCasilla36(), "Ferrocarril Reading", 200, 100, this.getRefPantalla().getLblLibreCasilla5(), this.getRefPantalla().getLblAlquilerCasilla5(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
-                        Calles casilla5 = new Calles("Impuestos 2", this.getRefPantalla().getLblCasilla37(), "Impuestos 2", 100, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
+                        Calles casilla5 = new Calles("Impuestos 2", this.getRefPantalla().getLblCasilla37(), "Impuestos 2", 200, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla4 = new Calles("Avenida Báltica", this.getRefPantalla().getLblCasilla38(), "Avenida Báltica", 60, 30, "Rojo oscuro", 50, 50, 4, 20, 60 ,180,320,450, this.getRefPantalla().getLblLibreCasilla3(), this.getRefPantalla().getLblAlquilerCasilla3(), this.getRefPantalla().getLblCasasCasilla3(), this.getRefPantalla().getLblHotelCasillas3());
                         Calles casilla3 = new Calles("Arca Comunal 3", this.getRefPantalla().getLblCasilla39(), "Arca Comunal 3", 0, 0, "Ninguno", 0, 0, 0, 0, 0 ,0,0,0, this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing(), this.getRefPantalla().getLblNothing());
                         Calles casilla2 = new Calles("Avenida Mediterránea", this.getRefPantalla().getLblCasilla40(), "Avenida Mediterránea", 60, 30, "Rojo oscuro", 50, 50, 2, 10, 30 ,90,160,250, this.getRefPantalla().getLblLibreCasilla1(), this.getRefPantalla().getLblAlquilerCasilla1(), this.getRefPantalla().getLblCasasCasilla1(), this.getRefPantalla().getLblHotelCasillas1());
@@ -665,7 +665,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             for (int i = 0; i < nombresOrden.size(); i++){
                                 this.refPantalla.getTxaHistorial().append(contPos + ". " + nombresOrden.get(i) + "\n");
                                 this.refPantalla.getCbConsultarPropiedades().addItem(nombresOrden.get(i));
-                                ArrayList<Calles> propiedadesJugador = new ArrayList<Calles>();
+                                ArrayList<Propiedades> propiedadesJugador = new ArrayList<Propiedades>();
                                 FileManager.writeObject(propiedadesJugador, "src/Partida/propiedades" + nombresOrden.get(i) + ".dat");
                                 contPos = contPos + 1;
                             }
@@ -721,8 +721,6 @@ public class ThreadCliente extends Thread implements Serializable{
                         if (fichaQuitar == 5)
                             indicePnl = 7;
                         
-                        System.out.println("indicePnl es :" + indicePnl);
-                        System.out.println("ComponentCount es: " + this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount());
                         if (this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount()-1 < indicePnl)
                             indicePnl = indicePnl - 1;
 
@@ -789,8 +787,11 @@ public class ThreadCliente extends Thread implements Serializable{
                                     TimeUnit.SECONDS.sleep(1);
                                 contMovido = contMovido + 1;
                             }
-                            
+                            if (this.getFicha().getNombre().equalsIgnoreCase(nombreFicha)){
+                                this.getFicha().setCasillaFinal(casillaFinal);
+                            }
                             System.out.println("Casilla actual de ficha es " + casillaFinal);
+                            
                         }
                         System.out.println("Casilla en la que se detuvo es: " + casillaFinal + " se supone que debería ser la 10 cuando llega a la carcel.");
                         if (casillaFinal == 2 || casillaFinal == 17 || casillaFinal == 33){ // si cae en una casilla de arca comunal saca la carta necesaria
@@ -885,6 +886,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
+                                    cantidadMoverse = cantidadMoverse + 1;
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }
@@ -1604,9 +1606,23 @@ public class ThreadCliente extends Thread implements Serializable{
                         break;
                     case 22:
                         String vencidoPor = reader.readUTF();
-                        if (this.getNombre().equalsIgnoreCase(vencidoPor)){
+                        String perdedor = reader.readUTF();
+                        
+                        for (int i = 0; i < this.getTablero().getCasillas().size(); i++){
+                            Propiedades propActual = (Propiedades)this.getTablero().getCasillas().get(i);
+                            
+                            if (propActual.getDueno().equalsIgnoreCase(perdedor)){
+                                System.out.println("Viejo dueno de la propiedad es: " + propActual.getDueno());
+                                propActual.setDueno(vencidoPor);
+                                propActual.getLblLibre().setText("Dueno: " + vencidoPor);
+                                propActual.getLblLibre().revalidate();
+                                propActual.getLblLibre().repaint();
+                                System.out.println("Nuevo dueno de la propiedad es: " + propActual.getDueno());
+                            }
                             
                         }
+                        ArrayList<Propiedades> propiedadesConsultadas = (ArrayList<Propiedades>)FileManager.readObject("src/Partida/propiedades" + perdedor + ".dat");
+                        propiedadesConsultadas.clear();
                         
                         break;
                 }

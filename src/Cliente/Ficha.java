@@ -21,6 +21,7 @@ public class Ficha implements Serializable{
     JPanel ultimoPanel;
     String nombreJugador;
     int posicionActual;
+    int casillaFinal = 0;
 
     public Ficha(String nombre, String imagen, String nombreJugador) {
         this.nombre = nombre;
@@ -29,6 +30,16 @@ public class Ficha implements Serializable{
         this.posicionActual = 0;
         this.ultimoPanel = new JPanel();
     }
+
+    public int getCasillaFinal() {
+        return casillaFinal;
+    }
+
+    public void setCasillaFinal(int casillaFinal) {
+        this.casillaFinal = casillaFinal;
+    }
+    
+    
 
     public JPanel getUltimoPanel() {
         return ultimoPanel;

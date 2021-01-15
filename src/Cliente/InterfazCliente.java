@@ -3881,6 +3881,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             
             if (dado1 != dado2){
                 this.getRefCliente().getHiloCliente().setDadosTirados(true);
+                this.getRefCliente().getHiloCliente().setVecesDobles(0);
             }
             
             else if (dado1 == dado2){
@@ -3890,13 +3891,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 
                 if (vecesDobles == 3){
                     this.getRefCliente().getHiloCliente().setDadosTirados(true);
+                    this.getRefCliente().getHiloCliente().setVecesDobles(0);
                     try {
                         this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
                         this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " sacó triples y fue a la cárcel.");
                         this.getRefCliente().getHiloCliente().setEnLaCarcel(true);
                         
                         int cantidadMoverse = 0;
-                        for (int i = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual(); i != 10; i++){
+                        for (int i = this.getRefCliente().getHiloCliente().getFicha().getCasillaFinal(); i != 10; i++){
                                         
                             if (i+1 > 39){
                                 i = 0;
@@ -3905,6 +3907,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                             cantidadMoverse = cantidadMoverse + 1;
                             System.out.println(cantidadMoverse);
                         }
+                        cantidadMoverse = cantidadMoverse + 1;
                         System.out.println(cantidadMoverse);
                         
                         this.getRefCliente().getHiloCliente().moverFicha(cantidadMoverse, 1);
@@ -4608,7 +4611,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         String consultarJugador = this.getCbConsultarPropiedades().getSelectedItem().toString();
         this.getRefCliente().getHiloCliente().setNombreConsultar(consultarJugador);
         
-        ArrayList<Calles> propiedadesConsultadas = (ArrayList<Calles>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
+        ArrayList<Propiedades> propiedadesConsultadas = (ArrayList<Propiedades>)FileManager.readObject("src/Partida/propiedades" + consultarJugador + ".dat");
         
         if (propiedadesConsultadas.size() == 0){
             this.getTxaHistorial().append("Error: El jugador que desea consultar todavía no tiene propiedades.\n");
@@ -4638,15 +4641,19 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
         
         getLblNombreTituloPropiedad().setText("Nombre: " + propiedadesConsultadas.get(0).getNombre());
-        getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(0).getPrecio0());
-        getLblCon1Casa().setText("Con 1 casa: " + propiedadesConsultadas.get(0).getPrecio1());
-        getLblCon2Casas().setText("Con 2 casas: " + propiedadesConsultadas.get(0).getPrecio2());
-        getLblCon3Casas().setText("Con 3 casas: " + propiedadesConsultadas.get(0).getPrecio3());
-        getLblCon4Casas().setText("Con 4 casas: " + propiedadesConsultadas.get(0).getPrecio4());
-        getLblConHotel().setText("Con hotel: " + propiedadesConsultadas.get(0).getPrecio5());
+        getLblAlquileresTitulo().setText("Alquileres: " + propiedadesConsultadas.get(0).cobrar());
+        if (!propiedadesConsultadas.get(0).getNombre().contains("Ferrocarril") || propiedadesConsultadas.get(0).getNombre().contains("Servicios")){
+            Calles callesProp = (Calles)propiedadesConsultadas.get(0);
+            getLblCon1Casa().setText("Con 1 casa: " + callesProp.getPrecio1());
+            getLblCon2Casas().setText("Con 2 casas: " + callesProp.getPrecio2());
+            getLblCon3Casas().setText("Con 3 casas: " + callesProp.getPrecio3());
+            getLblCon4Casas().setText("Con 4 casas: " + callesProp.getPrecio4());
+            getLblConHotel().setText("Con hotel: " + callesProp.getPrecio5());
+            getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + callesProp.getPrecioCasa());
+            getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + callesProp.getPrecioHotel());
+        }
         getLblHipotecaTitulo().setText("Valor de la Hipoteca: " + propiedadesConsultadas.get(0).getValorHipoteca());
-        getLblCadaCasaCuesta().setText("Cada Casa cuesta: " + propiedadesConsultadas.get(0).getPrecioCasa());
-        getLblCadaHotelCuesta().setText("Cada hotel cuesta: " + propiedadesConsultadas.get(0).getPrecioHotel());
+        
                 }
                 catch(Exception e){
                     e.printStackTrace();
