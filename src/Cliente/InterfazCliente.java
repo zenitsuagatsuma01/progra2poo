@@ -3871,16 +3871,30 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                     this.getRefCliente().getHiloCliente().setDadosTirados(true);
                     return;
                 }
-                
-                try {
-                    this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
-                    this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " no sacó doble cinco y perdió su turno.");
-                    this.getRefCliente().getHiloCliente().setDadosTirados(true);
-                    return;
-                } catch (IOException ex) {
-                    Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                else{
+                    try {
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                        this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " no sacó doble cinco y ya no se puede mover por este turno.");
+                        this.getRefCliente().getHiloCliente().setDadosTirados(true);
+                        return;
+                    } catch (IOException ex) {
+                        Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
 
+            }
+            else if (this.getRefCliente().getHiloCliente().isEnLaCarcel() && dado1 == 5 && dado2 == 5){
+                this.getRefCliente().getHiloCliente().setNumFailsCarcel(0);
+                try {
+                        this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                        this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " sacó doble cinco y puede moverse.");
+                        this.getRefCliente().getHiloCliente().setDadosTirados(false);
+                        this.getRefCliente().getHiloCliente().setEnLaCarcel(false);
+                        this.getRefCliente().getHiloCliente().setVecesDobles(0);
+                        return;
+                    } catch (IOException ex) {
+                        Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                    }
             }
             
             try {
@@ -3938,7 +3952,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                         this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
                         this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " sacó triples y fue a la cárcel.");
                         this.getRefCliente().getHiloCliente().setEnLaCarcel(true);
-                        this.getRefCliente().getHiloCliente().setDadosTirados(true);
                         
                         int cantidadMoverse = 0;
                         for (int i = this.getRefCliente().getHiloCliente().getFicha().getCasillaFinal(); i != 10; i++){
@@ -3955,6 +3968,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                     } catch (IOException ex) {
                         Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
                     }
+                    return;
                 }
                 else{
                     try {
