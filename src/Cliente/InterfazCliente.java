@@ -3839,7 +3839,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                     this.getLblNumDinero().repaint();
         
                     this.getRefCliente().getHiloCliente().setEnLaCarcel(false);
-                    this.getRefCliente().getHiloCliente().setDadosTirados(false);
+                    this.getRefCliente().getHiloCliente().setDadosTirados(true);
                     try {
                         this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
                         this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " pagó $50 para liberarse de la cárcel y puede moverse.");
