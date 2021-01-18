@@ -1059,6 +1059,7 @@ public class ThreadCliente extends Thread implements Serializable{
                         else{
                             Propiedades casillaPropiedad = (Propiedades)this.getTablero().getCasillas().get(casillaFinal);
                             if (casillaPropiedad.isComprada()){
+                                
                                 if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
                                     System.out.println(fichaMover.getNombreJugador());
                                     
@@ -1076,10 +1077,13 @@ public class ThreadCliente extends Thread implements Serializable{
                                     System.out.println(casillaPropiedad.getDueno());
                                     this.getBanco().darDinero(this, casillaPropiedad.cobrar());
                                 }
-                                this.getRefPantalla().getTxaHistorial().append("El jugador " + fichaMover.getNombreJugador() + " pagó de alquiler " + casillaPropiedad.cobrar() + "$ al jugador " + casillaPropiedad.getDueno() + ".\n");
-                                this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
-                                this.getRefPantalla().getLblNumDinero().revalidate();
-                                this.getRefPantalla().getLblNumDinero().repaint();
+                                if (!fichaMover.getNombreJugador().equalsIgnoreCase(casillaPropiedad.getDueno())){
+                                    this.getRefPantalla().getTxaHistorial().append("El jugador " + fichaMover.getNombreJugador() + " pagó de alquiler " + casillaPropiedad.cobrar() + "$ al jugador " + casillaPropiedad.getDueno() + ".\n");
+                                    this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+                                    this.getRefPantalla().getLblNumDinero().revalidate();
+                                    this.getRefPantalla().getLblNumDinero().repaint();
+                                }
+                                
                             }
                         }
                         
@@ -1239,6 +1243,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     int cantRailroads = currentRailroad.getCantidadDeFerrocarriles();
                                     cantRailroads = cantRailroads + 1;
                                     currentRailroad.setCantidadDeFerrocarriles(cantRailroads);
+                                    currentRailroad.getLblAlquiler().setText("Alquiler: " + currentRailroad.cobrar() + " $");
                                 }
                                 
                             }
@@ -1256,11 +1261,12 @@ public class ThreadCliente extends Thread implements Serializable{
                                     int cantServicios = currentService.getCantidadDeServicios();
                                     cantServicios = cantServicios + 1;
                                     currentService.setCantidadDeServicios(cantServicios);
+                                    currentService.getLblAlquiler().setText("Alquiler: " + currentService.cobrar() + " $");
                                 }
                                 
                             }
                             
-                            propiedadServicios.getLblAlquiler().setText("Alquiler: " + propiedadServicios.cobrar(numDadoCobrar) + " $");
+                            propiedadServicios.getLblAlquiler().setText("Alquiler: " + propiedadServicios.cobrar() + " $");
                         }
                         
                         break;

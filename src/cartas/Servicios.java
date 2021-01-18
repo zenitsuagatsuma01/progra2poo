@@ -21,16 +21,6 @@ public class Servicios extends Propiedades{
         this.cantidadDeServicios = 0;
         this.dados = 0;
     }
-    
-    public int cobrar(int dados){
-        if(cantidadDeServicios == 1){
-            return dados * 4;
-        }
-        else{
-            return dados * 10;
-        }
-        
-    }
 
     @Override
     public int cobrar() {
