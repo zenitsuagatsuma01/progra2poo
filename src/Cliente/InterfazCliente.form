@@ -315,6 +315,32 @@
             </Constraint>
           </Constraints>
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel37">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Get out of jail free:"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="190" y="180" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblGetOutOfJailFree">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No tiene"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="330" y="180" width="60" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
@@ -3816,7 +3842,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="180" y="530" width="70" height="20"/>
+                  <AbsoluteConstraints x="180" y="530" width="100" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -4859,23 +4885,8 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="cbSeleccion">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="14">
-                <StringItem index="0" value="Chikorita"/>
-                <StringItem index="1" value="Slowbro"/>
-                <StringItem index="2" value="Charizard"/>
-                <StringItem index="3" value="Pikachu"/>
-                <StringItem index="4" value="Yamper"/>
-                <StringItem index="5" value="Rayquaza"/>
-                <StringItem index="6" value="Suicune"/>
-                <StringItem index="7" value="Entei"/>
-                <StringItem index="8" value="Raikoui"/>
-                <StringItem index="9" value="Mewtwo"/>
-                <StringItem index="10" value="Espeon"/>
-                <StringItem index="11" value="Ditto"/>
-                <StringItem index="12" value="Cyndaquil"/>
-                <StringItem index="13" value="Totodile"/>
-              </StringArray>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Chikorita&quot;, &quot;Slowbro&quot;, &quot;Charizard&quot;, &quot;Pikachu&quot;, &quot;Yamper&quot;, &quot;Rayquaza&quot;, &quot;Suicune&quot;, &quot;Entei&quot;, &quot;Raikou&quot;, &quot;Mewtwo&quot;, &quot;Espeon&quot;, &quot;Ditto&quot;, &quot;Cyndaquil&quot;, &quot;Totodile&quot; })" type="code"/>
             </Property>
           </Properties>
           <AuxValues>

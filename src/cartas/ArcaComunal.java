@@ -86,6 +86,7 @@ public class ArcaComunal extends Cartas{
                 break;
             case 5:
                 jugador.setGetOutOfJailFree(true); // get out of jail free
+                jugador.getRefPantalla().getLblGetOutOfJailFree().setText("Si tiene");
                 jugador.mandarMensaje(efecto);
                 break;
             default:

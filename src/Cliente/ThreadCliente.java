@@ -380,24 +380,7 @@ public class ThreadCliente extends Thread implements Serializable{
     public void setNumJugador(int numJugador) {
         this.numJugador = numJugador;
     }
-    
-    
-    
-    public void solicitarPropiedad(){ // Parametro debería en realidad ser un objeto tipo Propiedad pero la clase no existe todavía
-        
-    }
-    
-    public void solicitarCasa(){ // Parametro debería ser un objeto tipo Casa
-        
-    }
-    
-    public void solicitarHotel(){ // Parametro debería ser un objeto tipo Hotel
-        
-    }
-    
-    public void actuarCarta(){      // Para reaccionar ante las diferentes cartas del juego
-        
-    }
+   
 
     public Ficha getFicha() {
         return ficha;
@@ -720,12 +703,24 @@ public class ThreadCliente extends Thread implements Serializable{
                         if (fichaQuitar == 5)
                             indicePnl = 7;
                         
-                        if (this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount()-1 < indicePnl)
-                            indicePnl = indicePnl - 1;
+                        try{
+                            this.getTablero().getCasillas().get(posicionActual).getPanel().remove(indicePnl);
+                            this.getTablero().getCasillas().get(posicionActual).getPanel().revalidate();
+                            this.getTablero().getCasillas().get(posicionActual).getPanel().repaint();
+                        }
+                        catch(ArrayIndexOutOfBoundsException e){
+                            System.out.println("Out of bounds");
+                            while (this.getTablero().getCasillas().get(posicionActual).getPanel().getComponentCount()-1 < indicePnl){
+                                indicePnl = indicePnl - 1;
+                            }
+                            this.getTablero().getCasillas().get(posicionActual).getPanel().remove(indicePnl);
+                            this.getTablero().getCasillas().get(posicionActual).getPanel().revalidate();
+                            this.getTablero().getCasillas().get(posicionActual).getPanel().repaint();
+                        }
 
-                        this.getTablero().getCasillas().get(posicionActual).getPanel().remove(indicePnl);
-                        this.getTablero().getCasillas().get(posicionActual).getPanel().revalidate();
-                        this.getTablero().getCasillas().get(posicionActual).getPanel().repaint();
+                        //this.getTablero().getCasillas().get(posicionActual).getPanel().remove(indicePnl);
+                        //this.getTablero().getCasillas().get(posicionActual).getPanel().revalidate();
+                        //this.getTablero().getCasillas().get(posicionActual).getPanel().repaint();
                         
                         if (posicionActual + 1 > this.getTablero().getCasillas().size()-1){
                             posicionActual = 0;
@@ -799,18 +794,14 @@ public class ThreadCliente extends Thread implements Serializable{
                                 }
                                 ArcaComunal cartaSacada = (ArcaComunal)this.getTablero().getCartasArcaComunal().get(this.getContadorArcaComunal());
                                 
-                                if (this.getContadorArcaComunal() == 0){
-                                    cartaSacada.setIndiceCasillaDestino(39-casillaFinal);
+                                if (this.getContadorArcaComunal() == 0 && casillaFinal == 2){
+                                    cartaSacada.setIndiceCasillaDestino(38);
                                 }
-                                if (this.getContadorArcaComunal() == 5 && casillaFinal == 2){
-                                    if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
-                                        System.out.println(fichaMover.getNombreJugador());
-                                        this.setEnLaCarcel(true);
-                                        System.out.println(this.isEnLaCarcel());
-                                    }
-                                    
-                                    System.out.println("Cantidad para moverse a la carcel es " + 8);
-                                    cartaSacada.setIndiceCasillaDestino(8);
+                                if (this.getContadorArcaComunal() == 0 && casillaFinal == 17){
+                                    cartaSacada.setIndiceCasillaDestino(23);
+                                }
+                                if (this.getContadorArcaComunal() == 0 && casillaFinal == 33){
+                                    cartaSacada.setIndiceCasillaDestino(7);
                                 }
                                 if (this.getContadorArcaComunal() == 5 && casillaFinal == 2){
                                     if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){

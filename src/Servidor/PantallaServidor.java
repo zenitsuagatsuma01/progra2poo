@@ -42,81 +42,47 @@ public class PantallaServidor extends javax.swing.JFrame implements Serializable
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         txaMensajes = new javax.swing.JTextArea();
         btnCerrar = new javax.swing.JButton();
-        btnSave = new javax.swing.JButton();
-        btnLoad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         txaMensajes.setColumns(20);
         txaMensajes.setRows(5);
         jScrollPane1.setViewportView(txaMensajes);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 712;
-        gridBagConstraints.ipady = 670;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 10);
-        getContentPane().add(jScrollPane1, gridBagConstraints);
-
         btnCerrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCerrar.setText("Cerrar");
+        btnCerrar.setText("Detener");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 23;
-        gridBagConstraints.ipady = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(31, 121, 0, 0);
-        getContentPane().add(btnCerrar, gridBagConstraints);
 
-        btnSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSave.setText("Guardar Partida");
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipady = 17;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(26, 115, 21, 0);
-        getContentPane().add(btnSave, gridBagConstraints);
-
-        btnLoad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnLoad.setText("Cargar Partida");
-        btnLoad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoadActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipady = 17;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(26, 102, 21, 0);
-        getContentPane().add(btnLoad, gridBagConstraints);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(318, 318, 318)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -126,26 +92,6 @@ public class PantallaServidor extends javax.swing.JFrame implements Serializable
         srv.stopserver();       // Se detiene el servidor
         this.addMessage("-Servidor detenido.");
     }//GEN-LAST:event_btnCerrarActionPerformed
-
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        String nombre = JOptionPane.showInputDialog("Escriba su nombre:");
-        try{
-        InterfazCliente pantalla = new InterfazCliente();
-        Cliente c = new Cliente(pantalla);
-        pantalla.pack();
-        pantalla.setVisible(true); 
-        c.conectar(nombre);
-               
-        }
-        catch(Exception e){
-            
-        }
-    }//GEN-LAST:event_btnSaveActionPerformed
-
-    private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
-        // TODO add your handling code here:
-        srv.cargarPartida(); // Carga la partida
-    }//GEN-LAST:event_btnLoadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,8 +133,6 @@ public class PantallaServidor extends javax.swing.JFrame implements Serializable
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
-    private javax.swing.JButton btnLoad;
-    private javax.swing.JButton btnSave;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txaMensajes;
     // End of variables declaration//GEN-END:variables

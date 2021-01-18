@@ -1042,6 +1042,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblFichaJugador = new javax.swing.JLabel();
         lblQuedanCasas = new javax.swing.JLabel();
         lblQuedanHoteles = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        lblGetOutOfJailFree = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pnlTablero = new javax.swing.JPanel();
         jPanel70 = new javax.swing.JPanel();
@@ -1467,6 +1469,14 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblQuedanHoteles.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblQuedanHoteles.setText("Quedan 12 hoteles");
         jPanel1.add(lblQuedanHoteles, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 170, -1));
+
+        jLabel37.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel37.setText("Get out of jail free:");
+        jPanel1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
+
+        lblGetOutOfJailFree.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblGetOutOfJailFree.setText("No tiene");
+        jPanel1.add(lblGetOutOfJailFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 60, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 0, 400, 1000));
 
@@ -2710,7 +2720,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         lblLibreCasilla11.setText("Dueno:");
         pnlTablero.add(lblLibreCasilla11);
-        lblLibreCasilla11.setBounds(180, 530, 70, 20);
+        lblLibreCasilla11.setBounds(180, 530, 100, 20);
 
         lblAlquilerCasilla11.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla11);
@@ -3128,7 +3138,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblSeleccionFicha.setText("Seleccionar ficha:");
         pnlToolbar.add(lblSeleccionFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 170, -1));
 
-        cbSeleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chikorita", "Slowbro", "Charizard", "Pikachu", "Yamper", "Rayquaza", "Suicune", "Entei", "Raikoui", "Mewtwo", "Espeon", "Ditto", "Cyndaquil", "Totodile" }));
+        cbSeleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chikorita", "Slowbro", "Charizard", "Pikachu", "Yamper", "Rayquaza", "Suicune", "Entei", "Raikou", "Mewtwo", "Espeon", "Ditto", "Cyndaquil", "Totodile" }));
         pnlToolbar.add(cbSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 260, 30));
 
         btnSeleccionFicha.setText("Ficha seleccionada");
@@ -4876,6 +4886,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().setGetOutOfJailFree(false);
             this.getRefCliente().getHiloCliente().setEnLaCarcel(false);
             this.getRefCliente().getHiloCliente().setDadosTirados(false);
+            this.getLblGetOutOfJailFree().setText("No tiene");
             try {
                 this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
                 this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " usó su tarjeta de salir de la carcel gratis y puede moverse libremente.");
@@ -5248,6 +5259,16 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         this.lblTurno.setText("Terminado");
     }
 
+    public JLabel getLblGetOutOfJailFree() {
+        return lblGetOutOfJailFree;
+    }
+
+    public void setLblGetOutOfJailFree(JLabel lblGetOutOfJailFree) {
+        this.lblGetOutOfJailFree = lblGetOutOfJailFree;
+    }
+    
+    
+
     
     public void setInicioPartida(){             // Configura la partida con los datos iniciales para empezarla
         lblStatusPartida.setText("Partida Iniciada");
@@ -5372,6 +5393,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
@@ -5558,6 +5580,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel lblFicha;
     private javax.swing.JLabel lblFichaJugador;
     private javax.swing.JLabel lblFortuna;
+    private javax.swing.JLabel lblGetOutOfJailFree;
     private javax.swing.JLabel lblHipotecaTitulo;
     private javax.swing.JLabel lblHistorial;
     private javax.swing.JLabel lblHotelCasillas1;
