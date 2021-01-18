@@ -1042,8 +1042,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblFichaJugador = new javax.swing.JLabel();
         lblQuedanCasas = new javax.swing.JLabel();
         lblQuedanHoteles = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        lblGetOutOfJailFree = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pnlTablero = new javax.swing.JPanel();
         jPanel70 = new javax.swing.JPanel();
@@ -1366,6 +1364,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblCarcel = new javax.swing.JLabel();
         btnLiberadoCarcel = new javax.swing.JButton();
         getOutOfJailFree = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
+        lblGetOutOfJailFree = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1469,14 +1469,6 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblQuedanHoteles.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblQuedanHoteles.setText("Quedan 12 hoteles");
         jPanel1.add(lblQuedanHoteles, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 170, -1));
-
-        jLabel37.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel37.setText("Get out of jail free:");
-        jPanel1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
-
-        lblGetOutOfJailFree.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblGetOutOfJailFree.setText("No tiene");
-        jPanel1.add(lblGetOutOfJailFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 60, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 0, 400, 1000));
 
@@ -3418,7 +3410,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         lblCarcel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblCarcel.setText("Cárcel:");
-        pnlToolbar.add(lblCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, -1, -1));
+        pnlToolbar.add(lblCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, -1, -1));
 
         btnLiberadoCarcel.setText("Ser liberado ($50)");
         btnLiberadoCarcel.addActionListener(new java.awt.event.ActionListener() {
@@ -3426,7 +3418,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnLiberadoCarcelActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnLiberadoCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 140, 50));
+        pnlToolbar.add(btnLiberadoCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 140, 50));
 
         getOutOfJailFree.setText("Get out of jail free");
         getOutOfJailFree.addActionListener(new java.awt.event.ActionListener() {
@@ -3434,7 +3426,15 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 getOutOfJailFreeActionPerformed(evt);
             }
         });
-        pnlToolbar.add(getOutOfJailFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(797, 110, 130, 50));
+        pnlToolbar.add(getOutOfJailFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, 130, 50));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel37.setText("Get out of jail free:");
+        pnlToolbar.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, -1, -1));
+
+        lblGetOutOfJailFree.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblGetOutOfJailFree.setText("No tiene");
+        pnlToolbar.add(lblGetOutOfJailFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 150, 100, -1));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
