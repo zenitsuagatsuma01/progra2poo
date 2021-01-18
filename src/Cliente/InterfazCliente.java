@@ -4411,6 +4411,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         Propiedades propiedadComprar = (Propiedades) this.getRefCliente().getHiloCliente().getTablero().getCasillas().get(casillaTablero);
         int precioPropiedad = propiedadComprar.getPrecioCompra();
         
+        if (propiedadComprar.isComprada()){
+            this.getTxaHistorial().append("Error: No puede comprar esta propiedad porque ya fue comprada.\n");
+            return;
+        }
+        
         if (propiedadComprar.getNombre().contains("Impuestos") || propiedadComprar.getNombre().contains("Arca") || propiedadComprar.getNombre().contains("Fortuna") || propiedadComprar.getNombre().contains("Go") || propiedadComprar.getNombre().contains("cárcel")){
             
             this.getTxaHistorial().append("Error: No puede comprar la casilla solicitada.\n");
