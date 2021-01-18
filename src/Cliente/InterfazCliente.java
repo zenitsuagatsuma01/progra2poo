@@ -3832,9 +3832,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             int dadoTotal = dado1+dado2;
             String nombreFicha = this.getRefCliente().getHiloCliente().getFicha().getNombre();
             int posFicha = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual();
-            
             int arcaJail = 0;
-            
             if (this.getRefCliente().getHiloCliente().isEnLaCarcel() && dado1 != 5 && dado2 != 5){
                 int numFailsCarcel = this.getRefCliente().getHiloCliente().getNumFailsCarcel();
                 numFailsCarcel = numFailsCarcel + 1;
@@ -4878,6 +4876,11 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         // TODO add your handling code here:
         if (!this.getLblTurno().getText().equalsIgnoreCase(this.getRefCliente().getHiloCliente().getNombre())){
             this.getTxaHistorial().append("Error: No puede liberarse de la carcel si no es su turno.\n");
+            return;
+        }
+        
+        if (!this.getRefCliente().getHiloCliente().isEnLaCarcel()){
+            this.getTxaHistorial().append("No puede liberarse porque no está en la cárcel.\n");
             return;
         }
         
