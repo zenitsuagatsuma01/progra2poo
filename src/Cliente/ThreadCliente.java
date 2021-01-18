@@ -1060,14 +1060,16 @@ public class ThreadCliente extends Thread implements Serializable{
                             Propiedades casillaPropiedad = (Propiedades)this.getTablero().getCasillas().get(casillaFinal);
                             if (casillaPropiedad.isComprada()){
                                 
-                                if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
-                                    System.out.println(fichaMover.getNombreJugador());
-                                    
-                                    if (casillaPropiedad.getNombre().contains("Servicios")){
+                                if (casillaPropiedad.getNombre().contains("Servicios")){
                                         Servicios servicioCasilla = (Servicios)casillaPropiedad;
                                         servicioCasilla.setDados(numMoverse);
                                         System.out.println("Cobro de alquiler sería " + servicioCasilla.cobrar());
                                     }
+                                
+                                if (this.getNombre().equalsIgnoreCase(fichaMover.getNombreJugador())){
+                                    System.out.println(fichaMover.getNombreJugador());
+                                    
+
                                     
                                     this.getBanco().retirarDinero(this, casillaPropiedad.cobrar());
                                     this.setPerdioPor(casillaPropiedad.getDueno());

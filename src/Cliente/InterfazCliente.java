@@ -4445,7 +4445,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getFicha().getPosicionActual());
             
             this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
-            this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " compró la propiedad " + propiedadComprar.getNombre() + " por la cantidad " + propiedadComprar.getPrecioCompra() + ".");
+            this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " compró la propiedad " + propiedadComprar.getNombre() + " por la cantidad " + propiedadComprar.getPrecioCompra() + "$.");
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
