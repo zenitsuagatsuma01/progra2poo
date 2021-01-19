@@ -4932,7 +4932,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         this.getLblNombreJugador().revalidate();
         this.getLblNombreJugador().repaint();
         try {
-            this.getRefCliente().getHiloCliente().revisarPerder("él mismo");
+            this.getRefCliente().getHiloCliente().revisarPerder("el banco");
             this.getRefCliente().getHiloCliente().writer.writeInt(20);
         } catch (IOException ex) {
             Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);

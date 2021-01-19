@@ -1450,6 +1450,9 @@ public class ThreadCliente extends Thread implements Serializable{
                                 propiedadActual.getLblCasas().setText("" + propiedadActual.getCantidadCasas());
                                 propiedadActual.getLblCasas().revalidate();
                                 propiedadActual.getLblCasas().repaint();
+                                propiedadActual.getLblAlquiler().setText("Alquiler: " + propiedadActual.cobrar() + "$");
+                                propiedadActual.getLblAlquiler().revalidate();
+                                propiedadActual.getLblAlquiler().repaint();
 
                                 System.out.println("Ha vendido una casa en " + propiedadActual.getNombre() + " y ahora esta tiene " + propiedadActual.getCantidadCasas());
                                 Calles calleActual = (Calles)propiedadActual;
@@ -1567,7 +1570,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                 if (propiedadActual.isHipotecada()){
                                     
                                     propiedadActual.setHipotecada(false);
-                                    propiedadActual.getLblAlquiler().setText("Alquiler: " + propiedadActual.cobrar());
+                                    propiedadActual.getLblAlquiler().setText("Alquiler: " + propiedadActual.cobrar() +  "$");
                                     propiedadActual.getLblAlquiler().revalidate();
                                     propiedadActual.getLblAlquiler().repaint();
                                     
@@ -1645,11 +1648,60 @@ public class ThreadCliente extends Thread implements Serializable{
                             
                             if (propActual.getDueno().equalsIgnoreCase(perdedor)){
                                 System.out.println("Viejo dueno de la propiedad es: " + propActual.getDueno());
+                                if (!vencidoPor.equalsIgnoreCase("el banco")){
+                                    if (!propActual.getNombre().contains("Ferrocarril") && !propActual.getNombre().contains("Servicios")){
+                                        Calles avActual = (Calles)propActual;
+                                        if (this.getNombre().equalsIgnoreCase(vencidoPor)){
+                                            if (avActual.getColor().equalsIgnoreCase("Rojo")){
+                                                int contadorColor = this.getContadorRojo();
+                                                contadorColor = contadorColor + 1;
+                                                this.setContadorRojo(contadorColor);
+                                            }
+                                            if (avActual.getColor().equalsIgnoreCase("Amarillo")){
+                                                int contadorColor = this.getContadorAmarillo();
+                                            contadorColor = contadorColor + 1;
+                                            this.setContadorAmarillo(contadorColor);
+                                            }
+                                            if (avActual.getColor().equalsIgnoreCase("Celeste")){
+                                                int contadorColor = this.getContadorCeleste();
+                                                contadorColor = contadorColor + 1;
+                                                this.setContadorCeleste(contadorColor);
+                                            }
+                                            if (avActual.getColor().equalsIgnoreCase("Azul")){
+                                                int contadorColor = this.getContadorAzul();
+                                                contadorColor = contadorColor + 1;
+                                                this.setContadorAzul(contadorColor);
+                                            }
+                                            if (avActual.getColor().equalsIgnoreCase("Naranja")){
+                                                int contadorColor = this.getContadorNaranja();
+                                                contadorColor = contadorColor + 1;
+                                                this.setContadorNaranja(contadorColor);
+                                            }
+                                            if (avActual.getColor().equalsIgnoreCase("Rojo oscuro")){
+                                                int contadorColor = this.getContadorRojoOscuro();
+                                                contadorColor = contadorColor + 1;
+                                                this.setContadorRojoOscuro(contadorColor);
+                                            }
+                                            if (avActual.getColor().equalsIgnoreCase("Verde")){
+                                                int contadorColor = this.getContadorVerde();
+                                                contadorColor = contadorColor + 1;
+                                                this.setContadorVerde(contadorColor);
+                                            }
+                                            if (avActual.getColor().equalsIgnoreCase("Rosado")){
+                                                int contadorColor = this.getContadorRosado();
+                                                contadorColor = contadorColor + 1;
+                                                this.setContadorRosado(contadorColor);
+                                            }
+                                            this.getRefPantalla().getCbPropiedades().addItem(propActual.getNombre());
+                                        }
+                                    }
+                                }
                                 propActual.setDueno(vencidoPor);
                                 propActual.getLblLibre().setText("Dueno: " + vencidoPor);
                                 propActual.getLblLibre().revalidate();
                                 propActual.getLblLibre().repaint();
                                 System.out.println("Nuevo dueno de la propiedad es: " + propActual.getDueno());
+                                this.getRefPantalla().getTxaHistorial().append("El nuevo dueno de la propiedad " + propActual.getNombre() + " del perdedor es: " + propActual.getDueno());
                             }
                             
                         }
