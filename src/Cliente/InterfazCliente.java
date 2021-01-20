@@ -1367,6 +1367,9 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         getOutOfJailFree = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
         lblGetOutOfJailFree = new javax.swing.JLabel();
+        pnlCheat = new javax.swing.JPanel();
+        txfCheat = new javax.swing.JTextField();
+        btnCheat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -3117,7 +3120,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 btnLanzarDadosActionPerformed(evt);
             }
         });
-        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 120, 90));
+        pnlToolbar.add(btnLanzarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 120, 90));
 
         btnHipotecar.setText("Hipotecar/deshipotecar");
         btnHipotecar.addActionListener(new java.awt.event.ActionListener() {
@@ -3444,6 +3447,33 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
         lblGetOutOfJailFree.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblGetOutOfJailFree.setText("No tiene");
         pnlToolbar.add(lblGetOutOfJailFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 150, 100, -1));
+
+        txfCheat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txfCheatActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlCheatLayout = new javax.swing.GroupLayout(pnlCheat);
+        pnlCheat.setLayout(pnlCheatLayout);
+        pnlCheatLayout.setHorizontalGroup(
+            pnlCheatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txfCheat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        pnlCheatLayout.setVerticalGroup(
+            pnlCheatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txfCheat, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        pnlToolbar.add(pnlCheat, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, 50));
+
+        btnCheat.setText("Trampa");
+        btnCheat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheatActionPerformed(evt);
+            }
+        });
+        pnlToolbar.add(btnCheat, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 190, 90, 40));
 
         getContentPane().add(pnlToolbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1380, 310));
 
@@ -4955,12 +4985,152 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             }
     }//GEN-LAST:event_btnRendirseActionPerformed
 
+    private void btnCheatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheatActionPerformed
+        // TODO add your handling code here:
+        String strCheat = this.getTxfCheat().getText();
+        int intCheat = 0;
+        
+        try{
+            intCheat = Integer.parseInt(strCheat);
+        }
+        catch(NumberFormatException e){
+            this.getTxaHistorial().append("El número con el que desea hacer trampa debe ser un entero.");
+            return;
+        }
+        
+        if (!this.getLblNombreJugador().getText().equals(this.getLblTurno().getText())){
+                
+                this.getTxaHistorial().append("Error: No puede lanzar los dados porque no es su turno.\n");
+                return;
+            }
+            
+            int dadoTotal = intCheat;
+            String nombreFicha = this.getRefCliente().getHiloCliente().getFicha().getNombre();
+            int posFicha = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual();
+            int arcaJail = 0;
+
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(11);
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(dadoTotal);
+                this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombreFicha);
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(posFicha);
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(arcaJail);
+                
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " se movió " + dadoTotal + " espacios.");
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            try {
+                    // TODO add your handling code here:
+                this.getRefCliente().getHiloCliente().revisarPerder(this.getRefCliente().getHiloCliente().getPerdioPor());
+                this.getRefCliente().getHiloCliente().writer.writeInt(20);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            if (this.getRefCliente().getHiloCliente().isPerdido()){
+                this.getLblNombreJugador().setText(this.getRefCliente().getHiloCliente().getNombre() + " (Perdido)");
+                this.getLblNombreJugador().revalidate();
+                this.getLblNombreJugador().repaint();
+                if (this.getRefCliente().getHiloCliente().getDinero() <= 0)
+                    this.getRefCliente().getHiloCliente().setDinero(0);
+                this.getLblNumDinero().setText(this.getRefCliente().getHiloCliente().getDinero() + " $");
+                this.getLblNumDinero().revalidate();
+                this.getLblNumDinero().repaint();
+                try {
+                    this.getRefCliente().getHiloCliente().writer.writeInt(21);
+                    this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+                    this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getPerdioPor());
+                    this.getRefCliente().getHiloCliente().writer.writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " ha perdido. Estaba endeudado a " + this.getRefCliente().getHiloCliente().getPerdioPor() + ".");
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }
+    }//GEN-LAST:event_btnCheatActionPerformed
+
+    private void txfCheatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfCheatActionPerformed
+        // TODO add your handling code here:
+        String strCheat = this.getTxfCheat().getText();
+        int intCheat = 0;
+        
+        try{
+            intCheat = Integer.parseInt(strCheat);
+        }
+        catch(NumberFormatException e){
+            this.getTxaHistorial().append("El número con el que desea hacer trampa debe ser un entero.");
+            return;
+        }
+        
+        if (!this.getLblNombreJugador().getText().equals(this.getLblTurno().getText())){
+                
+                this.getTxaHistorial().append("Error: No puede lanzar los dados porque no es su turno.\n");
+                return;
+            }
+            
+            int dadoTotal = intCheat;
+            String nombreFicha = this.getRefCliente().getHiloCliente().getFicha().getNombre();
+            int posFicha = this.getRefCliente().getHiloCliente().getFicha().getPosicionActual();
+            int arcaJail = 0;
+
+            try {
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(11);
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(dadoTotal);
+                this.getRefCliente().getHiloCliente().getWriter().writeUTF(nombreFicha);
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(posFicha);
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(arcaJail);
+                
+                this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
+                this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " se movió " + dadoTotal + " espacios.");
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            try {
+                    // TODO add your handling code here:
+                this.getRefCliente().getHiloCliente().revisarPerder(this.getRefCliente().getHiloCliente().getPerdioPor());
+                this.getRefCliente().getHiloCliente().writer.writeInt(20);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            if (this.getRefCliente().getHiloCliente().isPerdido()){
+                this.getLblNombreJugador().setText(this.getRefCliente().getHiloCliente().getNombre() + " (Perdido)");
+                this.getLblNombreJugador().revalidate();
+                this.getLblNombreJugador().repaint();
+                if (this.getRefCliente().getHiloCliente().getDinero() <= 0)
+                    this.getRefCliente().getHiloCliente().setDinero(0);
+                this.getLblNumDinero().setText(this.getRefCliente().getHiloCliente().getDinero() + " $");
+                this.getLblNumDinero().revalidate();
+                this.getLblNumDinero().repaint();
+                try {
+                    this.getRefCliente().getHiloCliente().writer.writeInt(21);
+                    this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getNombre());
+                    this.getRefCliente().getHiloCliente().writer.writeUTF(this.getRefCliente().getHiloCliente().getPerdioPor());
+                    this.getRefCliente().getHiloCliente().writer.writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " ha perdido. Estaba endeudado a " + this.getRefCliente().getHiloCliente().getPerdioPor() + ".");
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }
+    }//GEN-LAST:event_txfCheatActionPerformed
+
     public JButton getBtnAbrirServer() {
         return btnAbrirServer;
     }
 
     public void setBtnAbrirServer(JButton btnAbrirServer) {
         this.btnAbrirServer = btnAbrirServer;
+    }
+
+    public JTextField getTxfCheat() {
+        return txfCheat;
+    }
+
+    public void setTxfCheat(JTextField txfCheat) {
+        this.txfCheat = txfCheat;
     }
 
     public JButton getBtnCompraCasa() {
@@ -5365,6 +5535,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbrirServer;
+    private javax.swing.JButton btnCheat;
     private javax.swing.JButton btnCompraCasa;
     private javax.swing.JButton btnCompraHotel;
     private javax.swing.JButton btnComprarPropActual;
@@ -5704,6 +5875,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel lblTurnoDe;
     private javax.swing.JLabel lblUsuarioLanzamiento;
     private javax.swing.JPanel pnlArcaComunal;
+    private javax.swing.JPanel pnlCheat;
     private javax.swing.JPanel pnlColorTituloPropiedad;
     private javax.swing.JPanel pnlFicha;
     private javax.swing.JPanel pnlFortuna;
@@ -5713,6 +5885,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
     private javax.swing.JPanel pnlToolbar;
     private javax.swing.JTextArea txaHistorial;
     private javax.swing.JTextArea txaMensajes;
+    private javax.swing.JTextField txfCheat;
     private javax.swing.JTextField txfMensaje;
     // End of variables declaration//GEN-END:variables
 }
