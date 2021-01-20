@@ -771,17 +771,19 @@ public class ThreadCliente extends Thread implements Serializable{
                             
                             if (i == 0){
                                 System.out.println("Vuelta al tablero");
+                                if (arcaJail != 1 && arcaJail != 2)
+                                    this.getRefPantalla().getTxaHistorial().append("El jugador " + fichaMover.getNombreJugador() + " pasó Go y recibió 200$.\n");
                                 this.getTablero().getCasillas().get(39).getPanel().remove(fichaMover.getLabelFicha());
                                 this.getTablero().getCasillas().get(39).getPanel().revalidate();
                                 this.getTablero().getCasillas().get(39).getPanel().repaint();
                                 
                                 if (this.getFicha().getNombre().equals(nombreFicha)){
                                     
-                                    if (arcaJail != 1)
+                                    if (arcaJail != 1 && arcaJail != 2)
                                         this.getBanco().darDinero(this, 200);
                                     this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
                                     
-                                    if (arcaJail != 1)
+                                    if (arcaJail != 1 && arcaJail != 2)
                                         this.setVueltaDada(true);
                                     System.out.println("vueltaDada del jugador es: " + this.isVueltaDada());
                                     System.out.println("Mi nombre es: " + this.getNombre());
@@ -797,7 +799,8 @@ public class ThreadCliente extends Thread implements Serializable{
                                 casillaFinal = casillaFinal - 1;
                                 System.out.println("casillaFinal es " + casillaFinal);
                                 System.out.println("posicionActual es " + posicionActual);
-                            }
+                                System.out.println("i actual es: " + i);
+                           }
                             if (this.getFicha().getNombre().equalsIgnoreCase(nombreFicha)){
                                 this.getFicha().setCasillaFinal(casillaFinal);
                             }
@@ -877,7 +880,6 @@ public class ThreadCliente extends Thread implements Serializable{
                             if (this.getContadorFortuna() > 15){
                                     this.setContadorFortuna(0);
                             }
-                            
                                 Fortuna cartaSacada = (Fortuna)this.getTablero().getCartasFortuna().get(this.getContadorFortuna());
                                 
                                 if (this.getContadorFortuna() == 0 && casillaFinal == 7){
@@ -965,7 +967,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                 }
                                 
                                 if (this.getContadorFortuna() == 7){
-                                    cartaSacada.setIndiceCasillaDestino(36);
+                                    cartaSacada.setIndiceCasillaDestino(37);
                                 }
                                 
                                 if (this.getContadorFortuna() == 8 && casillaFinal == 7){
@@ -1013,6 +1015,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                         cantidadMoverse = cantidadMoverse + 1;
                                         System.out.println(cantidadMoverse);
                                     }
+                                    cantidadMoverse = cantidadMoverse + 1;
                                     System.out.println(cantidadMoverse);
                                     cartaSacada.setIndiceCasillaDestino(cantidadMoverse);
                                 }

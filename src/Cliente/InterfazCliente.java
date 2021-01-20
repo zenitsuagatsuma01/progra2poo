@@ -4977,6 +4977,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                     } catch (IOException ex) {
                         Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
                     }
+            this.getTxfCheat().setText("");
     }//GEN-LAST:event_btnCheatActionPerformed
 
     private void txfCheatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfCheatActionPerformed
@@ -5043,6 +5044,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
                 }
                 
             }
+            this.getTxfCheat().setText("");
     }//GEN-LAST:event_txfCheatActionPerformed
 
     public JButton getBtnAbrirServer() {
