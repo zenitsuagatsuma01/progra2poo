@@ -1727,7 +1727,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     this.getRefPantalla().getCbPropiedades().repaint();
                                 }
                                 System.out.println("Nuevo dueno de la propiedad es: " + propActual.getDueno());
-                                this.getRefPantalla().getTxaHistorial().append("El nuevo dueno de la propiedad " + propActual.getNombre() + " del perdedor es: " + propActual.getDueno());
+                                this.getRefPantalla().getTxaHistorial().append("El nuevo dueno de la propiedad " + propActual.getNombre() + " del perdedor es: " + propActual.getDueno() + ".\n");
                             }
                             
                         }
