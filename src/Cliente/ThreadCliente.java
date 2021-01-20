@@ -391,12 +391,26 @@ public class ThreadCliente extends Thread implements Serializable{
     }
     
     public void revisarPerder(String atacador) throws IOException{
-        if (this.getDinero() <= 0){
+        if (this.getDinero() <= 0 && this.yaPerdio != true){
+            this.yaPerdio = true;
+            this.setYaPerdio(true);
             this.perdido = true;
             this.setPerdido(true);
             System.out.println("perdió!");
             this.setPerdioPor(atacador);
             this.perdioPor = atacador;
+            this.setDinero(0);
+            this.getRefPantalla().getLblNumDinero().setText(this.getDinero() + " $");
+            this.getRefPantalla().getLblNumDinero().revalidate();
+            this.getRefPantalla().getLblNumDinero().repaint();
+            this.getRefPantalla().getLblNombreJugador().setText(this.getNombre() + " (Perdido)");
+            this.writer.writeInt(21);
+            this.writer.writeUTF(this.getNombre());
+            this.writer.writeUTF(this.getPerdioPor());
+            this.writer.writeUTF("El jugador " + this.getNombre() + " ha perdido. Estaba endeudado a " + this.getPerdioPor() + ".");
+        }
+        else{
+            System.out.println("No ha perdido");
         }
         
     }
@@ -780,6 +794,9 @@ public class ThreadCliente extends Thread implements Serializable{
                                 if (arcaJail != 2)
                                     TimeUnit.SECONDS.sleep(1);
                                 contMovido = contMovido + 1;
+                                casillaFinal = casillaFinal - 1;
+                                System.out.println("casillaFinal es " + casillaFinal);
+                                System.out.println("posicionActual es " + posicionActual);
                             }
                             if (this.getFicha().getNombre().equalsIgnoreCase(nombreFicha)){
                                 this.getFicha().setCasillaFinal(casillaFinal);
@@ -1088,9 +1105,11 @@ public class ThreadCliente extends Thread implements Serializable{
                                 
                             }
                         }
-                        
-                        this.revisarPerder(this.getPerdioPor());
-                        
+                        if (this.getDinero() <= 0){
+                            System.out.println(this.getNombre() + " PERDIDO");
+                            this.revisarPerder(this.getPerdioPor());
+                        }
+                            
                         break;
                     case 13:
                         int casillaMoverse = reader.readInt();
@@ -1692,7 +1711,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                                 contadorColor = contadorColor + 1;
                                                 this.setContadorRosado(contadorColor);
                                             }
-                                            this.getRefPantalla().getCbPropiedades().addItem(propActual.getNombre());
+                                            
                                         }
                                     }
                                 }
@@ -1700,6 +1719,13 @@ public class ThreadCliente extends Thread implements Serializable{
                                 propActual.getLblLibre().setText("Dueno: " + vencidoPor);
                                 propActual.getLblLibre().revalidate();
                                 propActual.getLblLibre().repaint();
+                                if (this.getNombre().equalsIgnoreCase(propActual.getDueno()))
+                                    this.getRefPantalla().getCbPropiedades().addItem(propActual.getNombre());
+                                if (this.getNombre().equalsIgnoreCase(perdedor)){
+                                    this.getRefPantalla().getCbPropiedades().removeAllItems();
+                                    this.getRefPantalla().getCbPropiedades().revalidate();
+                                    this.getRefPantalla().getCbPropiedades().repaint();
+                                }
                                 System.out.println("Nuevo dueno de la propiedad es: " + propActual.getDueno());
                                 this.getRefPantalla().getTxaHistorial().append("El nuevo dueno de la propiedad " + propActual.getNombre() + " del perdedor es: " + propActual.getDueno());
                             }

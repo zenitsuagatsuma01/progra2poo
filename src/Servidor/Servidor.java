@@ -210,7 +210,13 @@ public class Servidor extends Thread implements Serializable{
                 for (int x = 0; x < this.getNombreOrder().size(); x++){
                     if (this.getNombreOrder().get(x).equalsIgnoreCase(turnoActual)){
                         this.getNombreOrder().remove(this.getNombreOrder().get(x));
-                        nombreTurno = this.getNombreOrder().get(x);
+                        try {
+                            nombreTurno = this.getNombreOrder().get(x);
+                        }
+                        catch(IndexOutOfBoundsException e){
+                            
+                        }
+                        
                     }
                 }
                 
