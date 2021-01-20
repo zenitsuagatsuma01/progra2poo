@@ -3394,6 +3394,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         lblNumDado2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblNumDado2.setForeground(new java.awt.Color(255, 0, 0));
+        lblNumDado2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         pnlToolbar.add(lblNumDado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 20, 100, 100));
 
         btnVenderHotel.setText("Vender hotel");
@@ -3418,6 +3419,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         lblNumDado1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblNumDado1.setForeground(new java.awt.Color(255, 0, 0));
+        lblNumDado1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         pnlToolbar.add(lblNumDado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 100, 100));
 
         lblCarcel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
