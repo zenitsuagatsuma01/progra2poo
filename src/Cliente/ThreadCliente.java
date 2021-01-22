@@ -1784,19 +1784,19 @@ public class ThreadCliente extends Thread implements Serializable{
                             
                             if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Azul"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.blue);
-                            if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Verde"))
+                            else if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Verde"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.green);
-                            if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Amarillo"))
+                            else if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Amarillo"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.yellow);
-                            if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Rojo"))
+                            else if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Rojo"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red);
-                            if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Naranja"))
+                            else if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Naranja"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.orange);
-                            if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Rosado"))
+                            else if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Rosado"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.pink);
-                            if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Celeste"))
+                            else if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Celeste"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.cyan);
-                            if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Rojo oscuro"))
+                            else if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Rojo oscuro"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
                             else
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.white);
@@ -1869,21 +1869,21 @@ public class ThreadCliente extends Thread implements Serializable{
                             else if (propsConsultadas.size() > contadorConsulta){
                                 this.setContadorConsultar(contadorConsulta);
                                 
-                                if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Azul"))
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Azul"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.blue);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Verde"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Verde"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.green);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Amarillo"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Amarillo"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.yellow);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Naranja"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Naranja"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.orange);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rosado"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rosado"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.pink);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Celeste"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Celeste"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.cyan);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo oscuro"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo oscuro"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
                             else
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.white);
@@ -1898,7 +1898,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             this.getRefPantalla().getLblAlquileresTitulo().revalidate();
                             this.getRefPantalla().getLblAlquileresTitulo().repaint();
                             
-                            if (!propsConsultadas.get(contadorConsulta).getNombre().contains("Ferrocarril") || !propsConsultadas.get(contadorConsulta).getNombre().contains("Servicios")){
+                            if (!propsConsultadas.get(contadorConsulta).getNombre().contains("Ferrocarril") && !propsConsultadas.get(contadorConsulta).getNombre().contains("Servicios")){
                                 Calles callesProp = (Calles)propsConsultadas.get(contadorConsulta);
                                 this.getRefPantalla().getLblCon1Casa().setText("Con 1 casa: " + callesProp.getPrecio1());
                                 this.getRefPantalla().getLblCon1Casa().revalidate();
@@ -1957,21 +1957,21 @@ public class ThreadCliente extends Thread implements Serializable{
                             else if (contadorConsulta >= 0){
                                 this.setContadorConsultar(contadorConsulta);
                                 
-                                if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Azul"))
+                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Azul"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.blue);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Verde"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Verde"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.green);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Amarillo"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Amarillo"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.yellow);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Naranja"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Naranja"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.orange);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rosado"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rosado"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.pink);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Celeste"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Celeste"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.cyan);
-                            if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo oscuro"))
+                            else if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo oscuro"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
                             else
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.white);
@@ -1986,7 +1986,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             this.getRefPantalla().getLblAlquileresTitulo().revalidate();
                             this.getRefPantalla().getLblAlquileresTitulo().repaint();
                             
-                            if (!propsConsultadas.get(contadorConsulta).getNombre().contains("Ferrocarril") || !propsConsultadas.get(contadorConsulta).getNombre().contains("Servicios")){
+                            if (!propsConsultadas.get(contadorConsulta).getNombre().contains("Ferrocarril") && !propsConsultadas.get(contadorConsulta).getNombre().contains("Servicios")){
                                 Calles callesProp = (Calles)propsConsultadas.get(contadorConsulta);
                                 this.getRefPantalla().getLblCon1Casa().setText("Con 1 casa: " + callesProp.getPrecio1());
                                 this.getRefPantalla().getLblCon1Casa().revalidate();
