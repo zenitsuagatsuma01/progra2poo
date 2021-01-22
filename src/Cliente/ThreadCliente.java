@@ -1291,7 +1291,10 @@ public class ThreadCliente extends Thread implements Serializable{
                                 if (current.getNombre().contains("Servicios") && current.getDueno().equalsIgnoreCase(nombreComprador)){
                                     Servicios currentService = (Servicios)current;
                                     currentService.setCantidadDeServicios(numServicios);
-                                    currentService.getLblAlquiler().setText("Alquiler: " + currentService.cobrar() + " $");
+                                    if (currentService.getCantidadDeServicios() == 1)
+                                        currentService.getLblAlquiler().setText("Alq.: dados*4");
+                                    else
+                                        currentService.getLblAlquiler().setText("Alq.: dados*10");
                                     currentService.getLblAlquiler().revalidate();
                                     currentService.getLblAlquiler().repaint();
                                 }
@@ -1299,7 +1302,10 @@ public class ThreadCliente extends Thread implements Serializable{
                             }
                             
                             propiedadServicios.setCantidadDeServicios(numServicios);
-                            propiedadServicios.getLblAlquiler().setText("Alquiler: " + propiedadServicios.cobrar() + " $");
+                            if (propiedadServicios.getCantidadDeServicios() == 1)
+                                propiedadServicios.getLblAlquiler().setText("Alq.: dados*4");
+                            else
+                                propiedadServicios.getLblAlquiler().setText("Alq.: dados*10");
                             propiedadServicios.getLblAlquiler().revalidate();
                             propiedadServicios.getLblAlquiler().repaint();
                         }
@@ -1799,7 +1805,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             this.getRefPantalla().getLblNombreTituloPropiedad().setText("Nombre: " + propsConsultadas.get(contConsult).getNombre());
                             this.getRefPantalla().getLblNombreTituloPropiedad().revalidate();
                             this.getRefPantalla().getLblNombreTituloPropiedad().repaint();
-                            this.getRefPantalla().getLblAlquileresTitulo().setText("Alquileres: " + propsConsultadas.get(contConsult).cobrar());
+                            this.getRefPantalla().getLblAlquileresTitulo().setText("Alquiler: " + propsConsultadas.get(contConsult).cobrar() + "$");
                             this.getRefPantalla().getLblAlquileresTitulo().revalidate();
                             this.getRefPantalla().getLblAlquileresTitulo().repaint();
                             
@@ -1884,7 +1890,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             this.getRefPantalla().getLblNombreTituloPropiedad().setText("Nombre: " + propsConsultadas.get(contadorConsulta).getNombre());
                             this.getRefPantalla().getLblNombreTituloPropiedad().revalidate();
                             this.getRefPantalla().getLblNombreTituloPropiedad().repaint();
-                            this.getRefPantalla().getLblAlquileresTitulo().setText("Alquileres: " + propsConsultadas.get(contadorConsulta).cobrar());
+                            this.getRefPantalla().getLblAlquileresTitulo().setText("Alquiler: " + propsConsultadas.get(contadorConsulta).cobrar() + "$");
                             this.getRefPantalla().getLblAlquileresTitulo().revalidate();
                             this.getRefPantalla().getLblAlquileresTitulo().repaint();
                             
@@ -1970,7 +1976,7 @@ public class ThreadCliente extends Thread implements Serializable{
                             this.getRefPantalla().getLblNombreTituloPropiedad().setText("Nombre: " + propsConsultadas.get(contadorConsulta).getNombre());
                             this.getRefPantalla().getLblNombreTituloPropiedad().revalidate();
                             this.getRefPantalla().getLblNombreTituloPropiedad().repaint();
-                            this.getRefPantalla().getLblAlquileresTitulo().setText("Alquileres: " + propsConsultadas.get(contadorConsulta).cobrar());
+                            this.getRefPantalla().getLblAlquileresTitulo().setText("Alquiler: " + propsConsultadas.get(contadorConsulta).cobrar() + "$");
                             this.getRefPantalla().getLblAlquileresTitulo().revalidate();
                             this.getRefPantalla().getLblAlquileresTitulo().repaint();
                             

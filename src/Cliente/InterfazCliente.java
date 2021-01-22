@@ -2744,7 +2744,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         lblAlquilerCasilla12.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla12);
-        lblAlquilerCasilla12.setBounds(180, 490, 100, 20);
+        lblAlquilerCasilla12.setBounds(180, 490, 210, 20);
 
         lblLibreCasilla13.setText("Dueno:");
         pnlTablero.add(lblLibreCasilla13);
@@ -2964,7 +2964,7 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
 
         lblAlquilerCasilla28.setText("Alquiler: $0");
         pnlTablero.add(lblAlquilerCasilla28);
-        lblAlquilerCasilla28.setBounds(1000, 90, 80, 20);
+        lblAlquilerCasilla28.setBounds(980, 90, 100, 20);
 
         lblLibreCasilla29.setText("Dueno:");
         pnlTablero.add(lblLibreCasilla29);
