@@ -228,6 +228,11 @@ public class Servidor extends Thread implements Serializable{
             return;
         }
         
+        if (nombreTurno.equalsIgnoreCase("")){
+            nombreTurno = nombreOrder.get(0);
+            System.out.println("Turno estaba vacio");
+        }
+        
         System.out.println("El nuevo turno de proximoTurno es " + nombreTurno);
         System.out.println("La lista de perdedores del servidor es " + this.getListaPerdedores());
         if (this.getListaPerdedores().contains(nombreTurno)){

@@ -1743,7 +1743,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     propActual.getLblAlquiler().setText("Alquiler: $0");
                                     propActual.getLblAlquiler().revalidate();
                                     propActual.getLblAlquiler().repaint();
-                                    propActual.getLblCasas().setText("Casas: 0");
+                                    propActual.getLblCasas().setText("0");
                                     propActual.getLblCasas().revalidate();
                                     propActual.getLblCasas().repaint();
                                     propActual.getLblHotel().setText("Hotel: 0");
