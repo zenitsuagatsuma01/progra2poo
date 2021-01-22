@@ -4425,6 +4425,17 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             return;
         }
         
+        if (propiedadComprar.getNombre().contains("Ferrocarril")){
+            int numFerrocarriles = this.getRefCliente().getHiloCliente().getCantidadFerrocarriles();
+            numFerrocarriles = numFerrocarriles + 1;
+            this.getRefCliente().getHiloCliente().setCantidadFerrocarriles(numFerrocarriles);
+        }
+        if (propiedadComprar.getNombre().contains("Servicios")){
+            int numServicios = this.getRefCliente().getHiloCliente().getCantidadServicios();
+            numServicios = numServicios + 1;
+            this.getRefCliente().getHiloCliente().setCantidadServicios(numServicios);
+        }
+        
         try {
             // TODO add your handling code here:
             this.getRefCliente().getHiloCliente().writer.writeInt(13);
@@ -4439,6 +4450,8 @@ public class InterfazCliente extends javax.swing.JFrame implements Serializable{
             
             this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getDinero());
             this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getFicha().getPosicionActual());
+            this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getCantidadFerrocarriles());
+            this.getRefCliente().getHiloCliente().writer.writeInt(this.getRefCliente().getHiloCliente().getCantidadServicios());
             
             this.getRefCliente().getHiloCliente().getWriter().writeInt(7);
             this.getRefCliente().getHiloCliente().getWriter().writeUTF("El jugador " + this.getRefCliente().getHiloCliente().getNombre() + " compró la propiedad " + propiedadComprar.getNombre() + " por la cantidad " + propiedadComprar.getPrecioCompra() + "$.");

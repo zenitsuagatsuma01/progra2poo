@@ -571,6 +571,8 @@ public class ThreadServidor extends Thread implements Serializable{
                         String nombreComprador = reader.readUTF();
                         cantidadDinero = reader.readInt();
                         int casillaTablero = reader.readInt();
+                        int cantFerrocarriles = reader.readInt();
+                        int cantServicios = reader.readInt();
                         
                         for (int i = 0; i < server.conexiones.size(); i++) {
                             ThreadServidor current = server.conexiones.get(i);
@@ -579,6 +581,8 @@ public class ThreadServidor extends Thread implements Serializable{
                             current.writer.writeUTF(nombreComprador);
                             current.writer.writeInt(cantidadDinero);
                             current.writer.writeInt(casillaTablero);
+                            current.writer.writeInt(cantFerrocarriles);
+                            current.writer.writeInt(cantServicios);
                         }
                             break;
                     case 14: //compra de casas

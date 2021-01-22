@@ -192,10 +192,6 @@ public class Servidor extends Thread implements Serializable{
     public void proximoTurno(String turnoActual) throws IOException{
         String nombreTurno = "";
         System.out.println("El turnoActual de proximoTurno al comienzo es " + turnoActual);
-        
-        System.out.println("NombreOrder es " + this.getNombreOrder());
-        System.out.println("TurnoActual es " + turnoActual);
-        
         for (int i = 0; i < nombreOrder.size(); i++) {
             if (turnoActual.contains(nombreOrder.get(i))){
                 if (i + 1 >= nombreOrder.size()){
@@ -226,9 +222,9 @@ public class Servidor extends Thread implements Serializable{
         if (this.nombreOrder.size() == 1){
             //ArrayList<String> logLeida = (ArrayList<String>)FileManager.readObject("src/Archivos/log.dat");
             this.enviarMensaje("El jugador " + nombreOrder.get(0) + " ha ganado la partida!");
+            this.signalTerminarPartida();
             //logLeida.add("El jugador " + nombreOrder.get(0) + " ha ganado la partida!\n");
             //FileManager.writeObject(logLeida, "src/Archivos/log.dat");
-            this.signalTerminarPartida();
             return;
         }
         

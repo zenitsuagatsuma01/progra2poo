@@ -1083,6 +1083,9 @@ public class ThreadCliente extends Thread implements Serializable{
                                 if (casillaPropiedad.getNombre().contains("Servicios")){
                                         Servicios servicioCasilla = (Servicios)casillaPropiedad;
                                         servicioCasilla.setDados(numMoverse);
+                                        servicioCasilla.getLblAlquiler().setText("Alquiler: " +servicioCasilla.cobrar() + "$" );
+                                        servicioCasilla.getLblAlquiler().revalidate();
+                                        servicioCasilla.getLblAlquiler().repaint();
                                         System.out.println("Cobro de alquiler sería " + servicioCasilla.cobrar());
                                     }
                                 
@@ -1173,6 +1176,8 @@ public class ThreadCliente extends Thread implements Serializable{
                         String nombreComprador = reader.readUTF();
                         cantidadDinero = reader.readInt();
                         int casillaTablero = reader.readInt();
+                        int numFerrocarriles = reader.readInt();
+                        int numServicios = reader.readInt();
                         
                         Propiedades propiedadComprar = (Propiedades) this.getTablero().getCasillas().get(casillaTablero);
                         int precioPropiedad = propiedadComprar.getPrecioCompra();
@@ -1264,15 +1269,18 @@ public class ThreadCliente extends Thread implements Serializable{
                                 
                                 if (current.getNombre().contains("Ferrocarril") && current.getDueno().equalsIgnoreCase(nombreComprador)){
                                     Ferrocarriles currentRailroad = (Ferrocarriles)current;
-                                    int cantRailroads = currentRailroad.getCantidadDeFerrocarriles();
-                                    cantRailroads = cantRailroads + 1;
-                                    currentRailroad.setCantidadDeFerrocarriles(cantRailroads);
+                                    currentRailroad.setCantidadDeFerrocarriles(numFerrocarriles);
                                     currentRailroad.getLblAlquiler().setText("Alquiler: " + currentRailroad.cobrar() + " $");
+                                    currentRailroad.getLblAlquiler().revalidate();
+                                    currentRailroad.getLblAlquiler().repaint();
                                 }
                                 
                             }
                             
+                            propiedadFerrocarril.setCantidadDeFerrocarriles(numFerrocarriles);
                             propiedadFerrocarril.getLblAlquiler().setText("Alquiler: " + propiedadFerrocarril.cobrar() + " $");
+                            propiedadFerrocarril.getLblAlquiler().revalidate();
+                            propiedadFerrocarril.getLblAlquiler().repaint();
                         }
                         else if (propiedadComprar.getNombre().contains("Servicios")){
                             Servicios propiedadServicios = (Servicios)propiedadComprar;
@@ -1282,15 +1290,18 @@ public class ThreadCliente extends Thread implements Serializable{
                                 
                                 if (current.getNombre().contains("Servicios") && current.getDueno().equalsIgnoreCase(nombreComprador)){
                                     Servicios currentService = (Servicios)current;
-                                    int cantServicios = currentService.getCantidadDeServicios();
-                                    cantServicios = cantServicios + 1;
-                                    currentService.setCantidadDeServicios(cantServicios);
+                                    currentService.setCantidadDeServicios(numServicios);
                                     currentService.getLblAlquiler().setText("Alquiler: " + currentService.cobrar() + " $");
+                                    currentService.getLblAlquiler().revalidate();
+                                    currentService.getLblAlquiler().repaint();
                                 }
                                 
                             }
                             
+                            propiedadServicios.setCantidadDeServicios(numServicios);
                             propiedadServicios.getLblAlquiler().setText("Alquiler: " + propiedadServicios.cobrar() + " $");
+                            propiedadServicios.getLblAlquiler().revalidate();
+                            propiedadServicios.getLblAlquiler().repaint();
                         }
                         
                         break;
