@@ -1083,9 +1083,9 @@ public class ThreadCliente extends Thread implements Serializable{
                                 if (casillaPropiedad.getNombre().contains("Servicios")){
                                         Servicios servicioCasilla = (Servicios)casillaPropiedad;
                                         servicioCasilla.setDados(numMoverse);
-                                        servicioCasilla.getLblAlquiler().setText("Alquiler: " +servicioCasilla.cobrar() + "$" );
-                                        servicioCasilla.getLblAlquiler().revalidate();
-                                        servicioCasilla.getLblAlquiler().repaint();
+                                        //servicioCasilla.getLblAlquiler().setText("Alquiler: " +servicioCasilla.cobrar() + "$" );
+                                        //servicioCasilla.getLblAlquiler().revalidate();
+                                        //servicioCasilla.getLblAlquiler().repaint();
                                         System.out.println("Cobro de alquiler sería " + servicioCasilla.cobrar());
                                     }
                                 
@@ -1737,6 +1737,11 @@ public class ThreadCliente extends Thread implements Serializable{
                                 }
                                 propActual.setDueno(vencidoPor);
                                 propActual.getLblLibre().setText("Dueno: " + vencidoPor);
+                                if (propActual.getDueno().equalsIgnoreCase("el banco")){
+                                    propActual.setDueno("");
+                                    propActual.getLblLibre().setText("Dueno: ");
+                                    propActual.setComprada(false);
+                                }
                                 propActual.getLblLibre().revalidate();
                                 propActual.getLblLibre().repaint();
                                 if (this.getNombre().equalsIgnoreCase(propActual.getDueno()))
