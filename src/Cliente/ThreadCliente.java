@@ -1740,6 +1740,15 @@ public class ThreadCliente extends Thread implements Serializable{
                                 if (propActual.getDueno().equalsIgnoreCase("el banco")){
                                     propActual.setDueno("");
                                     propActual.getLblLibre().setText("Dueno: ");
+                                    propActual.getLblAlquiler().setText("Alquiler: $0");
+                                    propActual.getLblAlquiler().revalidate();
+                                    propActual.getLblAlquiler().repaint();
+                                    propActual.getLblCasas().setText("Casas: 0");
+                                    propActual.getLblCasas().revalidate();
+                                    propActual.getLblCasas().repaint();
+                                    propActual.getLblHotel().setText("Hotel: 0");
+                                    propActual.getLblHotel().revalidate();
+                                    propActual.getLblHotel().repaint();
                                     propActual.setComprada(false);
                                 }
                                 propActual.getLblLibre().revalidate();
@@ -1752,7 +1761,7 @@ public class ThreadCliente extends Thread implements Serializable{
                                     this.getRefPantalla().getCbPropiedades().repaint();
                                 }
                                 System.out.println("Nuevo dueno de la propiedad es: " + propActual.getDueno());
-                                this.getRefPantalla().getTxaHistorial().append("El nuevo dueno de la propiedad " + propActual.getNombre() + " del perdedor es: " + propActual.getDueno() + ".\n");
+                                this.getRefPantalla().getTxaHistorial().append("El nuevo dueno de la propiedad " + propActual.getNombre() + " del perdedor es: " + vencidoPor + ".\n");
                             }
                             
                         }
