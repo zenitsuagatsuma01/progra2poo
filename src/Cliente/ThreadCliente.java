@@ -1798,6 +1798,8 @@ public class ThreadCliente extends Thread implements Serializable{
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.cyan);
                             if(propsConsultadas.get(contConsult).getColor().equalsIgnoreCase("Rojo oscuro"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
+                            else
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.white);
                             
                             this.getRefPantalla().getPnlColorTituloPropiedad().revalidate();
                             this.getRefPantalla().getPnlColorTituloPropiedad().repaint();
@@ -1883,6 +1885,8 @@ public class ThreadCliente extends Thread implements Serializable{
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.cyan);
                             if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo oscuro"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
+                            else
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.white);
                             
                             this.getRefPantalla().getPnlColorTituloPropiedad().revalidate();
                             this.getRefPantalla().getPnlColorTituloPropiedad().repaint();
@@ -1969,6 +1973,8 @@ public class ThreadCliente extends Thread implements Serializable{
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.cyan);
                             if(propsConsultadas.get(contadorConsulta).getColor().equalsIgnoreCase("Rojo oscuro"))
                                 this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.red.darker().darker());
+                            else
+                                this.getRefPantalla().getPnlColorTituloPropiedad().setBackground(Color.white);
                             
                             this.getRefPantalla().getPnlColorTituloPropiedad().revalidate();
                             this.getRefPantalla().getPnlColorTituloPropiedad().repaint();
